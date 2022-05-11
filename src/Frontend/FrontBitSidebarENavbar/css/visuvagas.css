@@ -12,8 +12,11 @@
     text-align: center;
     border: solid 0px rgb(1, 1, 1);
     height: auto;
-    padding-top: 1%;
     }
+#logo{
+    padding-top: 0.3rem;
+    /* padding-bottom: 1%; */
+}
 .nav-bar {
     height: 76px;
 }
@@ -30,7 +33,7 @@
     /* border-radius: 10px; */
     background-color: rgb(245, 239, 239);
     /* position: fixed;  */
-    height: 76px;
+    height: 4.8rem;
     /* padding: 1%; */
 }
 #menu{
@@ -85,4 +88,7 @@
 .black:hover {
     color: #F3C42E;
     text-decoration: none;
+}
+.offcanvas-header{
+    height: 4.8rem;
 }
