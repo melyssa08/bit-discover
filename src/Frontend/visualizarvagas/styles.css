@@ -129,4 +129,8 @@ h5 {
 
 /* .col-3, .col-6, .col-9, .col-12 {
     border: solid 1px black;
+} */
+
+.offcanvas-header {
+    height: 4.8rem;
 }
