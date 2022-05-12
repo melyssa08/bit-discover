@@ -1,4 +1,5 @@
 .nav-bar-item{
+     width: 50px;
      height: 50px;
      overflow:hidden ;
      text-overflow: ellipsis;
@@ -28,7 +29,7 @@
     border: 0px solid rgb(5, 5, 5);
     /* border-radius: 10px; */
     background-color: rgb(245, 239, 239);
-     position: fixed;  
+    /* position: fixed;  */
     height: 76px;
     /* padding: 1%; */
 }
@@ -84,12 +85,4 @@
 .black:hover {
     color: #F3C42E;
     text-decoration: none;
-}
-
-html, body {
-    overflow-x: hidden;
-}
-
-.row {
-    --bs-gutter-x: 0;
 }
