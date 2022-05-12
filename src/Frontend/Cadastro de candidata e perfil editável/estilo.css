@@ -1,0 +1,198 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap");
+
+ body {
+  background-color: #530084;
+  font-size: 15px;
+  font-family: "Nunito";
+  align-items: center;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+h4 {
+  color: #530084;
+  font-family: "Nunito", sans-serif;
+}
+
+#Estado,
+#Nome,
+#Idade,
+#Cidade,
+#Formação,
+#HardSkills,
+#SoftSkills {
+  border: solid #eacc6c;
+  font-family: "Nunito";
+  border-radius: 10px;
+  color: #530084;
+  
+}
+h2 {
+  font-weight: bold;
+  font-family: "Nunito";
+  color: #530084;
+}
+
+#Sobre {
+  width: 20% !important;
+  height: 70px;
+  overflow: scroll;
+  font-family: "Nunito";
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: content-box;
+  overflow: auto;
+  font-size: small;
+  color: #530084;
+}
+
+.btn-check {
+  background-color: rgb(155, 155, 15);
+  color: #eacc6c;
+  font-family: "Nunito";
+  border-color: #530084;}
+  
+
+  .texto-area {
+    width: 22% !important;
+    font-size: small;
+    font-family: "Nunito";
+    border: solid 1.5px #eacc6c;
+    border-color: #eacc6c;
+    height: 5rem;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+  a {
+    color: black;
+    text-decoration: none;
+    font-family: "Nunito";
+  }
+
+  a:hover{
+    color: #f8e091;
+    font-family: "Nunito";
+    text-decoration: none;
+  }
+
+  #infopessoal{
+    color: #530084;
+    font-weight: bold;
+  }
+  #infopessoal:hover{
+    color: black;
+    font-weight: bold;
+  }
+
+  #infoprof{
+    color: #530084;
+
+  }
+  #infoprof:hover{
+    color: black;
+  }
+  .form-control{
+    width: 20% !important;
+    overflow: scroll;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: content-box;
+    overflow: auto;
+    flex: auto;
+    align-items: center; 
+    justify-content: center;
+    justify-items: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: small;
+    
+  }
+
+  .form-select-sm{
+    font-family: "Nunito", sans-serif;
+    width: 20% !important;
+    overflow: scroll;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: content-box;
+    overflow: auto;
+    flex: auto;
+    align-items: center; 
+    justify-content: center;
+    justify-items: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: small;
+    color: black;
+    border-color: #eacc6c;
+  }
+
+  .btn-check{
+    border-color: #eacc6c;
+  }
+
+  .paragrafo {
+    color: #530084;
+  }
+
+  .btn-group{
+    /* background-color: white; */
+    font-family: "Nunito";
+    border-style: hidden;
+    border-radius: 10px;
+  }
+
+.botoes {
+  border-color: #530084; 
+  border-width: 1.5px; 
+  color: black; 
+  font-weight: 500;
+  border-radius: 10px;
+}
+
+.button {
+  font-family: "Nunito";
+  font: bold 11px;
+  text-decoration: none;
+  background-color: white;
+  color: black;
+  padding: 2px 6px 2px 6px;
+  border-top: 1.5px solid #530084;
+  border-right: 1.5px solid #530084;
+  border-bottom: 1.5px solid #530084;
+  border-left: 1.5px solid #530084;
+  border-radius: 10px;
+}
+
+#btncheck1,
+#btncheck2,
+#btncheck3,
+#btncheck4 {
+  background-color: white;
+  color: white;
+}
+
+
+#hardskills,
+#softskills,
+#curriculo
+ {
+  color: #530084;
+}
+
+.form-group{
+  color: #530084;
+}
+
+#mais {
+  font-family: 'Nunito';
+  border-top: 1.5px solid #eacc6c;
+  border-right: 1.5px solid #eacc6c;
+  border-bottom: 1.5px solid #eacc6c;
+  border-left: 1.5px solid #eacc6c;
+  background-color: white;
+}
