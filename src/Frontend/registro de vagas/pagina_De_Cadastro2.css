@@ -1,0 +1,113 @@
+#registraVagas {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    position: absolute;
+    width: 30%;
+    height: 20%;
+    max-height: 100px;
+    border-bottom-style:solid;
+    border-width: 1px;
+    border-bottom-color: black;
+    justify-content: center;
+    min-width: 230px;
+}
+
+#form {
+    overflow: auto;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-height: 1500px;
+    height: 200%;
+    border-style: solid;
+    border-color: aquamarine;
+}
+
+
+#footer {
+    background-color: white;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: space-around;
+    height: 15%;
+    width: 100%;
+    position: fixed;
+    border-color: blueviolet;
+    border-style: solid;
+
+}
+
+#textoDeRegistra {
+    font-family: 'Roboto Slab', serif;
+    font-size: 20px;
+}
+
+#icon-fecha {
+    min-width: 54px;
+}
+
+#nome-Vaga {
+    width: 100px;
+}
+
+#inputs {
+    display: grid;
+    position: absolute;
+    border-style: solid;
+    border-color: brown;
+    margin-top: 7rem;
+    height: 80%;
+    max-height: 70rem;
+    width: 70%;
+    min-width: 300px;
+    margin-bottom: 5rem;
+}
+
+
+#fileira-1, #fileira-2, #fileira-3, #fileira-4, #fileira-5, #fileira-6, #fileira-7 {
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    border-style: solid;
+    border-color: blue;
+    height: 70%;
+    max-height: 8rem;
+    width: 100%;
+}
+
+#soft-skills {
+
+}
+
+
+
+#nome-Vaga, #regime-trabalho, #jornada-trabalho, #local-trabalho, #salario, #senioridade, #contato, #nivel-de-ensino, #curso, #cep, #teste{
+    height: 50%;
+    width: 25%;
+    max-width:60%;
+    min-width: 215px;
+    border-radius: 10px;
+}
+
+.html, .body {
+    overflow-x: hidden;
+}
+
+@media only screen and (max-width: 889px) {
+    
+    #fileira-1, #fileira-2, #fileira-3, #fileira-4, #fileira-5, #fileira-6 {
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    #nome-Vaga, #regime-trabalho, #jornada-trabalho, #local-trabalho, #salario, #senioridade, #contato, #nivel-de-ensino, #curso, #cep{
+        margin-top: 2%;
+    }
+}
+
+#hard-skills {
+    display: grid;
+}
