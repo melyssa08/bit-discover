@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
+
 .nav-bar-item{
      width: 50px;
      height: 50px;
@@ -8,6 +10,9 @@
     height: 50px; 
     width: 50px; 
     }
+body{
+    background-color: #F3C42E;
+}
 .col-4 {
     text-align: center;
     border: solid 0px rgb(1, 1, 1);
@@ -31,7 +36,7 @@
     margin: 0 auto;
     border: 0px solid rgb(5, 5, 5);
     /* border-radius: 10px; */
-    background-color: rgb(245, 239, 239);
+    background-color: #ffffff;
     /* position: fixed;  */
     height: 4.8rem;
     /* padding: 1%; */
@@ -91,4 +96,10 @@
 }
 .offcanvas-header{
     height: 4.8rem;
+}
+html, body{ 
+    overflow-x: hidden;
+}
+main{
+    font-family: 'Nunito', sans-serif;
 }
