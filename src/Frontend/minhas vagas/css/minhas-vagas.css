@@ -1,0 +1,69 @@
+body {
+    max-width: 100%;
+    /* margin: 0% 10%; */
+    background-color: #F5EFEF;
+    font-family: 'Nunito', sans-serif;
+}
+
+h1{
+    max-width: 100%;
+    margin: 0% 4% 5% 4%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    display: block;
+    text-align: center;
+    border-bottom: 2px solid #530084;
+    border-bottom-style: groove;
+    color: #F3C42E;
+    
+}
+
+h7 {
+    max-width: 100%;
+    display: block;
+}
+
+p, h7 {
+    color: white;
+}
+/* CSS FLEXBOX  */
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1400px;
+    margin: 0 auto;
+    /* margin: 0% 10%; */
+}
+
+.flex > div {
+    flex: 1 1 200px; /*tamanho maximo de caixa de conteudo*/
+    margin: 15px 40px;
+    border: 2px solid #530084;
+}
+
+.flex > div#plus {
+    flex: 1 1 200px; /*tamanho maximo de caixa de conteudo*/
+    padding-left: 85%;
+    margin: 10px;
+    border: 0px 
+}
+
+.card {
+    background-color: #530084;
+    padding: 5px 8px;
+
+}
+
+/* HOOVER */
+
+.card:hover{
+    transform: scale(1.08);
+    background-color: #F3C42E;
+    transition:  0.4s;
+    cursor: pointer;
+} 
+
+.card:hover > p, .card:hover > h7 {
+    color: rgb(0, 0, 0);
+}
