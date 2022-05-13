@@ -4,52 +4,81 @@ html {
 
 body {
     max-width: 100%;
-    background-color: rgb(239, 239, 239);
+    background-color: #F5EFEF;
+    font-family: 'Nunito', sans-serif;
 }
 
 .flex {
     display: flex;
     flex-wrap: wrap;
-    max-width: 1000px;
+    max-width: 700px;
     margin: 0 auto;
+    justify-content: center;
 }
 
 .flex > div {
     flex: 1 1 500px;
     margin: 15px 40px;
-    border: 2px solid black;
+    /* Debug de conteiner */
+    /* border: 2px solid black; */
 }
 
 .logo{
     display: flex;
     justify-content: center;
-    max-width: 75%;
+    max-width: 100%;
+
 }
 
 #img-logo{
    width: 40%;
    height: auto;
-   /* padding: 10%; */
-   /* margin: 10%; */
+   margin: 1%;
 }
 
-.login{}
-
-.cadastro{}
-
-#form-login {
-    margin: 0% 0% 0% 0%;
+.login{
+    height: 350px;
 }
 
-#label-login{
+h1#label-login{
     font-size: xx-large;
     font-weight: bold;
     margin: auto;
 }
 
-.label-login-all{
-    margin: 4% 0% 1% 0%;
-    font-size: larger;
+.login > #form-group{
+    display: flex;
+    flex: 1 1 500px;
+    flex-wrap: wrap;
+    max-width: 100%;
+}
+
+#group-email{
+    padding-top: 5%;
+}
+
+#group-password{
+    padding-bottom: 5%;
+}
+
+.cadastro{
+    display: flex;  
+    justify-content: space-evenly;
+    width: 80px;
+    height: 10%;
+    padding-top: 10%;
+}
+
+.flex > .cadastro {
+    margin: 15px 10%;
+}
+
+.cadastro > #label-cadastro{
+    font-size: small;
+}
+
+#form-login {
+    margin: 0% 0% 0% 0%;
 }
 
 #btn-entrar {

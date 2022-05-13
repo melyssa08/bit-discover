@@ -28,7 +28,8 @@
     margin: 0 auto;
     border: 0px solid rgb(5, 5, 5);
     /* border-radius: 10px; */
-    background-color: rgb(245, 239, 239);
+    /* background-color: rgb(245, 239, 239); */
+    background-color: white;
     /* position: fixed;  */
     height: 76px;
     /* padding: 1%; */
@@ -40,7 +41,7 @@
 }
 
 #menu:hover {
-    color: rgb(83, 00, 132);
+    color: ;
 }
 
 #notifications{
@@ -85,4 +86,9 @@
 .black:hover {
     color: #F3C42E;
     text-decoration: none;
+}
+
+/* MUDANÇA DE COR DOS ITENS */
+.black{
+    color: rgb(83, 00, 132);
 }
