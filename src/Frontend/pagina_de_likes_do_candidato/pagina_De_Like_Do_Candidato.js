@@ -14,7 +14,7 @@ p.className = 'card-text'
 main.appendChild(div1)
 div1.appendChild(div2)
 div2.appendChild(p)
-p.innerText = 'Teste para descobrir se o negócio deu certo, se deu certo Aleluia, senão aiaiai meu deus'
+p.innerText = 'O Google deu match em você na vaga de Analista de Sistema I'
 
 }
 

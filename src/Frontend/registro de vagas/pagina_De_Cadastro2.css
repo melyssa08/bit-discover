@@ -1,3 +1,9 @@
+body {
+    font-family: 'Nunito' !important;
+    background-color: #f5efef !important;
+}
+
+
 #registraVagas {
     display: flex;
     align-items: center;
@@ -21,13 +27,13 @@
     width: 100%;
     max-height: 1500px;
     height: 200%;
-    border-style: solid;
-    border-color: aquamarine;
+/*    border-style: solid;
+    border-color: aquamarine;*/
 }
 
 
 #footer {
-    background-color: white;
+    background-color: #F5EFEF;
     left: 0;
     bottom: 0;
     display: flex;
@@ -35,8 +41,8 @@
     height: 15%;
     width: 100%;
     position: fixed;
-    border-color: blueviolet;
-    border-style: solid;
+   /* border-color: blueviolet;
+    border-style: solid;*/
 
 }
 
@@ -45,9 +51,7 @@
     font-size: 20px;
 }
 
-#icon-fecha {
-    min-width: 54px;
-}
+
 
 #nome-Vaga {
     width: 100px;
@@ -56,8 +60,8 @@
 #inputs {
     display: grid;
     position: absolute;
-    border-style: solid;
-    border-color: brown;
+ /*   border-style: solid;
+    border-color: brown;*/
     margin-top: 7rem;
     height: 80%;
     max-height: 70rem;
@@ -67,38 +71,115 @@
 }
 
 
-#fileira-1, #fileira-2, #fileira-3, #fileira-4, #fileira-5, #fileira-6, #fileira-7 {
+#fileira-1, #fileira-2, #fileira-3, #fileira-4/*, #fileira-5, #fileira-6, #fileira-7*/ {
     align-items: center;
     display: flex;
     justify-content: space-around;
-    border-style: solid;
-    border-color: blue;
+ /*   border-style: solid;
+    border-color: blue;*/
     height: 70%;
     max-height: 8rem;
     width: 100%;
 }
 
-#soft-skills {
-
+#cep {
+    border-radius: 10px;
+    border-color: #F3C42E;
+    min-width: 212px;
+    height: 80%;
+    width: 100%;
+    min-height: 35.2px;
 }
 
+#observacao-vaga {
+    border-color: #F3C42E;
+    border-radius: 10px;
+    height: 80%;
+    min-width: 212px;
+    width: 100%;
+}
 
+#fileira-5, #fileira-6, #fileira-7 {
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+   /* border-style: solid;
+    border-color: blue;*/
+    height: 100%;
+    max-height: 20rem;
+    width: 100%;
+}
 
-#nome-Vaga, #regime-trabalho, #jornada-trabalho, #local-trabalho, #salario, #senioridade, #contato, #nivel-de-ensino, #curso, #cep, #teste{
-    height: 50%;
-    width: 25%;
-    max-width:60%;
+/*#input-nome-vaga, #input-regime-trabalho, #input-jornada-trabalho, #input-local-trabalho, #input-salario, #input-senioridade, #input-contato, #input-nivel-de-ensino, #input-curso, #input-cep, #input-observacao-vaga*/
+#input-form{
+    justify-content: space-around;
+    display: flex;
+    align-items: center;
+    height: 80%;
+    width: 70%;
+    max-width: 60%;
     min-width: 215px;
+}
+
+#icon {
+    min-width: 44px;
+    margin-right: 2%;
+}
+
+#input-form-botoes-caixa {
+    background-color: #FFFFFF;
+    display: flex;
+    height: 80%;
+    width: 100%;
+    min-width: 215px;
+    border-style: solid;
+    border-color: #530084;
     border-radius: 10px;
 }
 
-.html, .body {
-    overflow-x: hidden;
+#botaoTag {
+    border-style: solid;
+    border-color: #530084;
+    background-color: white;
+    color: #530084;
+    border-radius: 10px;
+    margin-top: 0.5%;
+    margin-bottom: 1%;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+#titulo {
+    padding-top: 1%;
+}
+
+#campo-busca {
+    display: flex;
+    justify-content: space-between;
+}
+
+#titulo-hard-skills-obrigatorios, #titulo-hard-skills-nao-obrigatorios {
+    display: flex;
+    align-items: center;
+    margin-left: 1%;
+    width: 98%;
+    justify-content: space-between;
+}
+
+
+#input-form-botoes {
+    overflow: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+#conteudo-obrigatorio, #conteudo-nao-obrigatorio {
+    overflow: auto;
 }
 
 @media only screen and (max-width: 889px) {
     
-    #fileira-1, #fileira-2, #fileira-3, #fileira-4, #fileira-5, #fileira-6 {
+    #fileira-1, #fileira-2, #fileira-3, #fileira-4, #fileira-5, #fileira-6, #fileira-7, #conteudo-hard-skills-obrigatorios,#conteudo-hard-skills-nao-obrigatorios {
         flex-direction: column;
         justify-content: space-around;
     }
@@ -106,8 +187,27 @@
     #nome-Vaga, #regime-trabalho, #jornada-trabalho, #local-trabalho, #salario, #senioridade, #contato, #nivel-de-ensino, #curso, #cep{
         margin-top: 2%;
     }
+
+    #inputs {
+        margin-top: 8rem;
+    }
+
 }
 
 #hard-skills {
     display: grid;
+}
+
+#busca-tag {
+    border-color: #F3C42E;
+    width: 80%;
+    height: 20%;
+}
+
+#linha-1, #linha-2, #linha-3 {
+    border-color: #F3C42E;
+    border-radius: 10px;
+    min-width: 212px;
+    width: 60%;
+    height: 80%;
 }
