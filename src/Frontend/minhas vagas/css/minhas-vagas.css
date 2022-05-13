@@ -26,6 +26,16 @@ h7 {
 p, h7 {
     color: white;
 }
+
+p {
+    padding: 7% 2%;
+    font-size: smaller;
+}
+
+h7{
+    font-size: larger;
+}
+
 /* CSS FLEXBOX  */
 
 .flex {
