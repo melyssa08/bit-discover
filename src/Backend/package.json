@@ -1,5 +1,13 @@
 {
-  "dependencies": {
-    "express": "^4.18.1"
-  }
+	"dependencies": {
+		"connect": "^3.7.0",
+		"cors": "^2.8.5",
+		"express": "^4.18.1",
+		"sqlite3": "^5.0.8"
+	},
+	"main": "app.js",
+	"scripts": {
+		"start": "node app.js"
+	},
+	"type": "module"
 }
