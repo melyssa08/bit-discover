@@ -6,12 +6,16 @@ import ConsoleUtils from './utils/console.js';
 import cors from 'cors';
 import colors from 'colors';
 
+const DBPATH = 'tests.db'
+
 const EXPRESS_CONFIG = await getConfig('express');
 
 ConsoleUtils.addTimeOnConsole();
 DatabaseTable.initDatabase();
 
 const app = express();
+
+app.use(express.static("../frontend/"));
 
 app.disable('x-powered-by');
 
@@ -141,3 +145,16 @@ app.delete('/jobs/:id', (req, res) => {
 app.listen(EXPRESS_CONFIG.port, EXPRESS_CONFIG.hostname, () => {
 	console.log(`Server running at http://${EXPRESS_CONFIG.hostname}:${EXPRESS_CONFIG.port}/`.rainbow);
 });
+
+app.get('/jobs', (req, res) => {
+	res.statusCode = 200;
+	var db = new sqlite3.Database(DBPATH);
+	var sql = ('SELECT * FROM tests');
+	db.all(sql, (err, row) => {
+	  if (err) {
+		throw err;
+	  }
+	  console.log(row)
+		res.send(row)
+	 });
+  });
