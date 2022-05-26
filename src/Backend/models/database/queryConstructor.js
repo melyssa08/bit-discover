@@ -15,6 +15,7 @@ const QueryConstructor = {
 
 				return filters;
 			},
+
 			data: (data) => {
 				if (!data) {
 					return '';
@@ -28,6 +29,10 @@ const QueryConstructor = {
 				});
 
 				return update;
+			},
+
+			foreignKeys: (state) => {
+				return `PRAGMA foreign_keys = ${state ? 'ON' : 'OFF'}`;
 			},
 		},
 	},
@@ -73,6 +78,30 @@ const QueryConstructor = {
 			if (filters) query += ` WHERE ${filters}`;
 
 			return query;
+		},
+
+		table: {
+			create: (table, columns) => {
+				let columnsSql = '';
+
+				columns.forEach((column) => {
+					columnsSql += `${column.name} ${column.type}`;
+					if (column.primaryKey) columnsSql += ' PRIMARY KEY';
+					if (column.autoIncrement) columnsSql += ' AUTOINCREMENT';
+					if (column.unique) columnsSql += ' UNIQUE';
+					if (column.notNull) columnsSql += ' NOT NULL';
+					if (column.default) columnsSql += ` DEFAULT ${column.default}`;
+					if (column.foreign)
+						columnsSql += ` FOREIGN KEY(${column.foreign.key}) REFERENCES ${column.foreign.table}(${column.foreign.column})`;
+					if (columns.indexOf(column) !== columns.length - 1) columnsSql += ', ';
+				});
+
+				return `CREATE TABLE IF NOT EXISTS ${table} (${columnsSql})`;
+			},
+
+			drop: (table) => {
+				return `DROP TABLE IF EXISTS ${table}`;
+			},
 		},
 	},
 };

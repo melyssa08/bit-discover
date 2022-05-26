@@ -1,8 +1,45 @@
 import QueryConstructor from './queryConstructor.js';
 import database from './connection.js';
+import colors from 'colors';
+
 class DatabaseTable {
-	constructor(table) {
+	constructor(table, columns) {
 		this.table = table;
+		this.columns = columns;
+
+		this.#initTable()
+			.then(() => {
+				console.log(`Table '${table}': `.bold, ' OK '.brightGreen.bgGreen.bold);
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	}
+
+	static initDatabase() {
+		const sql = QueryConstructor.utils.constructor.foreignKeys(true);
+		return new Promise((resolve, reject) => {
+			database.run(sql, (err) => {
+				if (err) {
+					reject(err);
+				} else {
+					resolve();
+				}
+			});
+		});
+	}
+
+	#initTable() {
+		const sql = QueryConstructor.construct.table.create(this.table, this.columns);
+		return new Promise((resolve, reject) => {
+			database.run(sql, (err) => {
+				if (err) {
+					reject(err);
+				} else {
+					resolve();
+				}
+			});
+		});
 	}
 
 	save(data) {

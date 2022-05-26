@@ -2,8 +2,14 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import DatabaseTable from './models/database/databaseTable.js';
 import getConfig from './configs/loader.js';
+import ConsoleUtils from './utils/console.js';
 import cors from 'cors';
+import colors from 'colors';
+
 const EXPRESS_CONFIG = await getConfig('express');
+
+ConsoleUtils.addTimeOnConsole();
+DatabaseTable.initDatabase();
 
 const app = express();
 
@@ -17,38 +23,121 @@ app.use(
 	})
 );
 
-class Temp extends DatabaseTable {
+class Jobs extends DatabaseTable {
 	constructor() {
-		super('temp');
+		/*
+			name: 'id',
+			type: 'INTEGER',
+			primaryKey: true,
+			autoIncrement: true,
+			notNull: true,
+			foreign: {
+				key: "key_tabela_atual"
+				table: "outra_tabela"
+				column: "coluna_outra_tabela"
+			}
+		*/
+		let columns = [
+			{
+				name: 'id',
+				type: 'INTEGER',
+				primaryKey: true,
+				notNull: true,
+				autoIncrement: true,
+			},
+			{
+				name: 'name',
+				type: 'TEXT',
+				notNull: true,
+			},
+			{
+				name: 'company_name',
+				type: 'TEXT',
+				notNull: true,
+			},
+			{
+				name: 'company_local',
+				type: 'TEXT',
+				notNull: true,
+			},
+			{
+				name: 'activities',
+				type: 'TEXT',
+				notNull: true,
+			},
+			{
+				name: 'required',
+				type: 'TEXT',
+				notNull: true,
+			},
+			{
+				name: 'company_description',
+				type: 'TEXT',
+				notNull: true,
+			},
+			{
+				name: 'type',
+				type: 'TEXT',
+				notNull: true,
+			},
+			{
+				name: 'education_level',
+				type: 'TEXT',
+				notNull: true,
+			},
+			{
+				name: 'job_time',
+				type: 'NUMBER',
+				notNull: true,
+			},
+			{
+				name: 'salary_min',
+				type: 'REAL',
+				notNull: true,
+			},
+			{
+				name: 'salary_max',
+				type: 'REAL',
+				notNull: true,
+			},
+		];
+
+		super('jobs', columns);
 	}
 }
 
-const temp = new Temp();
+const jobs = new Jobs();
 
-app.get('/', (req, res) => {
-	temp.filter({}).then((data) => {
-		res.send(data);
+app.get('/jobs', (req, res) => {
+	jobs.filter({}).then((result) => {
+		res.send(result);
 	});
 });
 
-app.post('/', (req, res) => {
-	temp.save(req.body).then((data) => {
-		res.send(data);
+app.get('/jobs/:id', (req, res) => {
+	jobs.filter({ id: req.params.id }).then((result) => {
+		res.send(result);
 	});
 });
 
-app.put('/:id', (req, res) => {
-	temp.update(req.body, { id: req.params.id }).then((data) => {
-		res.send(data);
+app.post('/jobs/', (req, res) => {
+	jobs.save(req.body).then((result) => {
+		res.send(result);
 	});
 });
 
-app.delete('/:id', (req, res) => {
-	temp.delete({ id: req.params.id }).then((data) => {
-		res.send(data);
+app.put('/jobs/:id', (req, res) => {
+	jobs.update(req.body, { id: req.params.id }).then((result) => {
+		res.send(result);
+	});
+});
+
+app.delete('/jobs/:id', (req, res) => {
+	jobs.delete({ id: req.params.id }).then((result) => {
+		res.send(result);
 	});
 });
 
 app.listen(EXPRESS_CONFIG.port, EXPRESS_CONFIG.hostname, () => {
-	console.log(`Server running at http://${EXPRESS_CONFIG.hostname}:${EXPRESS_CONFIG.port}/`);
+	console.log(`Server running at http://${EXPRESS_CONFIG.hostname}:${EXPRESS_CONFIG.port}/`.rainbow);
 });
