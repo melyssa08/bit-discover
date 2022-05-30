@@ -12,19 +12,8 @@
         @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
 
-        option {
-            opacity:0.5;
-        }
-
-        option:hover {
-            background-color:rgba(243, 196, 46, 1) ;
-        }
-
-        option:focus {
-            background-color:rgba(243, 196, 46, 1) ;
-        }
         
-        textarea {
+        #txa1 {
             display: block;
             margin-left: auto;
             margin-right: auto;
@@ -40,11 +29,11 @@
             width: 20%;
         }
 
-        ::placeholder {
+        #inp1::placeholder,#inp2::placeholder,#inp3::placeholder,#inp4::placeholder,#inp5::placeholder,#inp6::placeholder,#inp7::placeholder,#inp8::placeholder {
             opacity: 0.5;   
         }
 
-        input {
+        #inp1,#inp2,#inp3,#inp4,#inp5,#inp6,#inp7,#inp8 {
             border-style:solid;
             border-color: #F8E091 !important;
             border-radius: 10px;
@@ -81,17 +70,17 @@
             border-radius: 10px;
         }
 
-        a {
+        #a1 {
             color: #530084;
             text-decoration: none;
         }
 
-        a:hover {
+        #a1:hover {
             color: #F8E091;
             text-decoration: none;
         }
 
-        label {
+        #lbl1, #lbl2, #lbl3, #lbl4, #lbl5, #lbl6, #lbl7, #lbl8 {
             color: #530084;
             font-weight:lighter
         }
@@ -119,45 +108,45 @@
             
                         <div class="row mt-4 justify-content-center">
                             <div class="col-lg-4 col-md-4 col-sm-4">
-                                <label for="email">E-mail</label>
-                                <input type="text" placeholder="Digite seu e-mail" class="form-control input-box" id="email">
+                                <label id="lbl1" for="email">E-mail</label>
+                                <input id="inp1" type="text" placeholder="Digite seu e-mail" class="form-control input-box" id="email">
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-4">
-                                <label for="confirmacao">Confirmar e-mail</label>
-                                <input type="text" placeholder="Confirme seu e-mail" class="form-control input-box " id="confirmacao">
+                                <label id="lbl2" for="confirmacao">Confirmar e-mail</label>
+                                <input id="inp2" type="text" placeholder="Confirme seu e-mail" class="form-control input-box " id="confirmacao">
                             </div>
                         </div>
                         
                         <div class="row mt-4 justify-content-center">
                             <div class="col-lg-4 col-md-4 col-sm-4">
-                                <label for="cidade">Cidade</label>
-                                <input type="text" placeholder="Cidade" class=" form-control input-box">
+                                <label id="lbl3" for="cidade">Cidade</label>
+                                <input id="inp3" type="text" placeholder="Cidade" class=" form-control input-box">
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-4">
-                                <label for="estado">Estado</label>
-                                <input type="text" placeholder="Estado" class="form-control input-box" id="estado">
+                                <label id="lbl4" for="estado">Estado</label>
+                                <input id="inp4" type="text" placeholder="Estado" class="form-control input-box" id="estado">
                             </div>
                         </div>
                     
                         <div class="row mt-4 justify-content-center ">
                             <div class="col-lg-4 col-md-4 col-sm-4">
-                                <label for="senha">Senha</label>
-                                <input type="password" placeholder="Senha" class="form-control input-box" id="senha">
+                                <label id="lbl5" for="senha">Senha</label>
+                                <input id="inp5" type="password" placeholder="Senha" class="form-control input-box" id="senha">
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-4">
-                                <label for="confirmacao2">Confirmar senha</label>
-                                <input type="password" placeholder="Confirmar senha" class="form-control input-box" id="confirmacao2">
+                                <label id="lbl6" for="confirmacao2">Confirmar senha</label>
+                                <input id="inp6" type="password" placeholder="Confirmar senha" class="form-control input-box" id="confirmacao2">
                             </div>
                         </div>
                         
                         <div class="row mt-4 justify-content-center">
                             <div class="col-lg-4 col-md-4 col-sm-4">
-                                <label for="cnpj">CNPJ</label>
-                                <input type="text" placeholder="Digite seu CNPJ" class="form-control input-box" id="cnpj">
+                                <label id="lbl7" for="cnpj">CNPJ</label>
+                                <input id="inp7" type="text" placeholder="Digite seu CNPJ" class="form-control input-box" id="cnpj">
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-4">
-                                <label for="link">Link do site da empresa</label>
-                                <input type="text" placeholder="Site da sua empresa" class="form-control input-box" id="link">
+                                <label id="lbl8" for="link">Link do site da empresa</label>
+                                <input id="inp8" type="text" placeholder="Site da sua empresa" class="form-control input-box" id="link">
                             </div>
                         </div>
                             
@@ -167,13 +156,13 @@
                             </div>
                             <div class="row justify-content-center">
                                 <div class="col-lg-8 col-md-9 col-sm-9">
-                                    <textarea name="text" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' class="input-box textarea" style="width: 100%;"></textarea>
+                                    <textarea id="txa1" name="text" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' class="input-box textarea" style="width: 100%;"></textarea>
                                 </div>
                             </div>
                         </div>
 
                         <div class="container input-container" >
-                            <a href="../minhas vagas/FlexBox.html"><button class="btn" id="botao">Criar Conta</button></a>
+                            <a href="../minhas vagas/FlexBox.html" id="a1"><button class="btn" id="botao">Criar Conta</button></a>
                         </div> 
                         
                         <div class="container input-container">
