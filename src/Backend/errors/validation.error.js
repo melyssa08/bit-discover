@@ -5,4 +5,12 @@ class ValidationError extends Error {
 	}
 }
 
-export default ValidationError;
+class PropertyRequiredError extends ValidationError {
+	constructor(property) {
+		super('No property: ' + property);
+		this.name = 'PropertyRequiredError';
+		this.property = property;
+	}
+}
+
+export default { ValidationError, PropertyRequiredError };
