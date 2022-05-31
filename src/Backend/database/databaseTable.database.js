@@ -21,6 +21,10 @@ class DataTypes {
 	static get blob() {
 		return 'BLOB';
 	}
+
+	static get datetime(){
+		return 'DATETIME';
+	}
 }
 
 class DatabaseTable {
