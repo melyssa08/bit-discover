@@ -1,4 +1,4 @@
-import getConfig from '../../configs/loader.js';
+import getConfig from '../configs/loader.config.js';
 import sqlite3 from 'sqlite3';
 
 const DATABASE_CONFIG = await getConfig('database');

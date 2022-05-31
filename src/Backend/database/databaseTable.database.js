@@ -1,6 +1,27 @@
-import QueryConstructor from './queryConstructor.js';
-import database from './connection.js';
-import colors from 'colors';
+import QueryConstructor from './queryConstructor.database.js';
+import database from './connection.database.js';
+
+class DataTypes {
+	static get integer() {
+		return 'INTEGER';
+	}
+
+	static get text() {
+		return 'TEXT';
+	}
+
+	static get null() {
+		return 'NULL';
+	}
+
+	static get real() {
+		return 'REAL';
+	}
+
+	static get blob() {
+		return 'BLOB';
+	}
+}
 
 class DatabaseTable {
 	constructor(table, columns) {
@@ -55,8 +76,8 @@ class DatabaseTable {
 		});
 	}
 
-	filter(where) {
-		const sql = QueryConstructor.construct.filter(this.table, where);
+	get(where) {
+		const sql = QueryConstructor.construct.filter(this.table, { where });
 		return new Promise((resolve, reject) => {
 			database.all(sql, (err, rows) => {
 				if (err) {
@@ -93,6 +114,20 @@ class DatabaseTable {
 			});
 		});
 	}
+
+	innerJoin(join, columns, where, key) {
+		console.log(columns);
+		const sql = QueryConstructor.construct.innerJoin(this.table, join, columns, where, key);
+		return new Promise((resolve, reject) => {
+			database.all(sql, (err, rows) => {
+				if (err) {
+					reject(err);
+				} else {
+					resolve(rows);
+				}
+			});
+		});
+	}
 }
 
-export default DatabaseTable;
+export { DatabaseTable, DataTypes };

@@ -80,27 +80,56 @@ const QueryConstructor = {
 			return query;
 		},
 
+		innerJoin: (table, { columns, where, join, key }) => {
+			let filters = '';
+
+			filters = QueryConstructor.utils.constructor.filter(where);
+
+			let query = `SELECT ${columns ? columns.join() : '*'} FROM ${table} INNER JOIN ${join.table} ON ${join.table}.${
+				join.property
+			} = ${table}.${key}`;
+			if (filters) query += ` WHERE ${filters}`;
+
+			return query;
+		},
+
 		table: {
 			create: (table, columns) => {
 				let columnsSql = '';
 
-				columns.forEach((column) => {
-					columnsSql += `${column.name} ${column.type}`;
-					if (column.primaryKey) columnsSql += ' PRIMARY KEY';
-					if (column.autoIncrement) columnsSql += ' AUTOINCREMENT';
-					if (column.unique) columnsSql += ' UNIQUE';
-					if (column.notNull) columnsSql += ' NOT NULL';
-					if (column.default) columnsSql += ` DEFAULT ${column.default}`;
-					if (column.foreign)
-						columnsSql += ` FOREIGN KEY(${column.foreign.key}) REFERENCES ${column.foreign.table}(${column.foreign.column})`;
-					if (columns.indexOf(column) !== columns.length - 1) columnsSql += ', ';
-				});
+				for (const key in columns) {
+					columnsSql += `${key} ${columns[key].type}`;
+					if (columns[key].primaryKey) columnsSql += ' PRIMARY KEY';
+					if (columns[key].autoIncrement) columnsSql += ' AUTOINCREMENT';
+					if (columns[key].unique) columnsSql += ' UNIQUE';
+					if (columns[key].notNull) columnsSql += ' NOT NULL';
+					if (columns[key].default) columnsSql += ` DEFAULT ${columns[key].default}`;
+					if (columns[key].foreign)
+						columnsSql += `, FOREIGN KEY (${columns[key].foreign.key}) REFERENCES ${columns[key].foreign.table} (${columns[key].foreign.column})`;
+					if (Object.keys(columns)[Object.keys(columns).length - 1] !== key) columnsSql += ', ';
+				}
 
 				return `CREATE TABLE IF NOT EXISTS ${table} (${columnsSql})`;
 			},
 
 			drop: (table) => {
 				return `DROP TABLE IF EXISTS ${table}`;
+			},
+
+			addColumn: (table, column) => {
+				return `ALTER TABLE ${table} ADD COLUMN ${column.name} ${column.type}`;
+			},
+
+			removeColumn: (table, column) => {
+				return `ALTER TABLE ${table} DROP COLUMN ${column}`;
+			},
+
+			renameColumn: (table, oldColumn, newColumn) => {
+				return `ALTER TABLE ${table} RENAME COLUMN ${oldColumn} TO ${newColumn}`;
+			},
+
+			infos: (table) => {
+				return `PRAGMA table_info(${table})`;
 			},
 		},
 	},
