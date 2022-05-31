@@ -13,4 +13,13 @@ class PropertyRequiredError extends ValidationError {
 	}
 }
 
-export default { ValidationError, PropertyRequiredError };
+class PropertyNotValidError extends ValidationError {
+	constructor(property, validation) {
+		super('Property not valid: ' + property);
+		this.name = 'PropertyNotValidError';
+		this.property = property;
+		this.validation = validation;
+	}
+}
+
+export default { ValidationError, PropertyRequiredError, PropertyNotValidError };

@@ -4,6 +4,7 @@ import ConsoleUtils from './utils/console.util.js';
 import RouteManager from './routes/index.js';
 import BasicsConfig from './middlewares/basics.middleware.js';
 import { DatabaseTable } from './database/databaseTable.database.js';
+
 const EXPRESS_CONFIG = await getConfig('express');
 
 ConsoleUtils.addTimeOnConsole();
