@@ -1,37 +1,49 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
 
-.nav-bar-item{
-     width: 50px;
-     height: 50px;
-     overflow:hidden ;
-     text-overflow: ellipsis;
-     }
-.nav-bar-link{ 
+.SNBar-nav-bar-item{
+    width: 50px;
+    height: 50px;
+    overflow:hidden ;
+    text-overflow: ellipsis;
+ }
+
+.SNBar-nav-bar-link{ 
     height: 50px; 
     width: 50px; 
-    }
-body{
-    background-color: #F3C42E;
 }
+
+#SNBar-body{
+    background-color: #F3C42E;
+    /* overflow-x: hidden;  */
+    font-family: 'Nunito', sans-serif;
+}
+
+/* Bootstrap */
 .col-4 {
     text-align: center;
     border: solid 0px rgb(1, 1, 1);
     height: auto;
-    }
-#logo{
+}
+
+#SNBar-logo{
     padding-top: 0.3rem;
     /* padding-bottom: 1%; */
 }
-.nav-bar {
+
+.SNBar-nav-bar {
     height: 76px;
 }
-.direita {
+
+.SNBar-right {
     text-align: right;
-     }
-.esquerda {
-     text-align: left;
-     }
-.containernavbar{
+}
+
+.SNBar-left {
+    text-align: left;
+}
+
+/* Bootstrap */
+.container-fluid{
     width: 100%;
     margin: 0 auto;
     border: 0px solid rgb(5, 5, 5);
@@ -39,67 +51,63 @@ body{
     background-color: #ffffff;
     /* position: fixed;  */
     height: 4.8rem;
-    /* padding: 1%; */
+    padding: 1%;
 }
-#menu{
+
+#SNBar-menu{
     color: rgb(243, 196, 46);
     position: relative;
     top: 20%
 }
 
-#menu:hover {
+#SNBar-menu:hover {
     color: rgb(83, 00, 132);
 }
 
-#notifications{
+#SNBar-notifications{
     color: rgb(243, 196, 46);
     position: relative;
     top: 25%
 }
-#notifications:hover{
+
+#SNBar-notifications:hover{
     color: rgb(83, 00, 132);
 }
-.sidebarPadding {
+
+.SNBar-side-bar-padding {
     height: 6.25rem;
     text-align: center;
     /* border: solid 1px black; */
     padding-top: 10%;
 }
-.backreturnSideBar {
+
+.SNBar-side-bar-back-return {
     background-color: rgb(243, 196, 46); 
 }
 
-.backreturnSideBar:hover {
+.SNBar-side-bar-back-return:hover {
     background-color: rgb(83, 00, 132);
 }
 
-.zoom {
+.SNBar-zoom {
     transition: 0.2s;
 }
 
-.zoom:hover {
+.SNBar-zoom:hover {
     transform: scale(1.2);
 }
 
-.size {
-    width: 80%;
-}
-
-.black:link {
+/* Mudar cor do texto para roxo */
+.SNBar-black:link {
     color: black;
     text-decoration: none;
 }
 
-.black:hover {
+.SNBar-black:hover {
     color: #F3C42E;
     text-decoration: none;
 }
+/* Bootstrap */
 .offcanvas-header{
     height: 4.8rem;
-}
-html, body{ 
-    overflow-x: hidden;
-}
-main{
-    font-family: 'Nunito', sans-serif;
 }

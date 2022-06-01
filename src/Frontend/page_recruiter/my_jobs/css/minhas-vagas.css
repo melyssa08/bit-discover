@@ -1,11 +1,11 @@
-body {
+body#myJobs-body{
     max-width: 100%;
     /* margin: 0% 10%; */
     background-color: #F5EFEF;
     font-family: 'Nunito', sans-serif;
 }
 
-h1{
+h1#myJobs-title{
     max-width: 100%;
     margin: 0% 4% 5% 4%;
     padding-top: 4%;
@@ -18,27 +18,27 @@ h1{
     
 }
 
-h7 {
+h7.myJobs-card-title{
     max-width: 100%;
     display: block;
 }
 
-p, h7 {
+.myJobs-card > p, h7 {
     color: white;
 }
 
-p {
+.myJobs-card > p {
     padding: 7% 2%;
     font-size: smaller;
 }
 
-h7{
+.myJobs-card > h7{
     font-size: larger;
 }
 
 /* CSS FLEXBOX  */
 
-.flex {
+.myJobs-main {
     display: flex;
     flex-wrap: wrap;
     max-width: 1400px;
@@ -46,34 +46,34 @@ h7{
     /* margin: 0% 10%; */
 }
 
-.flex > div {
+.myJobs-main > div.myJobs-card {
     flex: 1 1 200px; /*tamanho maximo de caixa de conteudo*/
     margin: 15px 40px;
     border: 2px solid #530084;
 }
 
-.flex > div#plus {
+.myJobs-main > div#myJobs-icon-plus {
     flex: 1 1 200px; /*tamanho maximo de caixa de conteudo*/
     padding-left: 85%;
     margin: 10px;
     border: 0px 
 }
 
-.card {
+.myJobs-card {
     background-color: #530084;
     padding: 5px 8px;
 
 }
 
-/* HOOVER */
+/* HOVER */
 
-.card:hover{
+.myJobs-card:hover{
     transform: scale(1.08);
     background-color: #F3C42E;
     transition:  0.4s;
     cursor: pointer;
 } 
 
-.card:hover > p, .card:hover > h7 {
+.myJobs-card:hover > p, .card:hover > h7 {
     color: rgb(0, 0, 0);
 }
