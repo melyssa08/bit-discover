@@ -1,147 +1,132 @@
+/* Importa do googlefonts a fonte Nunito */
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
 
-.nav-bar-item{
+/* Propriedades de espaço nos itens que estão na navbar  */
+.jobsVisualization-nav-bar-item{
     width: 50px;
     height: 50px;
     overflow: hidden;
     text-overflow: ellipsis;
     }
-.nav-bar-link{ 
+
+/* Outrar propriedades de espaço nos itens que estão na navbar */
+.jobsVisualization-nav-bar-link{ 
    height: 50px; 
    width: 50px; 
    }
 
-.containernavbar{
+/* Propriedades de espaço, posicionamento e estilo da caixa de navbar */
+#jobsVisualization-containernavbar{
     position: fixed;
     z-index: 2;
     width: 100%;
     margin: 0 auto;
     border: 0px solid rgb(5, 5, 5);
-    /* border-radius: 10px; */
     background-color: rgb(255, 255, 255);
-    /* position: fixed;  */
     height: 76px;
-    /* padding: 1%; */
 }
 
-#logo {
+/* Propriedade de espaço no logo da Bit */
+#jobsVisualization-logo {
     padding-top: 0.;
 }
 
-.col-4 {
+/* Propriedade de estilo, espaço e posição dos itens na parte da navbar */
+.jobsVisualization-col-4 {
     text-align: center;
     border: solid 0px white;
     height: auto;
 }
 
-.nav-bar {
+/* Propriedade de espaço na navbar */
+#jobsVisualization-nav-bar {
     height: 76px;
 }
 
-.direita {
+/* Propriedade de posição no icone de sininho */
+#jobsVisualization-direita {
     text-align: right;
 }
 
-.esquerda {
+/* Propriedade de posição no icone de menu */
+#jobsVisualization-esquerda {
      text-align: left;
 }
 
-div::-webkit-scrollbar {
-}
-
-#menu{
+/* Propriedade de estilo no icone de menu */
+#jobsVisualization-menu{
     color: rgb(243, 196, 46);
     position: relative;
     top: 20%
 }
-    
-#menu:hover {
+
+/* Propriedade de estilo no icone menu ao passar por hover */
+#jobsVisualization-menu:hover {
     color: rgb(83, 00, 132);
 }
 
-#notifications{
+/* Propriedade de estilo no icone do sininho */
+#jobsVisualization-notifications{
     color: rgb(243, 196, 46);
     position: relative;
     top: 25%
 }
-#notifications:hover{
+
+/* Propriedade de estilo no icone do sininho ao passar por hover */
+#jobsVisualization-notifications:hover{
     color: rgb(83, 00, 132);
 }
 
-h5 {
+/* Propridade do item do side bar e também do titulo do modal */
+#jobsVisualization-exampleModalLabel, #jobsVisualization-offcanvasExampleLabel {
     text-align: left;
 }
 
-.body {
-    background-color: rgb(243, 196, 46);
-}
-
-.sidebarPadding {
+/* Propriedade de espaço e posição de cada item do sidebar */
+.jobsVisualization-sidebarPadding {
     height: 6.25rem;
     text-align: center;
-    /* border: solid 1px black; */
     padding-top: 10%;
 }
 
-.hr {
-    border-radius: 100%;
-}
-
-.black:link {
+/* Propriedade de estilo de cada item do sidebar */
+.jobsVisualization-black:link {
     color: black;
     text-decoration: none;
 }
 
-.black:hover {
+/* Propriedade de estilo de cada item do sidebar ao passar por hover */
+.jobsVisualization-black:hover {
     color: #F3C42E;
     text-decoration: none;
 }
 
-.backreturnSideBar {
+/* Propriedade de estilo do icone para sair da sidebar e voltar para a página */
+#jobsVisualization-backreturnSideBar {
     background-color: #F3C42E; 
 }
 
-.backreturnSideBar:hover {
+/* Propriedade de estilo do icone para sair da sidebar quando se passa por hover */
+#jobsVisualization-backreturnSideBar:hover {
     background-color: #530084;
 }
 
-.zoom {
+/* Propriedade de cada item do sidebar quando se passam por algum efeito, no caso quando houver hover irá aumentar o zoom */
+.jobsVisualization-zoom {
     transition: 0.2s;
 }
 
-.zoom:hover {
+/* Propriedade de efeito nos itens do sidebar quando acontece hover neles */
+.jobsVisualization-zoom:hover {
     transform: scale(1.2);
 }
 
-.size {
-    width: 80%;
-}
-
-/*.col-12, .col-4, .col {
-    border: solid 1px black;
-} */
-
-.center {
-    text-align: center;
-    vertical-align: baseline;
-}
-
-.bling {
-    fill: black;
-}
-
-.bling:hover {
-    fill: #F3C42E;
-}
-
-/* .col-3, .col-6, .col-9, .col-12 {
-    border: solid 1px black;
-} */
-
-.offcanvas-header {
+/* Propriedade de espaço no canto superior da sidebar, ou seja o header da sidebar */
+#jobsVisualization-offcanvas-header {
     height: 4.8rem;
 }
 
-html, body {
+/* Propriedade do html e do body que esconde o scroll de x, ou seja o scroll horizontal */
+#jobsVisualization-html, #jobsVisualization-body {
     overflow-x: hidden;
 }
