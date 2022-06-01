@@ -1,13 +1,17 @@
 function teste() {
     console.log('teste')
+// Consumo de api por jQuery com o método get
     $.get("http://localhost:3000/jobs", function(resultado){
         console.log(resultado)
         var count = 0
         console.log(resultado.length)
+        // Veio como array o resultado então usa o map para fazer a modificação em cada item do array
         resultado.map((resul) => {
+          // Está colocando os cards no html por meio do jQuery
         $("#cards").append();
+        // Template de string que mostra a criação dos cards como se fosse um html só que dentro de um arquivo javascript
         $("#cards").append(`<!--Inicio Card-->
-        <div class="card container d-flex justify-content-between align-items-center text-black col-4" style="width: 20rem;">
+        <div class="card container d-flex justify-content-between align-items-center text-black jobsVisualization-col-4" style="width: 20rem;">
           <div class="row">
            <div class="mt-3 text-center col-12">
              <!--Imagem Card-->
@@ -26,7 +30,7 @@ function teste() {
               </svg>&nbsp; ` + resul.name + `</p></div>
               <div class="col-12" style="text-align: left;"><p style="display: inline;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trophy-fill" viewBox="0 0 16 16"><path d="M2.5.5A.5.5 0 0 1 3 0h10a.5.5 0 0 1 .5.5c0 .538-.012 1.05-.034 1.536a3 3 0 1 1-1.133 5.89c-.79 1.865-1.878 2.777-2.833 3.011v2.173l1.425.356c.194.048.377.135.537.255L13.3 15.1a.5.5 0 0 1-.3.9H3a.5.5 0 0 1-.3-.9l1.838-1.379c.16-.12.343-.207.537-.255L6.5 13.11v-2.173c-.955-.234-2.043-1.146-2.833-3.012a3 3 0 1 1-1.132-5.89A33.076 33.076 0 0 1 2.5.5zm.099 2.54a2 2 0 0 0 .72 3.935c-.333-1.05-.588-2.346-.72-3.935zm10.083 3.935a2 2 0 0 0 .72-3.935c-.133 1.59-.388 2.885-.72 3.935z"/>   
               </svg>&nbsp;` + resul.education_level + `</p></div>
-              <div class="col-12" style="text-align: left;"><p style="font-size: 1rem"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-clock-fill" viewBox="0 0 16 16">
+              <div class="col-12" style="text-align: left;"><p style="font- : 1rem"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-clock-fill" viewBox="0 0 16 16">
                 <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
               </svg>&nbsp;` + resul.job_time + ` Horas semanais</p></div>
               <div class="col-12" style="text-align: left"><p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cash-stack" viewBox="0 0 16 16">
@@ -44,7 +48,7 @@ function teste() {
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Vaga de Empresa <b>` + resul.company_name + `</b></h5>
+                      <h5 class="modal-title" id="jobsVisualization-exampleModalLabel">Vaga de Empresa <b>` + resul.company_name + `</b></h5>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body row" style="text-align: left;">

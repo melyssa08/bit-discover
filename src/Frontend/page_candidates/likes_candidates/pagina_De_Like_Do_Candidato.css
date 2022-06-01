@@ -1,9 +1,11 @@
-body {
+/* Define as propriedades do body que perpetuam por todo conteúdo do html */
+#likesCandidates-body { 
     font-family: 'Nunito' !important;
     background-color: #F5EFEF;
 }
 
-#header {
+/* Define as propriedades do espaço do header */
+#likesCandidates-header {
     display: flex;
     justify-content: center;
     position: fixed;
@@ -11,9 +13,9 @@ body {
     width: 100%;
 }
 
-#botao1, #botao2 {
+/* Define as propriedades dos botões do toogle */
+#likesCandidates-botao1, #likesCandidates-botao2 {
     font-family: 'Nunito';
-/*    font-family: 'Nunito', sans-serif;*/
     background-color: white;
     color: #530084;
     height: 40px;
@@ -24,7 +26,8 @@ body {
     border-width: 2px;
 }
 
-#container-header {
+/* Define as propriedades do espaço do header */
+#likesCandidates-container-header {
     display: flex;
     justify-content: center;
     padding-top: 3rem;
@@ -34,32 +37,39 @@ body {
     background-color: #F5EFEF;
 }
 
-#botao1:hover, #botao2:hover {
+/* Define as propriedades dos botões após o hover */
+#likesCandidates-botao1:hover, #likesCandidates-botao2:hover {
     background-color: #530084;
     color: white;
 }
 
-.card {
+/* Define as propriedades de espações entre cada card */
+.jobsVisualization-card {
     margin-top: 30px;
     margin-left: 10%;
     margin-right: 10%;
 }
 
-#card-1 {
-    margin-top: 125px;
+/* Propriedade exclusiva do primeiro card que delimita espaço entre ele e o header */
+#jobsVisualization-card-1 {
+    margin-top: 150px;
 }
 
-.card-text {
-    font-family: 'Nunito';
-/*    font-family: 'Nunito', sans-serif;*/
+/* Propriedade que delimita a margem do primeiro card quando a tela tem pelo menos 970px de altura */
+@media only screen and (min-height: 970px) {
+    #jobsVisualization-card-1 {
+        margin-top: 170px;
+    }
 }
 
-.container-Icon-Fechar {
+/* Propriedade do icone de X */
+#likesCandidates-container-Icon-Fechar {
     cursor: pointer;
     margin-left: 10%;
 }
 
-#footer {
+/* Propriedades de tamanho e espaço do footer */
+#likesCandidates-footer {
     position: fixed;
     left: 0;
     bottom: 0;
@@ -68,19 +78,18 @@ body {
     height: 15%;
 }
 
-.btn-secondary.focus, .btn-secondary:focus {
+/* Propriedade dos botões do toogle para tirar algumas propriedades do bootstrap */
+#likesCandidates-botao1, #likesCandidates-botao2:focus {
     box-shadow: 0 0 0 0;
 }
 
-.btn.focus, .btn:focus {
-    box-shadow: 0 0 0 0;
-}
-
-.card-body {
+/* Propriedade do cursor ao passar por cima de cada card */
+.likesCandidates-card-body {
     cursor: pointer;
 }
 
-#main {
+/* Propriedades do espaço main */
+#likesCandidates-main {
     overflow: auto;
     margin-bottom: 15%;
 }
