@@ -1,9 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap");
-
- body {
-  background-color: #530084;
+.myProfile-body {
+  background-color: #f5efef;
   font-size: 15px;
-  font-family: "Nunito";
+  font-family: "Nunito" "Roboto Slab";
   align-items: center;
   width: 100%;
   -webkit-box-sizing: border-box;
@@ -11,6 +9,120 @@
   box-sizing: border-box;
 }
 
+#myProfile-title{
+  text-align:center;
+  color:  #550084;
+  font-family: 'Nunito';
+  margin-top: 15px;
+}
+
+#myProfile-cardsbootstrap{
+  width: 70%;
+}
+
+.myProfile-label{
+    opacity:0.;
+    border-color: #F8E091;
+    color:  #550084;
+    /* font-weight:lighter */
+}
+
+.myProfile-margintop{
+  margin-top: 15px;
+}
+
+#myProfile-textarea {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-color: #F8E091;
+    width: 100%;
+    overflow: hidden;
+}
+
+.myProfile-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+}
+
+.myProfile-placeholder::placeholder{
+    opacity: 0.5;   
+}
+
+.myProfile-placeholder{
+  border-style:solid;
+  border-color: #F8E091 !important;
+  border-radius: 10px;
+}
+
+#myProfile-input-textarea{
+  width: 100%;
+}
+
+#myProfile-input-course{
+  color: #550084;
+}
+
+.myProfile-input-box {
+    color: rgba(87, 3, 131, 1) !important; 
+    background-color:rgb(240, 239, 239) !important;
+}
+
+/* .input-container {
+    text-align:center;
+    height:80px;
+    padding-top:5%;
+} */
+
+.myProfile-btn {
+    border-style:hidden ;
+    background-color: rgba(87, 3, 131, 1);
+    color:antiquewhite;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+#myProfile-line
+{
+  color:#F8E091; 
+  height:2px;
+}
+.myProfile-btn:hover{
+    border-style:hidden;
+    border-radius: 10px;
+    background-color:rgba(243, 196, 46, 1);
+}
+
+/* .dropdown-options {
+    text-align: center;
+    width: 11.5rem; 
+    border-radius: 10px;
+} */
+
+.myProfile-hs {
+    color:purple;
+    text-align: center;
+}
+
+.select {
+    border-color: #F8E091!important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
 h4 {
   color: #530084;
   font-family: "Nunito", sans-serif;
@@ -140,7 +252,7 @@ h2 {
   }
 
   .btn-group{
-    /* background-color: white; */
+    /* background-color: white; 
     font-family: "Nunito";
     border-style: hidden;
     border-radius: 10px;
@@ -195,4 +307,4 @@ h2 {
   border-bottom: 1.5px solid #eacc6c;
   border-left: 1.5px solid #eacc6c;
   background-color: white;
-}
+} */

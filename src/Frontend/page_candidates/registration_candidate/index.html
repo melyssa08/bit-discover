@@ -1,226 +1,136 @@
 <!DOCTYPE html>
 <html lang ="en">
 
-    <head>
-        
+    <head> 
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
-        <title>Meu perfil</title>
+        <link rel="stylesheet" href="estilo.css">
+        <title>Cadastro de candidata</title>
         <style>
-        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
-
-        #l1,#l2,#l3,#l4,#l5,#l6,#l7,#l8,#l9,#l10,#l11,#l12,#l13,#l14,#l15,#l16,#L17,#l18,#l19{
-            opacity:0.5;
-            border-color: #F8E091;
-        }
-        
-        #textarea {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            border-color: #F8E091;
-            width: 100%;
-            overflow: hidden;
-        }
-
-        .center {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            width: 20%;
-        }
-
-        #pl1::placeholder,#pl2::placeholder,#pl3::placeholder,#pl4::placeholder,#pl5::placeholder {
-            opacity: 0.5;   
-        }
-
-        input {
-            border-style:solid;
-            border-color: #F8E091 !important;
-            border-radius: 10px;
-            /* text-align: center; */
-        }
-
-        .input-box {
-            color: rgba(87, 3, 131, 1) !important; 
-            background-color:rgb(240, 239, 239) !important;
-        }
-
-        .input-container {
-            text-align:center;
-            height:80px;
-            padding-top:5%;
-        }
-
-        .btn {
-            border-style:hidden ;
-            background-color: rgba(87, 3, 131, 1);
-            color:antiquewhite;
-            border-radius: 10px;
-        }
-
-        .btn:hover{
-            border-style:hidden;
-            border-radius: 10px;
-            background-color:rgba(243, 196, 46, 1);
-        }
-
-        .dropdown-options {
-            text-align: center;
-            width: 11.5rem; 
-            border-radius: 10px;
-        }
-        #l1,#l2,#l3,#l4,#l5,#l6,#l7,#l8 {
-            color: purple;
-            font-weight:lighter
-        }
-
-        #h4,#h3,#h2,#h1 {
-            color:purple;
-            text-align: center;
-        }
-
-        #se1,#se2,#se3 {
-            border-color: #F8E091!important;
-        }
-
-        body {
-            font-family: 'Nunito';
-        }
+            @import url('https://fonts.googleapis.com/css2?family=Nunito&family=Roboto&display=swap');
         </style>
     </head>
 
-    <body style="background-color:#f5efef;">
+    <body class="registrationCandidate-body">
 
         <div class="container justify-content-center me-auto">
-
+            
             <div class="row justify-content-center">
-                <div class="card justify-content-center" style="width: 70%;">
+                <div class="card justify-content-center" id="registrationCandidate-cardsbootstrap">
                     <div class="card-body">
-                        <div class="container-lg my-5" id="oi">
+                        <div class="container-lg my-5">
                             <div class="justify-content-center mb-10">
-                                <img src="logo.png" alt="bit-logo" class="center">
+                                <img src="../../assets/logo.png" alt="bit-logo" class="registrationCandidate-image">
                             </div>
                         </div>
-        
-                        <h2 style="text-align:center; color: purple; font-family: 'Roboto Slab';">Meu Perfil </h2>
-                        
-                        <div class="row justify-content-center ">
-                            <h4 style= "margin-top: 15px;" id="h1">Informações pessoais</h4>
+
+                        <h2 id="registrationCandidate-title">Cadastro de Candidata</h2>
+
+                        <div class="row justify-content-center">
+                            <h4 id="registrationCandidate-info" class="registrationCandidate-hs">Informações pessoais</h4>
                         </div>
                         <div class="row mt-4 justify-content-center">
                             <div class="col-lg-4 col-md-4 col-sm-4">
-                                <label for="nome" id="l1">Nome</label>
-                                <input id="i1" type="text" id="pl1"placeholder="Digite seu nome" class="form-control input-box" id="nome">
+                                <label for="registrationCandidate-input-name" class="registrationCandidate-label">Nome</label>
+                                <input type="text" placeholder="Digite seu nome" class="form-control registrationCandidate-input-box registrationCandidate-placeholder" id="registrationCandidate-input-name">
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-4">
-                                <label for="idade" id="l2">Digite sua idade</label>
-                                <input id="i2" type="text" id="pl2"placeholder="Digite sua idade" class="form-control input-box " id="idade">
+                                <label for="registrationCandidate-input-age" class="registrationCandidate-label">Digite sua idade</label>
+                                <input type="text" placeholder="Digite sua idade" class="form-control registrationCandidate-input-box registrationCandidate-placeholder" id="registrationCandidate-input-age">
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4">
+                                <label for="registrationCandidate-input-cpf" class="registrationCandidate-label">Digite seu CPF</label>
+                                <input type="text" placeholder="CPF" class= "form-control registrationCandidate-input-box registrationCandidate-placeholder" id="registrationCandidate-input-cpf">
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4">
+                                <label for="registrationCandidate-input-cp" class="registrationCandidate-label">Digite seu Código Postal</label>
+                                <input type="text" placeholder="CP" class= "form-control registrationCandidate-input-box registrationCandidate-placeholder" id="registrationCandidate-input-cp">
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4">
+                                <label for="registrationCandidate-input-email" class="registrationCandidate-label">Digite seu email</label>
+                                <input type="text" placeholder="Email" class= "form-control registrationCandidate-input-box registrationCandidate-placeholder" id="registrationCandidate-input-email">
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4">
+                                <label for="registrationCandidate-input-password" class="registrationCandidate-label">Digite sua senha</label>
+                                <input type="password" placeholder="Senha" class= "form-control registrationCandidate-input-box registrationCandidate-placeholder" id="registrationCandidate-input-password">
                             </div>
                         </div>
                         
-                        <div class="row mt-4 justify-content-center">
-                            <div class="col-lg-4 col-md-4 col-sm-4">
-                                <label for="cpf" id="l3">Digite seu CPF</label>
-                                <input id="i3" type="text" id="pl3"placeholder="CPF" class=" form-control input-box" id="cpf">
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-4">
-                                <label for="cep" id="l4">Digite seu CEP</label>
-                                <input id="i4" type="text" id="pl4"placeholder="CEP" class="form-control input-box" id="cep">
-                            </div>
-                        </div>
                             
                         <div class="container-lg mt-5">
                             <div class="row justify-content-center ">
-                                <h4 id="h2">Conte mais sobre você</h4>
+                                <h4 class="registrationCandidate-hs">Conte mais sobre você</h4>
                             </div>
                             <div class="row justify-content-center">
-                                <div class="col-lg-8 col-md-8 col-sm-8">
-                                    <textarea name="text"id="textarea" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' class="input-box textarea" style="width: 100%;"></textarea>
+                                <div class="col-lg-8 col-md-8 col-sm-8" id="registrationCandidate-input-textarea">
+                                    <textarea name="text"id="registrationCandidate-textarea" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' class="textarea registrationCandidate-input-box"></textarea>
                                 </div>
                             </div>
                         </div>  
                         <div class="container-lg mt-5">
-                            <h4 id="hardskills" style="margin-top: 15px;" id="h3">Informações Profissionais</h4>
-                            <div class="row justify-content-center" style="margin-top: 15px;">
+                            <h4 id="hardskills" class="registrationCandidate-hs registratioCandidate-margintop">Informações Profissionais</h4>
+                            <div class="row justify-content-center" class="registratioCandidate-margintop">
                                 <div class="col-lg-4 col-md-4 col-sm-4">
-                                    <label for="escolaridade" id="l5">Escolha sua escolaridade</label>
-                                    <select class="form-select input-box" aria-label="Default select example" id="se1">
-                                        <option id="l1"selected>Escolaridade</option>
-                                        <option id="l2"value="ensino fundamental in">Ensino fundamental incompleto</option>
-                                        <option id="l3"value="ensino fundamental">Ensino fundamental</option>
-                                        <option id="l4"value="ensino médio">Ensino médio</option>
-                                        <option id="l5"value="ensino médio">Ensino médio incompleto</option>
-                                        <option id="l6"value="graduação">Graduação</option>
-                                        <option id="l7"value="graduação in">Graduação incompleta</option>
-                                        <option id="l8"value="pós">Pós-graduação</option>
+                                    <label for="escolaridade" class="registrationCandidate-label">Escolha sua escolaridade</label>
+                                    <select class="form-select registrationCandidate-input-box" aria-label="Default select example" class="select">
+                                        <option id="registrationCandidate-label"selected>Escolaridade</option>
+                                        <option id="registrationCandidate-label"value="ensino fundamental in">Ensino fundamental incompleto</option>
+                                        <option id="registrationCandidate-label"value="ensino fundamental">Ensino fundamental</option>
+                                        <option id="registrationCandidate-label"value="ensino médio">Ensino médio</option>
+                                        <option id="registrationCandidate-label"value="ensino médio">Ensino médio incompleto</option>
+                                        <option id="registrationCandidate-label"value="graduação">Graduação</option>
+                                        <option id="registrationCandidate-label"value="graduação in">Graduação incompleta</option>
+                                        <option id="registrationCandidate-label"value="pós">Pós-graduação</option>
                                     </select>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4">
-                                    <label for="escolaridade" id="l6">Curso do ensino superior</label>
-                                    <input id="i5" type="text" class="input-box form-control" id="pl5"placeholder="Curso de ensino superior" style="color: #550084;"></input>
+                                    <label for="escolaridade" class="registrationCandidate-label">Curso do ensino superior</label>
+                                    <input type="text" class="form-control registrationCandidate-placeholder registrationCandidate-input-box" placeholder="Curso de ensino superior" id="registrationCandidate-input-course"></input>
                                 </div>
                             </div>
                         </div>
                         <div class="container-lg mt-5">
-                            <div class="row justify-content-center" style="margin-top: 15px;">
+                            <div class="row justify-content-center registratioCandidate-margintop">
                                 <div class="col-lg-4 col-md-4 col-sm-4">
-                                    <label for="escolaridade" id="l7">experiência prêvia</label>
-                                    <select class="form-select input-box" aria-label="Default select example" id="se2">
-                                        <option id="l9"selected>selecione área de experiência prêvia</option>
-                                        <option id="l10"value="backend">Backend</option>
-                                        <option id="l11"value="fullstack">Fullstack</option>
-                                        <option id="l12"value="frontend">Frontend</option>
+                                    <label for="escolaridade" class="registrationCandidate-label">Experiência prévia</label>
+                                    <select class="form-select registrationCandidate-input-box" aria-label="Default select example" class="select">
+                                        <option class="registrationCandidate-label"selected>Selecione área de experiência prévia</option>
+                                        <option class="registrationCandidate-label"value="backend">Backend</option>
+                                        <option class="registrationCandidate-label"value="fullstack">Fullstack</option>
+                                        <option class="registrationCandidate-label"value="frontend">Frontend</option>
                                       </select>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4">
-                                    <label for="hardskills" id="l8">Hard Skills</label>
-                                    <select class="form-select input-box" aria-label="Default select example" id="se3">
-                                        <option id="l13"selected>Adicione suas Hard Skills</option>
-                                        <option id="l14"value="JavaScript">JavaScript</option>
-                                        <option id="l15"value="Godot">Godot</option>
-                                        <option id="l16"value="Phyton">Phyton</option>
-                                        <option id="l17"value="Excel">Excel</option>
-                                        <option id="l18"value="SQLite">SQLite</option>
-                                        <option id="l19"value="C++">C++</option>
+                                    <label class="registrationCandidate-label" for="hardskills">Hard Skills</label>
+                                    <select class="form-select registrationCandidate-input-box" aria-label="Default select example" class="select">
+                                        <option class="registrationCandidate-label"selected>Adicione suas Hard Skills</option>
+                                        <option class="registrationCandidate-label"value="JavaScript">JavaScript</option>
+                                        <option class="registrationCandidate-label"value="Godot">Godot</option>
+                                        <option class="registrationCandidate-label"value="Phyton">Phyton</option>
+                                        <option class="registrationCandidate-label"value="Excel">Excel</option>
+                                        <option class="registrationCandidate-label"value="SQLite">SQLite</option>
+                                        <option class="registrationCandidate-label"value="C++">C++</option>
                                       </select>
                                 </div>
                             </div>
                         </div>
-                        
                     </div>
-                    <h4 id="Softskills" style="margin-top: 15px;" id="h4">SoftSkills</h4>
+                    <h4 id="Softskills" class="registrationCandidate-hs registratioCandidate-margintop">SoftSkills</h4>
                     <div class="container-lg mt-2">
                         <div class="row justify-content-center mt-15">
                             <div class="col-lg-4 col-md-4 col-sm-4">
-                                <button class="btn">Aperte aqui para realizar avaliação de Soft Skills</button>
+                                <button class="registrationCandidate-btn">Aperte aqui para realizar avaliação de Soft Skills</button>
                             </div>
                         </div>
                     </div>
-                    <hr style="color:#F8E091;height:2px">
-                    <button class="btn center" style="margin-top: 15px;">Criar perfil</button>
+                    <hr id="registrationCandidate-line">
+                    <div class="d-grid col-lg-2 col-md-2 col-sm-2 mx-auto">
+                        <button class="registrationCandidate-btn">Criar perfil</button>
+                    </div>
                 </div>
-
             </div>
-        </div>
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-        <!-- <script>
-        function mover(lugar) {
-            document.getElementById(lugar).scrollIntoView();
-        }
-        </script> -->
-        <!-- <script>
-            const para = document.createElement("p");
-            const node = document.createTextNode("This is new.");
-            para.appendChild(node);
-            const element = document.getElementById("div1");
-            element.appendChild(para);
-        </script> -->
-        
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     </body>
  
 </html>
