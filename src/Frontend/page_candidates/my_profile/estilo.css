@@ -16,7 +16,7 @@
   margin-top: 15px;
 }
 
-#myProfile-cardsbootstrap{
+#myProfile-cards-bootstrap{
   width: 70%;
 }
 
@@ -27,11 +27,11 @@
     /* font-weight:lighter */
 }
 
-.myProfile-margintop{
+.myProfile-margin-top{
   margin-top: 15px;
 }
 
-#myProfile-textarea {
+#myProfile-text-area {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -57,7 +57,7 @@
   border-radius: 10px;
 }
 
-#myProfile-input-textarea{
+#myProfile-input-text-area{
   width: 100%;
 }
 
@@ -69,12 +69,6 @@
     color: rgba(87, 3, 131, 1) !important; 
     background-color:rgb(240, 239, 239) !important;
 }
-
-/* .input-container {
-    text-align:center;
-    height:80px;
-    padding-top:5%;
-} */
 
 .myProfile-btn {
     border-style:hidden ;
@@ -94,12 +88,6 @@
     border-radius: 10px;
     background-color:rgba(243, 196, 46, 1);
 }
-
-/* .dropdown-options {
-    text-align: center;
-    width: 11.5rem; 
-    border-radius: 10px;
-} */
 
 .myProfile-hs {
     color:purple;

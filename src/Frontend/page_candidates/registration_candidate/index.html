@@ -17,7 +17,7 @@
         <div class="container justify-content-center me-auto">
             
             <div class="row justify-content-center">
-                <div class="card justify-content-center" id="registrationCandidate-cardsbootstrap">
+                <div class="card justify-content-center" id="registrationCandidate-cards-bootstrap">
                     <div class="card-body">
                         <div class="container-lg my-5">
                             <div class="justify-content-center mb-10">
@@ -63,38 +63,38 @@
                                 <h4 class="registrationCandidate-hs">Conte mais sobre você</h4>
                             </div>
                             <div class="row justify-content-center">
-                                <div class="col-lg-8 col-md-8 col-sm-8" id="registrationCandidate-input-textarea">
-                                    <textarea name="text"id="registrationCandidate-textarea" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' class="textarea registrationCandidate-input-box"></textarea>
+                                <div class="col-lg-8 col-md-8 col-sm-8" id="registrationCandidate-input-text-area">
+                                    <textarea name="text"id="registrationCandidate-text-area" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' class="registrationCandidate-text-area registrationCandidate-input-box"></textarea>
                                 </div>
                             </div>
                         </div>  
                         <div class="container-lg mt-5">
-                            <h4 id="hardskills" class="registrationCandidate-hs registratioCandidate-margintop">Informações Profissionais</h4>
-                            <div class="row justify-content-center" class="registratioCandidate-margintop">
+                            <h4 id="registrationCandidate-hardskills" class="registrationCandidate-hs registratioCandidate-margin-top">Informações Profissionais</h4>
+                            <div class="row justify-content-center" class="registratioCandidate-margin-top">
                                 <div class="col-lg-4 col-md-4 col-sm-4">
-                                    <label for="escolaridade" class="registrationCandidate-label">Escolha sua escolaridade</label>
-                                    <select class="form-select registrationCandidate-input-box" aria-label="Default select example" class="select">
-                                        <option id="registrationCandidate-label"selected>Escolaridade</option>
-                                        <option id="registrationCandidate-label"value="ensino fundamental in">Ensino fundamental incompleto</option>
-                                        <option id="registrationCandidate-label"value="ensino fundamental">Ensino fundamental</option>
-                                        <option id="registrationCandidate-label"value="ensino médio">Ensino médio</option>
-                                        <option id="registrationCandidate-label"value="ensino médio">Ensino médio incompleto</option>
-                                        <option id="registrationCandidate-label"value="graduação">Graduação</option>
-                                        <option id="registrationCandidate-label"value="graduação in">Graduação incompleta</option>
-                                        <option id="registrationCandidate-label"value="pós">Pós-graduação</option>
+                                    <label for="registrationCandidate-schooling" class="registrationCandidate-label">Escolha sua escolaridade</label>
+                                    <select class="form-select registrationCandidate-input-box" aria-label="Default select example" class="registrationCandidate-select" id="registrationCandidate-schooling">
+                                        <option class="registrationCandidate-label"selected>Escolaridade</option>
+                                        <option class="registrationCandidate-label"value="ensino fundamental in">Ensino fundamental incompleto</option>
+                                        <option class="registrationCandidate-label"value="ensino fundamental">Ensino fundamental</option>
+                                        <option class="registrationCandidate-label"value="ensino médio">Ensino médio</option>
+                                        <option class="registrationCandidate-label"value="ensino médio">Ensino médio incompleto</option>
+                                        <option class="registrationCandidate-label"value="graduação">Graduação</option>
+                                        <option class="registrationCandidate-label"value="graduação in">Graduação incompleta</option>
+                                        <option class="registrationCandidate-label"value="pós">Pós-graduação</option>
                                     </select>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4">
-                                    <label for="escolaridade" class="registrationCandidate-label">Curso do ensino superior</label>
+                                    <label for="registrationCandidate-input-course" class="registrationCandidate-label">Curso do ensino superior</label>
                                     <input type="text" class="form-control registrationCandidate-placeholder registrationCandidate-input-box" placeholder="Curso de ensino superior" id="registrationCandidate-input-course"></input>
                                 </div>
                             </div>
                         </div>
                         <div class="container-lg mt-5">
-                            <div class="row justify-content-center registratioCandidate-margintop">
+                            <div class="row justify-content-center registratioCandidate-margin-top">
                                 <div class="col-lg-4 col-md-4 col-sm-4">
-                                    <label for="escolaridade" class="registrationCandidate-label">Experiência prévia</label>
-                                    <select class="form-select registrationCandidate-input-box" aria-label="Default select example" class="select">
+                                    <label for="registrationCandidate-experience" class="registrationCandidate-label">Experiência prévia</label>
+                                    <select class="form-select registrationCandidate-input-box" aria-label="Default select example" class="registrationCandidate-select" id="registrationCandidate-experience">
                                         <option class="registrationCandidate-label"selected>Selecione área de experiência prévia</option>
                                         <option class="registrationCandidate-label"value="backend">Backend</option>
                                         <option class="registrationCandidate-label"value="fullstack">Fullstack</option>
@@ -102,8 +102,8 @@
                                       </select>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4">
-                                    <label class="registrationCandidate-label" for="hardskills">Hard Skills</label>
-                                    <select class="form-select registrationCandidate-input-box" aria-label="Default select example" class="select">
+                                    <label class="registrationCandidate-label" for="registrationCandidate-hardskills">Hard Skills</label>
+                                    <select class="form-select registrationCandidate-input-box" aria-label="Default select example" class="registrationCandidate-select">
                                         <option class="registrationCandidate-label"selected>Adicione suas Hard Skills</option>
                                         <option class="registrationCandidate-label"value="JavaScript">JavaScript</option>
                                         <option class="registrationCandidate-label"value="Godot">Godot</option>
@@ -116,7 +116,7 @@
                             </div>
                         </div>
                     </div>
-                    <h4 id="Softskills" class="registrationCandidate-hs registratioCandidate-margintop">SoftSkills</h4>
+                    <h4 id="registrationCandidate-softskills" class="registrationCandidate-hs registratioCandidate-margin-top">SoftSkills</h4>
                     <div class="container-lg mt-2">
                         <div class="row justify-content-center mt-15">
                             <div class="col-lg-4 col-md-4 col-sm-4">

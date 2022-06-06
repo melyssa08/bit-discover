@@ -8,7 +8,6 @@ function teste() {
         // Veio como array o resultado então usa o map para fazer a modificação em cada item do array
         resultado.map((resul) => {
           // Está colocando os cards no html por meio do jQuery
-        $("#cards").append();
         // Template de string que mostra a criação dos cards como se fosse um html só que dentro de um arquivo javascript
         $("#cards").append(`<!--Inicio Card-->
         <div class="card container d-flex justify-content-between align-items-center text-black jobsVisualization-col-4" style="width: 20rem;">
