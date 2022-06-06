@@ -5,19 +5,20 @@ import RouteManager from './routes/index.js';
 import BasicsConfig from './middlewares/basics.middleware.js';
 import { DatabaseTable } from './database/databaseTable.database.js';
 
-const EXPRESS_CONFIG = await getConfig('express');
+const EXPRESS_CONFIG = await getConfig('express'); // Load express config
 
-ConsoleUtils.addTimeOnConsole();
-DatabaseTable.initDatabase();
+ConsoleUtils.addTimeOnConsole(); // Add time on console from class ConsoleUtils
+DatabaseTable.initDatabase(); // Init database
 
-const app = express();
+const app = express(); // Create express app
 
-BasicsConfig.bodyParser(app);
-BasicsConfig.cors(app);
-BasicsConfig.security(app);
+BasicsConfig.bodyParser(app); // Add body parser
+BasicsConfig.cors(app); // Add cors
+BasicsConfig.security(app); // Add security middleware
 
-RouteManager.instanceRoutes(app);
+RouteManager.instanceRoutes(app); // Add routes
 
+// Start server from config file
 app.listen(EXPRESS_CONFIG.port, EXPRESS_CONFIG.hostname, () => {
 	console.log(`Server running at http://${EXPRESS_CONFIG.hostname}:${EXPRESS_CONFIG.port}/`.rainbow);
 });

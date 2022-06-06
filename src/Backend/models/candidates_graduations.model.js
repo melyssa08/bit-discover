@@ -1,6 +1,11 @@
 import { DatabaseTable, DataTypes } from '../database/databaseTable.database.js';
 
-class Candidates_graduations extends DatabaseTable {
+/*
+ * Jobs table model.
+ * See '../database/databaseTable.database.js' for more information.
+ */
+
+class CandidatesGraduations extends DatabaseTable {
 	constructor() {
 		let columns = {
 			id: {
@@ -10,26 +15,26 @@ class Candidates_graduations extends DatabaseTable {
 				autoIncrement: true,
 			},
 			graduation: {
-                type: DataTypes.integer,
-                notNull: true,
-                foreign: {
+				type: DataTypes.integer,
+				notNull: true,
+				foreign: {
 					key: 'graduation',
 					table: 'GraduationNamespaces',
 					column: 'id',
 				},
-            },
-            start_date: {
-                type: DataTypes.datetime,
-                notNull: true,
-            },
-            end_date: {
-                type: DataTypes.datetime,
-                notNull: true,
-            },
+			},
+			start_date: {
+				type: DataTypes.datetime,
+				notNull: true,
+			},
+			end_date: {
+				type: DataTypes.datetime,
+				notNull: true,
+			},
 		};
 
 		super('candidates_graduations', columns);
 	}
 }
 
-export default Candidates_graduations;
+export default CandidatesGraduations;

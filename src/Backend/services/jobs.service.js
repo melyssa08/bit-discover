@@ -1,5 +1,5 @@
-import { jobs } from '../models/index.js';
-
+// TODO: Add jobs service... and others...
+//import { jobs } from '../models/index.js';
 //class Job {
 //	constructor(id, title, description, salary, company, location, createdAt, updatedAt) {
 //		Object.autoAssign(this, arguments);

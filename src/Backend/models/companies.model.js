@@ -1,5 +1,10 @@
 import { DatabaseTable, DataTypes } from '../database/databaseTable.database.js';
 
+/*
+ * Jobs table model.
+ * See '../database/databaseTable.database.js' for more information.
+ */
+
 class Companies extends DatabaseTable {
 	constructor() {
 		let columns = {
@@ -15,24 +20,24 @@ class Companies extends DatabaseTable {
 			},
 			postal_code: {
 				type: DataTypes.integer,
-				notNull: true 
+				notNull: true,
 			},
 			cnpj: {
 				type: DataTypes.integer,
-				notNull: true 
+				notNull: true,
 			},
 			password: {
 				type: DataTypes.text,
-				notNull: true 
+				notNull: true,
 			},
 			website: {
 				type: DataTypes.text,
-				notNull: true
+				notNull: true,
 			},
 			created_at: {
 				type: DataTypes.datetime,
-				notNull: true 
-			}
+				notNull: true,
+			},
 		};
 
 		super('companies', columns);

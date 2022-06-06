@@ -1,4 +1,9 @@
+/*
+ * Create errors validations for the program
+ */
+
 class ValidationError extends Error {
+	// Default error class
 	constructor(message) {
 		super(message);
 		this.name = 'ValidationError';
@@ -6,6 +11,7 @@ class ValidationError extends Error {
 }
 
 class PropertyRequiredError extends ValidationError {
+	// Property required error
 	constructor(property) {
 		super('No property: ' + property);
 		this.name = 'PropertyRequiredError';
@@ -14,6 +20,7 @@ class PropertyRequiredError extends ValidationError {
 }
 
 class PropertyNotValidError extends ValidationError {
+	// Property not valid error
 	constructor(property, validation) {
 		super('Property not valid: ' + property);
 		this.name = 'PropertyNotValidError';

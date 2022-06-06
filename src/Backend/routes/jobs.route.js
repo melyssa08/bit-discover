@@ -1,16 +1,16 @@
-import JobsController from '../controllers/jobs.controller.js';
+import { JobsController } from '../controllers/index.js';
 import express from 'express';
 
-const api_jobs = express.Router();
+const api_jobs = express.Router(); // Create express router
 
-api_jobs.get('/', JobsController.get);
+api_jobs.get('/', JobsController.get); // Add get all jobs endpoint
 
-api_jobs.get('/:id', JobsController.getOne);
+api_jobs.get('/:id', JobsController.getOne); // Add get job by id endpoint
 
-api_jobs.post('/', JobsController.post);
+api_jobs.post('/', JobsController.post); // Add post job endpoint
 
-api_jobs.put('/:id', JobsController.put);
+api_jobs.put('/:id', JobsController.put); // Add put job endpoint
 
-api_jobs.delete('/:id', JobsController.delete);
+api_jobs.delete('/:id', JobsController.delete); // Add delete job endpoint
 
-export default { route: '/api/jobs', router: api_jobs };
+export default { route: '/api/jobs', router: api_jobs }; // Export router
