@@ -1,132 +1,54 @@
 /* Importa do googlefonts a fonte Nunito */
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
 
-/* Propriedades de espaço nos itens que estão na navbar  */
-.jobsVisualization-nav-bar-item{
-    width: 50px;
-    height: 50px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    }
-
-/* Outrar propriedades de espaço nos itens que estão na navbar */
-.jobsVisualization-nav-bar-link{ 
-   height: 50px; 
-   width: 50px; 
-   }
-
-/* Propriedades de espaço, posicionamento e estilo da caixa de navbar */
-#jobsVisualization-containernavbar{
-    position: fixed;
-    z-index: 2;
-    width: 100%;
-    margin: 0 auto;
-    border: 0px solid rgb(5, 5, 5);
-    background-color: rgb(255, 255, 255);
-    height: 76px;
-}
-
-/* Propriedade de espaço no logo da Bit */
-#jobsVisualization-logo {
-    padding-top: 0.;
-}
-
 /* Propriedade de estilo, espaço e posição dos itens na parte da navbar */
 .jobsVisualization-col-4 {
     text-align: center;
     border: solid 0px white;
     height: auto;
-}
-
-/* Propriedade de espaço na navbar */
-#jobsVisualization-nav-bar {
-    height: 76px;
-}
-
-/* Propriedade de posição no icone de sininho */
-#jobsVisualization-direita {
-    text-align: right;
-}
-
-/* Propriedade de posição no icone de menu */
-#jobsVisualization-esquerda {
-     text-align: left;
-}
-
-/* Propriedade de estilo no icone de menu */
-#jobsVisualization-menu{
-    color: rgb(243, 196, 46);
-    position: relative;
-    top: 20%
-}
-
-/* Propriedade de estilo no icone menu ao passar por hover */
-#jobsVisualization-menu:hover {
-    color: rgb(83, 00, 132);
-}
-
-/* Propriedade de estilo no icone do sininho */
-#jobsVisualization-notifications{
-    color: rgb(243, 196, 46);
-    position: relative;
-    top: 25%
-}
-
-/* Propriedade de estilo no icone do sininho ao passar por hover */
-#jobsVisualization-notifications:hover{
-    color: rgb(83, 00, 132);
+    width: 20rem;
 }
 
 /* Propridade do item do side bar e também do titulo do modal */
-#jobsVisualization-exampleModalLabel, #jobsVisualization-offcanvasExampleLabel {
+#jobsVisualization-example-modal-label {
     text-align: left;
-}
-
-/* Propriedade de espaço e posição de cada item do sidebar */
-.jobsVisualization-sidebarPadding {
-    height: 6.25rem;
-    text-align: center;
-    padding-top: 10%;
-}
-
-/* Propriedade de estilo de cada item do sidebar */
-.jobsVisualization-black:link {
-    color: black;
-    text-decoration: none;
-}
-
-/* Propriedade de estilo de cada item do sidebar ao passar por hover */
-.jobsVisualization-black:hover {
-    color: #F3C42E;
-    text-decoration: none;
-}
-
-/* Propriedade de estilo do icone para sair da sidebar e voltar para a página */
-#jobsVisualization-backreturnSideBar {
-    background-color: #F3C42E; 
-}
-
-/* Propriedade de estilo do icone para sair da sidebar quando se passa por hover */
-#jobsVisualization-backreturnSideBar:hover {
-    background-color: #530084;
-}
-
-/* Propriedade de cada item do sidebar quando se passam por algum efeito, no caso quando houver hover irá aumentar o zoom */
-.jobsVisualization-zoom {
-    transition: 0.2s;
-}
-
-/* Propriedade de efeito nos itens do sidebar quando acontece hover neles */
-.jobsVisualization-zoom:hover {
-    transform: scale(1.2);
-}
-
-/* Propriedade de espaço no canto superior da sidebar, ou seja o header da sidebar */
-#jobsVisualization-offcanvas-header {
-    height: 4.8rem;
 }
 
 /* Propriedade do html e do body que esconde o scroll de x, ou seja o scroll horizontal */
 #jobsVisualization-html, #jobsVisualization-body {
     overflow-x: hidden;
+}
+
+#jobsVisualization-body {
+    font-family: nunito, sans-serif; 
+    background-color: rgb(245, 239, 239);
+}
+
+.jobsVisualization-style {
+    text-align: left;
+}
+
+#jobsVisualization-style-education {
+    display: inline;
+}
+
+#jobsVisualization-follow {
+    background-color: purple;
+}
+
+.jobsVisualization-actvities-required {
+    margin-left: 1.3rem;
+}
+
+#jobsVisualization-list {
+    list-style-type: none; 
+    text-align: justify;
+}
+
+#jobsVisualization-company-description {
+    font-size: 0.9rem;
+}
+
+#jobsVisualization-contact {
+    background-color: purple;
 }

@@ -1,5 +1,5 @@
 // variável que pega todos os botões que ficam em formato de array
-var botao = document.querySelectorAll('.registrationJobs-botaoTag')
+var botao = document.querySelectorAll('.registrationJobs-button-tag')
 
 // loop que passa por cada botão e adciona propriedades em cada um deles
 // visto que quando o evento é disparado o botão que foi clicado se ve com propriedades novas

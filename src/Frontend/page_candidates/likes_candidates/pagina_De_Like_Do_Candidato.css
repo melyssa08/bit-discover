@@ -4,66 +4,27 @@
     background-color: #F5EFEF;
 }
 
-/* Define as propriedades do espaço do header */
-#likesCandidates-header {
-    display: flex;
-    justify-content: center;
-    position: fixed;
-    z-index: 1;
-    width: 100%;
-}
-
-/* Define as propriedades dos botões do toogle */
-#likesCandidates-botao1, #likesCandidates-botao2 {
-    font-family: 'Nunito';
-    background-color: white;
-    color: #530084;
-    height: 40px;
-    width: 10rem;
-    max-width: 50rem;
-    border-radius: 5px;
-    border-color: #530084;
-    border-width: 2px;
-}
-
-/* Define as propriedades do espaço do header */
-#likesCandidates-container-header {
-    display: flex;
-    justify-content: center;
-    padding-top: 3rem;
-    position: fixed;
-    width: 100%;
-    height: 15%;
-    background-color: #F5EFEF;
-}
-
-/* Define as propriedades dos botões após o hover */
-#likesCandidates-botao1:hover, #likesCandidates-botao2:hover {
-    background-color: #530084;
-    color: white;
-}
-
 /* Define as propriedades de espações entre cada card */
-.jobsVisualization-card {
+.likesCandidates-card {
     margin-top: 30px;
     margin-left: 10%;
     margin-right: 10%;
 }
 
 /* Propriedade exclusiva do primeiro card que delimita espaço entre ele e o header */
-#jobsVisualization-card-1 {
+#likesCandidates-card-first {
     margin-top: 150px;
 }
 
 /* Propriedade que delimita a margem do primeiro card quando a tela tem pelo menos 970px de altura */
 @media only screen and (min-height: 970px) {
-    #jobsVisualization-card-1 {
+    #likesCandidates-card-first {
         margin-top: 170px;
     }
 }
 
 /* Propriedade do icone de X */
-#likesCandidates-container-Icon-Fechar {
+#likesCandidates-container-icon-close {
     cursor: pointer;
     margin-left: 10%;
 }
@@ -78,14 +39,15 @@
     height: 15%;
 }
 
-/* Propriedade dos botões do toogle para tirar algumas propriedades do bootstrap */
-#likesCandidates-botao1, #likesCandidates-botao2:focus {
-    box-shadow: 0 0 0 0;
-}
-
 /* Propriedade do cursor ao passar por cima de cada card */
 .likesCandidates-card-body {
     cursor: pointer;
+}
+
+/* Propriedade dos cards quando se passa o cursor que muda o estilo */
+.likesCandidates-card-body:hover {
+    border-style: solid;
+    border-color:blueviolet;
 }
 
 /* Propriedades do espaço main */

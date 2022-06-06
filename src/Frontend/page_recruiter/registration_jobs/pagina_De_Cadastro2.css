@@ -5,7 +5,7 @@
 }
 
 /* Propriedades do título registra nova vaga */
-#registrationJobs-registraVagas {
+#registrationJobs-register-jobs {
     display: flex;
     align-items: center;
     margin-top: 5px;
@@ -45,7 +45,7 @@
 }
 
 /* Propriedades de estilo no titulo registra nova vaga */
-#registrationJobs-textoDeRegistra {
+#registrationJobs-text-of-register {
     font-family: 'Roboto Slab', serif;
     font-size: 20px;
 }
@@ -63,7 +63,7 @@
 }
 
 /* Propriedades de espaço e posicionamento de cada fileira do forms */
-#registrationJobs-fileira-1, #registrationJobs-fileira-2, #registrationJobs-fileira-3, #registrationJobs-fileira-4 {
+#registrationJobs-row-first, #registrationJobs-row-second, #registrationJobs-row-third, #registrationJobs-row-fourth {
     align-items: center;
     display: flex;
     justify-content: space-around;
@@ -83,7 +83,7 @@
 }
 
 /* Propriedades de estilo e espaço no campo observação vaga */
-#registrationJobs-observacao-vaga {
+#registrationJobs-description-jobs {
     border-color: #F3C42E;
     border-radius: 10px;
     height: 80%;
@@ -92,7 +92,7 @@
 }
 
 /* Propriedades de espaço e posicionamento de cada fileira do forms */
-#registrationJobs-fileira-5, #registrationJobs-fileira-6, #registrationJobs-fileira-7 {
+#registrationJobs-row-fifth, #registrationJobs-row-sixth, #registrationJobs-row-seventh {
     align-items: center;
     display: flex;
     justify-content: space-around;
@@ -119,7 +119,7 @@
 }
 
 /* Propriedades de espaço e estilo nos campos de seleção de tags */
-.registrationJobs-input-form-botoes-caixa {
+.registrationJobs-input-form-buttons-box {
     background-color: #FFFFFF;
     display: flex;
     height: 80%;
@@ -131,7 +131,7 @@
 }
 
 /* Propriedades de estilo e espaço nas tags */
-.registrationJobs-botaoTag {
+.registrationJobs-button-tag {
     border-style: solid;
     border-color: #530084;
     background-color: white;
@@ -144,18 +144,18 @@
 }
 
 /* Propriedade de posição no titulo de requisitos obrigatórios e não obrigatórios */
-.registrationJobs-titulo {
+.registrationJobs-title {
     padding-top: 1%;
 }
 
 /* Propriedades de posicionamento nos campos de busca dentro das caixas de seleção de tags */
-.registrationJobs-campo-busca {
+.registrationJobs-field-search {
     display: flex;
     justify-content: space-between;
 }
 
 /* Propriedades de espaço e posicionamento do canto superior das caixas de seleção de tags */
-#registrationJobs-titulo-hard-skills-obrigatorios, #registrationJobs-titulo-hard-skills-nao-obrigatorios {
+#registrationJobs-title-hard-skills-obligations, #registrationJobs-title-hard-skills-no-obligations {
     display: flex;
     align-items: center;
     margin-left: 1%;
@@ -164,14 +164,14 @@
 }
 
 /* Propriedade da caixa de seleção de tags quando a caixa se estica e aparece uma sroll para deslizar para baixo */
-#registrationJobs-conteudo-obrigatorio, #registrationJobs-conteudo-nao-obrigatorio {
+#registrationJobs-content-obligation, #registrationJobs-content-no-obligation {
     overflow: auto;
 }
 
 /* Mudanças de propriedades dos cards na parte de posicionamento quando o comprimento atingi igual ou menos do que 889px */
 @media only screen and (max-width: 889px) {
     
-    #registrationJobs-fileira-1, #registrationJobs-fileira-2, #registrationJobs-fileira-3, #registrationJobs-fileira-4, #registrationJobs-fileira-5, #registrationJobs-fileira-6, #registrationJobs-fileira-7, #registrationJobs-titulo-hard-skills-obrigatorios,#registrationJobs-titulo-hard-skills-nao-obrigatorios {
+    #registrationJobs-row-first, #registrationJobs-row-second, #registrationJobs-row-third, #registrationJobs-row-fourth, #registrationJobs-row-fifth, #registrationJobs-row-sixth, #registrationJobs-row-seventh, #registrationJobs-title-hard-skills-obligations,#registrationJobs-title-hard-skills-no-obligations {
         flex-direction: column;
         justify-content: space-around;
     }
@@ -188,14 +188,14 @@
 }
 
 /* Propriedade de estilo e espaço nos campos de busca dentro das caixas de seleção de tags */
-.registrationJobs-busca-tag {
+.registrationJobs-search-tag {
     border-color: #F3C42E;
     width: 80%;
     height: 20%;
 }
 
 /* Propriedade de espaço e estilo de cada campo do forms */
-.registrationJobs-linha-1, .registrationJobs-linha-2, .registrationJobs-linha-3 {
+.registrationJobs-line-first, .registrationJobs-line-second, .registrationJobs-line-third {
     border-color: #F3C42E;
     border-radius: 10px;
     min-width: 212px;

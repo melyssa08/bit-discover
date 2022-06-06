@@ -7,7 +7,7 @@
     <title>Teste site</title>
     <link rel="stylesheet" href="styles.css">
     <!--Script JS-->
-    <script src="script.js"></script>
+    <script src="src\Frontend\js\jobs_visualization.js"></script>
 <!--Jquery-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <!-- Bootstrap CSS only -->
@@ -29,7 +29,7 @@
     <!--<meta name="theme-color" content="#7952b3">-->
     
     
-        <style>
+        <style>/*
           .bd-placeholder-img {
             font-size: 1.125rem;
             text-anchor: middle;
@@ -42,72 +42,18 @@
             .bd-placeholder-img-lg {
               font-size: 3.5rem;
             }
-          }
+          }*/
         </style>
         </head>
         <!-- navbar -->
-      <body class="mt-5" style="font-family: nunito, sans-serif; background-color: rgb(245, 239, 239);" onload="teste()" id="jobsVisualization-body">
-        <div class="containernavbar fixed-top" id="jobsVisualization-containernavbar">
-          <div class="row" id="jobsVisualization-nav-bar">
-              <div class="jobsVisualization-nav-bar-item col-4 teste jobsVisualization-col-4" id="jobsVisualization-esquerda">
-                  <a class="jobsVisualization-nav-bar-link" data-bs-toggle="offcanvas" href="#offcanvasExample" role="" aria-controls="offcanvasExample">
-                  <svg id="jobsVisualization-menu" xmlns="http://www.w3.org/2000/svg"  
-                  width="45" height="40" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-                      <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
-                  </svg>
-                  </a>
-              </div>
-              <div class="jobsVisualization-nav-bar-item col-4 jobsVisualization-col-4" id= "jobsVisualization-logo">
-                  <a class="jobsVisualization-nav-bar-link"href="https://braziliansintech.com/">
-                  <img src="img/logo.png" class="nav-bar-link" style="height: 60px; width: auto;"> 
-                  </a>
-              </div>
-              <div class="jobsVisualization-nav-bar-item col-4 jobsVisualization-col-4" id="jobsVisualization-direita">
-                  <a class="jobsVisualization-nav-bar-link text-align-right" href="../pagina_de_likes_do_candidato/paginda_De_Like_Do_Candidato.html">  
-                      <svg id="jobsVisualization-notifications" xmlns="http://www.w3.org/2000/svg" width="35" height="30" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
-                          <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"/>
-                      </svg>
-                  </a>
-              </div>
-          </div>
-      </div>
-        
+      <body class="mt-5" onload="teste()" id="jobsVisualization-body">
         <!--ACABA AQUI A navbar!-->
         <!-- SideBar -->
         <main class="mt-5 text-black row gx-0">
-        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-          <div class="offcanvas-header" id="jobsVisualization-offcanvas-header" style="padding-top: 5%; background-color: rgb(245, 239, 239); overflow-x: hidden; overflow-y: hidden;">
-            <h5 class="offcanvas-title" id="jobsVisualization-offcanvasExampleLabel"><img src="./img/logoSideBar.png" style="width: auto; height: 4rem;"></h5>
-            <button type="button" class="text-reset" id="jobsVisualization-backreturnSideBar" data-bs-dismiss="offcanvas" aria-label="Close" style="border-radius: 50%; border: 0px;"><i class="fa-solid fa-angles-left" style="color: white;"></i></button>
-          </div>
-          <div class="offcanvas-body">
-              <div class="row">
-                  <b><div class="col-12 jobsVisualization-zoom jobsVisualization-sidebarPadding">
-                  <a class="jobsVisualization-black" href="url"><i class="fa-solid fa-globe"></i> Início</a>
-                  </div>
-                  <hr>
-                  <div class="col-12 jobsVisualization-zoom jobsVisualization-sidebarPadding">
-                  <a class="jobsVisualization-black" href="url"><i class="fa-solid fa-user"></i> Vagas</a>
-                  </div>
-                  <hr>
-                  <div class="col-12 jobsVisualization-zoom jobsVisualization-sidebarPadding">
-                  <a class="jobsVisualization-black" href="../Cadastro de candidata e perfil editável/perfil editável.html" style="color: black;"><i class="fa-solid fa-user"></i> Meu Perfil</a>
-                  </div>
-                  <hr>
-                  <div class="col-12 jobsVisualization-zoom jobsVisualization-sidebarPadding">
-                  <a class="jobsVisualization-black" href="../tela login/FlexBox.html" style="color: black;"><i class="fa-solid fa-right-from-bracket"></i> Sair</a>
-                  </div></b>
-            </div>
-          </div>
-        </div>
         </main>
-        <main class="mt-5 text-black row" id="cards">
+        <main class="mt-5 text-black row">
         <!--ACABA AQUI A SideBar!-->
-            <!---->
-            </div>
           </main>
-                
-              
           </div>
         </div>
       </div>
