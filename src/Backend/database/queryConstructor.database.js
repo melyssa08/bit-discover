@@ -154,17 +154,28 @@ const QueryConstructor = {
 			create: (table, columns) => {
 				let columnsSql = ''; // Create columns sql
 
+				// Separate foreign keys columns
+				const foreignKeys = {};
+				for (const key in columns) {
+					if (columns[key].foreign) {
+						foreignKeys[key] = columns[key];
+					}
+				}
+
 				for (const key in columns) {
 					// For each column
 					columnsSql += `${key} ${columns[key].type}`; // Add column to columns sql
+					if (columns[key].autoIncrement && !columns[key].primaryKey) columnsSql += ' AUTOINCREMENT'; // Add auto increment to columns sql
 					if (columns[key].primaryKey) columnsSql += ' PRIMARY KEY'; // Add primary key to columns sql
-					if (columns[key].autoIncrement) columnsSql += ' AUTOINCREMENT'; // Add auto increment to columns sql
 					if (columns[key].unique) columnsSql += ' UNIQUE'; // Add unique to columns sql
 					if (columns[key].notNull) columnsSql += ' NOT NULL'; // Add not null to columns sql
 					if (columns[key].default) columnsSql += ` DEFAULT ${columns[key].default}`; // Add default to columns sql
-					if (columns[key].foreign)
-						columnsSql += `, FOREIGN KEY (${columns[key].foreign.key}) REFERENCES ${columns[key].foreign.table} (${columns[key].foreign.column})`; // Add foreign key to columns sql
 					if (Object.keys(columns)[Object.keys(columns).length - 1] !== key) columnsSql += ', '; // Add comma to columns sql
+				}
+
+				for (const key in foreignKeys) {
+					// For each foreign key
+					columnsSql += `, FOREIGN KEY (${key}) REFERENCES ${foreignKeys[key].foreign.table} (${foreignKeys[key].foreign.column})`; // Add foreign key to columns sql
 				}
 
 				return `CREATE TABLE IF NOT EXISTS ${table} (${columnsSql})`; // Return query

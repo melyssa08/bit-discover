@@ -61,7 +61,6 @@ class Candidates extends DatabaseTable {
 			created_at: {
 				type: DataTypes.datetime,
 				notNull: true,
-				autoIncrement: true,
 			},
 		};
 		super('candidates', columns);

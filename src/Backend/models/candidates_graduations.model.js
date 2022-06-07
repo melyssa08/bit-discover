@@ -18,8 +18,7 @@ class CandidatesGraduations extends DatabaseTable {
 				type: DataTypes.integer,
 				notNull: true,
 				foreign: {
-					key: 'graduation',
-					table: 'GraduationNamespaces',
+					table: 'graduation_namespaces',
 					column: 'id',
 				},
 			},

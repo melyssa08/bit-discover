@@ -22,7 +22,7 @@ class RouteManager {
 	static instanceRoutes(app) {
 		RouteManager.routes.forEach((route) => {
 			// For each route
-			app.use(`${route.route}`, route.router); // Add route to app
+			app.use(`${route.api ? '/api' : ''}/${route.route}`, route.router); // Add route to app
 		});
 	}
 }

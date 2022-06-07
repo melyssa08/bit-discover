@@ -1,4 +1,4 @@
-import { JobsController } from '../controllers/index.js';
+import JobsController from '../controllers/index.js';
 import express from 'express';
 
 const api_jobs = express.Router(); // Create express router
@@ -13,4 +13,4 @@ api_jobs.put('/:id', JobsController.put); // Add put job endpoint
 
 api_jobs.delete('/:id', JobsController.delete); // Add delete job endpoint
 
-export default { route: '/api/jobs', router: api_jobs }; // Export router
+export default { route: 'jobs', router: api_jobs, api: true }; // Export router

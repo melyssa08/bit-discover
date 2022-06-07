@@ -15,6 +15,8 @@ const app = express(); // Create express app
 BasicsConfig.bodyParser(app); // Add body parser
 BasicsConfig.cors(app); // Add cors
 BasicsConfig.security(app); // Add security middleware
+BasicsConfig.staticFiles(app); // Add static files
+BasicsConfig.debug(app); // Add debug middleware
 
 RouteManager.instanceRoutes(app); // Add routes
 
