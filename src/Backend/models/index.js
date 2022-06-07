@@ -7,6 +7,7 @@ import GraduationNamespaces from './graduation_namespaces.model.js';
 import HardSkills from './hardskills.model.js';
 import SoftSkills from './softskills.model.js';
 import JobContacts from './job_contacts.model.js';
+import Departaments from './departaments.model.js';
 
 const jobs = new Jobs();
 const bonus = new Bonus();
@@ -17,5 +18,6 @@ const graduationNamespaces = new GraduationNamespaces();
 const hardSkills = new HardSkills();
 const softSkills = new SoftSkills();
 const jobContacts = new JobContacts();
+const departaments = new Departaments();
 
-export { jobs, bonus, candidatesGraduations, candidates, companies, graduationNamespaces, hardSkills, softSkills, jobContacts };
+export { jobs, bonus, candidatesGraduations, candidates, companies, graduationNamespaces, hardSkills, softSkills, jobContacts, departaments };
