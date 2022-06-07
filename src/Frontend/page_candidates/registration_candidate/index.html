@@ -30,30 +30,36 @@
                         <div class="row justify-content-center">
                             <h4 id="registrationCandidate-info" class="registrationCandidate-hs">Informações pessoais</h4>
                         </div>
-                        <div class="row mt-4 justify-content-center">
-                            <div class="col-lg-4 col-md-4 col-sm-4">
-                                <label for="registrationCandidate-input-name" class="registrationCandidate-label">Nome</label>
-                                <input type="text" placeholder="Digite seu nome" class="form-control registrationCandidate-input-box registrationCandidate-placeholder" id="registrationCandidate-input-name">
+                        <div class="justify-content-center" id="registrationCandidate-flex" >
+                            <div class="registrationCandidate-columns">
+                                <div>
+                                    <label for="registrationCandidate-input-name" class="registrationCandidate-label">Email</label>
+                                    <input type="text" placeholder="Digite seu nome" class="form-control registrationCandidate-input-box registrationCandidate-placeholder" id="registrationCandidate-input-name">
+                                </div>
+                                <div>
+                                    <label for="registrationCandidate-input-age" class="registrationCandidate-label">Senha</label>
+                                    <input type="text" placeholder="Digite sua idade" class="form-control registrationCandidate-input-box registrationCandidate-placeholder" id="registrationCandidate-input-age">
+                                </div>
+                                <div>
+                                    <label for="registrationCandidate-input-cpf" class="registrationCandidate-label">Idade</label>
+                                    <input type="text" placeholder="CPF" class= "form-control registrationCandidate-input-box registrationCandidate-placeholder" id="registrationCandidate-input-cpf">
+                                </div>
+                                <!-- col-lg-4 col-md-4  col-sm-4 -->
+                                <!-- row mt-4 -->
                             </div>
-                            <div class="col-lg-4 col-md-4 col-sm-4">
-                                <label for="registrationCandidate-input-age" class="registrationCandidate-label">Digite sua idade</label>
-                                <input type="text" placeholder="Digite sua idade" class="form-control registrationCandidate-input-box registrationCandidate-placeholder" id="registrationCandidate-input-age">
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-4">
-                                <label for="registrationCandidate-input-cpf" class="registrationCandidate-label">Digite seu CPF</label>
-                                <input type="text" placeholder="CPF" class= "form-control registrationCandidate-input-box registrationCandidate-placeholder" id="registrationCandidate-input-cpf">
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-4">
-                                <label for="registrationCandidate-input-cp" class="registrationCandidate-label">Digite seu Código Postal</label>
-                                <input type="text" placeholder="CP" class= "form-control registrationCandidate-input-box registrationCandidate-placeholder" id="registrationCandidate-input-cp">
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-4">
-                                <label for="registrationCandidate-input-email" class="registrationCandidate-label">Digite seu email</label>
-                                <input type="text" placeholder="Email" class= "form-control registrationCandidate-input-box registrationCandidate-placeholder" id="registrationCandidate-input-email">
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-4">
-                                <label for="registrationCandidate-input-password" class="registrationCandidate-label">Digite sua senha</label>
-                                <input type="password" placeholder="Senha" class= "form-control registrationCandidate-input-box registrationCandidate-placeholder" id="registrationCandidate-input-password">
+                            <div class="registrationCandidate-columns">
+                                <div>
+                                    <label for="registrationCandidate-input-cp" class="registrationCandidate-label">Confirmar email</label>
+                                    <input type="text" placeholder="CP" class= "form-control registrationCandidate-input-box registrationCandidate-placeholder" id="registrationCandidate-input-cp">
+                                </div>
+                                <div>
+                                    <label for="registrationCandidate-input-email" class="registrationCandidate-label">Confirmar senha</label>
+                                    <input type="text" placeholder="Email" class= "form-control registrationCandidate-input-box registrationCandidate-placeholder" id="registrationCandidate-input-email">
+                                </div>
+                                <div>
+                                    <label for="registrationCandidate-input-password" class="registrationCandidate-label">Código Postal (CEP)</label>
+                                    <input type="password" placeholder="Senha" class= "form-control registrationCandidate-input-box registrationCandidate-placeholder" id="registrationCandidate-input-password">
+                                </div>
                             </div>
                         </div>
                         
@@ -85,7 +91,7 @@
                                     </select>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4">
-                                    <label for="escolaridade" class="registrationCandidate-label">Curso do ensino superior</label>
+                                    <label for="registrationCandidate-input-course" class="registrationCandidate-label">Curso do ensino superior</label>
                                     <input type="text" class="form-control registrationCandidate-placeholder registrationCandidate-input-box" placeholder="Curso de ensino superior" id="registrationCandidate-input-course"></input>
                                 </div>
                             </div>
@@ -93,8 +99,8 @@
                         <div class="container-lg mt-5">
                             <div class="row justify-content-center registratioCandidate-margintop">
                                 <div class="col-lg-4 col-md-4 col-sm-4">
-                                    <label for="escolaridade" class="registrationCandidate-label">Experiência prévia</label>
-                                    <select class="form-select registrationCandidate-input-box" aria-label="Default select example" class="select">
+                                    <label for="registrationCandidate-experience" class="registrationCandidate-label">Experiência prévia</label>
+                                    <select class="form-select registrationCandidate-input-box select" aria-label="Default select example" id="registrationCandidate-experience">
                                         <option class="registrationCandidate-label"selected>Selecione área de experiência prévia</option>
                                         <option class="registrationCandidate-label"value="backend">Backend</option>
                                         <option class="registrationCandidate-label"value="fullstack">Fullstack</option>
@@ -102,8 +108,8 @@
                                       </select>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4">
-                                    <label class="registrationCandidate-label" for="hardskills">Hard Skills</label>
-                                    <select class="form-select registrationCandidate-input-box" aria-label="Default select example" class="select">
+                                    <label class="registrationCandidate-label" for="registrationCandidate-hardskills">Hard Skills</label>
+                                    <select class="form-select registrationCandidate-input-box select" aria-label="Default select example" id="registrationCandidate-hardskills">
                                         <option class="registrationCandidate-label"selected>Adicione suas Hard Skills</option>
                                         <option class="registrationCandidate-label"value="JavaScript">JavaScript</option>
                                         <option class="registrationCandidate-label"value="Godot">Godot</option>
@@ -116,20 +122,83 @@
                             </div>
                         </div>
                     </div>
-                    <h4 id="Softskills" class="registrationCandidate-hs registratioCandidate-margintop">SoftSkills</h4>
-                    <div class="container-lg mt-2">
+                    <br>
+                    <h4 id="Softskills" class="registrationCandidate-hs registratioCandidate-margintop">Registre aqui suas Soft Skills!</h4>
+                    <div id="registrationCandidates-row-sixth">
+                        <div class="registrationCandidates-input-form-buttons-box">
+                            <div class="registrationCandidates-hard-skills">
+                                <div id="registrationCandidates-title-hard-skills-obligations">
+                                    <p class="registrationCandidates-title">
+                                        Soft Skills:
+                                    </p>
+                                    <div class="registrationCandidates-field-search">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="auto" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                        </svg>
+                                        <input type="text" class="registrationCandidates-search-tag" class="form-control"></input>
+                                    </div>
+                                </div>
+                                <div id="registrationCandidates-content-obligation">
+                                    <button class="registrationCandidates-button-tag">Resolução de Problemas Complexos</button>
+                                    <button class="registrationCandidates-button-tag">Pensamento Crítico</button>
+                                    <button class="registrationCandidates-button-tag">Criatividade</button>
+                                    <button class="registrationCandidates-button-tag">Gestão de Pessoas</button>
+                                    <button class="registrationCandidates-button-tag">Liderança e influência social</button>
+                                    <button class="registrationCandidates-button-tag">Pensamento analítico e inovação</button>
+                                    <button class="registrationCandidates-button-tag">Resiliência, tolerância e flexibilidade</button>
+                                    <button class="registrationCandidates-button-tag">Inteligência emocional</button>
+                                    <button class="registrationCandidates-button-tag">Persuasão e negociação</button>
+                                    <button class="registrationCandidates-button-tag">Gestão do tempo</button>
+                                    <button class="registrationCandidates-button-tag">Aprendizado ativo</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h4 id="registrationCandidate-hardskills" class="registrationCandidate-hs registratioCandidate-margintop">Registre aqui suas Hard Skills!</h4>
+                    <div id="registrationCandidates-row-sixth">
+                        <div class="registrationCandidates-input-form-buttons-box">
+                            <div class="registrationCandidates-hard-skills">
+                                <div id="registrationCandidates-title-hard-skills-obligations">
+                                    <p class="registrationCandidates-title">
+                                        Hard Skills:
+                                    </p>
+                                    <div class="registrationCandidates-field-search">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="auto" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                        </svg>
+                                        <input type="text" class="registrationCandidates-search-tag" class="form-control"></input>
+                                    </div>
+                                </div>
+                                <div id="registrationCandidates-content-obligation">
+                                    <button class="registrationCandidates-button-tag">GODOT</button>
+                                    <button class="registrationCandidates-button-tag">PHYTON</button>
+                                    <button class="registrationCandidates-button-tag">HTML/CSS</button>
+                                    <button class="registrationCandidates-button-tag">JAVA</button>
+                                    <button class="registrationCandidates-button-tag">JAVASCRIPT</button>
+                                    <button class="registrationCandidates-button-tag">C++</button>
+                                    <button class="registrationCandidates-button-tag">REALIDADE VIRTUAL</button>
+                                    <button class="registrationCandidates-button-tag">CANVA</button>
+                                    <button class="registrationCandidates-button-tag">GIT</button>
+                                    <button class="registrationCandidates-button-tag">REACT</button>
+                                    <button class="registrationCandidates-button-tag">SQLITE</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="container-lg mt-2">
                         <div class="row justify-content-center mt-15">
                             <div class="col-lg-4 col-md-4 col-sm-4">
                                 <button class="registrationCandidate-btn">Aperte aqui para realizar avaliação de Soft Skills</button>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <hr id="registrationCandidate-line">
                     <div class="d-grid col-lg-2 col-md-2 col-sm-2 mx-auto">
                         <button class="registrationCandidate-btn">Criar perfil</button>
                     </div>
                 </div>
             </div>
+            <script src="/js/registrationCandidate-js.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     </body>
  

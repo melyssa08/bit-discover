@@ -110,10 +110,92 @@
     border-color: #F8E091!important;
 }
 
+.registrationCandidate-columns{
+  display: grid;
+  margin-left: 12px;
+}
 
 
+#registrationCandidate-flex{
+  display: flex;
+  justify-content: space-between;
+}
 
+/* Propriedades de espaço e estilo nos campos de seleção de tags */
+.registrationCandidates-input-form-buttons-box {
+  background-color: #FFFFFF;
+  display: flex;
+  height: 80%;
+  width: 100%;
+  min-width: 215px;
+  border-style: solid;
+  border-color: #530084;
+  border-radius: 10px;
+}
 
+/* Propriedades de estilo e espaço nas tags */
+.registrationCandidates-button-tag {
+  border-style: solid;
+  border-color: #530084;
+  background-color: white;
+  color: #530084;
+  border-radius: 10px;
+  margin-top: 0.5%;
+  margin-bottom: 1%;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+/* Propriedade de posição no titulo de requisitos obrigatórios e não obrigatórios */
+.registrationCandidates-title {
+  padding-top: 1%;
+}
+
+/* Propriedades de posicionamento nos campos de busca dentro das caixas de seleção de tags */
+.registrationCandidates-field-search {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Propriedades de espaço e posicionamento do canto superior das caixas de seleção de tags */
+#registrationCandidates-title-hard-skills-obligations, #registrationCandidates-title-hard-skills-no-obligations {
+  display: flex;
+  align-items: center;
+  margin-left: 1%;
+  width: 98%;
+  justify-content: space-between;
+}
+
+/* Propriedade da caixa de seleção de tags quando a caixa se estica e aparece uma sroll para deslizar para baixo */
+#registrationCandidates-content-obligation, #registrationCandidates-content-no-obligation {
+  overflow: auto;
+}
+
+/* Mudanças de propriedades dos cards na parte de posicionamento quando o comprimento atingi igual ou menos do que 889px */
+@media only screen and (max-width: 889px) {
+  
+  #registrationCandidates-row-first, #registrationCandidates-row-second, #registrationCandidates-row-third, #registrationCandidates-row-fourth, #registrationCandidates-row-fifth, #registrationCandidates-row-sixth, #registrationCandidates-row-seventh, #registrationCandidates-title-hard-skills-obligations,#registrationCandidates-title-hard-skills-no-obligations {
+      flex-direction: column;
+      justify-content: space-around;
+  }
+
+  .registrationCandidates-inputs {
+      margin-top: 8rem;
+  }
+
+}
+
+/* Propriedade de display de uma caixa de seleção de tag */
+.registrationCandidates-hard-skills {
+  display: grid;
+}
+
+/* Propriedade de estilo e espaço nos campos de busca dentro das caixas de seleção de tags */
+.registrationCandidates-search-tag {
+  border-color: #F3C42E;
+  width: 80%;
+  height: 20%;
+}
 
 
 
