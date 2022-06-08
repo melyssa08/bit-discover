@@ -1,4 +1,4 @@
-import SoftSkillsController from '../controllers/index.js';
+import { SoftSkillsController } from '../controllers/index.js';
 import express from 'express';
 
 const api_softskills = express.Router(); // Create express router

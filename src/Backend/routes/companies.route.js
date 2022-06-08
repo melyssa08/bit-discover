@@ -1,4 +1,4 @@
-import CompaniesController from '../controllers/index.js';
+import { CompaniesController } from '../controllers/index.js';
 import express from 'express';
 
 const api_companies = express.Router(); // Create express router

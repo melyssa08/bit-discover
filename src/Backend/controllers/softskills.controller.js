@@ -1,4 +1,4 @@
-import { softskills } from '../models/index.js';
+import { softSkills } from '../models/index.js';
 
 const SoftSkillsController = {
 	/*
@@ -7,7 +7,7 @@ const SoftSkillsController = {
 	 */
 	get(req, res) {
 		// Get all softskills
-		softskills.get({}).then((result) => {
+		softSkills.get({}).then((result) => {
 			// Get all softskills
 			res.send(result); // Send all softskills
 		});
@@ -18,7 +18,7 @@ const SoftSkillsController = {
 	 * Get specific softskills by id
 	 */
 	getOne(req, res) {
-		softskills.get({ id: req.params.id }).then((result) => {
+		softSkills.get({ id: req.params.id }).then((result) => {
 			// Get softskills by id
 			res.send(result); // Send softskills with id = req.params.id
 		});
@@ -29,7 +29,7 @@ const SoftSkillsController = {
 	 * Create new softskills
 	 */
 	post(req, res) {
-		softskills.save(req.body).then((result) => {
+		softSkills.save(req.body).then((result) => {
 			// Save softskills
 			res.send(result); // Send result
 		});
@@ -40,7 +40,7 @@ const SoftSkillsController = {
 	 * Update softskills
 	 */
 	put(req, res) {
-		softskills.update(req.body, { id: req.params.id }).then((result) => {
+		softSkills.update(req.body, { id: req.params.id }).then((result) => {
 			// Update softskills with id = req.params.id
 			res.send(result); // Send result
 		});
@@ -51,7 +51,7 @@ const SoftSkillsController = {
 	 * Delete a softskills
 	 */
 	delete(req, res) {
-		softskills.delete({ id: req.params.id }).then((result) => {
+		softSkills.delete({ id: req.params.id }).then((result) => {
 			// Delete softskills with id = req.params.id
 			res.send(result); // Send result
 		});

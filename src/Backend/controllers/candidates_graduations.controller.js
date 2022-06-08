@@ -1,4 +1,4 @@
-import { candidatesgraduations } from '../models/index.js';
+import { candidatesGraduations } from '../models/index.js';
 
 const CandidatesGraduationsController = {
 	/*
@@ -7,7 +7,7 @@ const CandidatesGraduationsController = {
 	 */
 	get(req, res) {
 		// Get all candidatesgraduations
-		candidatesgraduations.get({}).then((result) => {
+		candidatesGraduations.get({}).then((result) => {
 			// Get all candidatesgraduations
 			res.send(result); // Send all candidatesgraduations
 		});
@@ -18,7 +18,7 @@ const CandidatesGraduationsController = {
 	 * Get specific candidatesgraduations by id
 	 */
 	getOne(req, res) {
-		candidatesgraduations.get({ id: req.params.id }).then((result) => {
+		candidatesGraduations.get({ id: req.params.id }).then((result) => {
 			// Get candidatesgraduations by id
 			res.send(result); // Send candidatesgraduations with id = req.params.id
 		});
@@ -29,7 +29,7 @@ const CandidatesGraduationsController = {
 	 * Create new candidatesgraduations
 	 */
 	post(req, res) {
-		candidatesgraduations.save(req.body).then((result) => {
+		candidatesGraduations.save(req.body).then((result) => {
 			// Save candidatesgraduations
 			res.send(result); // Send result
 		});
@@ -40,7 +40,7 @@ const CandidatesGraduationsController = {
 	 * Update candidatesgraduations
 	 */
 	put(req, res) {
-		candidatesgraduations.update(req.body, { id: req.params.id }).then((result) => {
+		candidatesGraduations.update(req.body, { id: req.params.id }).then((result) => {
 			// Update candidatesgraduations with id = req.params.id
 			res.send(result); // Send result
 		});
@@ -51,7 +51,7 @@ const CandidatesGraduationsController = {
 	 * Delete a candidatesgraduations
 	 */
 	delete(req, res) {
-		candidatesgraduations.delete({ id: req.params.id }).then((result) => {
+		candidatesGraduations.delete({ id: req.params.id }).then((result) => {
 			// Delete candidatesgraduations with id = req.params.id
 			res.send(result); // Send result
 		});

@@ -1,4 +1,4 @@
-import { jobcontacts } from '../models/index.js';
+import { jobContacts } from '../models/index.js';
 
 const JobContactsController = {
 	/*
@@ -7,7 +7,7 @@ const JobContactsController = {
 	 */
 	get(req, res) {
 		// Get all jobContacts
-		jobcontacts.get({}).then((result) => {
+		jobContacts.get({}).then((result) => {
 			// Get all jobContacts
 			res.send(result); // Send all jobContacts
 		});
@@ -18,7 +18,7 @@ const JobContactsController = {
 	 * Get specific jobContacts by id
 	 */
 	getOne(req, res) {
-		jobcontacts.get({ id: req.params.id }).then((result) => {
+		jobContacts.get({ id: req.params.id }).then((result) => {
 			// Get jobContacts by id
 			res.send(result); // Send jobContacts with id = req.params.id
 		});
@@ -29,7 +29,7 @@ const JobContactsController = {
 	 * Create new jobContacts
 	 */
 	post(req, res) {
-		jobcontacts.save(req.body).then((result) => {
+		jobContacts.save(req.body).then((result) => {
 			// Save jobContacts
 			res.send(result); // Send result
 		});
@@ -40,7 +40,7 @@ const JobContactsController = {
 	 * Update jobContacts
 	 */
 	put(req, res) {
-		jobcontacts.update(req.body, { id: req.params.id }).then((result) => {
+		jobContacts.update(req.body, { id: req.params.id }).then((result) => {
 			// Update jobContacts with id = req.params.id
 			res.send(result); // Send result
 		});
@@ -51,7 +51,7 @@ const JobContactsController = {
 	 * Delete a jobContacts
 	 */
 	delete(req, res) {
-		jobcontacts.delete({ id: req.params.id }).then((result) => {
+		jobContacts.delete({ id: req.params.id }).then((result) => {
 			// Delete jobContact with id = req.params.id
 			res.send(result); // Send result
 		});

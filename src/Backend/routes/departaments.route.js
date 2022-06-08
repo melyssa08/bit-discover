@@ -1,4 +1,4 @@
-import DepartamentsController from '../controllers/index.js';
+import { DepartamentsController } from '../controllers/index.js';
 import express from 'express';
 
 const api_departaments = express.Router(); // Create express router

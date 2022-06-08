@@ -1,4 +1,4 @@
-import BonusController from '../controllers/index.js';
+import { BonusController } from '../controllers/index.js';
 import express from 'express';
 
 const api_bonus = express.Router(); // Create express router

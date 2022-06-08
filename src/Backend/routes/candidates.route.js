@@ -1,4 +1,4 @@
-import CandidatesController from '../controllers/index.js';
+import { CandidatesController } from '../controllers/index.js';
 import express from 'express';
 
 const api_candidates = express.Router(); // Create express router

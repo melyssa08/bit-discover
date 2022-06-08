@@ -7,8 +7,8 @@ import { DatabaseTable } from './database/databaseTable.database.js';
 
 const EXPRESS_CONFIG = await getConfig('express'); // Load express config
 
-ConsoleUtils.addTimeOnConsole(); // Add time on console from class ConsoleUtils
 DatabaseTable.initDatabase(); // Init database
+ConsoleUtils.addTimeOnConsole(); // Add time on console from class ConsoleUtils
 
 const app = express(); // Create express app
 

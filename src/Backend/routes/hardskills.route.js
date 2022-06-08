@@ -1,4 +1,4 @@
-import HardSkillsController from '../controllers/index.js';
+import { HardSkillsController } from '../controllers/index.js';
 import express from 'express';
 
 const api_hardskills = express.Router(); // Create express router

@@ -9,4 +9,15 @@ import SoftSkillsController from './softskills.controller.js';
 import JobContactsController from './job_contacts.controller.js';
 import DepartamentsController from './departaments.controller.js';
 
-export {JobsController, BonusController, CandidatesGraduationsController, CandidatesController, CompaniesController, GraduationNamespacesController, HardSkillsController, SoftSkillsController, JobContactsController, DepartamentsController};
+export {
+	JobsController,
+	BonusController,
+	CandidatesGraduationsController,
+	CandidatesController,
+	CompaniesController,
+	GraduationNamespacesController,
+	HardSkillsController,
+	SoftSkillsController,
+	JobContactsController,
+	DepartamentsController,
+};

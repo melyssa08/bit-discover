@@ -1,4 +1,4 @@
-import JobsController from '../controllers/index.js';
+import { JobsController } from '../controllers/index.js';
 import express from 'express';
 
 const api_jobs = express.Router(); // Create express router
