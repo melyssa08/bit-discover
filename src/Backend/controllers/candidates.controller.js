@@ -7,7 +7,7 @@ const CandidatesController = {
 	 */
 	get(req, res) {
 		// Get all candidates
-		candidates.get({}).then((result) => {
+		candidates.get(req.body).then((result) => {
 			// Get all candidates
 			res.send(result); // Send all candidates
 		});

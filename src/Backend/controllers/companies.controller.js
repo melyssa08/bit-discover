@@ -7,7 +7,7 @@ const CompaniesController = {
 	 */
 	get(req, res) {
 		// Get all companies
-		companies.get({}).then((result) => {
+		companies.get(req.body).then((result) => {
 			// Get all companies
 			res.send(result); // Send all companies
 		});

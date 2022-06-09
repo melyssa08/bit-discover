@@ -7,7 +7,7 @@ const JobsController = {
 	 */
 	get(req, res) {
 		// Get all jobs
-		jobs.get({}).then((result) => {
+		jobs.get(req.body).then((result) => {
 			// Get all jobs
 			res.send(result); // Send all jobs
 		});
