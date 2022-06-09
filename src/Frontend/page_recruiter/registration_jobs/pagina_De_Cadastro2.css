@@ -29,6 +29,7 @@
     width: 100%;
     max-height: 1500px;
     height: 200%;
+    margin-top: 80px;
 }
 
 /* Propriedades de espaço do footer */
@@ -73,22 +74,24 @@
 }
 
 /* Propriedades de estilização e espaço no campo cep */
-#registrationJobs-cep {
+#registrationJobs-cp, #registrationJobs-name-company {
+    border-style: #F3C42E;
     border-radius: 10px;
     border-color: #F3C42E;
     min-width: 212px;
     height: 80%;
-    width: 100%;
+    width: 80%;
     min-height: 35.2px;
 }
 
 /* Propriedades de estilo e espaço no campo observação vaga */
-#registrationJobs-description-jobs {
+#registrationJobs-description-jobs, #registrationJobs-description-bonus {
+    border-style: solid;
     border-color: #F3C42E;
     border-radius: 10px;
     height: 80%;
     min-width: 212px;
-    width: 100%;
+    width: 80%;
 }
 
 /* Propriedades de espaço e posicionamento de cada fileira do forms */
@@ -146,21 +149,31 @@
 /* Propriedade de posição no titulo de requisitos obrigatórios e não obrigatórios */
 .registrationJobs-title {
     padding-top: 1%;
+    width: 100%;
 }
 
 /* Propriedades de posicionamento nos campos de busca dentro das caixas de seleção de tags */
 .registrationJobs-field-search {
     display: flex;
-    justify-content: space-between;
+    width: 100%;
 }
 
 /* Propriedades de espaço e posicionamento do canto superior das caixas de seleção de tags */
-#registrationJobs-title-hard-skills-obligations, #registrationJobs-title-hard-skills-no-obligations {
+#registrationJobs-title-hard-skills-obligations {
     display: flex;
-    align-items: center;
     margin-left: 1%;
+    align-items: center;
     width: 98%;
     justify-content: space-between;
+}
+
+#registrationJobs-title-hard-skills-no-obligations {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding-left: 1%;
+    padding-top: 3%;
+    height: 50%;
 }
 
 /* Propriedade da caixa de seleção de tags quando a caixa se estica e aparece uma sroll para deslizar para baixo */
@@ -168,16 +181,30 @@
     overflow: auto;
 }
 
+
 /* Mudanças de propriedades dos cards na parte de posicionamento quando o comprimento atingi igual ou menos do que 889px */
 @media only screen and (max-width: 889px) {
     
-    #registrationJobs-row-first, #registrationJobs-row-second, #registrationJobs-row-third, #registrationJobs-row-fourth, #registrationJobs-row-fifth, #registrationJobs-row-sixth, #registrationJobs-row-seventh, #registrationJobs-title-hard-skills-obligations,#registrationJobs-title-hard-skills-no-obligations {
+    #registrationJobs-row-first, #registrationJobs-row-second, #registrationJobs-row-third, #registrationJobs-row-fourth, #registrationJobs-row-fifth, #registrationJobs-row-sixth, #registrationJobs-row-seventh {
         flex-direction: column;
         justify-content: space-around;
     }
 
+    #registrationJobs-salary {
+        margin-top: 1%;
+    }
+
+    #registrationJobs-row-first {
+        margin-top: 25px;
+    }
+
     .registrationJobs-inputs {
         margin-top: 8rem;
+    }
+
+    #registrationJobs-title-hard-skills-obligations {
+        flex-direction: column;
+        flex-wrap: wrap;
     }
 
 }
@@ -188,17 +215,38 @@
 }
 
 /* Propriedade de estilo e espaço nos campos de busca dentro das caixas de seleção de tags */
-.registrationJobs-search-tag {
+.registrationJobs-add-tag-user {
     border-color: #F3C42E;
+    border-style: solid;
     width: 80%;
-    height: 20%;
+    height: 100%;
+    margin-left: 10px;
+    border-radius: 10px;
+    border-width: 1px;
+    
 }
 
 /* Propriedade de espaço e estilo de cada campo do forms */
 .registrationJobs-line-first, .registrationJobs-line-second, .registrationJobs-line-third {
     border-color: #F3C42E;
+    border-style: #F3C42E;
     border-radius: 10px;
     min-width: 212px;
     width: 60%;
     height: 80%;
+}
+
+#registrationJobs-add-new-tag {
+    cursor: pointer;
+}
+
+#registrationJobs-name-job, #registrationJobs-salary, #registrationJobs-email, #registrationJobs-number {
+    border-style: solid;
+    border-width: 0.5px;
+    border-color: #F3C42E;
+}
+
+#registrationJobs-salary {
+    width: 72%;
+    border-radius: 10px;
 }

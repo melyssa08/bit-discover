@@ -15,7 +15,7 @@ DatabaseTable.initDatabase();
 
 const app = express();
 
-app.use(express.static("../frontend/"));
+app.use(express.static("../Frontend/"));
 
 app.disable('x-powered-by');
 
