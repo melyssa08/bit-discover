@@ -54,6 +54,10 @@ class Candidates extends DatabaseTable {
 				type: DataTypes.text,
 				notNull: false,
 			},
+			likes: {
+				type: DataTypes.text,
+				notNull: false,
+			},
 			password: {
 				type: DataTypes.text,
 				notNull: true,
