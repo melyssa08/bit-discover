@@ -32,35 +32,35 @@
                                 <div class="row justify-content-center">
                                     <div class="col-lg-5">
                                         <label for="registrationCandidates-input-email" class="registrationCandidates-label">Email</label>
-                                        <input type="text" placeholder="Digite seu email" class="registrationCandidates-columns form-control registrationCandidates-input-box registrationCandidates-placeholder" id="registrationCandidates-input-email" />
+                                        <input type="text" placeholder="Digite seu email" class="registrationCandidates-columns form-control registrationCandidates-input-box registrationCandidates-placeholder" id="registrationCandidates-input-email" name="rC-input-email" />
                                     </div>
                                     <div class="col-lg-5">
-                                        <label for="registrationCandidates-input-confirmemail" class="registrationCandidates-label">Confirmar email</label>
-                                        <input type="text" placeholder="Confirmar email" class="registrationCandidates-columns form-control registrationCandidates-input-box registrationCandidates-placeholder" id="registrationCandidates-input-confirmemail" />
+                                        <label for="registrationCandidates-input-confirm-email" class="registrationCandidates-label">Confirmar email</label>
+                                        <input type="text" placeholder="Confirmar email" class="registrationCandidates-columns form-control registrationCandidates-input-box registrationCandidates-placeholder" id="registrationCandidates-input-confirm-email" name="rC-input-confirm-email" />
                                     </div>
                                     <div class="col-lg-5">
                                         <label for="registrationCandidates-input-password" class="registrationCandidates-label">Senha</label>
-                                        <input type="password" placeholder="Senha" class="registrationCandidates-columns form-control registrationCandidates-input-box registrationCandidates-placeholder" id="registrationCandidates-input-password" />
+                                        <input type="password" placeholder="Senha" class="registrationCandidates-columns form-control registrationCandidates-input-box registrationCandidates-placeholder" id="registrationCandidates-input-password" name="rC-input-password" />
                                     </div>
                                     <div class="col-lg-5">
-                                        <label for="registrationCandidates-input-confirmpassword" class="registrationCandidates-label">Confirmar
+                                        <label for="registrationCandidates-input-confirm-password" class="registrationCandidates-label">Confirmar
                                             senha</label>
-                                        <input type="password" placeholder="Confirmar senha" class="registrationCandidates-columns form-control registrationCandidates-input-box registrationCandidates-placeholder registrationCandidates" id="registrationCandidates-input-confirmpassword" />
+                                        <input type="password" placeholder="Confirmar senha" class="registrationCandidates-columns form-control registrationCandidates-input-box registrationCandidates-placeholder registrationCandidates" id="registrationCandidates-input-confirm-password" name="rC-input-confirm-password" />
                                     </div>
                                     <div class="col-lg-5">
                                         <label for="registrationCandidates-input-age" class="registrationCandidates-label">Idade</label>
-                                        <input type="text" placeholder="Idade" class="registrationCandidates-columns form-control registrationCandidates-input-box registrationCandidates-placeholder" id="registrationCandidates-input-age" />
+                                        <input type="text" placeholder="Idade" class="registrationCandidates-columns form-control registrationCandidates-input-box registrationCandidates-placeholder" id="registrationCandidates-input-age" name="rC-input-age" />
                                     </div>
                                     <div class="col-lg-5">
                                         <label class="registrationCandidates-label" for="registrationCandidates-input-CPF">CPF</label>
-                                        <input type="text" class="registrationCandidates-columns form-control registrationCandidates-placeholder registrationCandidates-input-box" placeholder="CPF" id="registrationCandidates-input-CPF" />
+                                        <input type="text" class="registrationCandidates-columns form-control registrationCandidates-placeholder registrationCandidates-input-box" placeholder="CPF" id="registrationCandidates-input-CPF" name="rC-input-CPF" />
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-5 offset-lg-1">
                                         <label for="registrationCandidates-input-cp" class="registrationCandidates-label">Código Postal
                                             (CEP)</label>
-                                        <input placeholder="Código Postal" class="registrationCandidates-columns form-control registrationCandidates-input-box registrationCandidates-placeholder" id="registrationCandidates-input-cp" />
+                                        <input placeholder="Código Postal" class="registrationCandidates-columns form-control registrationCandidates-input-box registrationCandidates-placeholder" id="registrationCandidates-input-cp" name="rC-input-cp"/>
                                     </div>
                                 </div>
                             </div>
@@ -71,7 +71,7 @@
                             <h4 class="registrationCandidates-hs">Conte mais sobre você</h4>
                         </div>
                         <div class="row justify-content-center">
-                            <div class="col-lg-8 col-md-8 col-sm-8" id="registrationCandidates-input-textarea">
+                            <div class="col-lg-8 col-md-8 col-sm-8" id="registrationCandidates-input-textarea" name="rC-input-textarea">
                                 <textarea name="text" id="registrationCandidates-textarea" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' class="textarea registrationCandidates-input-box"></textarea>
                             </div>
                         </div>
@@ -83,7 +83,7 @@
                         <div class="row justify-content-center" class="registrationCandidates-margintop">
                             <div class="col-lg-5 col-md-6 col-sm-12">
                                 <label for="registrationCandidates-scholarity" class="registrationCandidates-label">Escolha sua escolaridade</label>
-                                <select class="form-select registrationCandidates-placeholder registrationCandidates-input-box" aria-label="Default select example" class="select" id="registrationCandidates-scholarity">
+                                <select class="form-select registrationCandidates-placeholder registrationCandidates-input-box" aria-label="Default select example" class="select" id="registrationCandidates-scholarity" name="rC-input-select-scholarity">
                                     <option id="registrationCandidates-label" selected>Escolaridade</option>
                                     <option id="registrationCandidates-label" value="ensino fundamental in">
                                         Ensino fundamental incompleto
@@ -111,7 +111,7 @@
                             <div class="col-lg-5 col-md-6 col-sm-12">
                                 <label for="registrationCandidates-input-course" class="registrationCandidates-label">Curso do ensino
                                     superior</label>
-                                <input type="text" class="form-control registrationCandidates-placeholder registrationCandidates-input-box" placeholder="Curso de ensino superior" id="registrationCandidates-input-course" />
+                                <input type="text" class="form-control registrationCandidates-placeholder registrationCandidates-input-box" placeholder="Curso de ensino superior" id="registrationCandidates-input-course" name="rC-input-course" />
                             </div>
                         </div>
                     </div>
@@ -119,7 +119,7 @@
                         <div class="row registrationCandidates-margintop">
                             <div class="col-lg-5 offset-lg-1 col-md-6 col-sm-12">
                                 <label for="registrationCandidates-experience" class="registrationCandidates-label">Experiência prévia</label>
-                                <select class="form-select registrationCandidates-placeholder registrationCandidates-input-box select" aria-label="Default select example" id="registrationCandidates-experience">
+                                <select class="form-select registrationCandidates-placeholder registrationCandidates-input-box select" aria-label="Default select example" id="registrationCandidates-experience" name="rC-input-select-experience">
                                     <option class="registrationCandidates-label" selected>
                                         Selecione área de experiência prévia
                                     </option>
@@ -131,6 +131,9 @@
                                     </option>
                                     <option class="registrationCandidates-label" value="frontend">
                                         Frontend
+                                    </option>
+                                    <option class="registrationCandidates-label" value="none">
+                                        Nenhuma experiência
                                     </option>
                                 </select>
                             </div>

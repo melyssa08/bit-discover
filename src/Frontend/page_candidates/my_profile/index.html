@@ -31,37 +31,37 @@
                             <div class="col-sm-12">
                                 <div class="row justify-content-center">
                                     <div class="col-lg-5">
-                                        <label for="myProfile-input-name" class="myProfile-label">Email</label>
-                                        <input type="text" placeholder="Digite seu email" class="myProfile-columns form-control myProfile-input-box myProfile-placeholder" id="myProfile-input-name" />
+                                        <label for="myProfile-input-email" class="myProfile-label">Email</label>
+                                        <input type="text" placeholder="Digite seu email" class="myProfile-columns form-control myProfile-input-box myProfile-placeholder" id="myProfile-input-email" name="mP-input-email" />
                                     </div>
                                     <div class="col-lg-5">
-                                        <label for="myProfile-input-cp" class="myProfile-label">Confirmar email</label>
-                                        <input type="text" placeholder="Confirmar email" class="myProfile-columns form-control myProfile-input-box myProfile-placeholder" id="myProfile-input-cp" />
+                                        <label for="myProfile-input-confirm-email" class="myProfile-label">Confirmar email</label>
+                                        <input type="text" placeholder="Confirmar email" class="myProfile-columns form-control myProfile-input-box myProfile-placeholder" id="myProfile-input-confirm-email" name="mP-input-confirm-email" />
                                     </div>
 
                                     <div class="col-lg-5">
                                         <label for="myProfile-input-age" class="myProfile-label">Idade</label>
-                                        <input type="text" placeholder="Idade" class="myProfile-columns form-control myProfile-input-box myProfile-placeholder" id="myProfile-input-age" />
+                                        <input type="text" placeholder="Idade" class="myProfile-columns form-control myProfile-input-box myProfile-placeholder" id="myProfile-input-age" name="mP-input-age" />
                                     </div>
                                     <div class="col-lg-5">
                                         <label class="myProfile-label" for="myProfile-input-CPF">CPF</label>
-                                        <input type="text" class="myProfile-columns form-control myProfile-placeholder myProfile-input-box myProfile-disabled" placeholder="000.000.000-00" id="myProfile-input-CPF" disabled />
+                                        <input type="text" class="myProfile-columns form-control myProfile-placeholder myProfile-input-box myProfile-disabled" placeholder="000.000.000-00" id="myProfile-input-CPF" name="mP-input-CPF" disabled />
                                     </div>
                                     <div class="col-lg-5">
-                                        <label for="myProfile-input-age" class="myProfile-label">Senha</label>
-                                        <input type="password" placeholder="12345" class="myProfile-columns form-control myProfile-input-box myProfile-placeholder myProfile-disabled" id="myProfile-input-age" disabled />
+                                        <label for="myProfile-input-password" class="myProfile-label">Senha</label>
+                                        <input type="password" placeholder="12345" class="myProfile-columns form-control myProfile-input-box myProfile-placeholder myProfile-disabled" id="myProfile-input-password" name="mP-input-password" disabled />
                                     </div>
                                     <div class="col-lg-5">
-                                        <label for="myProfile-input-email" class="myProfile-label">Confirmar
+                                        <label for="myProfile-input-confirm-password" class="myProfile-label">Confirmar
                                             senha</label>
-                                        <input type="password" placeholder="12345" class="myProfile-columns form-control myProfile-input-box myProfile-placeholder myProfile-disabled" id="myProfile-input-email" disabled />
+                                        <input type="password" placeholder="12345" class="myProfile-columns form-control myProfile-input-box myProfile-placeholder myProfile-disabled" id="myProfile-input-confirm-password" name="mP-input-confirm-password" disabled />
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-5 offset-lg-1">
-                                        <label for="myProfile-input-password" class="myProfile-label">Código Postal
+                                        <label for="myProfile-input-cp" class="myProfile-label">Código Postal
                                             (CEP)</label>
-                                        <input placeholder="Código Postal" class="myProfile-columns form-control myProfile-input-box myProfile-placeholder" id="myProfile-input-password" />
+                                        <input placeholder="Código Postal" class="myProfile-columns form-control myProfile-input-box myProfile-placeholder" id="myProfile-input-cp" name="mP-input-cp" />
                                     </div>
                                 </div>
                             </div>
@@ -73,7 +73,7 @@
                         </div>
                         <div class="row justify-content-center">
                             <div class="col-lg-8 col-md-8 col-sm-8" id="myProfile-input-textarea">
-                                <textarea name="text" id="myProfile-textarea" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' class="textarea myProfile-input-box"></textarea>
+                                <textarea name="text" id="myProfile-textarea" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' class="textarea myProfile-input-box" name="mP-input-textarea"></textarea>
                             </div>
                         </div>
                     </div>
@@ -84,7 +84,7 @@
                         <div class="row justify-content-center" class="myProfile-margintop">
                             <div class="col-lg-5 col-md-6 col-sm-12">
                                 <label for="escolaridade" class="myProfile-label">Escolha sua escolaridade</label>
-                                <select class="form-select myProfile-placeholder myProfile-input-box" aria-label="Default select example" class="select">
+                                <select class="form-select myProfile-placeholder myProfile-input-box" aria-label="Default select example" class="select" name="mP-input-select-scholarity">
                                     <option id="myProfile-label" selected>Escolaridade</option>
                                     <option id="myProfile-label" value="ensino fundamental in">
                                         Ensino fundamental incompleto
@@ -112,7 +112,7 @@
                             <div class="col-lg-5 col-md-6 col-sm-12">
                                 <label for="myProfile-input-course" class="myProfile-label">Curso do ensino
                                     superior</label>
-                                <input type="text" class="form-control myProfile-placeholder myProfile-input-box" placeholder="Curso de ensino superior" id="myProfile-input-course" />
+                                <input type="text" class="form-control myProfile-placeholder myProfile-input-box" placeholder="Curso de ensino superior" id="myProfile-input-course" name="mP-input-course" />
                             </div>
                         </div>
                     </div>
@@ -120,7 +120,7 @@
                         <div class="row myProfile-margintop">
                             <div class="col-lg-5 offset-lg-1 col-md-6 col-sm-12">
                                 <label for="myProfile-experience" class="myProfile-label">Experiência prévia</label>
-                                <select class="form-select myProfile-placeholder myProfile-input-box select" aria-label="Default select example" id="myProfile-experience">
+                                <select class="form-select myProfile-placeholder myProfile-input-box select" aria-label="Default select example" id="myProfile-experience" name="mP-input-select-experience">
                                     <option class="myProfile-label" selected>
                                         Selecione área de experiência prévia
                                     </option>
