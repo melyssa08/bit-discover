@@ -38,6 +38,12 @@ const StringList = {
 		});
 	},
 
+	matchsPorcent: function (str1, str2) {
+		var arr1 = StringList.unpack(str1);
+		var matchs = StringList.matchs(str1, str2);
+		return ((matchs.length / arr1.length) * 100).toFixed(2);
+	},
+
 	remains: function (str1, str2) {
 		var arr1 = StringList.unpack(str1);
 		var arr2 = StringList.unpack(str2);
