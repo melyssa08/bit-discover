@@ -6,11 +6,10 @@ import BasicsConfig from './middlewares/basics.middleware.js';
 import { DatabaseTable } from './database/databaseTable.database.js';
 
 const EXPRESS_CONFIG = await getConfig('express'); // Load express config
+const app = express(); // Create express app
 
 DatabaseTable.initDatabase(); // Init database
 ConsoleUtils.addTimeOnConsole(); // Add time on console from class ConsoleUtils
-
-const app = express(); // Create express app
 
 BasicsConfig.bodyParser(app); // Add body parser
 BasicsConfig.cors(app); // Add cors
