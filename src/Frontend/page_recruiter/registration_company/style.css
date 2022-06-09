@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&family=Roboto&display=swap");
+.registrationCompany-body {
+    background-color: #F5EFEF;
+    font-size: 15px;
+    font-family: "Nunito";
+    align-items: center;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#registrationCompany-title {
+    text-align: center;
+    color: #550084;
+    font-family: 'Nunito';
+    margin-top: 15px;
+}
+
+#registrationCompany-cardsbootstrap {
+    width: 70%;
+}
+
+.registrationCompany-label {
+    border-color: #F8E091;
+    color: #550084;
+    /* font-weight:lighter */
+}
+
+.registrationCompany-margintop {
+    margin-top: 15px;
+}
+
+#registrationCompany-textarea {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-color: #F8E091;
+    width: 100%;
+    overflow: hidden;
+}
+
+.registrationCompany-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+}
+
+.registrationCompany-placeholder::placeholder {
+    opacity: 0.5;
+}
+
+.registrationCompany-placeholder {
+    border-style: solid;
+    border-color: #F8E091 !important;
+    border-radius: 10px;
+}
+
+#registrationCompany-input-textarea {
+    width: 100%;
+}
+
+#registrationCompany-input-course {
+    color: #550084;
+}
+
+.registrationCompany-input-box {
+    color: rgba(87, 3, 131, 1) !important;
+    background-color: rgb(240, 239, 239) !important;
+}
+
+.registrationCompany-btn {
+    border-style: hidden;
+    background-color: rgba(87, 3, 131, 1);
+    color: antiquewhite;
+    border-radius: 10px;
+    margin-top: 15px;
+    width: max-content;
+    padding: 10px 20px;
+    margin-bottom: 50px;
+}
+
+#registrationCompany-line {
+    color: #F8E091;
+    height: 2px;
+}
+
+.registrationCompany-btn:hover {
+    border-style: hidden;
+    border-radius: 10px;
+    background-color: rgba(243, 196, 46, 1);
+}
+
+.registrationCompany-hs {
+    color: purple;
+    text-align: center;
+}
+
+.select {
+    border-color: #F8E091 !important;
+}
+
+.registrationCompany-columns {
+    display: grid;
+}
+
+#registrationCompany-flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+#registrationCompany-linkwithcandidate {
+    color: #550084;
+    text-decoration: none;
+}
