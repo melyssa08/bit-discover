@@ -1,9 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
 
+@media screen and (max-width: 540px){
+
+    .sideNavBar-nav-bar-item{
+        width: 75%;
+        height: 50px;
+        text-overflow: ellipsis;
+     }
+
+}
+
 .sideNavBar-nav-bar-item{
-    width: 250px;
+    /* width: 50%; */
     height: 50px;
-    overflow:hidden ;
     text-overflow: ellipsis;
  }
 
@@ -26,8 +35,9 @@
 }
 
 #sideNavBar-logo{
-    /* padding-top: 0.3rem; */
-    /* padding-bottom: 1%; */
+    display: flex;
+    justify-content: center;
+    padding-right: 24%;
 }
 
 .sideNavBar-nav-bar {
