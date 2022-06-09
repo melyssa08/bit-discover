@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&family=Roboto&display=swap");
+.myProfile-body {
+    background-color: #F5EFEF;
+    font-size: 15px;
+    font-family: "Nunito";
+    align-items: center;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#myProfile-title {
+    text-align: center;
+    color: #550084;
+    font-family: 'Nunito';
+    margin-top: 15px;
+}
+
+#myProfile-cardsbootstrap {
+    width: 70%;
+}
+
+.myProfile-label {
+    border-color: #F8E091;
+    color: #550084;
+    /* font-weight:lighter */
+}
+
+.myProfile-margintop {
+    margin-top: 15px;
+}
+
+#myProfile-textarea {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-color: #F8E091;
+    width: 100%;
+    overflow: hidden;
+}
+
+.myProfile-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+}
+
+.myProfile-placeholder::placeholder {
+    opacity: 0.5;
+}
+
+.myProfile-placeholder {
+    border-style: solid;
+    border-color: #F8E091 !important;
+    border-radius: 10px;
+}
+
+#myProfile-input-textarea {
+    width: 100%;
+}
+
+#myProfile-input-course {
+    color: #550084;
+}
+
+.myProfile-input-box {
+    color: rgba(87, 3, 131, 1) !important;
+    background-color: rgb(240, 239, 239) !important;
+}
+
+.myProfile-btn {
+    border-style: hidden;
+    background-color: rgba(87, 3, 131, 1);
+    color: antiquewhite;
+    border-radius: 10px;
+    margin-top: 15px;
+    width: max-content;
+    padding: 10px 20px;
+    margin-bottom: 50px;
+}
+
+#myProfile-line {
+    color: #F8E091;
+    height: 2px;
+}
+
+.myProfile-btn:hover {
+    border-style: hidden;
+    border-radius: 10px;
+    background-color: rgba(243, 196, 46, 1);
+}
+
+.myProfile-hs {
+    color: purple;
+    text-align: center;
+}
+
+.select {
+    border-color: #F8E091 !important;
+}
+
+.myProfile-columns {
+    display: grid;
+}
+
+#myProfile-flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* Propriedades de espaço e estilo nos campos de seleção de tags */
+
+.myProfile-input-form-buttons-box {
+    background-color: #FFFFFF;
+    display: flex;
+    height: 80%;
+    width: 100%;
+    min-width: 215px;
+    border-style: solid;
+    border-color: #530084;
+    border-radius: 10px;
+}
+
+
+/* Propriedades de estilo e espaço nas tags */
+
+.myProfile-button-tag {
+    border-style: solid;
+    border-color: #530084;
+    background-color: white;
+    color: #530084;
+    border-radius: 10px;
+    margin-top: 0.5%;
+    margin-bottom: 1%;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+
+/* Propriedade de posição no titulo de requisitos obrigatórios e não obrigatórios */
+
+.myProfile-title {
+    padding-top: 1%;
+}
+
+
+/* Propriedades de posicionamento nos campos de busca dentro das caixas de seleção de tags */
+
+.myProfile-field-search {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* Propriedades de espaço e posicionamento do canto superior das caixas de seleção de tags */
+
+#myProfile-title-hard-skills-obligations,
+#myProfile-title-hard-skills-no-obligations {
+    display: flex;
+    align-items: center;
+    margin-left: 1%;
+    width: 98%;
+    justify-content: space-between;
+}
+
+
+/* Propriedade da caixa de seleção de tags quando a caixa se estica e aparece uma sroll para deslizar para baixo */
+
+#myProfile-content-obligation,
+#myProfile-content-no-obligation {
+    overflow: auto;
+}
+
+
+/* Mudanças de propriedades dos cards na parte de posicionamento quando o comprimento atingi igual ou menos do que 889px */
+
+@media only screen and (max-width: 889px) {
+    #myProfile-row-first,
+    #myProfile-row-second,
+    #myProfile-row-third,
+    #myProfile-row-fourth,
+    #myProfile-row-fifth,
+    #myProfile-row-sixth,
+    #myProfile-row-seventh,
+    #myProfile-title-hard-skills-obligations,
+    #myProfile-title-hard-skills-no-obligations {
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .myProfile-inputs {
+        margin-top: 8rem;
+    }
+}
+
+
+/* Propriedade de display de uma caixa de seleção de tag */
+
+.myProfile-hard-skills {
+    display: grid;
+}
+
+
+/* Propriedade de estilo e espaço nos campos de busca dentro das caixas de seleção de tags */
+
+.myProfile-search-tag {
+    border-color: #F3C42E;
+    width: 80%;
+    height: 20%;
+}
+
+.myProfile-columns {
+    display: flex;
+    justify-content: space-between;
+}
+
+.myProfile-disabled {
+    text-decoration: none;
+    background-color: #7d7d7d !important;
+    color: #FFFFFF !important;
+}
+
+.myProfile-disabled::placeholder {
+    color: #F3C42E !important;
+}

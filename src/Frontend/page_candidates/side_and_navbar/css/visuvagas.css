@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
+
+.sideNavBar-nav-bar-item{
+    width: 250px;
+    height: 50px;
+    overflow:hidden ;
+    text-overflow: ellipsis;
+ }
+
+.sideNavBar-nav-bar-link{ 
+    height: 50px; 
+    width: 50px; 
+}
+
+#sideNavBar-body{
+    background-color: #F3C42E;
+    /* overflow-x: hidden;  */
+    font-family: 'Nunito', sans-serif;
+}
+
+/* Bootstrap */
+.col-4 {
+    text-align: center;
+    border: solid 0px rgb(1, 1, 1);
+    height: auto;
+}
+
+#sideNavBar-logo{
+    /* padding-top: 0.3rem; */
+    /* padding-bottom: 1%; */
+}
+
+.sideNavBar-nav-bar {
+    height: 76px;
+    margin-bottom: 4%;
+}
+
+.sideNavBar-right {
+    text-align: right;
+    padding-right: 2rem;
+}
+
+.sideNavBar-left {
+    text-align: left;
+    padding-left: 2rem;
+}
+
+/* Bootstrap */
+.container-fluid{
+    width: 100%;
+    margin: 0 auto;
+    border: 0px solid rgb(5, 5, 5);
+    /* border-radius: 10px; */
+    background-color: #ffffff;
+    /* position: fixed;  */
+    height: 4.8rem;
+    padding: 0.5rem;
+}
+
+#sideNavBar-menu{
+    color: rgb(243, 196, 46);
+    position: relative;
+    top: 20%
+}
+
+#sideNavBar-menu:hover {
+    color: rgb(83, 00, 132);
+}
+
+#sideNavBar-notifications{
+    color: rgb(243, 196, 46);
+    position: relative;
+    top: 25%
+}
+
+#sideNavBar-notifications:hover{
+    color: rgb(83, 00, 132);
+}
+
+.sideNavBar-side-bar-padding {
+    height: 6.25rem;
+    text-align: center;
+    /* border: solid 1px black; */
+    padding-top: 10%;
+}
+
+.sideNavBar-side-bar-back-return {
+    background-color: rgb(243, 196, 46); 
+}
+
+.sideNavBar-side-bar-back-return:hover {
+    background-color: rgb(83, 00, 132);
+}
+
+.sideNavBar-zoom {
+    transition: 0.2s;
+}
+
+.sideNavBar-zoom:hover {
+    transform: scale(1.2);
+}
+
+/* Mudar cor do texto para roxo */
+.sideNavBar-black:link {
+    color: rgb(83, 00, 132);
+    text-decoration: none;
+}
+
+.sideNavBar-black:hover {
+    color: #F3C42E;
+    text-decoration: none;
+}
+/* Bootstrap */
+.offcanvas-header{
+    height: 4.8rem;
+}

@@ -1,160 +1,25 @@
 import express from 'express';
-import bodyParser from 'body-parser';
-import DatabaseTable from './models/database/databaseTable.js';
-import getConfig from './configs/loader.js';
-import ConsoleUtils from './utils/console.js';
-import cors from 'cors';
-import colors from 'colors';
+import getConfig from './configs/loader.config.js';
+import ConsoleUtils from './utils/console.util.js';
+import RouteManager from './routes/index.js';
+import BasicsConfig from './middlewares/basics.middleware.js';
+import { DatabaseTable } from './database/databaseTable.database.js';
 
-const DBPATH = 'tests.db'
+const EXPRESS_CONFIG = await getConfig('express'); // Load express config
+const app = express(); // Create express app
 
-const EXPRESS_CONFIG = await getConfig('express');
+DatabaseTable.initDatabase(); // Init database
+ConsoleUtils.addTimeOnConsole(); // Add time on console from class ConsoleUtils
 
-ConsoleUtils.addTimeOnConsole();
-DatabaseTable.initDatabase();
+BasicsConfig.bodyParser(app); // Add body parser
+BasicsConfig.cors(app); // Add cors
+BasicsConfig.security(app); // Add security middleware
+BasicsConfig.staticFiles(app); // Add static files
+BasicsConfig.debug(app); // Add debug middleware
 
-const app = express();
+RouteManager.instanceRoutes(app); // Add routes
 
-app.use(express.static("../frontend/"));
-
-app.disable('x-powered-by');
-
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-app.use(
-	cors({
-		origin: '*',
-	})
-);
-
-class Jobs extends DatabaseTable {
-	constructor() {
-		/*
-			name: 'id',
-			type: 'INTEGER',
-			primaryKey: true,
-			autoIncrement: true,
-			notNull: true,
-			foreign: {
-				key: "key_tabela_atual"
-				table: "outra_tabela"
-				column: "coluna_outra_tabela"
-			}
-		*/
-		let columns = [
-			{
-				name: 'id',
-				type: 'INTEGER',
-				primaryKey: true,
-				notNull: true,
-				autoIncrement: true,
-			},
-			{
-				name: 'name',
-				type: 'TEXT',
-				notNull: true,
-			},
-			{
-				name: 'company_name',
-				type: 'TEXT',
-				notNull: true,
-			},
-			{
-				name: 'company_local',
-				type: 'TEXT',
-				notNull: true,
-			},
-			{
-				name: 'activities',
-				type: 'TEXT',
-				notNull: true,
-			},
-			{
-				name: 'required',
-				type: 'TEXT',
-				notNull: true,
-			},
-			{
-				name: 'company_description',
-				type: 'TEXT',
-				notNull: true,
-			},
-			{
-				name: 'type',
-				type: 'TEXT',
-				notNull: true,
-			},
-			{
-				name: 'education_level',
-				type: 'TEXT',
-				notNull: true,
-			},
-			{
-				name: 'job_time',
-				type: 'NUMBER',
-				notNull: true,
-			},
-			{
-				name: 'salary_min',
-				type: 'REAL',
-				notNull: true,
-			},
-			{
-				name: 'salary_max',
-				type: 'REAL',
-				notNull: true,
-			},
-		];
-
-		super('jobs', columns);
-	}
-}
-
-const jobs = new Jobs();
-
-app.get('/jobs', (req, res) => {
-	jobs.filter({}).then((result) => {
-		res.send(result);
-	});
-});
-
-app.get('/jobs/:id', (req, res) => {
-	jobs.filter({ id: req.params.id }).then((result) => {
-		res.send(result);
-	});
-});
-
-app.post('/jobs/', (req, res) => {
-	jobs.save(req.body).then((result) => {
-		res.send(result);
-	});
-});
-
-app.put('/jobs/:id', (req, res) => {
-	jobs.update(req.body, { id: req.params.id }).then((result) => {
-		res.send(result);
-	});
-});
-
-app.delete('/jobs/:id', (req, res) => {
-	jobs.delete({ id: req.params.id }).then((result) => {
-		res.send(result);
-	});
-});
-
+// Start server from config file
 app.listen(EXPRESS_CONFIG.port, EXPRESS_CONFIG.hostname, () => {
 	console.log(`Server running at http://${EXPRESS_CONFIG.hostname}:${EXPRESS_CONFIG.port}/`.rainbow);
 });
-
-app.get('/jobs', (req, res) => {
-	res.statusCode = 200;
-	var db = new sqlite3.Database(DBPATH);
-	var sql = ('SELECT * FROM tests');
-	db.all(sql, (err, row) => {
-	  if (err) {
-		throw err;
-	  }
-	  console.log(row)
-		res.send(row)
-	 });
-  });
