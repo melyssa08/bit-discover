@@ -1,4 +1,4 @@
-import { jobs, bonus, hardSkills, softSkills, jobContacts } from '../models/index.js';
+import { jobs, bonus, hardSkills, softSkills, jobContacts, companies } from '../models/index.js';
 import StringList from '../utils/string_array.util.js';
 const JobsController = {
 	/*
@@ -56,6 +56,14 @@ const JobsController = {
 				if (softSkill_raw.length > 0) {
 					jobs_raw[i].requireds_softskill.push(softSkill_raw[0]);
 				}
+			}
+
+			// Get all companies
+			let company_raw = await companies.get({ id: jobs_raw[i].company });
+			jobs_raw[i].company = [];
+
+			if (company_raw.length > 0) {
+				jobs_raw[i].company = company_raw[0];
 			}
 
 			res.json(jobs_raw);
