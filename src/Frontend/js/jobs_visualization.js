@@ -6,7 +6,6 @@ window.addEventListener('load', function () {
 			console.log('Funcionou');
 		}
 	});
-	teste();
 });
 
 function teste() {
@@ -16,7 +15,6 @@ function teste() {
 		// Veio como array o resultado então usa o map para fazer a modificação em cada item do array
 		resultado.map((resul) => {
 			// Está colocando os cards no html por meio do jQuery
-			$('#jobsVisualization-cards').append();
 			// Template de string que mostra a criação dos cards como se fosse um html só que dentro de um arquivo javascript
 			$('#jobsVisualization-cards').append(
 				`<!--Inicio Card-->
@@ -118,7 +116,8 @@ function teste() {
                 </div>`
 			);
 		});
-	}).then(() => {
+	})
+	.then(() => {
 		let itens = document.querySelectorAll('[id^=jobsVisualization-icon-like]');
 		for (let i = 0; i < itens.length; i++) {
 			let iconLike = itens[i];
