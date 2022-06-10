@@ -4,30 +4,34 @@
 <a href= "https://www.inteli.edu.br/"><img src="https://www.inteli.edu.br/wp-content/uploads/2021/08/20172028/marca_1-2.png" alt="Inteli - Instituto de Tecnologia e Liderança" border="0"></a>
 </p>
 
-# Nome do Projeto
+# BIT Discover
 
-## Nome do Grupo
+## Programaria
 
-## Integrantes: <a href="https://www.linkedin.com/in/victorbarq/">Goku Sayajin</a>, <a href="https://www.linkedin.com/in/victorbarq/">Saitama One</a>, <a href="https://www.linkedin.com/in/victorbarq/">Ikki de Fenix</a>, <a href="https://www.linkedin.com/in/victorbarq/">Yusuke Urameshi</a>, <a href="https://www.linkedin.com/in/victorbarq/">Roronoa Zoro</a>
+## Integrantes: 
+* <a href="https://www.linkedin.com/in/gabrielriostorres/">Gabriel Torres</a>
+* <a href="https://www.linkedin.com/in/jo%C3%A3o-pedro-gon%C3%A7alves-carazzato-147120231/">João Pedro Carazzato</a>
+* <a href="https://www.linkedin.com/in/vinicioslugli/">Vinicios Lugli</a>
+* <a href="https://www.linkedin.com/in/mihaellalves/">Mihaell Alves</a>
+* <a href="https://www.linkedin.com/in/alberto-da-rocha-miranda-angrysine/">Alberto Da Rocha Miranda</a>
+* <a href="https://www.linkedin.com/in/valentina-garcia-a015981b8/">Valentina Garcia</a>
+* <a href="https://www.linkedin.com/in/melyssa-rojas-221610204/">Melyssa Rojas</a>
 
 ## Descrição
 
-📜 Descrição curta sobre o que seu projeto faz.
+📜 Descrição curta sobre o que nosso projeto faz.
 <br><br>
-Meu projeto é um exemplo de como utilizar o github.
+Nosso projeto tem o intuito de facilitar o acesso de mulheres na tecnologia, se dando através de um sistema de cadastro padronizado e com um algoritmo de combinação entre candidata e empresa.
 <br><br>
 <p align="center">
-<img src="https://pix4free.org/assets/library/2021-01-20/originals/game.jpg" alt="NOME DO JOGO" border="0">
-  Game by <a href="http://www.nyphotographic.com/">Nick Youngson</a> <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a> <a href="http://pix4free.org/">Pix4free</a>
+<img src="https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/90ea7097626237.5ec97f8ee0faa.png" alt="Logo Empresa BIT" border="0">
+  Logo by <a href="https://www.linkedin.com/in/carolmo/">Carolina Moreira</a> <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>
 </p>
 
 
-💡 De um a dois parágrafos sobre o que é seu projeto e o que ele faz.
+💡 Um parágrafo sobre o que é nosso projeto e o que ele faz.
 <br><br>
-Meu projeto ajuda estudantes inteli a configurarem seus githubs.
-<br><br>
-May the force be with you!
-<br><br>
+Nosso projeto ajuda candidatas na área de tecnologia que buscam emprego a encontrar seu emprego dos sonhos através de um sistema simples e rápido de fácil entendimento!
 
 ## 🛠 Estrutura de pastas
 
