@@ -1,5 +1,5 @@
 window.addEventListener('load', function () {
-    $("#likesCandidates-header").load("/page_global/side_and_navbar/index.html", function (response, status) {
+    $("#likesCandidates-header").load("/page_candidates/side_and_navbar/index.html", function (response, status) {
         if (status == "error") {
             console.log("Deu errado")
         } else {
