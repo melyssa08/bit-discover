@@ -3,12 +3,20 @@
 @media screen and (max-width: 540px){
 
     .sideNavBar-nav-bar-item{
-        width: 75%;
+        width: auto;
         height: 50px;
         text-overflow: ellipsis;
-        justify-content: start;
      }
 
+     
+}
+
+@media screen and (max-width: 410px) {
+    #sideNavBar-logo{
+        display: flex;
+        justify-content: center;
+        padding-right: 24%;
+    }
 }
 
 .sideNavBar-nav-bar-item{
@@ -38,7 +46,7 @@
 #sideNavBar-logo{
     display: flex;
     justify-content: center;
-    padding-right: 24%;
+    padding-right: 8%;
 }
 
 .sideNavBar-nav-bar {
