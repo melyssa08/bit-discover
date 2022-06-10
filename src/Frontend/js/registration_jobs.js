@@ -1,5 +1,5 @@
 window.addEventListener('load', function () {
-    $("#registrationJobs-header").load("/page_global/side_and_navbar/index.html", function (response, status) {
+    $("#registrationJobs-header").load("/page_recruiter/side_and_navbar/index.html", function (response, status) {
         if (status == "error") {
             console.log("Deu errado")
         } else {
@@ -7,6 +7,7 @@ window.addEventListener('load', function () {
         }
     })
 })
+
     
 var addNewTag = document.getElementById("registrationJobs-add-new-tag")
 var listNewTag = document.getElementById("registrationJobs-input-add-tag")
@@ -21,6 +22,8 @@ addNewTag.addEventListener('click', function () {
     divFatherOpcional.appendChild(newTag)
 
 })
+
+
 
 // variável que pega todos os botões que ficam em formato de array
 var botao = document.querySelectorAll('.registrationJobs-button-tag')

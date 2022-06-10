@@ -18,30 +18,18 @@
     
     </head>
 
-    <body id="myJobs-body">
+    <body id="myJobs-body" onload="getJobOnLoad()">
         <!-- MINHAS VAGAS -->
         <h1 id="myJobs-title">Minhas Vagas</h1>
 
         <!-- VAGAS -->
 
         <section class="myJobs-main">
-            <!-- <div class="myJobs-card" data-bs-toggle="modal" data-bs-target="#modalTeste">
-                <h7 class="myJobs-card-title">Analista de sistemas</h7>
-                <p>-----------------------------------------------------
-                    ----------------------------------------------------
-                </p>
-            </div>
-           <div class="myJobs-card" data-bs-toggle="modal" data-bs-target="#modalTeste">
-                <h7 class="myJobs-card-title">Dev. FullStack</h7>
-                <p>-------------------------------------------------------
-                    -----------------------------------------------------
-                </p>
-            </div> -->
-            <button onclick="GetCardJob()">Clique aqui!</button>
+
         </section>
 
         <!-- FOOTER -->
-        <section class="myJobs-main">
+        <section class="myJobs-footer">
             <div id="myJobs-icon-plus">
                 <!-- <i class="bi bi-plus"></i> -->
                 <!-- Retirar o icone do do html e passar pro css -->
@@ -50,40 +38,6 @@
                 </svg></a>
             </div>
         </section>
-
-        <!-- MODAL -->
-
-        <div class="modal fade" id="modalTeste" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-
-                    <div class="modal-header">
-                        <h5 class="modal-title">Modal Titulo</h5>
-                        <button type="button" class="close" data-bs-dismiss="modal">
-                            <span>&times;</span>
-                        </button>
-                    </div>
-
-                    <div class="modal-body">
-                        <p>Texto texto textotextotexto  texto textotexto texto  texto texto texto texto  texto textotexto texto 
-                            texto textotextotexto  texto textotexto texto  texto texto texto texto  texto textotexto texto
-                            texto textotextotexto  texto textotexto texto  texto texto texto texto  texto textotexto texto 
-                            texto textotextotexto  texto textotexto texto  texto texto texto texto  texto textotexto texto 
-                            texto textotextotexto  texto textotexto texto  texto texto texto texto  texto textotexto texto 
-                            texto textotextotexto  texto textotexto texto  texto texto texto texto  texto textotexto texto
-                            texto textotextotexto  texto textotexto texto  texto texto texto texto  texto textotexto texto
-                            texto textotextotexto  texto textotexto texto  texto texto texto texto  texto textotexto texto
-                        </p>
-                    </div>
-
-                    <div class="modal-footer">
-                        <a class="btn btn-light" href="#" role="button">Editar Vaga</a>
-                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Deletar Vaga</button>
-                    </div>
-
-                </div>
-            </div>
-        </div>
 
             <!-- Jquery -->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
