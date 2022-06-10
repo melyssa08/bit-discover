@@ -1,105 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <!-- no head, declaro as fontes que usaremos e linko o bootstrap e o css -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width initial-scale=1.0" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>Cadastro de empresa</title>
     <style>
-        @import url("https://fonts.googleapis.com/css2?family=Nunito&family=Roboto&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Nunito&family=Roboto&display=swap");
     </style>
-</head>
-<!-- no body, declaro uma id para poder mexer na tela por inteiro -->
+  </head>
+  <!-- no body, declaro uma id para poder mexer na tela por inteiro -->
 
-<body class="registrationCompany-body">
+  <body class="registrationCompany-body">
     <!-- as classes que NÃO comecam com "registrationCompany" são do bootstrap -->
     <div class="container justify-content-center me-auto">
-        <div class="row justify-content-center">
-            <div class="card justify-content-center" id="registrationCompany-cardsbootstrap">
-                <div class="card-body">
-                    <!-- Body de todos os cards -->
-                    <div class="container-lg my-5">
-                        <div class="justify-content-center mb-10">
-                            <!-- aqui coloco a logo da BIT -->
-                            <img src="../../assets/logo.png" alt="bit-logo" class="registrationCompany-image" />
-                        </div>
-                    </div>
+      <div class="row justify-content-center">
+        <div
+          class="card justify-content-center"
+          id="registrationCompany-cardsbootstrap"
+        >
+          <div class="card-body">
+            <!-- Body de todos os cards -->
+            <div class="container-lg my-5">
+              <div class="justify-content-center mb-10">
+                <!-- aqui coloco a logo da BIT -->
+                <img
+                  src="../../assets/logo.png"
+                  alt="bit-logo"
+                  class="registrationCompany-image"
+                />
+              </div>
+            </div>
 
-                    <h2 id="registrationCompany-title">Cadastro de Empresa</h2>
-                    <!-- título da pagina -->
+            <h2 id="registrationCompany-title">Cadastro de Empresa</h2>
+            <!-- título da pagina -->
+            <div class="row justify-content-center">
+              <h4 id="registrationCompany-info" class="registrationCompany-hs">
+                Informações empresariais
+              </h4>
+            </div>
+            <div class="row mt-4 justify-content-center">
+              <!-- DIV DOS INPUTS -->
+              <div
+                class="container justify-content-center"
+                id="registrationCompany-flex"
+              >
+                <div class="row">
+                  <div class="col-sm-12">
                     <div class="row justify-content-center">
-                        <h4 id="registrationCompany-info" class="registrationCompany-hs">
-                            Informações empresariais
-                        </h4>
+                      <div class="col-lg-5">
+                        <label
+                          for="registrationCompany-input-company-name"
+                          class="registrationCompany-label"
+                          >Nome da empresa</label
+                        >
+                        <input
+                          type="text"
+                          placeholder="Digite o nome da empresa"
+                          class="registrationCompany-columns form-control registrationCompany-input-box registrationCompany-placeholder"
+                          id="registrationCompany-input-company-name"
+                          name="rCo-input-email-company-name"
+                        />
+                      </div>
+                      <div class="col-lg-5">
+                        <label
+                          for="registrationCompany-input-email"
+                          class="registrationCompany-label"
+                          >Email</label
+                        >
+                        <input
+                          type="text"
+                          placeholder="Digite seu email"
+                          class="registrationCompany-columns form-control registrationCompany-input-box registrationCompany-placeholder"
+                          id="registrationCompany-input-email"
+                          name="rCo-input-email"
+                        />
+                      </div>
+                      <div class="col-lg-5">
+                        <label
+                          for="registrationCompany-input-confirmemail"
+                          class="registrationCompany-label"
+                          >Confirmar email</label
+                        >
+                        <input
+                          type="text"
+                          placeholder="Confirmar email"
+                          class="registrationCompany-columns form-control registrationCompany-input-box registrationCompany-placeholder"
+                          id="registrationCompany-input-confirmemail"
+                          name="rCo-input-confirm-email"
+                        />
+                      </div>
+                      <div class="col-lg-5">
+                        <label
+                          for="registrationCompany-input-password"
+                          class="registrationCompany-label"
+                          >Senha</label
+                        >
+                        <input
+                          type="password"
+                          placeholder="Senha"
+                          class="registrationCompany-columns form-control registrationCompany-input-box registrationCompany-placeholder"
+                          id="registrationCompany-input-password"
+                          name="rCo-input-password"
+                        />
+                      </div>
+                      <div class="col-lg-5">
+                        <label
+                          for="registrationCompany-input-confirmpassword"
+                          class="registrationCompany-label"
+                          >Confirmar senha</label
+                        >
+                        <input
+                          type="password"
+                          placeholder="Confirmar senha"
+                          class="registrationCompany-columns form-control registrationCompany-input-box registrationCompany-placeholder registrationCompany"
+                          id="registrationCompany-input-confirmpassword"
+                          name="rCo-input-confirm-password"
+                        />
+                      </div>
+                      <div class="col-lg-5">
+                        <label
+                          class="registrationCompany-label"
+                          for="registrationCompany-input-cnpj"
+                          >CNPJ</label
+                        >
+                        <input
+                          type="text"
+                          class="registrationCompany-columns form-control registrationCompany-placeholder registrationCompany-input-box"
+                          placeholder="CNPJ"
+                          id="registrationCompany-input-cnpj"
+                          name="rCo-input-cnpj"
+                        />
+                      </div>
+                      <div class="col-lg-5">
+                        <label
+                          for="registrationCompany-input-cp"
+                          class="registrationCompany-label"
+                          >Código Postal (CEP)</label
+                        >
+                        <input
+                          placeholder="Código Postal"
+                          class="registrationCompany-columns form-control registrationCompany-input-box registrationCompany-placeholder"
+                          id="registrationCompany-input-cp"
+                          name="rCo-input-cp"
+                        />
+                      </div>
+                      <div class="col-lg-5">
+                        <label
+                          for="registrationCompany-input-link"
+                          class="registrationCompany-label"
+                          >Link do site da empresa</label
+                        >
+                        <input
+                          placeholder="Link do site da empresa"
+                          class="registrationCompany-columns form-control registrationCompany-input-box registrationCompany-placeholder"
+                          id="registrationCompany-input-link"
+                          name="rCo-input-link"
+                        />
+                      </div>
                     </div>
-                    <div class="row mt-4 justify-content-center">
-                        <!-- DIV DOS INPUTS -->
-                        <div class="container justify-content-center" id="registrationCompany-flex">
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <div class="row justify-content-center">
-                                        <div class="col-lg-5">
-                                            <label for="registrationCompany-input-email" class="registrationCompany-label">Email</label>
-                                            <input type="text" placeholder="Digite seu email" class="registrationCompany-columns form-control registrationCompany-input-box registrationCompany-placeholder" id="registrationCompany-input-email" name="rCo-input-email" />
-                                        </div>
-                                        <div class="col-lg-5">
-                                            <label for="registrationCompany-input-confirmemail" class="registrationCompany-label">Confirmar email</label>
-                                            <input type="text" placeholder="Confirmar email" class="registrationCompany-columns form-control registrationCompany-input-box registrationCompany-placeholder" id="registrationCompany-input-confirmemail" name="rCo-input-confirm-email" />
-                                        </div>
-                                        <div class="col-lg-5">
-                                            <label for="registrationCompany-input-password" class="registrationCompany-label">Senha</label>
-                                            <input type="password" placeholder="Senha" class="registrationCompany-columns form-control registrationCompany-input-box registrationCompany-placeholder" id="registrationCompany-input-password" name="rCo-input-password"/>
-                                        </div>
-                                        <div class="col-lg-5">
-                                            <label for="registrationCompany-input-confirmpassword" class="registrationCompany-label">Confirmar
-                                                senha</label>
-                                            <input type="password" placeholder="Confirmar senha" class="registrationCompany-columns form-control registrationCompany-input-box registrationCompany-placeholder registrationCompany" id="registrationCompany-input-confirmpassword" name="rCo-input-confirm-password"/>
-                                        </div>
-                                        <div class="col-lg-5">
-                                            <label for="registrationCompany-input-setor" class="registrationCompany-label">Setor</label>
-                                            <input type="text" placeholder="Idade" class="registrationCompany-columns form-control registrationCompany-input-box registrationCompany-placeholder" id="registrationCompany-input-setor" name="rCo-input-setor"/>
-                                        </div>
-                                        <div class="col-lg-5">
-                                            <label class="registrationCompany-label" for="registrationCompany-input-cnpj">CNPJ</label>
-                                            <input type="text" class="registrationCompany-columns form-control registrationCompany-placeholder registrationCompany-input-box" placeholder="CNPJ" id="registrationCompany-input-cnpj" name="rCo-input-cnpj" />
-                                        </div>
-                                        <div class="col-lg-5">
-                                            <label for="registrationCompany-input-cp" class="registrationCompany-label">Código Postal
-                                                (CEP)</label>
-                                            <input placeholder="Código Postal" class="registrationCompany-columns form-control registrationCompany-input-box registrationCompany-placeholder" id="registrationCompany-input-cp" name="rCo-input-cp"/>
-                                        </div>
-                                        <div class="col-lg-5">
-                                            <label for="registrationCompany-input-link" class="registrationCompany-label">Link do site da empresa</label>
-                                            <input placeholder="Link do site da empresa" class="registrationCompany-columns form-control registrationCompany-input-box registrationCompany-placeholder" id="registrationCompany-input-link" name="rCo-input-link" />
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-5 offset-lg-1">
-                                            <label for="registrationCompany-input-recruiter" class="registrationCompany-label">Nome de recrutador(a/e)</label>
-                                            <input placeholder="Nome da recrutadora responsável" class="registrationCompany-columns form-control registrationCompany-input-box registrationCompany-placeholder" id="registrationCompany-input-recruiter" name="rCo-input-recruiter" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container-lg mt-5">
-                        <!-- DIV DO TEXT AREA -->
-                        <div class="row justify-content-center">
-                            <h4 class="registrationCompany-hs">Descreva sua empresa</h4>
-                        </div>
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8 col-md-8 col-sm-8" id="registrationCompany-input-textarea">
-                                <textarea name="text" id="registrationCompany-textarea" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' class="textarea registrationCompany-input-box" name="rCo-input-textarea"></textarea>
-                            </div>
-                        </div>
-                    </div>
-                    <!--DIV DOS BOTÕES  -->
-                    <div class="d-grid col-lg-3 col-md-3 col-sm-3 mx-auto container input-container">
-                        <a href="../my_jobs/index.html"><button class="registrationCompany-btn">Criar Conta</button></a
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="container-lg mt-5">
+              <!-- DIV DO TEXT AREA -->
+              <div class="row justify-content-center">
+                <h4 class="registrationCompany-hs">Descreva sua empresa</h4>
+              </div>
+              <div class="row justify-content-center">
+                <div
+                  class="col-lg-8 col-md-8 col-sm-8"
+                  id="registrationCompany-input-textarea"
+                >
+                  <textarea
+                    name="text"
+                    id="registrationCompany-textarea"
+                    oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'
+                    class="textarea registrationCompany-input-box"
+                    name="rCo-input-textarea"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+            <!--DIV DOS BOTÕES  -->
+            <div
+              class="d-grid col-lg-3 col-md-3 col-sm-3 mx-auto container input-container"
+            >
+              <a href="../my_jobs/index.html"
+                ><button class="registrationCompany-btn">Criar Conta</button></a
               >
             </div>
             <br />
@@ -120,7 +216,10 @@
         </div>
       </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"crossorigin="anonymous"
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
     ></script>
   </body>
 </html>
