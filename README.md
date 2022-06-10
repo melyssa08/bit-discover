@@ -39,65 +39,66 @@ Nosso projeto ajuda candidatas na área de tecnologia que buscam emprego a encon
 |<br>
 |-->documentos<br>
   &emsp;|-->antigos<br>
-  &emsp;|Documentação.docx<br>
-|-->executáveis<br>
-  &emsp;|-->windows<br>
-  &emsp;|-->android<br>
-  &emsp;|-->HTML<br>
+  &emsp;|WAD - Programaria.docx<br>
+<br>
 |-->imagens<br>
+<br>
 |-->src<br>
   &emsp;|-->Backend<br>
+  &emsp;&emsp;|-->configs<br>
+  &emsp;&emsp;|-->controllers<br>
+  &emsp;&emsp;|-->database<br>
+  &emsp;&emsp;|-->errors<br>
+  &emsp;&emsp;|-->middlewares<br>
+  &emsp;&emsp;|-->models<br>
+  &emsp;&emsp;|-->routes<br>
+  &emsp;&emsp;|-->services<br>
+  &emsp;&emsp;|-->utils<br>
+  &emsp;&emsp;|app.js<br>
+  &emsp;&emsp;|development.db<br>
+  <br>
   &emsp;|-->Frontend<br>
+  &emsp;&emsp;|-->assets<br>
+  &emsp;&emsp;|-->css<br>
+  &emsp;&emsp;|-->js<br>
+  &emsp;&emsp;|-->page_admins<br>
+  &emsp;&emsp;|-->page_candidates<br>
+  &emsp;&emsp;|-->page_global<br>
+  &emsp;&emsp;|-->page_recruiter<br>
+  <br>
 |readme.md<br>
-
-A pasta raiz contem dois arquivos que devem ser alterados:
-
-<b>README.MD</b>: Arquivo que serve como guia e explicação geral sobre seu projeto. O mesmo que você está lendo agora.
-
-Há também 4 pastas que seguem da seguinte forma:
+<br>
+<br>
+Temos 3 pastas que seguem da seguinte forma:
 
 <b>documentos</b>: Aqui estarão todos os documentos do projeto, mas principalmente o <b>Documentação do Sistema</b>. Há uma pasta <b>antigos</b> onde estarão todas as versões antigas da documentação.
 
-<b>executáveis</b>: Aqui estarão todos os executáveis do jogo, prontos para rodar. Há no mínimo 3 pastas, uma para binários <b>Windows</b>, uma para binários <b>android</b> e uma para a <b>Web/HTML</b>
+<b>imagens</b>: Algumas imagens do sistema e logos prontos para serem utilizados e visualizados.
 
-<b>imagens</b>: Algumas imagens do jogo/sistema e logos prontos para serem utilizados e visualizados.
-
-<b>src</b>: Nesta pasta irá todo o código fonte do sistema, pronto para para ser baixado e modificado. Existem duas pastas, <b>Backend</b> e <b>Frintend</b> que devem conter, respectivamente, o código do servidor e o código da página web.
+<b>src</b>: Nesta pasta irá todo o código fonte do sistema, pronto para para ser baixado e modificado. Existem duas pastas, <b>Backend</b> e <b>Frintend</b> que contem, respectivamente, o código do servidor e o código da página web.
 
 ## 🛠 Instalação
-
-<b>Android:</b>
-
-Faça o Download do JOGO.apk no seu celular.
-Execute o APK e siga as instruções de seu telefone.
-
-```sh
-Coloque código do prompt de comnando se for necessário
-```
-
 <b>Windows:</b>
 
-Não há instalação! Apenas executável!
-Encontre o JOGO.exe na pasta executáveis e execute-o como qualquer outro programa.
-
+1. Baixe o node.js e os arquivos do projeto
+2. Navegue até o backend onde se encontra o arquivo *app.js*
+3. Em seguida, execute o cmd e navegue até o local do arquivo
+4. Para executar o código, execute os seguintes comandos nessa pasta:
 ```sh
-Coloque código do prompt de comnando se for necessário
+npm i
+node app.js
 ```
 
-<b>HTML:</b>
-
-Não há instalação!
-Encontre o index.html na pasta executáveis e execute-o como uma página WEB (através de algum browser).
-
 ## 📈 Exemplo de uso
+Alguns exemplos interessantes e úteis sobre como nosso projeto pode ser utilizado.
 
-Alguns exemplos interessantes e úteis sobre como seu projeto pode ser utilizado.
+* Utilizado para empresas encontrarem seu funcionário dos sonhos
 
-Adicione blocos de códigos e, se necessário, screenshots.
+* Utilizado para candidatos encontrarem seu emprego dos sonhos
 
-Este modelo pode ser copiado e utilizado à vontade.
+* Facilitador de mares no mercado de trabalho
 
-Através da cópia/clone/ download do repositório, altere os dados do readme.md e carregue os arquivos de seu projeto.
+* Remover o peso de todo o processo entediante que é encontrar um emprego e preencher formulários
 
 ## 💻 Configuração para Desenvolvimento
 
@@ -105,29 +106,29 @@ Descreva como instalar todas as dependências para desenvolvimento e como rodar 
 
 Para abrir este projeto você necessita das seguintes ferramentas:
 
--<a href="https://godotengine.org/download">GODOT</a>
+-<a href="https://nodejs.org/en/">Node.js</a>
 
 ```sh
-make install
-npm test
-Coloque código do prompt de comnando se for necessário
+npm i
 ```
 
 ## 🗃 Histórico de lançamentos
 
 A cada atualização os detalhes devem ser lançados aqui.
 
-* 0.2.1 - 25/01/2022
-    * MUDANÇA: Atualização de docs (código do módulo permanece inalterado)
-* 0.2.0 - 15/01/2022
-    * MUDANÇA: Remove `setDefaultXYZ()`
-    * ADD: Adiciona `init()`
-* 0.1.1 - 11/01/2022
-    * CONSERTADO: Crash quando chama `baz()` (Obrigado @NomeDoContribuidorGeneroso!)
-* 0.1.0 - 10/01/2022
-    * O primeiro lançamento adequado
-    * MUDANÇA: Renomeia `foo()` para `bar()`
-* 0.0.1 - 01/01/2022
+* 0.0.5 - 09/06/2022
+    * Conexão entre backend e frontend(Integração)
+    * Correção de Bugs gerais
+    * Atualização WAD
+* 0.0.4 - 30/05/2022
+    * Versão atualizada do frontend
+    * Continuação do backend
+* 0.0.3 - 16/05/2022
+    * Lançamento da versão inicial do backend
+* 0.0.2 - 05/05/2022
+    * Lançamento da primeira versão completa do frontend
+    * Adicionado o WAD a pasta documentos
+* 0.0.1 - 19/04/2022
     * Trabalho em andamento
 
 ## 📋 Licença/License
@@ -141,5 +142,4 @@ Aqui estão as referências usadas no projeto.
 1. <https://github.com/iuricode/readme-template>
 2. <https://github.com/gabrieldejesus/readme-model>
 3. <https://creativecommons.org/share-your-work/>
-4. <https://freesound.org/>
-5. Músicas por: <a href="https://freesound.org/people/DaveJf/sounds/616544/"> DaveJf </a> e <a href="https://freesound.org/people/DRFX/sounds/338986/"> DRFX </a> ambas com Licença CC 0.
+4. <https://braziliansintech.com>
