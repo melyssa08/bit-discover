@@ -65,9 +65,54 @@ const JobsController = {
 			if (company_raw.length > 0) {
 				jobs_raw[i].company = company_raw[0];
 			}
-
-			res.json(jobs_raw);
 		}
+		res.json(jobs_raw);
+	},
+
+	async tempPostOld(req, res) {
+		let body = req.body;
+
+		await companies.save({
+			name: body.name_company,
+			description: body.description,
+			email: body.email,
+			postal_code: body.postal_code,
+			cnpj: 1234,
+			password: '123456',
+			website: 'www.google.com',
+			created_at: '2020-01-01 00:00:00',
+		});
+
+		await jobContacts.save({
+			email: body.email,
+			number: body.number,
+		});
+
+		let company_id = await companies.get({ email: body.email });
+		let job_contact_id = await jobContacts.get({ email: body.email });
+
+		await jobs.save({
+			name: body.job_name,
+			description: body.job_description,
+			company: company_id[0].id,
+			requireds_hardskill: StringList.pack([0]),
+			requireds_softskill: StringList.pack([1]),
+			bonus: 0,
+			contact: job_contact_id[0].id,
+			activities: 'Citadas na descrição',
+			created_at: '2020-01-01',
+			salary_min: parseInt(body.salary) - parseInt(body.salary) * 0.1,
+			salary_max: parseInt(body.salary) + parseInt(body.salary) * 0.1,
+			scholarship: body.scholarship,
+			modality: body.modality,
+			shift: body.shift,
+			workload: parseInt(body.time),
+			bonus: 0,
+			postal_code: body.postal_code,
+			type: body.type,
+		});
+
+		res.json({});
 	},
 
 	/*
