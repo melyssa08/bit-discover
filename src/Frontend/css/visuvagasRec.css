@@ -6,6 +6,7 @@
         width: 75%;
         height: 50px;
         text-overflow: ellipsis;
+        justify-content: start;
      }
 
 }
