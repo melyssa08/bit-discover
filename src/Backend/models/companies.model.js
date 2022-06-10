@@ -14,6 +14,14 @@ class Companies extends DatabaseTable {
 				notNull: true,
 				autoIncrement: true,
 			},
+			name: {
+				type: DataTypes.text,
+				notNull: true,
+			},
+			description: {
+				type: DataTypes.text,
+				notNull: true,
+			},
 			email: {
 				type: DataTypes.text,
 				notNull: true,

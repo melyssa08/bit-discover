@@ -25,6 +25,10 @@ class Jobs extends DatabaseTable {
 					column: 'id',
 				},
 			},
+			activities: {
+				type: DataTypes.text,
+				notNull: true,
+			},
 			name: {
 				type: DataTypes.text,
 				notNull: true,
@@ -49,7 +53,11 @@ class Jobs extends DatabaseTable {
 				type: DataTypes.text,
 				notNull: true,
 			},
-			salary: {
+			salary_min: {
+				type: DataTypes.real,
+				notNull: true,
+			},
+			salary_max: {
 				type: DataTypes.real,
 				notNull: true,
 			},
@@ -67,6 +75,10 @@ class Jobs extends DatabaseTable {
 			},
 			shift: {
 				type: DataTypes.text,
+				notNull: true,
+			},
+			workload: {
+				type: DataTypes.number,
 				notNull: true,
 			},
 			created_at: {
