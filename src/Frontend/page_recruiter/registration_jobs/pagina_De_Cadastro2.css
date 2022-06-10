@@ -74,13 +74,13 @@
 }
 
 /* Propriedades de estilização e espaço no campo cep */
-#registrationJobs-cp, #registrationJobs-name-company {
+#registrationJobs-cp, #registrationJobs-name-company, #registrationJobs-profiency {
     border-style: #F3C42E;
     border-radius: 10px;
     border-color: #F3C42E;
     min-width: 212px;
     height: 80%;
-    width: 80%;
+    width: 60%;
     min-height: 35.2px;
 }
 

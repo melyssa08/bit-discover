@@ -50,3 +50,73 @@ for (let i = 0; i < botao.length; i++) {
         }
     })
 }
+
+var jobsName = document.getElementById('registrationJobs-jobs-list')
+var jobsType = document.getElementById('registrationJobs-type')
+var jobsTime = document.getElementById('registrationJobs-time')
+var jobsSalary = document.getElementById('registrationJobs-salary')
+var jobsModality = document.getElementById('registrationJobs-modality')
+var jobsShift = document.getElementById('registrationJobs-shift')
+var jobsEmail = document.getElementById('rgistrationJobs-email')
+var jobsSchooling = document.getElementById('registrationJobs-schooling')
+var jobsNumber = document.getElementById('registrationJobs-number')
+var jobsCP = document.getElementById('registrationJobs-cp')
+var jobsProficiency = document.getElementById('registrationJobs-profiency')
+var jobsNameCompany = document.getElementById('registrationJobs-name-company')
+var jobsDescription = document.getElementById('registrationJobs-description-jobs')
+var jobsDescriptionBonus = document.getElementById('registrationJobs-description-bonus')
+var jobsTagsHabilities = document.getElementById('registrationJobs-tags-habilities').children
+var jobsTagsBonus = document.getElementById('registrationJobs-tags-bonus').children
+var iconConfirm = document.getElementById('registrationJobs-icon-confirm')
+
+console.log(jobsTagsHabilities)
+
+function iteradorTagsHabilities () {
+    var arrHabilities = []
+    for (item of jobsTagsHabilities) {
+        if (item.className == 'registrationJobs-button-tag true') {
+        arrHabilities.push(item.value)
+        }
+    }
+    return arrHabilities
+}
+
+function iteradorTagsBonus () {
+    var arrBonus = []
+    for (item of jobsTagsBonus) {
+        if (item.className == 'registrationJobs-button-tag true') {
+        arrBonus.push(item.value)
+        }
+    }
+    return arrBonus
+}
+
+var informationJob
+
+iconConfirm.addEventListener('click', function (e) {
+    e.preventDefault()
+        informationJob = {
+        name: jobsName.value,
+        type: jobsType.value,
+        time: jobsTime.value,
+        salary: jobsSalary.value,
+        modality: jobsModality.value,
+        shift: jobsShift.value,
+        number: jobsNumber.value,
+        cp: jobsCP.value,
+        proficiency: jobsProficiency.value,
+        nameCompany: jobsNameCompany.value,
+        description: jobsDescription.value,
+        descriptionBonus: jobsDescriptionBonus.value,
+        tagsHabilities: iteradorTagsHabilities(),
+        tagsBonus: iteradorTagsBonus()
+    }
+    console.log(informationJob)
+})
+
+function postarCadastro () {
+    $.post('http://127.0.0.1:3000/jobs/api/', informationJob, function (data, status) {
+    console.log(data)
+    console.log(status)
+    })
+}
