@@ -52,3 +52,5 @@ const StringList = {
 		});
 	},
 };
+
+export default StringList;

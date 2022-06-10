@@ -136,9 +136,7 @@ const QueryConstructor = {
 
 			filters = QueryConstructor.utils.constructor.filter(where); // Get filters
 
-			let query = `SELECT ${columns ? columns.join() : '*'} FROM ${table} INNER JOIN ${join.table} ON ${join.table}.${
-				join.property
-			} = ${table}.${key}`; // Create query
+			let query = `SELECT ${columns ? columns.join() : '*'} FROM ${table} INNER JOIN ${join.table} ON ${join.table}.${join.property} = ${table}.${key}`; // Create query
 			if (filters) query += ` WHERE ${filters}`; // Add filters to query
 
 			return query;
