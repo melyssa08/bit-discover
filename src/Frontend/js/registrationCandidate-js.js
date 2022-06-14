@@ -22,3 +22,14 @@ for (let i = 0; i < botao.length; i++) {
     }
   });
 }
+
+function onload() {
+  console.log('teste');
+  $.get('http://localhost:3000/api/softskills', function(softskills) {
+    softskills.map((result) => {
+      $('#registrationCandidates-content-obligation').append(`<button class="registrationCandidates-button-tag">` + result.name + `</button>`)
+
+    })
+
+  })
+}

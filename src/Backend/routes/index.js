@@ -1,6 +1,7 @@
 import JobsRoute from './jobs.route.js';
 import CandidatesRoute from './candidates.route.js';
 import CompaniesRoute from './companies.route.js';
+import SoftskillsRoute from './softskills.route.js';
 /*
  * Static routes controller for the application.
  */
@@ -31,5 +32,6 @@ class RouteManager {
 RouteManager.addRoute(JobsRoute); // Add Jobs route to routes manager
 RouteManager.addRoute(CandidatesRoute); // Add Candidates route to routes manager
 RouteManager.addRoute(CompaniesRoute); // Add Companies route to routes manager
+RouteManager.addRoute(SoftskillsRoute); // Add Softskills route to routes manager
 
 export default RouteManager;
