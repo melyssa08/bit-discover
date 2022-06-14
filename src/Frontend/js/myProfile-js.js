@@ -22,3 +22,12 @@ for (let i = 0; i < botao.length; i++) {
     }
   });
 }
+
+
+function pencilbutton() {
+  var inputs = document.querySelectorAll("input")
+  for (let i = 0; i < inputs.length; i++) {
+    inputs[i].disabled = false
+    inputs[i].classList.remove("myProfile-disabled")
+  }
+}
