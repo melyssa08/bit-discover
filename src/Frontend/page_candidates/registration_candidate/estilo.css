@@ -174,6 +174,16 @@
     overflow: auto;
 }
 
+#registrationCandidates-content-obligation-softskills,
+#registrationCandidates-content-no-obligation-softskills {
+    overflow: auto;
+}
+
+#registrationCandidates-content-obligation-hardskills,
+#registrationCandidates-content-no-obligation-hardskills {
+    overflow: auto;
+}
+
 
 /* Mudanças de propriedades dos cards na parte de posicionamento quando o comprimento atingi igual ou menos do que 889px */
 
