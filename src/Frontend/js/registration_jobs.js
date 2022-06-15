@@ -163,8 +163,11 @@ var botaoDispara = new Promise(function (resolve, reject) {
 	postarCadastro(res)
  })
 .then((resp) => {
-	var iconConfirmTarget = document.getElementById('registrationJobs-target-myjobs')
-	iconConfirmTarget.href = 'http://127.0.0.1:3000/page_recruiter/my_jobs/index.html'
+	$('#registrationJobs-target-myjobs').click(function () {
+		window.location = 'http://127.0.0.1:3000/page_recruiter/my_jobs/index.html'
+	})
+	// var iconConfirmTarget = document.getElementById('registrationJobs-target-myjobs')
+	// iconConfirmTarget.href = 'http://127.0.0.1:3000/page_recruiter/my_jobs/index.html'
 })
 
 function postarCadastro(information) {

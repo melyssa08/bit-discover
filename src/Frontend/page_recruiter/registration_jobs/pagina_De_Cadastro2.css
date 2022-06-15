@@ -259,3 +259,15 @@ input::-webkit-inner-spin-button {
     width: 72%;
     border-radius: 10px;
 }
+
+.registrationJobs-link {
+    color: black;
+}
+
+.registrationJobs-link:hover {
+    color: black;
+}
+
+#registrationJobs-icon-confirm {
+    cursor: pointer;
+}
