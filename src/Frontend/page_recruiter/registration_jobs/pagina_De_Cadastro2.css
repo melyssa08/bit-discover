@@ -4,6 +4,11 @@
     background-color: #f5efef !important;
 }
 
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 /* Propriedades do título registra nova vaga */
 #registrationJobs-register-jobs {
     display: flex;
@@ -34,7 +39,7 @@
 
 /* Propriedades de espaço do footer */
 #registrationJobs-footer {
-    background-color: #F5EFEF;
+    /* background-color: #F5EFEF; */
     left: 0;
     bottom: 0;
     display: flex;
@@ -84,8 +89,12 @@
     min-height: 35.2px;
 }
 
+#registrationJobs-profiency {
+    width: 80%;
+}
+
 /* Propriedades de estilo e espaço no campo observação vaga */
-#registrationJobs-description-jobs, #registrationJobs-description-bonus {
+#registrationJobs-description-jobs, #registrationJobs-description-activities {
     border-style: solid;
     border-color: #F3C42E;
     border-radius: 10px;
@@ -95,7 +104,7 @@
 }
 
 /* Propriedades de espaço e posicionamento de cada fileira do forms */
-#registrationJobs-row-fifth, #registrationJobs-row-sixth, #registrationJobs-row-seventh {
+#registrationJobs-row-fifth, #registrationJobs-row-sixth, #registrationJobs-row-seventh, #registrationJobs-row-eighteen {
     align-items: center;
     display: flex;
     justify-content: space-around;
@@ -185,7 +194,7 @@
 /* Mudanças de propriedades dos cards na parte de posicionamento quando o comprimento atingi igual ou menos do que 889px */
 @media only screen and (max-width: 889px) {
     
-    #registrationJobs-row-first, #registrationJobs-row-second, #registrationJobs-row-third, #registrationJobs-row-fourth, #registrationJobs-row-fifth, #registrationJobs-row-sixth, #registrationJobs-row-seventh {
+    #registrationJobs-row-first, #registrationJobs-row-second, #registrationJobs-row-third, #registrationJobs-row-fourth, #registrationJobs-row-fifth, #registrationJobs-row-sixth, #registrationJobs-row-seventh, #registrationJobs-row-eighteen {
         flex-direction: column;
         justify-content: space-around;
     }
@@ -240,7 +249,7 @@
     cursor: pointer;
 }
 
-#registrationJobs-name-job, #registrationJobs-salary, #registrationJobs-email, #registrationJobs-number {
+#registrationJobs-name-job, #registrationJobs-salary, #registrationJobs-salary-min, #registrationJobs-salary-max {
     border-style: solid;
     border-width: 0.5px;
     border-color: #F3C42E;
