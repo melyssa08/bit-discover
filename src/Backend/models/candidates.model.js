@@ -26,10 +26,6 @@ class Candidates extends DatabaseTable {
 				type: DataTypes.text,
 				notNull: true,
 			},
-			country_code: {
-				type: DataTypes.integer,
-				notNull: true,
-			},
 			postal_code: {
 				type: DataTypes.int,
 				notNull: true,
@@ -65,6 +61,10 @@ class Candidates extends DatabaseTable {
 			created_at: {
 				type: DataTypes.datetime,
 				notNull: true,
+			},
+			description: {
+				type: DataTypes.text,
+				notNull: false,
 			},
 		};
 		super('candidates', columns);

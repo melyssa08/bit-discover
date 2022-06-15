@@ -210,11 +210,13 @@
 .myProfile-disabled {
   text-decoration: none;
   background-color: #7d7d7d !important;
-  color: #ffffff !important;
+  color: #958d8d !important;
+  opacity: initial;
 }
 
 .myProfile-disabled::placeholder {
-  color: #f3c42e !important;
+  color: #958d8d !important;
+  opacity: initial;
 }
 
 #myProfile-pencil-btn {
