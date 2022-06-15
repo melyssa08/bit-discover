@@ -17,10 +17,13 @@ const JobsController = {
 		for (var i = 0; i < jobs_raw.length; i++) {
 			// Get all bonus
 			let bonus_raw = await bonus.get({ id: jobs_raw[i].bonus });
+			let input_bonus = StringList.unpack(jobs_raw[i].bonus);
 			jobs_raw[i].bonus = [];
-			if (bonus_raw.length > 0) {
-				for (var j = 0; j < bonus_raw.length; j++) {
-					jobs_raw[i].bonus.push(bonus_raw[j]);
+			for (var j = 0; j < input_bonus.length; j++) {
+				let bonus_raw = await bonus.get({ id: input_bonus[j] });
+
+				if (bonus_raw.length > 0) {
+					jobs_raw[i].bonus.push(bonus_raw[0]);
 				}
 			}
 

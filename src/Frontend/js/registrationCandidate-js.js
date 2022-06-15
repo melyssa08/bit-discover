@@ -1,8 +1,5 @@
 // variável que pega todos os botões que ficam em formato de array
 var botao = document.querySelectorAll(".registrationCandidates-button-tag");
-for (item of botao) {
-  item.className = "registrationCandidates-button-tag false";
-}
 // loop que passa por cada botão e adciona propriedades em cada um deles
 // visto que quando o evento é disparado o botão que foi clicado se ve com propriedades novas
 for (let i = 0; i < botao.length; i++) {
@@ -27,9 +24,13 @@ function onload() {
   console.log('teste');
   $.get('http://localhost:3000/api/softskills', function(softskills) {
     softskills.map((result) => {
-      $('#registrationCandidates-content-obligation').append(`<button class="registrationCandidates-button-tag">` + result.name + `</button>`)
+      $('#registrationCandidates-content-obligation-softskills').append(`<button class="registrationCandidates-button-tag false" onclick="botao()">` + result.name + `</button>`)
 
     })
-
+  $.get('http://localhost:3000/api/hardskills', function(hardskills) {
+    hardskills.map((result) => {
+      $('#registrationCandidates-content-obligation-hardskills').append(`<button class="registrationCandidates-button-tag false" onclick="botao()">` + result.name + `</button>`)
+    })
+  })
   })
 }

@@ -27,11 +27,11 @@ class Candidates extends DatabaseTable {
 				notNull: true,
 			},
 			postal_code: {
-				type: DataTypes.int,
+				type: DataTypes.text,
 				notNull: true,
 			},
 			CPF: {
-				type: DataTypes.int,
+				type: DataTypes.text,
 				notNull: true,
 			},
 			hardskills: {

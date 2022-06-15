@@ -31,7 +31,7 @@ function teste() {
 					`</h4>
               <span class="text-muted d-block mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="purple" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
                 <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
-              </svg>` +
+              </svg> ` +
 					resul.postal_code +
 					`</span></div>
               <div class="col-12">
@@ -42,12 +42,12 @@ function teste() {
 					resul.name +
 					`</p></div>
                 <div class="col-12 jobsVisualization-style"><p id = "jobsVisualization-style-education"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trophy-fill" viewBox="0 0 16 16"><path d="M2.5.5A.5.5 0 0 1 3 0h10a.5.5 0 0 1 .5.5c0 .538-.012 1.05-.034 1.536a3 3 0 1 1-1.133 5.89c-.79 1.865-1.878 2.777-2.833 3.011v2.173l1.425.356c.194.048.377.135.537.255L13.3 15.1a.5.5 0 0 1-.3.9H3a.5.5 0 0 1-.3-.9l1.838-1.379c.16-.12.343-.207.537-.255L6.5 13.11v-2.173c-.955-.234-2.043-1.146-2.833-3.012a3 3 0 1 1-1.132-5.89A33.076 33.076 0 0 1 2.5.5zm.099 2.54a2 2 0 0 0 .72 3.935c-.333-1.05-.588-2.346-.72-3.935zm10.083 3.935a2 2 0 0 0 .72-3.935c-.133 1.59-.388 2.885-.72 3.935z"/>
-                </svg>&nbsp;` +
+                </svg>&nbsp; ` +
 					resul.scholarship +
 					`</p></div>
                 <div class="col-12 jobsVisualization-style"><p><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-clock-fill" viewBox="0 0 16 16">
                   <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
-                </svg>&nbsp;` +
+                </svg>&nbsp; ` +
 					resul.workload +
 					` Horas diárias</p></div>
                 <div class="col-12 jobsVisualization-style""><p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cash-stack" viewBox="0 0 16 16">
@@ -74,7 +74,7 @@ function teste() {
 
             </div>
                 <!---->
-                              <div class="modal fade" id="modalid` +
+                <div class="modal fade" id="modalid` +
 					resul.id +
 					`" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog">
@@ -86,34 +86,55 @@ function teste() {
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body row jobsVisualization-style">
-                        <h6>Atividades</h6>
-                        <ul  class ="jobsVisualization-activities-required">
-                          <li>` +
-					resul.activities +
-					`</li>
-                        </ul>
-                        <h6>Requisitos</h6>
+                        <h6><b>Atividades</b></h6>
+                        <ul  class ="jobsVisualization-activities-required"><ul><li>` + resul.description +
+					`</li></ul><br>
+					<h6><b>Modalidade</b></h6>
+					<ul  class ="jobsVisualization-activities-required">
+					  <li>`+ resul.modality + `</li>
+                        </ul><br>
+						<h6><b>Periodo</b></h6>
+						<ul class ="jobsVisualization-activities-required"> 
+						<li>` + resul.shift + `</li></ul><br>
+                        <h6><b>Requisitos</b></h6><hr>
+						<h7 class="hsmall"><b>Hardskills</b><h7><ul>
                         <ul class="jobsVisualization-activities-required">
                           <li>` +
-					[
+						[
 						...resul.requireds_hardskill.map(function (resul) {
 							return resul.name;
 						}),
+						].join(', ') + `</li></ul></ul><h7 class="hsmall"><b>Softskills</b><h7><ul><ul><li>` +
+						[
 						...resul.requireds_softskill.map(function (resul) {
 							return resul.name;
-						}),
-					].join(', ') +
+						}),].join(', ') +
 					`</li>
-                        </ul>
-                        <h6>Sobre a empresa</h6>
-                        <ul id="jobsVisualization-list"><li id = jobsVisualization-company-description>` +
-					resul.company.description +
-					`</li></ul>
+                        </ul></ul><hr>
+						<h6><b>Vantagens</b></h6>
+						<ul id="jobsVisualization-list"><li id = jobsVisualization-company-description>` +
+						[
+						...resul.bonus.map(function (resul) {
+							console.log(resul)
+							return resul.benefits;
+						}),
+						].join(', ') + `
+						</li></ul><br>
+                        <h6><b>Sobre a empresa</b></h6>
+                        <ul id="jobsVisualization-list"><li id = jobsVisualization-company-description>` 
+						+ resul.company.description + `</li></ul><br>
+						<div class="modal-footer modal-footer-fix">
+							<button id="jobsVisualization-confirm-modal" onclick="contacts` + resul.id + `()">Entrar em Contato</button>
+      					</div>
+						<div id="contacts` + resul.id + `"> </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                </div>`
+            </div>
+			<br>
+			<script> function contacts` + resul.id + `() {
+				$('#contacts` + resul.id + `').html("<br><b>Contato:<br> Email: `+ resul.job_contacts.email +` Telefone: `+ resul.job_contacts.number +`<br>Website: `+ resul.company.website + `</b>")}`
 			);
 		});
 	})
