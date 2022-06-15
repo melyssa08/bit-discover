@@ -10,6 +10,7 @@
 
 </head>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 <body class="registrationCandidates-body" onload="onload()">
     <div class="container justify-content-center me-auto">
         <div class="row justify-content-center">
@@ -112,8 +113,25 @@
                             </div>
                             <div class="col-lg-5 col-md-6 col-sm-12">
                                 <label for="registrationCandidates-input-course" class="registrationCandidates-label">Curso do ensino
-                                    superior</label>
-                                <input type="text" class="form-control registrationCandidates-placeholder registrationCandidates-input-box" placeholder="Curso de ensino superior" id="registrationCandidates-input-course" name="rC-input-course" />
+                                    superior
+                                </label>
+                                    <select class="form-select registrationCandidates-placeholder registrationCandidates-input-box select" aria-label="Default select example" id="registrationCandidates-experience" name="rC-input-select-experience">
+                                        <option class="registrationCandidates-label" selected>
+                                            Selecione seu curso de tecnologia
+                                        </option>
+                                        <option class="registrationCandidates-label" value="computer-science">
+                                            Ciências da Computação
+                                        </option>
+                                        <option class="registrationCandidates-label" value="computer-engineer">
+                                            Engenharia da Computação
+                                        </option>
+                                        <option class="registrationCandidates-label" value="information-system">
+                                            Sistemas da Informação
+                                        </option>
+                                        <option class="registrationCandidates-label" value="software-engineer">
+                                            Engenharia de Software
+                                        </option>
+                                    </select>
                             </div>
                         </div>
                     </div>
@@ -154,7 +172,6 @@
                                     <p class="registrationCandidates-title">Soft Skills:</p>
                                 </div>
                                 <div id="registrationCandidates-content-obligation">
-
                                 </div>
                             </div>
                         </div>
