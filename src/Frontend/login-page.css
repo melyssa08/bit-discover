@@ -81,6 +81,7 @@ h1#login-label-login{
 .login-cadastro > #login-label-cadastro{
     font-size: small;
     margin-top: 7px;
+    width: 50%;
 }
 
 #login-btn-entrar, #login-btn-cadastro{
@@ -94,4 +95,12 @@ h1#login-label-login{
     border-color: #F3C42E;
     transition:  0.4s;
     cursor: pointer;
+}
+
+.effects-remove:active{
+background-color: #F3C42E !important;
+}
+
+.align-right {
+    align-self: right;
 }

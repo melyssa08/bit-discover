@@ -2,11 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
 
 /* Propriedade de estilo, espaço e posição dos itens na parte da navbar */
-.jobsVisualization-col-4 {
+.jobsVisualization-fix-center {
     text-align: center;
     border: solid 0px white;
     height: auto;
     width: 20rem;
+    margin-bottom: 1.5rem;
 }
 
 /* Propridade do item do side bar e também do titulo do modal */
@@ -70,7 +71,7 @@
 #jobsVisualization-footer {
     bottom: 0;
     width: 100%;
-    height: 20%;
+    height: 10%;
     position: fixed;
     background-color: rgb(245, 239, 239);
     display: flex;
