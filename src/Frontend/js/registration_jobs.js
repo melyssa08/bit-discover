@@ -1,3 +1,4 @@
+// Pega a Nav bar e a Side Bar
 window.addEventListener('load', function () {
 	$('#registrationJobs-header').load('/page_recruiter/side_and_navbar/index.html', function (response, status) {
 		if (status == 'error') {
@@ -8,6 +9,17 @@ window.addEventListener('load', function () {
 	});
 });
 
+//Pega os dados para colocar nas tags de soft
+$.get("http://127.0.0.1:3000/api/softskills/", function(response) {
+	for (i of response) {
+		$("#registrationJobs-tags-habilities-soft").append(
+			`<button class="registrationJobs-button-tag" value="${i.id}">${i.name}</button>`
+			)}
+	adcionaFuncionalidadeAsTags('registrationJobs-tags-habilities-soft')
+}
+)
+
+// Pega as tags e põem novas
 var addNewTag = document.getElementById('registrationJobs-add-new-tag');
 var listNewTag = document.getElementById('registrationJobs-input-add-tag');
 var divFatherOpcional = document.getElementById('registrationJobs-content-no-obligation');
@@ -21,31 +33,31 @@ addNewTag.addEventListener('click', function () {
 	divFatherOpcional.appendChild(newTag);
 });
 
-// variável que pega todos os botões que ficam em formato de array
-var botao = document.querySelectorAll('.registrationJobs-button-tag');
 
-for (item of botao) {
-	item.className = 'registrationJobs-button-tag false';
+function adcionaFuncionalidadeAsTags (nomeId) {
+	var botao = document.getElementById(nomeId).children
+	for (item of botao) {
+		item.className = 'registrationJobs-button-tag false';
+	}
+	for (let i = 0; i < botao.length; i++) {
+		botao[i].addEventListener('click', function (e) {
+			if (botao[i].className == 'registrationJobs-button-tag false') {
+				e.preventDefault();
+				botao[i].style.backgroundColor = '#530084';
+				botao[i].style.color = '#FFFFFF';
+				botao[i].className = 'registrationJobs-button-tag true';
+			} else if (botao[i].className == 'registrationJobs-button-tag true') {
+				e.preventDefault();
+				botao[i].style.borderStyle = 'solid';
+				botao[i].style.borderStyle = '#530084';
+				botao[i].style.backgroundColor = '#FFFFFF';
+				botao[i].style.color = '#530084';
+				botao[i].className = 'registrationJobs-button-tag false';
+			}
+		});
+	}
 }
-// loop que passa por cada botão e adciona propriedades em cada um deles
-// visto que quando o evento é disparado o botão que foi clicado se ve com propriedades novas
-for (let i = 0; i < botao.length; i++) {
-	botao[i].addEventListener('click', function (e) {
-		if (botao[i].className == 'registrationJobs-button-tag false') {
-			e.preventDefault();
-			botao[i].style.backgroundColor = '#530084';
-			botao[i].style.color = '#FFFFFF';
-			botao[i].className = 'registrationJobs-button-tag true';
-		} else if (botao[i].className == 'registrationJobs-button-tag true') {
-			e.preventDefault();
-			botao[i].style.borderStyle = 'solid';
-			botao[i].style.borderStyle = '#530084';
-			botao[i].style.backgroundColor = '#FFFFFF';
-			botao[i].style.color = '#530084';
-			botao[i].className = 'registrationJobs-button-tag false';
-		}
-	});
-}
+
 
 var jobsName = document.getElementById('registrationJobs-name-job');
 var jobsType = document.getElementById('registrationJobs-type');
@@ -126,7 +138,8 @@ var botaoDispara = new Promise(function (resolve, reject) {
 
 	resolve(informationJob = {
 		postal_code: parseInt(jobsCP.value),
-		company: pegaIdEmpresa(),
+		company: 4,
+		// company: pegaIdEmpresa(),
 		activities: jobsActivities.value,
 		name: jobsName.value,
 		description: jobsDescription.value,
@@ -136,12 +149,14 @@ var botaoDispara = new Promise(function (resolve, reject) {
 		bonus: iteradorTagsBonus().join(','),
 		salary_min: parseFloat(jobsSalaryMin.value),
 		salary_max: parseFloat(jobsSalaryMax.value),
-		contact: pegaIdEmpresa(),
+		contact: 1,
+		// contact: pegaIdEmpresa(),
 		scholarship: jobsSchooling.value,
 		modality: jobsModality.value,
 		shift: jobsShift.value,
 		workload: jobsTime.value === 'full-time' ? 6 : 4,
 		proficiency: jobsProficiency.value,
+		created_at: '2020-01-01'
 	});
 	reject('Não deu')
 
