@@ -68,7 +68,7 @@ var jobsSalaryMin = document.getElementById('registrationJobs-salary-min');
 var jobsSchooling = document.getElementById('registrationJobs-schooling');
 var jobsSalaryMax = document.getElementById('registrationJobs-salary-max');
 var jobsCP = document.getElementById('registrationJobs-cp');
-var jobsProficiency = document.getElementById('registrationJobs-proficiency');
+var jobsProficiency = document.getElementById('registrationJobs-profiency');
 var jobsNameCompany = document.getElementById('registrationJobs-name-company');
 var jobsDescription = document.getElementById('registrationJobs-description-jobs');
 var jobsActivities = document.getElementById('registrationJobs-description-activities');
@@ -138,8 +138,7 @@ var botaoDispara = new Promise(function (resolve, reject) {
 
 	resolve(informationJob = {
 		postal_code: parseInt(jobsCP.value),
-		company: 4,
-		// company: pegaIdEmpresa(),
+		company: pegaIdEmpresa(3,'http://127.0.0.1:3000/api/companies/'),
 		activities: jobsActivities.value,
 		name: jobsName.value,
 		description: jobsDescription.value,
@@ -149,36 +148,45 @@ var botaoDispara = new Promise(function (resolve, reject) {
 		bonus: iteradorTagsBonus().join(','),
 		salary_min: parseFloat(jobsSalaryMin.value),
 		salary_max: parseFloat(jobsSalaryMax.value),
-		contact: 1,
-		// contact: pegaIdEmpresa(),
+		// contact: pegaIdEmpresa(3,'http://127.0.0.1:3000/api/companies/'),
+		contact: 2,
 		scholarship: jobsSchooling.value,
 		modality: jobsModality.value,
 		shift: jobsShift.value,
 		workload: jobsTime.value === 'full-time' ? 6 : 4,
 		proficiency: jobsProficiency.value,
-		created_at: '2020-01-01'
+		created_at: `${new Date().getDate()}`
 	});
 	reject('Não deu')
 
 })}).then((res) => {
 	postarCadastro(res)
-}).catch((res) => {
-	console.log(res)
+ })
+.then((resp) => {
+	$('#registrationJobs-target-myjobs').click(function () {
+		window.location = 'http://127.0.0.1:3000/page_recruiter/my_jobs/index.html'
+	})
+	// var iconConfirmTarget = document.getElementById('registrationJobs-target-myjobs')
+	// iconConfirmTarget.href = 'http://127.0.0.1:3000/page_recruiter/my_jobs/index.html'
 })
 
 function postarCadastro(information) {
 	$.post('http://127.0.0.1:3000/api/jobs/', information, function (response) {
-		console.log(response);
+		console.log(response); 
 	});
 }
 
-
-function pegaIdEmpresa () {
-	var resposta
-	$.get('http://127.0.0.1:3000/api/companies/').done( function (response) {
-		resposta = response[response.length -1].id
-		console.log(resposta)
-		return resposta
-	})
+function pegaIdEmpresa(id, urlGet)
+{
+     $.ajax({
+        url: `${urlGet}${id}`,
+        type: 'get',
+        dataType: 'json',
+        async: false,
+        success: function(data) {
+            result = data[0].id
+        } 
+     });
+     return result;
 }
 

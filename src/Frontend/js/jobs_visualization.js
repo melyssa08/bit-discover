@@ -18,7 +18,8 @@ function teste() {
 			// Template de string que mostra a criação dos cards como se fosse um html só que dentro de um arquivo javascript
 			$('#jobsVisualization-cards').append(
 				`<!--Inicio Card-->
-          <div class="card container d-flex justify-content-between align-items-center text-black jobsVisualization-col-4" id=jobsVisualization-card>
+				<div class="col-4">
+          <div class="card container d-flex justify-content-between align-items-center text-black jobsVisualization-fix-center col-12" id=jobsVisualization-card>
             <div class="row">
             <div class="mt-3 text-center col-12">
               <!--Imagem Card-->
@@ -71,7 +72,7 @@ function teste() {
                 <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
               </svg>
             </div>
-
+<br>
             </div>
                 <!---->
                 <div class="modal fade" id="modalid` +
@@ -97,16 +98,16 @@ function teste() {
 						<ul class ="jobsVisualization-activities-required"> 
 						<li>` + resul.shift + `</li></ul><br>
                         <h6><b>Requisitos</b></h6><hr>
-						<h7 class="hsmall"><b>Hardskills</b><h7><ul>
+						<h7 class="hsmall"><b>Softkills</b><h7><ul>
                         <ul class="jobsVisualization-activities-required">
                           <li>` +
 						[
-						...resul.requireds_hardskill.map(function (resul) {
+						...resul.requireds_softskill.map(function (resul) {
 							return resul.name;
 						}),
-						].join(', ') + `</li></ul></ul><h7 class="hsmall"><b>Softskills</b><h7><ul><ul><li>` +
+						].join(', ') + `</li></ul></ul><h7 class="hsmall"><b>Hardskills</b><h7><ul><ul><li>` +
 						[
-						...resul.requireds_softskill.map(function (resul) {
+						...resul.requireds_hardskill.map(function (resul) {
 							return resul.name;
 						}),].join(', ') +
 					`</li>
@@ -132,6 +133,7 @@ function teste() {
                   </div>
                 </div>
             </div>
+		</div>
 			<br>
 			<script> function contacts` + resul.id + `() {
 				$('#contacts` + resul.id + `').html("<br><b>Contato:<br> Email: `+ resul.job_contacts.email +` Telefone: `+ resul.job_contacts.number +`<br>Website: `+ resul.company.website + `</b>")}`

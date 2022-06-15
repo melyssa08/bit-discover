@@ -53,9 +53,17 @@
         <!-- CADASTRE-SE -->
         <div class="login-cadastro">
             <h5 id="login-label-cadastro">Ainda não tem conta?</h5>
-            <a href="page_candidates/registration_candidate/index.html"><input class="btn btn-primary btn-sm" type="button" value="Cadastre-se" id="login-btn-cadastro">
-        </a>
+            <button class="btn btn-primary dropdown-toggle align-right" type="button" id="login-btn-cadastro" data-bs-toggle="dropdown" aria-expanded="false">
+              Cadastre-se
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="login-btn-cadastro">
+              <li><a class="dropdown-item effects-remove" href="page_candidates/registration_candidate/index.html">Sou Candidato</a></li>
+              <li><a class="dropdown-item effects-remove" href="page_recruiter/registration_company/index.html">Sou Empresa</a></li>
+            </ul>
         </div>
     </section>
 </body>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </html>

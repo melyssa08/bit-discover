@@ -83,7 +83,7 @@ class Jobs extends DatabaseTable {
 			},
 			proficiency: {
 				type: DataTypes.text,
-				notNull: true,
+				notNull: false,
 			},
 			created_at: {
 				type: DataTypes.datetime,
