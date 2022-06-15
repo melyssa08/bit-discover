@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- no head, declaro as fontes que usaremos e linko o bootstrap e o css -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/1b4e4dcd7e.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Minha empresa</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Nunito&family=Roboto&display=swap");
+    </style>
+  </head>
+  <!-- no body, declaro uma id para poder mexer na tela por inteiro -->
+
+  <body class="companyProfile-body">
+    <!-- as classes que NÃO comecam com "companyProfile" são do bootstrap -->
+    <div class="container justify-content-center me-auto">
+      <div class="row justify-content-center">
+        <div
+          class="card justify-content-center"
+          id="companyProfile-cardsbootstrap"
+        >
+          <div class="card-body">
+            <!-- Body de todos os cards -->
+            <div class="container-lg my-5">
+              <div class="justify-content-center mb-10">
+                <!-- aqui coloco a logo da BIT -->
+                <img
+                  src="../../assets/logo.png"
+                  alt="bit-logo"
+                  class="companyProfile-image"
+                />
+              </div>
+            </div>
+
+            <h2 id="companyProfile-title">Minha Empresa</h2>
+            <!-- título da pagina -->
+            <div class="row justify-content-center">
+              <h4 id="companyProfile-info" class="companyProfile-hs">
+                Informações empresariais
+              </h4>
+            </div>
+            <div class="row mt-4 justify-content-center">
+              <!-- DIV DOS INPUTS -->
+              <div
+                class="container justify-content-center"
+                id="companyProfile-flex"
+              >
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="row justify-content-center">
+                      <div class="col-lg-5">
+                        <label
+                          for="companyProfile-input-company-name"
+                          class="companyProfile-label"
+                          >Nome da empresa</label
+                        >
+                        <input
+                          type="text"
+                          placeholder="Digite o nome da empresa"
+                          class="companyProfile-columns form-control companyProfile-input-box companyProfile-placeholder companyProfile-disabled"
+                          id="companyProfile-input-company-name"
+                          name="rCo-input-email-company-name"
+                          disabled
+                        />
+                      </div>
+                      <div class="col-lg-5">
+                        <label
+                          class="companyProfile-label"
+                          for="companyProfile-input-cnpj"
+                          >CNPJ</label
+                        >
+                        <input
+                          type="text"
+                          class="companyProfile-columns form-control companyProfile-placeholder companyProfile-input-box companyProfile-disabled"
+                          placeholder="CNPJ"
+                          id="companyProfile-input-cnpj"
+                          name="rCo-input-cnpj"
+                          disabled
+                        />
+                      </div>
+                      <div class="col-lg-5">
+                        <label
+                          for="companyProfile-input-email"
+                          class="companyProfile-label"
+                          >Email</label
+                        >
+                        <input
+                          type="text"
+                          placeholder="Digite seu email"
+                          class="companyProfile-columns form-control companyProfile-input-box companyProfile-placeholder companyProfile-disabled companyProfile-disabled"
+                          id="companyProfile-input-email"
+                          name="rCo-input-email"
+                          disabled
+                        />
+                      </div>
+                      <div class="col-lg-5">
+                        <label
+                          for="companyProfile-input-confirmemail"
+                          class="companyProfile-label"
+                          >Confirmar email</label
+                        >
+                        <input
+                          type="text"
+                          placeholder="Confirmar email"
+                          class="companyProfile-columns form-control companyProfile-input-box companyProfile-placeholder companyProfile-disabled"
+                          id="companyProfile-input-confirmemail"
+                          name="rCo-input-confirm-email"
+                          disabled
+                        />
+                      </div>
+                      <div class="col-lg-5">
+                        <label
+                          for="companyProfile-input-password"
+                          class="companyProfile-label"
+                          >Senha</label
+                        >
+                        <input
+                          type="password"
+                          placeholder="Senha"
+                          class="companyProfile-columns form-control companyProfile-input-box companyProfile-placeholder companyProfile-disabled"
+                          id="companyProfile-input-password"
+                          name="rCo-input-password"
+                          disabled
+                        />
+                      </div>
+                      <div class="col-lg-5">
+                        <label
+                          for="companyProfile-input-confirmpassword"
+                          class="companyProfile-label"
+                          >Confirmar senha</label
+                        >
+                        <input
+                          type="password"
+                          placeholder="Confirmar senha"
+                          class="companyProfile-columns form-control companyProfile-input-box companyProfile-placeholder companyProfile-disabled"
+                          id="companyProfile-input-confirmpassword"
+                          name="rCo-input-confirm-password"
+                          disabled
+                        />
+                      </div>
+                      <div class="col-lg-5">
+                        <label
+                          for="companyProfile-input-cp"
+                          class="companyProfile-label"
+                          >Código Postal (CEP)</label
+                        >
+                        <input
+                          placeholder="Código Postal"
+                          class="companyProfile-columns form-control companyProfile-input-box companyProfile-placeholder companyProfile-disabled"
+                          id="companyProfile-input-cp"
+                          name="rCo-input-cp"
+                          disabled
+                        />
+                      </div>
+                      <div class="col-lg-5">
+                        <label
+                          for="companyProfile-input-link"
+                          class="companyProfile-label"
+                          >Link do site da empresa</label
+                        >
+                        <input
+                          placeholder="Link do site da empresa"
+                          class="companyProfile-columns form-control companyProfile-input-box companyProfile-placeholder companyProfile-disabled"
+                          id="companyProfile-input-link"
+                          name="rCo-input-link"
+                          disabled
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="container-lg mt-5">
+              <!-- DIV DO TEXT AREA -->
+              <div class="row justify-content-center">
+                <h4 class="companyProfile-hs">Descreva sua empresa</h4>
+              </div>
+              <div class="row justify-content-center">
+                <div
+                  class="col-lg-8 col-md-8 col-sm-8"
+                  id="companyProfile-input-textarea"
+                >
+                  <textarea
+                    name="text"
+                    id="companyProfile-textarea"
+                    oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'
+                    class="textarea companyProfile-input-box companyProfile-disabled"
+                    name="rCo-input-textarea"
+                    disabled
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+            <!--DIV DOS BOTÕES  -->
+            <div
+              class="d-grid col-lg-3 col-md-3 col-sm-3 mx-auto container input-container"
+            >
+              <a href="../my_jobs/index.html"
+                ><button class="companyProfile-btn" onclick="update_profile()">
+                  Salvar alterações
+                </button></a
+              >
+            </div>
+            <br />
+            <div
+              class="d-grid col-lg-9 col-md-9 col-sm-9 mx-auto container input-container"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <button id="companyProfile-pencil-btn" onclick="pencilbutton()">
+        <i class="fa-solid fa-pencil fa-xl fa-shake"></i>
+      </button>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../../js/company-profile.js"></script>
+    <script>
+      $.ajax({
+        url: "http://127.0.0.1:3000/api/companies/?id=1",
+        type: "GET",
+        success: function (data) {
+          console.log(data);
+          console.log(data[0]["name"]);
+          $("#companyProfile-input-company-name").val(data[0]["name"]);
+          $("#companyProfile-input-email").val(data[0]["email"]);
+          $("#companyProfile-input-confirmemail").val(data[0]["email"]);
+          $("#companyProfile-input-cnpj").val(data[0]["cnpj"]);
+          $("#companyProfile-input-password").val(data[0]["password"]);
+          $("#companyProfile-input-confirmpassword").val(data[0]["password"]);
+          $("#companyProfile-input-cp").val(data[0]["postal_code"]);
+          $("#companyProfile-input-link").val(data[0]["website"]);
+          $("#companyProfile-textarea").val(data[0]["description"]);
+        },
+      });
+
+      function update_profile() {
+        $.ajax({
+          url: "http://127.0.0.1:3000/api/companies/0",
+          type: "PUT",
+          data: `name=${$(
+            "#companyProfile-input-company-name"
+          ).val()}&email=${$("#companyProfile-input-email").val()}&cnpj=${$(
+            "#companyProfile-input-cnpj"
+          ).val()}&password=${$(
+            "#companyProfile-input-confirmpassword"
+          ).val()}&postal_code=${$(
+            "#companyProfile-input-cp"
+          ).val()}&website=${$(
+            "#companyProfile-input-link"
+          ).val()}&description=${$("#companyProfile-textarea").val()}`,
+        });
+      }
+    </script>
+  </body>
+</html>
