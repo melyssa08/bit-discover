@@ -35,6 +35,18 @@ const CompaniesController = {
 		});
 	},
 
+	async postLogin(req, res) {
+		var companies_raw = undefined;
+		companies_raw = await companies.get(req.body);
+		if (companies_raw.length === 0) {
+				res.status(404).send('Credenciais incorretas!')
+		}
+		else {
+			console.log(companies_raw[0])
+			res.json(companies_raw[0])
+		}
+	},
+
 	/*
 	 * PUT /companies
 	 * Update companies

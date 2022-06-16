@@ -35,6 +35,18 @@ const CandidatesController = {
 		});
 	},
 
+	async postLogin(req, res) {
+		var candidates_raw = undefined;
+		candidates_raw = await candidates.get(req.body);
+		if (candidates_raw.length === 0) {
+				res.status(404).send('Credenciais incorretas!')
+		}
+		else {
+			console.log(candidates_raw[0])
+			res.json(candidates_raw[0])
+		}
+	},
+
 	/*
 	 * PUT /candidates
 	 * Update candidates
