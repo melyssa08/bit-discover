@@ -104,3 +104,7 @@ background-color: #F3C42E !important;
 .align-right {
     align-self: right;
 }
+
+.align-items-right {
+    align-items: right;
+}

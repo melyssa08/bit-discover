@@ -9,6 +9,8 @@ api_companies.get('/:id', CompaniesController.getOne); // Add get companies by i
 
 api_companies.post('/', CompaniesController.post); // Add post companies endpoint
 
+api_companies.post('/login', CompaniesController.postLogin); // Add post companies endpoint
+
 api_companies.put('/:id', CompaniesController.put); // Add put companies endpoint
 
 api_companies.delete('/:id', CompaniesController.delete); // Add delete companies endpoint

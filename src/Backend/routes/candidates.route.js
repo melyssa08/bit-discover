@@ -9,6 +9,8 @@ api_candidates.get('/:id', CandidatesController.getOne); // Add get candidates b
 
 api_candidates.post('/', CandidatesController.post); // Add post candidates endpoint
 
+api_candidates.post('/login', CandidatesController.postLogin); // Add post companies endpoint
+
 api_candidates.put('/:id', CandidatesController.put); // Add put candidates endpoint
 
 api_candidates.delete('/:id', CandidatesController.delete); // Add delete candidates endpoint
