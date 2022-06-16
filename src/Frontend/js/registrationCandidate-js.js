@@ -22,15 +22,22 @@ for (let i = 0; i < botao.length; i++) {
 
 function onload() {
   console.log('teste');
-  $.get('http://localhost:3000/api/softskills', function(softskills) {
-    softskills.map((result) => {
-      $('#registrationCandidates-content-obligation-softskills').append(`<button class="registrationCandidates-button-tag false" onclick="botao()">` + result.name + `</button>`)
+  $.get("http://localhost:3000/api/softskills", function(softskills) {
+    console.log(softskills)
+    for (i=0;i<softskills.length;i++) {
+      $('#registrationCandidates-content-obligation').append(`<button class="registrationCandidates-button-tag false" onclick="botao()">` + softskills[i].name + `</button>`)
+    }
+  }) 
 
-    })
+  
+  // $.get('http://localhost:3000/api/softskills', function(softskills) {
+  //   softskills.map((result) => {
+  //     $('#registrationCandidates-content-obligation-softskills').append(`<button class="registrationCandidates-button-tag false" onclick="botao()">` + result.name + `</button>`)
+
+  //   })
   $.get('http://localhost:3000/api/hardskills', function(hardskills) {
-    hardskills.map((result) => {
-      $('#registrationCandidates-content-obligation-hardskills').append(`<button class="registrationCandidates-button-tag false" onclick="botao()">` + result.name + `</button>`)
-    })
+    for (i=0;i<hardskills.length;i++) {
+      $('#registrationCandidates-content-obligation-1').append(`<button class="registrationCandidates-button-tag false" onclick="botao()">` + hardskills[i].name + `</button>`)
+    }
   })
-  })
-}
+   }
