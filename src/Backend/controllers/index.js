@@ -4,5 +4,6 @@ import CompaniesController from './companies.controller.js';
 import SoftSkillsController from './softskills.controller.js';
 import HardSkillsController from './hardskills.controller.js';
 import BonusController from './bonus.controller.js';
+import JobsContactsController from './jobs_contacts.controller.js';
 
-export { JobsController, CandidatesController, CompaniesController, SoftSkillsController, HardSkillsController, BonusController };
+export { JobsController, CandidatesController, CompaniesController, SoftSkillsController, HardSkillsController, BonusController, JobsContactsController };
