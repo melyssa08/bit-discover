@@ -12,7 +12,7 @@
 <!-- na head, declaro o fontawesome e o bootstrap, assim como o css -->
 </head>
 
-<body class="myProfile-body">  <!-- classe do body todo -->
+<body class="myProfile-body" onload="onload()">  <!-- classe do body todo -->
     <div id="myProfile-navbar"></div>
     <div class="container justify-content-center me-auto">
         <!-- todas as classes que nao comecam com "myProfile" são do bootstrap -->
@@ -177,32 +177,9 @@
                                 <div id="myProfile-title-hard-skills-obligations">
                                     <p class="myProfile-title">Soft Skills:</p>
                                 </div>
-                                <div id="myProfile-content-obligation">
-                                    <!-- a classe myProfile-button-tag é referenciada no js -->
-                                    <button class="myProfile-button-tag" disabled>
-                                        Resolução de Problemas Complexos
-                                    </button>
-                                    <button class="myProfile-button-tag" disabled>Pensamento Crítico</button>
-                                    <button class="myProfile-button-tag" disabled>Criatividade</button>
-                                    <button class="myProfile-button-tag" disabled>Gestão de Pessoas</button>
-                                    <button class="myProfile-button-tag" disabled>
-                                        Liderança e influência social
-                                    </button>
-
-                                    <button class="myProfile-button-tag" disabled>
-                                        Pensamento analítico e inovação
-                                    </button>
-                                    <button class="myProfile-button-tag" disabled>
-                                        Resiliência, tolerância e flexibilidade
-                                    </button>
-                                    <button class="myProfile-button-tag" disabled>
-                                        Inteligência emocional
-                                    </button>
-                                    <button class="myProfile-button-tag" disabled>
-                                        Persuasão e negociação
-                                    </button>
-                                    <button class="myProfile-button-tag" disabled>Gestão do tempo</button>
-                                    <button class="myProfile-button-tag" disabled>Aprendizado ativo</button>
+                                <div id="myProfile-content-obligation" style="height: 10rem;">
+                                    <!-- o banco de dados puxa esses itens em uma requisição get -->
+                                   
                                 </div>
                             </div>
                         </div>
@@ -219,18 +196,9 @@
                                 <div id="myProfile-title-hard-skills-obligations">
                                     <p class="myProfile-title">Hard Skills:</p>
                                 </div>
-                                <div id="myProfile-content-obligation">
-                                    <button class="myProfile-button-tag" disabled>GODOT</button>
-                                    <button class="myProfile-button-tag" disabled>PHYTON</button>
-                                    <button class="myProfile-button-tag" disabled>HTML/CSS</button>
-                                    <button class="myProfile-button-tag" disabled>JAVA</button>
-                                    <button class="myProfile-button-tag" disabled>JAVASCRIPT</button>
-                                    <button class="myProfile-button-tag" disabled>C++</button>
-                                    <button class="myProfile-button-tag" disabled>REALIDADE VIRTUAL</button>
-                                    <button class="myProfile-button-tag" disabled>CANVA</button>
-                                    <button class="myProfile-button-tag" disabled>GIT</button>
-                                    <button class="myProfile-button-tag" disabled>REACT</button>
-                                    <button class="myProfile-button-tag" disabled>SQLITE</button>
+                                <div id="myProfile-content-obligation-1" style="height: 10rem;overflow-y:scroll">
+                                    <!-- o banco de dados puxa esses itens em uma requisição get -->
+
                                 </div>
                             </div>
                         </div>
