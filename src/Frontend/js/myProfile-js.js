@@ -1,34 +1,12 @@
-// // variável que pega todos os botões que ficam em formato de array
-// var botao = document.querySelectorAll(".myProfile-button-tag");
-// for (item of botao) {
-//   item.className = "myProfile-button-tag false";
-// }
-// // loop que passa por cada botão e adciona propriedades em cada um deles
-// // visto que quando o evento é disparado o botão que foi clicado se ve com propriedades novas
-// for (let i = 0; i < botao.length; i++) {
-//   botao[i].addEventListener("click", function (e) {
-//     if (botao[i].className == "myProfile-button-tag false") {
-//       e.preventDefault();
-//       botao[i].style.backgroundColor = "#530084";
-//       botao[i].style.color = "#FFFFFF";
-//       botao[i].className = "myProfile-button-tag true";
-//     } else if (botao[i].className == "myProfile-button-tag true") {
-//       e.preventDefault();
-//       botao[i].style.borderStyle = "solid";
-//       botao[i].style.borderStyle = "#530084";
-//       botao[i].style.backgroundColor = "#FFFFFF";
-//       botao[i].style.color = "#530084";
-//       botao[i].className = "myProfile-button-tag false";
-//     }
-//   });
-// }
-
+// faz os botões de hard e soft skill funcionar
 function botao(id) {
-  document.getElementById(`"${id}"`).setAttribute("class","myProfile-button-tag-clicked")
-  console.log("foi")
+  if (id.getAttribute("class") == "myProfile-button-tag-unclicked" ){
+ id.setAttribute("class","myProfile-button-tag-clicked")
+  }
+  else {
+    id.setAttribute("class","myProfile-button-tag-unclicked")
+  }
 }
-
-
 function pencilbutton() {
   var inputs = document.querySelectorAll("input")
   var selects = document.querySelectorAll("select")
@@ -50,7 +28,7 @@ function pencilbutton() {
     buttons[h].disabled = false
   }
 }
-
+gn 
 $.ajax({
   url: "http://127.0.0.1:3000/api/candidates/?id=1",
   type: "GET",
@@ -105,7 +83,7 @@ function onload() {
   $.get('http://localhost:3000/api/hardskills', function(hardskills) {
      //carrega os botões de hardskill e os adiciona na página
     for (i=0;i<hardskills.length;i++) {
-      $('#myProfile-content-obligation-1').append(`<button class="myProfile-button-tag-unclicked"" id="h${hardskills[i].id}" onclick="botao(h${hardskills[i].id})">` + hardskills[i].name + `</button>`)
+      $('#myProfile-content-obligation-1').append(`<button class="myProfile-button-tag-unclicked" id="h${hardskills[i].id}" onclick="botao(h${hardskills[i].id})">` + hardskills[i].name + `</button>`)
     }
   })
    }

@@ -152,8 +152,8 @@
 .myProfile-button-tag-clicked {
   border-style: solid;
   border-color: #530084;
-  background-color: white;
-  color: #530084;
+  background-color: #530084;
+  color: white ;
   border-radius: 10px;
   margin-top: 0.5%;
   margin-bottom: 1%;
