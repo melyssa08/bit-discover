@@ -10,6 +10,11 @@ window.addEventListener('load', function () {
 	});
 });
 
+var iconNewJob = document.getElementById('myJobs-icon-new-job')
+
+iconNewJob.addEventListener('click', function () {
+	window.location = "http://127.0.0.1:3000/page_recruiter/registration_jobs/"
+})
 //  function teste() {
 // 	console.log("Deu certo!");
 // 	// $.get("http://localhost:3003/myjobsCard",);
