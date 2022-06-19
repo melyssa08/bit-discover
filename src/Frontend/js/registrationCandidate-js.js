@@ -42,16 +42,34 @@ function create_profile() {
     alert("As senhas não coincidem!")
     return false
   }
+  //guarda os botões apertados em strings
+  var soft_text = ""
+  var hard_text = ""
+  for (i =0;i<document.getElementById("registrationCandidates-content-obligation").childElementCount;i++) {
+    if (document.getElementById(`s${i}`).getAttribute("class")==  "registrationCandidates-button-tag-clicked") {
+      soft_text += i + ","
+    }
+  }
+  for (i =0;i<document.getElementById("registrationCandidates-content-obligation-1").childElementCount;i++) {
+    if (document.getElementById(`h${i}`).getAttribute("class")==  "registrationCandidates-button-tag-clicked") {
+      hard_text += i +","
+    }
+  }
+  // retira a última virgula das strings
+  soft_text=soft_text.substring(0,soft_text.length-1)
+  hard_text = hard_text.substring(0,hard_text.length-1)
   //salva as mudanças no perfil do usário
   $.ajax({
-    url: "http://127.0.0.1:3000/api/candidates/1",
-    type: "PUT",
-    data: `name=${$("#registrationCandidates-input-name").val()}&email=${$("#registrationCandidates-input-email").val()}&age=${$("#registrationCandidates-input-age").val()}&CPF=${$("#registrationCandidates-input-CPF").val()}&password=${$("#registrationCandidates-input-password").val()}&postal_code=${$("#registrationCandidates-input-cp").val()}&scholarship=${$("#registrationCandidates-select-scholarity").val()}&graduation=${$("#registrationCandidates-input-course").val()}&likes=${$("#registrationCandidates-experience").val()}&description=${$("#registrationCandidates-textarea").val()}`,
+    url: "http://127.0.0.1:3000/api/candidates/",
+    type: "POST",
+    data: `name=${$("#registrationCandidates-input-name").val()}&email=${$("#registrationCandidates-input-email").val()}&age=${$("#registrationCandidates-input-age").val()}&CPF=${$("#registrationCandidates-input-CPF").val()}&password=${$("#registrationCandidates-input-password").val()}&postal_code=${$("#registrationCandidates-input-cp").val()}&scholarship=${$("#registrationCandidates-select-scholarity").val()}&graduation=${$("#registrationCandidates-input-course").val()}&likes=${$("#registrationCandidates-experience").val()}&description=${$("#registrationCandidates-textarea").val()}&hardskills=${hard_text}&softskills=${soft_text}`,
     success: function (data) {
       alert("Perfil Criado com sucesso! :D")
     }
   })
-  window.location.href = "../jobs_visualization/index.html"
+  // window.location.href = "../jobs_visualization/index.html"
+  console.log(soft_text)
+  console.log(hard_text)
 }
 //carrega ao iniciar pagina 
 function onload() {
