@@ -25,7 +25,111 @@ function queryString(parameter) {
 var idJob = queryString("idJob");
 // console.log("id do Job: "+idJob);
 
-//DECLARAÇÃO DE VAR
+
+$(document).ready(
+
+	$.get("http://localhost:3000/api/jobs", function (dados) {
+		
+		// var test = $('#registrationJobs-name-job').val();
+		// test = dados[idJob].name;
+
+		//Seta os valores do html para os valores do DB
+		$(jobsName).val(dados[idJob].name);
+		$(jobsType).val(dados[idJob].type);
+		$(jobsTime).val(dados[idJob].worload).change();
+		$(jobsModality).val(dados[idJob].modality).change();
+		$(jobsShift).val(dados[idJob].shift);
+		$(jobsSalaryMin).val(dados[idJob].salary_min);
+		$(jobsSchooling).val(dados[idJob].scholarship).change;
+		$(jobsSalaryMax).val(dados[idJob].salary_max);
+		$(jobsCP).val(dados[idJob].postal_code);
+		$(jobsProficiency).val(dados[idJob].proficiency);
+		$(jobsNameCompany).val(dados[idJob].companu);
+		$(jobsDescription).val(dados[idJob].description);
+		$(jobsActivities).val(dados[idJob].activities);
+		$(jobsTagsHabilitiesHard).val(dados[idJob].requireds_hardskill);
+		$(jobsTagsHabilitiesSoft).val(dados[idJob].requireds_softskill);
+		$(jobsTagsBonus).val(dados[idJob].bonus);
+
+
+
+	
+		// console.log(dados[idJob]);
+		// console.log(jobsName);
+	})
+
+
+);
+
+//-----TESTE EDIÇÃO
+
+//Pega os dados para colocar nas tags de soft
+$.get("http://127.0.0.1:3000/api/softskills/", function(response) {
+	for (i of response) {
+		$("#registrationJobs-tags-habilities-soft").append(
+			`<button class="registrationJobs-button-tag" value="${i.id}">${i.name}</button>`
+			)}
+	adcionaFuncionalidadeAsTags('registrationJobs-tags-habilities-soft')
+}
+
+)
+
+$.get("http://127.0.0.1:3000/api/hardskills/", function(response) {
+	for (i of response) {
+		$("#registrationJobs-tags-habilities-hard").append(
+			`<button class="registrationJobs-button-tag" value="${i.id}">${i.name}</button>`
+		)}
+	adcionaFuncionalidadeAsTags('registrationJobs-tags-habilities-hard')
+})
+
+$.get("http://127.0.0.1:3000/api/bonus/", function (response) {
+	for (i of response) {
+		$("#registrationJobs-tags-bonus").append(
+			`<button class="registrationJobs-button-tag" value="${i.id}">${i.name}</button>`
+		)}
+	adcionaFuncionalidadeAsTags('registrationJobs-tags-bonus')
+})
+
+// Pega as tags e põem novas
+var addNewTag = document.getElementById('registrationJobs-add-new-tag');
+var listNewTag = document.getElementById('registrationJobs-input-add-tag');
+var divFatherOpcional = document.getElementById('registrationJobs-content-no-obligation');
+
+addNewTag.addEventListener('click', function () {
+	var newTag = document.createElement('button');
+	newTag.className = 'registrationJobs-button-tag';
+	newTag.style.backgroundColor = '#530084';
+	newTag.style.color = 'white';
+	newTag.innerHTML = `${listNewTag.value}`;
+	divFatherOpcional.appendChild(newTag);
+});
+
+
+function adcionaFuncionalidadeAsTags (nomeId) {
+	var botao = document.getElementById(nomeId).children
+	for (item of botao) {
+		item.className = 'registrationJobs-button-tag false';
+	}
+	for (let i = 0; i < botao.length; i++) {
+		botao[i].addEventListener('click', function (e) {
+			if (botao[i].className == 'registrationJobs-button-tag false') {
+				e.preventDefault();
+				botao[i].style.backgroundColor = '#530084';
+				botao[i].style.color = '#FFFFFF';
+				botao[i].className = 'registrationJobs-button-tag true';
+			} else if (botao[i].className == 'registrationJobs-button-tag true') {
+				e.preventDefault();
+				botao[i].style.borderStyle = 'solid';
+				botao[i].style.borderStyle = '#530084';
+				botao[i].style.backgroundColor = '#FFFFFF';
+				botao[i].style.color = '#530084';
+				botao[i].className = 'registrationJobs-button-tag false';
+			}
+		});
+	}
+}
+
+
 var jobsName = document.getElementById('registrationJobs-name-job');
 var jobsType = document.getElementById('registrationJobs-type');
 var jobsTime = document.getElementById('registrationJobs-time');
@@ -35,7 +139,7 @@ var jobsSalaryMin = document.getElementById('registrationJobs-salary-min');
 var jobsSchooling = document.getElementById('registrationJobs-schooling');
 var jobsSalaryMax = document.getElementById('registrationJobs-salary-max');
 var jobsCP = document.getElementById('registrationJobs-cp');
-var jobsProficiency = document.getElementById('registrationJobs-profiency');
+var jobsProficiency = document.getElementById('registrationJobs-proficiency');
 var jobsNameCompany = document.getElementById('registrationJobs-name-company');
 var jobsDescription = document.getElementById('registrationJobs-description-jobs');
 var jobsActivities = document.getElementById('registrationJobs-description-activities');
@@ -43,8 +147,8 @@ var jobsTagsHabilitiesHard = document.getElementById('registrationJobs-tags-habi
 var jobsTagsHabilitiesSoft = document.getElementById('registrationJobs-tags-habilities-soft').children;
 var jobsTagsBonus = document.getElementById('registrationJobs-tags-bonus').children;
 var iconConfirm = document.getElementById('registrationJobs-icon-confirm');
-// var jobsEmail = document.getElementById('registrationJobs-email')
-// var jobsCell = document.getElementById('registrationJobs-cellphone')
+var jobsEmail = document.getElementById('registrationJobs-email')
+var jobsCell = document.getElementById('registrationJobs-cellphone')
 
 
 jobsType.addEventListener('input', function () {
@@ -107,55 +211,19 @@ function iteradorTagsBonus() {
 var informationJob;
 
 
-
-$(document).ready(
-
-	$.get("http://localhost:3000/api/jobs", function (dados) {
-		
-		// var test = $('#registrationJobs-name-job').val();
-		// test = dados[idJob].name;
-
-		//Seta os valores do html para os valores do DB
-		$(jobsName).val(dados[idJob].name);
-		$(jobsType).val(dados[idJob].type);
-		$(jobsTime).val(dados[idJob].worload).change();
-		$(jobsModality).val(dados[idJob].modality).change();
-		$(jobsShift).val(dados[idJob].shift);
-		$(jobsSalaryMin).val(dados[idJob].salary_min);
-		$(jobsSchooling).val(dados[idJob].scholarship).change;
-		$(jobsSalaryMax).val(dados[idJob].salary_max);
-		$(jobsCP).val(dados[idJob].postal_code);
-		$(jobsProficiency).val(dados[idJob].proficiency);
-		$(jobsNameCompany).val(dados[idJob].companu);
-		$(jobsDescription).val(dados[idJob].description);
-		$(jobsActivities).val(dados[idJob].activities);
-		$(jobsTagsHabilitiesHard).val(dados[idJob].requireds_hardskill);
-		$(jobsTagsHabilitiesSoft).val(dados[idJob].requireds_softskill);
-		$(jobsTagsBonus).val(dados[idJob].bonus);
-
-
-
-	
-		console.log(dados[idJob]);
-		// console.log(jobsName);
-	})
-
-
-);
-
-
-//Edit cadastro
 var botaoDispara = new Promise(function (resolve, reject) { 
 	iconConfirm.addEventListener('click', function (e) {
 	e.preventDefault();
 
-		if (jobsSalaryMin.value && jobsSalaryMax.value && jobsCP.value && jobsDescription.value && jobsActivities.value /*&& jobsEmail.value && jobsCell.value*/) {
+	console.log("DEU CERTO")
 
-		//	editarCadastro('http://127.0.0.1:3000/api/jobscontacts/', {email: jobsEmail.value , number: jobsCell.value})
+		if (jobsSalaryMin.value && jobsSalaryMax.value && jobsCP.value && jobsDescription.value && jobsActivities.value /*&& jobsEmail.value && jobsCell.value*/) {
+			//adicionar cellphone  e email
+			//editarCadastro('http://127.0.0.1:3000/api/jobscontacts/', {email: jobsEmail.value , number: jobsCell.value})
 
 	resolve(informationJob = {
 		postal_code: parseInt(jobsCP.value),
-		//company: pegaIdEmpresa(JSON.parse(localStorage.UserBITDiscover).id,'http://127.0.0.1:3000/api/companies/'),
+		company: pegaIdEmpresa(JSON.parse(localStorage.UserBITDiscover).id,'http://127.0.0.1:3000/api/companies/'),
 		activities: jobsActivities.value,
 		name: jobsName.value,
 		description: jobsDescription.value,
@@ -179,7 +247,7 @@ var botaoDispara = new Promise(function (resolve, reject) {
 }
 
 })}).then((res) => {
-	editarCadastro('http://127.0.0.1:3000/api/jobs/',res)
+	editarCadastro('http://127.0.0.1:3000/api/jobs/'+idJob,res)
  })
 .then((resp) => {
 	$('#registrationJobs-target-myjobs').click(function () {
@@ -187,14 +255,29 @@ var botaoDispara = new Promise(function (resolve, reject) {
 	})
 })
 
+botaoDispara.catch((err) => {
+	alert(err)
+})
 
 
-function editarCadastro (id, urlGet){
+// function postarCadastro(url,information) {
+// 	$.post(url, information, function (response) {
+// 		console.log(response); 
+// 	});
+// }
+
+function editarCadastro (url, information){
 	$.ajax({
-		url: `${urlGet}${id}`,
-		type: 'put',
-		success: function(data){
-			alert(data);
+		type: "put",
+		url: url,
+		data: information,
+		dataType: "dataType",
+		success: function (response) {
+			alert("vaga editada cok sucesso!")
+		},
+		error: function(response){
+			alert("erro na resposta")
+			
 		}
 	});
 }
@@ -227,3 +310,6 @@ function pegaIdContact () {
      });
      return result;
 }
+
+//-----FIM TESTE
+
