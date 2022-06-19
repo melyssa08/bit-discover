@@ -83,3 +83,17 @@ h7.myJobs-card-title{
 .myJobs-card:hover > p, .card:hover > h7 {
     color: rgb(0, 0, 0);
 }
+
+a {
+    color: purple;
+}
+
+a:link {
+    color: rgb(83, 00, 132);
+    text-decoration: none;
+}
+
+a:hover {
+    color: #F3C42E;
+    text-decoration: none;
+}

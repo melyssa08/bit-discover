@@ -2,11 +2,6 @@
 
 window.addEventListener('load', function () {
 	$('#myJobs-header').load('/page_recruiter/side_and_navbar/index.html', function (response, status) {
-		if (status == 'error') {
-			console.log('Deu errado');
-		} else {
-			console.log('Funcionou');
-		}
 	});
 });
 
@@ -100,12 +95,19 @@ function deleteJob(id){
 	//Pedir confirmação antes de relamente deletar
 	//implementar o api_jobs.delete!!
 
-}
+	$.ajax({
+		url: `http://localhost:3000/api/jobs/${id}`,
+		type: 'DELETE',
+		success: function(){
+			alert("deletado com sucesso!")
+		}
+	});
 
+}
 
 function getJobOnLoad() {
 	$.get('http://localhost:3000/api/jobs', function (result) {
-		//  console.log("Resultado", result);
+		 console.log("Resultado", result);
 
 		if (result.length == 0) {
 			console.log('teste');

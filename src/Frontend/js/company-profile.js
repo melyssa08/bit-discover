@@ -34,11 +34,14 @@ $.ajax({
 });
 
 function update_profile() {
+    if ($("#companyProfile-input-company-name").val().length == 0 ||  $("#companyProfile-input-email").val().length==0||$("#companyProfile-input-confirmemail").val().length==0||$("#companyProfile-input-cnpj").val().length ==0||$("#companyProfile-input-password").val().length==0||$("#companyProfile-input-confirmpassword").val().length==0|| $("#companyProfile-input-cp").val().length==0||$("#companyProfile-input-link").val().length==0||$("#companyProfile-textarea").val().length==0)
     if (!($("#companyProfile-input-email").val() == $("#companyProfile-input-confirmemail").val())) {
-        return alert("Os emails não coincidem!")
+         alert("Os emails não coincidem!")
+         return false
     }
     if (!($("#companyProfile-input-password").val() == $("#companyProfile-input-confirmpassword").val())) {
-        return alert("As senhas não coincidem!")
+         alert("As senhas não coincidem!")
+         return false
     }
     $.ajax({
         url: "http://127.0.0.1:3000/api/companies/0",
@@ -55,4 +58,5 @@ function update_profile() {
             "#companyProfile-input-link"
         ).val()}&description=${$("#companyProfile-textarea").val()}`,
     });
+    window.location.href = "../my_jobs/index.html"
 }

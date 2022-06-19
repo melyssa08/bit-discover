@@ -1,79 +1,53 @@
-// variável que pega todos os botões que ficam em formato de array
-var botao = document.querySelectorAll(".myProfile-button-tag");
-for (item of botao) {
-  item.className = "myProfile-button-tag false";
+// faz os botões de hard e soft skill funcionar
+function botao(id) {
+  if (id.getAttribute("class") == "myProfile-button-tag-unclicked" ){
+ id.setAttribute("class","myProfile-button-tag-clicked")
+  }
+  else {
+    id.setAttribute("class","myProfile-button-tag-unclicked")
+  }
 }
-// loop que passa por cada botão e adciona propriedades em cada um deles
-// visto que quando o evento é disparado o botão que foi clicado se ve com propriedades novas
-for (let i = 0; i < botao.length; i++) {
-  botao[i].addEventListener("click", function (e) {
-    if (botao[i].className == "myProfile-button-tag false") {
-      e.preventDefault();
-      botao[i].style.backgroundColor = "#530084";
-      botao[i].style.color = "#FFFFFF";
-      botao[i].className = "myProfile-button-tag true";
-    } else if (botao[i].className == "myProfile-button-tag true") {
-      e.preventDefault();
-      botao[i].style.borderStyle = "solid";
-      botao[i].style.borderStyle = "#530084";
-      botao[i].style.backgroundColor = "#FFFFFF";
-      botao[i].style.color = "#530084";
-      botao[i].className = "myProfile-button-tag false";
-    }
-  });
-}
-
-
+//o butão que deixa editar os campos
 function pencilbutton() {
   var inputs = document.querySelectorAll("input")
   var selects = document.querySelectorAll("select")
   var buttons = document.querySelectorAll(".myProfile-button-tag")
   var textarea = document.querySelectorAll("textarea")
+  //após apertar o botão permite que os campos sejam modificados
   for (let i = 0; i < inputs.length; i++) {
     inputs[i].disabled = false
     inputs[i].classList.remove("myProfile-disabled")
   }
+  //após apertar o botão permite que os campos sejam modificados
   for (let g = 0; g < selects.length; g++) {
     selects[g].disabled = false
     selects[g].classList.remove("myProfile-disabled")
   }
+  //após apertar o botão permite que os campos sejam modificados
   for (let j = 0; j < textarea.length; j++) {
     textarea[j].disabled = false
     textarea[j].classList.remove("myProfile-disabled")
   }
+  //após apertar o botão permite que os campos sejam modificados
   for (let h = 0; h < buttons.length; h++) {
     buttons[h].disabled = false
   }
 }
-
-$.ajax({
-  url: "http://127.0.0.1:3000/api/candidates/?id=1",
-  type: "GET",
-  success: function (data) {
-    console.log(data)
-    console.log(data[0]["name"])
-    $("#myProfile-input-name").val(data[0]["name"])
-    $("#myProfile-input-email").val(data[0]["email"])
-    $("#myProfile-input-confirm-email").val(data[0]["email"])
-    $("#myProfile-input-age").val(data[0]["age"])
-    $("#myProfile-input-CPF").val(data[0]["CPF"])
-    $("#myProfile-input-password").val(data[0]["password"])
-    $("#myProfile-input-confirm-password").val(data[0]["password"])
-    $("#myProfile-input-cp").val(data[0]["postal_code"])
-    $("#myProfile-select-scholarity").val(data[0]["scholarship"]).change()
-    $("#myProfile-input-course").val(data[0]["graduation"]).change()
-    $("#myProfile-experience").val(data[0]["likes"]).change()
-    $("#myProfile-textarea").val(data[0]["description"]);
-
-  }
-})
+// atualiza os dados da usuária e vê se os campos esão preechidos corretamente
 function update_profile() {
+  // os if abaixo garantem que os dados estejam sendo inseridos de froma correta no formulário
+  if ( $("#myProfile-input-name").val().length ==0 || $("#myProfile-input-email").val().length == 0 || $("#myProfile-input-confirm-email").val().length ==0 || $("#myProfile-input-age").val().length ==0 || $("#myProfile-input-CPF").val().length == 0|| $("#myProfile-input-password").val().length == 0 ||  $("#myProfile-input-confirm-password").val().length == 0 ||$("#myProfile-input-cp").val().length == 0 ||$("#myProfile-textarea").val().length ==0){
+    alert("não deixe nenhum campo em branco")
+    return false
+  }
+
   if (!($("#myProfile-input-email").val() == $("#myProfile-input-confirm-email").val())) {
     return alert("Os emails não coincidem!")
   }
   if (!($("#myProfile-input-password").val() == $("#myProfile-input-confirm-password").val())) {
     return alert("As senhas não coincidem!")
   }
+  //salva as mudanças no perfil do usário
   $.ajax({
     url: "http://127.0.0.1:3000/api/candidates/1",
     type: "PUT",
@@ -83,3 +57,22 @@ function update_profile() {
     }
   })
 }
+
+//executa a função ao iniciar a pagina adicionando os botões de hard e softskills
+function onload() {
+ //carrega os botões de softskill e os adiciona na página
+  $.get("http://localhost:3000/api/softskills", function(softskills) {
+    console.log(softskills)
+    for (i=0;i<softskills.length;i++) {
+      $('#myProfile-content-obligation').append(`<button class="myProfile-button-tag-unclicked" id="s${softskills[i].id}"  onclick="botao(s${softskills[i].id})">` + softskills[i].name + `</button>`)
+    }
+  }) 
+
+  
+  $.get('http://localhost:3000/api/hardskills', function(hardskills) {
+     //carrega os botões de hardskill e os adiciona na página
+    for (i=0;i<hardskills.length;i++) {
+      $('#myProfile-content-obligation-1').append(`<button class="myProfile-button-tag-unclicked" id="h${hardskills[i].id}" onclick="botao(h${hardskills[i].id})">` + hardskills[i].name + `</button>`)
+    }
+  })
+   }
