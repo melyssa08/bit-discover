@@ -111,3 +111,59 @@
 #likesCandidates-company-description {
     font-size: 0.9rem;
 }
+
+.likesCandidates-fix-center {
+    text-align: center;
+    border: solid 0px white;
+    height: auto;
+    width: 20rem;
+    margin-bottom: 1.5rem;
+}
+
+.likesCandidates-style {
+    text-align: left;
+}
+
+#likesCandidates-style-education {
+    display: inline;
+}
+
+#likesCandidates-space-like {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10%;
+}
+
+#likesCandidates-follow {
+    background-color: purple;
+    width: 80%;
+}
+
+#likesCandidates-example-modal-label {
+    text-align: left;
+}
+
+.likesCandidates-activities-required {
+    margin-left: 1.3rem;
+}
+
+#likesCandidates-list {
+    list-style-type: none; 
+    text-align: justify;
+}
+
+#likesCandidates-company-description {
+    font-size: 0.9rem;
+}
+
+#likesCandidates-confirm-modal {
+    background-color: rgb(83, 00, 132);
+    color: white;
+    border-style: solid;
+    border-color: rgb(83, 00, 132);
+    border-radius: 4px;
+}
+
+#likesCandidates-icon-like:hover {
+    color: rgb(83, 00, 132);
+}

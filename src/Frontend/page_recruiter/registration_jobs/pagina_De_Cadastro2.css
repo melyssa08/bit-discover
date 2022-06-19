@@ -86,7 +86,6 @@ input::-webkit-inner-spin-button {
     min-width: 212px;
     height: 80%;
     width: 60%;
-    min-height: 35.2px;
 }
 
 #registrationJobs-profiency {
@@ -134,7 +133,7 @@ input::-webkit-inner-spin-button {
 .registrationJobs-input-form-buttons-box {
     background-color: #FFFFFF;
     display: flex;
-    height: 80%;
+    height: 100%;
     width: 100%;
     min-width: 215px;
     border-style: solid;
@@ -220,6 +219,8 @@ input::-webkit-inner-spin-button {
 
 /* Propriedade de display de uma caixa de seleção de tag */
 .registrationJobs-hard-skills {
+    margin-top: 10px;
+    width: 100%;
     display: grid;
 }
 

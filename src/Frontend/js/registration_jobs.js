@@ -36,21 +36,6 @@ $.get("http://127.0.0.1:3000/api/bonus/", function (response) {
 	adcionaFuncionalidadeAsTags('registrationJobs-tags-bonus')
 })
 
-// Pega as tags e põem novas
-var addNewTag = document.getElementById('registrationJobs-add-new-tag');
-var listNewTag = document.getElementById('registrationJobs-input-add-tag');
-var divFatherOpcional = document.getElementById('registrationJobs-content-no-obligation');
-
-addNewTag.addEventListener('click', function () {
-	var newTag = document.createElement('button');
-	newTag.className = 'registrationJobs-button-tag';
-	newTag.style.backgroundColor = '#530084';
-	newTag.style.color = 'white';
-	newTag.innerHTML = `${listNewTag.value}`;
-	divFatherOpcional.appendChild(newTag);
-});
-
-
 function adcionaFuncionalidadeAsTags (nomeId) {
 	var botao = document.getElementById(nomeId).children
 	for (item of botao) {
@@ -74,6 +59,20 @@ function adcionaFuncionalidadeAsTags (nomeId) {
 		});
 	}
 }
+
+// Pega as tags e põem novas
+var addNewTag = document.getElementById('registrationJobs-add-new-tag');
+var listNewTag = document.getElementById('registrationJobs-input-add-tag');
+var divFatherOpcional = document.getElementById('registrationJobs-content-no-obligation');
+
+addNewTag.addEventListener('click', function () {
+	var newTag = document.createElement('button');
+	newTag.className = 'registrationJobs-button-tag';
+	newTag.style.backgroundColor = '#530084';
+	newTag.style.color = 'white';
+	newTag.innerHTML = `${listNewTag.value}`;
+	divFatherOpcional.appendChild(newTag);
+});
 
 
 var jobsName = document.getElementById('registrationJobs-name-job');
@@ -161,7 +160,8 @@ var botaoDispara = new Promise(function (resolve, reject) {
 	iconConfirm.addEventListener('click', function (e) {
 	e.preventDefault();
 
-		if (jobsSalaryMin.value && jobsSalaryMax.value && jobsCP.value && jobsDescription.value && jobsActivities.value && jobsEmail.value && jobsCell.value) {
+		if (jobsSalaryMin.value && jobsSalaryMax.value && jobsCP.value && jobsDescription.value && jobsActivities.value && jobsEmail.value && jobsCell.value
+			&& iteradorTagsHabilitiesHard() && iteradorTagsHabilitiesSoft() && iteradorTagsBonus()) {
 
 			postarCadastro('http://127.0.0.1:3000/api/jobscontacts/', {email: jobsEmail.value , number: jobsCell.value})
 

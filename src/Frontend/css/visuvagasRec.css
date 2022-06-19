@@ -133,3 +133,11 @@
 .offcanvas-header{
     height: 4.8rem;
 }
+
+#sideNavBar-link {
+    color: rgb(83, 00, 132);
+}
+
+#sideNavBar-link:hover {
+    color: #F3C42E;
+}

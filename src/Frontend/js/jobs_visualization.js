@@ -117,7 +117,7 @@ function teste() {
 						[
 						...resul.bonus.map(function (resul) {
 							console.log(resul)
-							return resul.benefits;
+							return resul.name;
 						}),
 						].join(', ') + `
 						</li></ul><br>
