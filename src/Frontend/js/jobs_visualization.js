@@ -1,15 +1,9 @@
 window.addEventListener('load', function () {
 	$('#jobsVisualization-header').load('/page_candidates/side_and_navbar/index.html', function (response, status) {
-		if (status == 'error') {
-			console.log('Deu errado');
-		} else {
-			console.log('Funcionou');
-		}
 	});
 });
 
 function teste() {
-	console.log('teste');
 	// Consumo de api por jQuery com o método get
 	$.get('http://localhost:3000/api/jobs', function (resultado) {
 		// Veio como array o resultado então usa o map para fazer a modificação em cada item do array
@@ -116,7 +110,6 @@ function teste() {
 						<ul id="jobsVisualization-list"><li id = jobsVisualization-company-description>` +
 						[
 						...resul.bonus.map(function (resul) {
-							console.log(resul)
 							return resul.benefits;
 						}),
 						].join(', ') + `
@@ -136,7 +129,8 @@ function teste() {
 		</div>
 			<br>
 			<script> function contacts` + resul.id + `() {
-				$('#contacts` + resul.id + `').html("<br><b>Contato:<br> Email: `+ resul.job_contacts.email +` Telefone: `+ resul.job_contacts.number +`<br>Website: `+ resul.company.website + `</b>")}`
+				$('#contacts` + resul.id + `').html("<br><b>Contato:<br> Email: `+ resul.job_contacts.email +` Telefone: `+ resul.job_contacts.number +`<br>Website: `+ resul.company.website + `</b>")
+			}`
 			);
 		});
 	})

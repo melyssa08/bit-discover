@@ -2,11 +2,6 @@
 
 window.addEventListener('load', function () {
 	$('#myJobs-header').load('/page_recruiter/side_and_navbar/index.html', function (response, status) {
-		if (status == 'error') {
-			console.log('Deu errado');
-		} else {
-			console.log('Funcionou');
-		}
 	});
 });
 
