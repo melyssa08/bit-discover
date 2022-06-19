@@ -33,28 +33,6 @@ function pencilbutton() {
     buttons[h].disabled = false
   }
 }
-
-//preenche os campos com os dados da usuária
-$.ajax({
-  url: "http://127.0.0.1:3000/api/candidates/?id=1",
-  type: "GET",
-  success: function (data) {
-    console.log(data)
-    $("#myProfile-input-name").val(data[0]["name"])
-    $("#myProfile-input-email").val(data[0]["email"])
-    $("#myProfile-input-confirm-email").val(data[0]["email"])
-    $("#myProfile-input-age").val(data[0]["age"])
-    $("#myProfile-input-CPF").val(data[0]["CPF"])
-    $("#myProfile-input-password").val(data[0]["password"])
-    $("#myProfile-input-confirm-password").val(data[0]["password"])
-    $("#myProfile-input-cp").val(data[0]["postal_code"])
-    $("#myProfile-select-scholarity").val(data[0]["scholarship"]).change()
-    $("#myProfile-input-course").val(data[0]["graduation"]).change()
-    $("#myProfile-experience").val(data[0]["likes"]).change()
-    $("#myProfile-textarea").val(data[0]["description"]);
-
-  }
-})
 // atualiza os dados da usuária e vê se os campos esão preechidos corretamente
 function update_profile() {
   // os if abaixo garantem que os dados estejam sendo inseridos de froma correta no formulário
@@ -98,39 +76,3 @@ function onload() {
     }
   })
    }
-
-   
-var softSkills = [];
-var hardSkills = [];
-
-// deixar essas var no global
-function selectSoftSkill(id) {
-    //busca se o id já exise no array
-    if (softSkills.indexOf(id)>=0) {
-      //se existe, ele romeve do array o id
-      softSkills.splice(softSkills.indexOf(id), 1);
-      //e retira a classe de clicado
-      document.getElementById("s"+id).classList.remove("registrationCandidates-button-tag-clicked");
-    }else{
-      //se não existe, adiciona ao array
-      softSkills.push(id);
-      //e adiciona a classe clicada
-      document.getElementById("s"+id).classList.add("registrationCandidates-button-tag-clicked");
-    }
-
-};
-
-function selectHardSkill(id){
-  //busca se o id já exise no array
-  if (hardSkills.indexOf(id)>=0) {
-    //se existe, ele romeve do array o id
-    hardSkills.splice(hardSkills.indexOf(id), 1);
-    //e retira a classe de clicado
-    document.getElementById("h"+id).classList.remove("registrationCandidates-button-tag-clicked");
-  }else{
-    //se não existe, adiciona ao array
-    hardSkills.push(id);
-    //e adiciona a classe clicada
-    document.getElementById("h"+id).classList.add("registrationCandidates-button-tag-clicked");
-  }
-};
