@@ -48,7 +48,7 @@ function create_profile() {
     type: "PUT",
     data: `name=${$("#registrationCandidates-input-name").val()}&email=${$("#registrationCandidates-input-email").val()}&age=${$("#registrationCandidates-input-age").val()}&CPF=${$("#registrationCandidates-input-CPF").val()}&password=${$("#registrationCandidates-input-password").val()}&postal_code=${$("#registrationCandidates-input-cp").val()}&scholarship=${$("#registrationCandidates-select-scholarity").val()}&graduation=${$("#registrationCandidates-input-course").val()}&likes=${$("#registrationCandidates-experience").val()}&description=${$("#registrationCandidates-textarea").val()}`,
     success: function (data) {
-      alert("Mudanças registradas! :D")
+      alert("Perfil Criado com sucesso! :D")
     }
   })
   window.location.href = "../jobs_visualization/index.html"

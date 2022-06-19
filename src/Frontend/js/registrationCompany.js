@@ -12,8 +12,8 @@ function create_profile() {
         return alert("As senhas não coincidem!")
     }
     $.ajax({
-        url: "http://127.0.0.1:3000/api/companies/0",
-        type: "PUT",
+        url: "http://127.0.0.1:3000/api/companies/",
+        type: "POST",
         data: `name=${$(
             "#registrationCompany-input-company-name"
         ).val()}&email=${$("#registrationCompany-input-email").val()}&cnpj=${$(
