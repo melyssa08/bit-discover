@@ -54,6 +54,7 @@ const CandidatesController = {
 	put(req, res) {
 		candidates.update(req.body, { id: req.params.id }).then((result) => {
 			// Update candidates with id = req.params.id
+			console.log(req.params.id)
 			res.send(result); // Send result
 		});
 	},

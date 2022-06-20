@@ -7,9 +7,9 @@ function botao(id) {
     id.setAttribute("class","myProfile-button-tag-unclicked")
   }
 }
+
 var user = JSON.parse(localStorage.getItem('UserBITDiscover'));
 var id = user.id
-
 //o butão que deixa editar os campos
 function pencilbutton() {
   var inputs = document.querySelectorAll("input")
@@ -50,56 +50,81 @@ function update_profile() {
   if (!($("#myProfile-input-password").val() == $("#myProfile-input-confirm-password").val())) {
     return alert("As senhas não coincidem!")
   }
+  //guarda os botões apertados em strings
+  var soft_text = ""
+  var hard_text = ""
+  for (i =0;i<document.getElementById("myProfile-content-obligation").childElementCount;i++) {
+    if (document.getElementById(`s${i}`).getAttribute("class")==  "myProfile-button-tag-clicked") {
+      soft_text += i + ","
+    }
+  }
+  for (i =0;i<document.getElementById("myProfile-content-obligation-1").childElementCount;i++) {
+    if (document.getElementById(`h${i}`).getAttribute("class")==  "myProfile-button-tag-clicked") {
+     hard_text += i +","
+    }
+  }
+  console.log(hard_text,soft_text)
+// retira a última virgula das strings
+  soft_text=soft_text.substring(0,soft_text.length-1)
+  hard_text = hard_text.substring(0,hard_text.length-1)
+//salva as mudanças no perfil do usário
   //salva as mudanças no perfil do usário
   $.ajax({
     url: `http://127.0.0.1:3000/api/candidates/${id}`,
     type: "PUT",
-    data: `name=${$("#myProfile-input-name").val()}&email=${$("#myProfile-input-email").val()}&age=${$("#myProfile-input-age").val()}&CPF=${$("#myProfile-input-CPF").val()}&password=${$("#myProfile-input-password").val()}&postal_code=${$("#myProfile-input-cp").val()}&scholarship=${$("#myProfile-select-scholarity").val()}&graduation=${$("#myProfile-input-course").val()}&departaments=${$("#myProfile-experience").val()}&description=${$("#myProfile-textarea").val()}`,
+    data: `name=${$("#myProfile-input-name").val()}&email=${$("#myProfile-input-email").val()}&age=${$("#myProfile-input-age").val()}&CPF=${$("#myProfile-input-CPF").val()}&password=${$("#myProfile-input-password").val()}&postal_code=${$("#myProfile-input-cp").val()}&scholarship=${$("#myProfile-select-scholarity").val()}&graduation=${$("#myProfile-input-course").val()}&departaments=${$("#myProfile-experience").val()}&description=${$("#myProfile-textarea").val()}&softskills=${soft_text}&hardskills=${hard_text}`,
     success: function (data) {
       alert("Mudanças registradas! :D")
       //redieciona para a próxima pagina
-    window.location.href = "../jobs_visualization/index.html"
+    // window.location.href = "../jobs_visualization/index.html"
     }
   })
 }
 //pega os dados do banco e já deixa o perfil preenchido com as informações interiores preenchidas
 $.ajax({
-  url: `http://127.0.0.1:3000/api/companies/?id= ${id}`,
+  url: `http://127.0.0.1:3000/api/candidates/${id}`,
   type: "GET",
   success: function (data) {
-      console.log(data);
-      console.log(data[id]["name"]);
-      $("#myProfile-input-name").val(data[id]["name"]);
-      $("#myProfile-input-email").val(data[id]["email"]);
-      $("#myProfile-input-confirm-email").val(data[id]["email"]);
-      $("#myProfile-input-CPF").val(data[id]["CPF"]);
-      $("#myProfile-input-password").val(data[id]["password"]);
-      $("#myProfile-input-confirm-password").val(data[id]["password"]);
-      $("#myProfile-input-age").val(data[id]["age"]);
-      $("#myProfile-input-cp").val(data[id]["cp"]);
-      $("#myProfile-textarea").val(data[id]["description"]);
-      $("#myProfile-select-scholarity").val(data[id]["scholarship"]).change();
-      $("#myProfile-select-course").val(data[id]["graduation"]).change();
-      $("#myProfile-select-experience").val(data[id]["departament"]).change();
+      $("#myProfile-input-name").val(data[0]["name"]);
+      $("#myProfile-input-email").val(data[0]["email"]);
+      $("#myProfile-input-confirm-email").val(data[0]["email"]);
+      $("#myProfile-input-CPF").val(data[0]["CPF"]);
+      $("#myProfile-input-password").val(data[0]["password"]);
+      $("#myProfile-input-confirm-password").val(data[0]["password"]);
+      $("#myProfile-input-age").val(data[0]["age"]);
+      $("#myProfile-input-cp").val(data[0]["postal_code"]);
+      $("#myProfile-textarea").val(data[0]["description"]);
+      $("#myProfile-select-scholarity").prop("selectedIndex",data[0]["scholarship"])
+      $("#myProfile-input-course").prop("selectedIndex",Number(data[0]["graduation"]))
+      $("#myProfile-experience").prop("selectedIndex",data[0]["departaments"])
   },
-});
-
-$.ajax()
-
-//executa a função ao iniciar a pagina adicionando os botões de hard e softskills
-function onload() {
- //carrega os botões de softskill e os adiciona na página
+}).then(function(result) {
+  //carrega os botões de softskill e os adiciona na página
   $.get("http://localhost:3000/api/softskills", function(softskills) {
     for (i=0;i<softskills.length;i++) {
-      $('#myProfile-content-obligation').append(`<button class="myProfile-button-tag-unclicked" id="s${softskills[i].id}"  onclick="botao(s${softskills[i].id})">` + softskills[i].name + `</button>`)
+      $('#myProfile-content-obligation').append(`<button class="myProfile-button-tag-unclicked" id="s${softskills[i].id}"  onclick="botao(document.getElementById('s${softskills[i].id}'))">` + softskills[i].name + `</button>`)
     }
-  }) 
+  }).then(function(buttons) {
+    let array_soft = result[0]["softskills"].split(",")
+    array_soft.forEach(element => {
+      botao(document.getElementById("s"+element))
+    });
+  })
 
-  
   $.get('http://localhost:3000/api/hardskills', function(hardskills) {
      //carrega os botões de hardskill e os adiciona na página
     for (i=0;i<hardskills.length;i++) {
       $('#myProfile-content-obligation-1').append(`<button class="myProfile-button-tag-unclicked" id="h${hardskills[i].id}" onclick="botao(h${hardskills[i].id})">` + hardskills[i].name + `</button>`)
     }
+  }).then(function(buttons) {
+    let array_hard = result[0]["hardskills"].split(",")
+    array_hard.forEach(element => {
+      botao(document.getElementById("h" + element))
+    })
   })
-   }
+
+});
+
+
+
+
