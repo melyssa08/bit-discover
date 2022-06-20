@@ -62,14 +62,12 @@ function create_profile() {
   $.ajax({
     url: "http://127.0.0.1:3000/api/candidates/",
     type: "POST",
-    data: `name=${$("#registrationCandidates-input-name").val()}&email=${$("#registrationCandidates-input-email").val()}&age=${$("#registrationCandidates-input-age").val()}&CPF=${$("#registrationCandidates-input-CPF").val()}&password=${$("#registrationCandidates-input-password").val()}&postal_code=${$("#registrationCandidates-input-cp").val()}&scholarship=${$("#registrationCandidates-select-scholarity").val()}&graduation=${$("#registrationCandidates-input-course").val()}&likes=${$("#registrationCandidates-experience").val()}&description=${$("#registrationCandidates-textarea").val()}&hardskills=${hard_text}&softskills=${soft_text}`,
+    data: `name=${$("#registrationCandidates-input-name").val()}&email=${$("#registrationCandidates-input-email").val()}&age=${$("#registrationCandidates-input-age").val()}&CPF=${$("#registrationCandidates-input-CPF").val()}&password=${$("#registrationCandidates-input-password").val()}&postal_code=${$("#registrationCandidates-input-cp").val()}&scholarship=${$("#registrationCandidates-scholarity").val()}&graduation=${$("#registrationCandidates-graduation").val()}&description=${$("#registrationCandidates-textarea").val()}&hardskills=${hard_text}&softskills=${soft_text}&departaments=${$("#registrationCandidates-experience").val()}`,
     success: function (data) {
       alert("Perfil Criado com sucesso! :D")
     }
   })
   // window.location.href = "../jobs_visualization/index.html"
-  console.log(soft_text)
-  console.log(hard_text)
 }
 //carrega ao iniciar pagina 
 function onload() {
