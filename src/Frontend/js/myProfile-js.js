@@ -58,6 +58,27 @@ function update_profile() {
   })
 }
 
+$.ajax({
+  url: "http://127.0.0.1:3000/api/companies/?id=1",
+  type: "GET",
+  success: function (data) {
+      console.log(data);
+      console.log(data[0]["name"]);
+      $("#myProfile-input-name").val(data[0]["name"]);
+      $("#myProfile-input-email").val(data[0]["email"]);
+      $("#myProfile-input-confirm-email").val(data[0]["email"]);
+      $("#myProfile-input-CPF").val(data[0]["CPF"]);
+      $("#myProfile-input-password").val(data[0]["password"]);
+      $("#myProfile-input-confirm-password").val(data[0]["password"]);
+      $("#myProfile-input-age").val(data[0]["age"]);
+      $("#myProfile-input-cp").val(data[0]["cp"]);
+      $("#myProfile-textarea").val(data[0]["description"]);
+      $("#myProfile-select-scholarity").val(data[0]["scholarship"]).change();
+      $("#myProfile-select-course").val(data[0]["graduation"]).change();
+      $("#myProfile-select-experience").val(data[0]["expireince"]).change();
+  },
+});
+
 //executa a função ao iniciar a pagina adicionando os botões de hard e softskills
 function onload() {
  //carrega os botões de softskill e os adiciona na página
