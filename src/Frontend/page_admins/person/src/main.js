@@ -1,14 +1,24 @@
-function create_user(type, name, date, status, email) {
-	return `
-		<tr>
+function delete_user(indetification) {
+	$.ajax({
+		url: '/api/candidates/' + indetification,
+		type: 'DELETE',
+		success: function (result) {
+			document.getElementById('user-' + indetification).remove();
+		},
+	});
+}
+
+function create_user(indetification, name, date, idade, email) {
+	document.getElementById('main-body').innerHTML += `
+		<tr id="user-${indetification}">
 			<td>
 				<img src="https://source.boringavatars.com/beam/${name}" alt="" />
 				<a href="#" class="user-link">${name}</a>
-				<span class="user-subhead">${type}</span>
+				<span class="user-subhead">${indetification}</span>
 			</td>
 			<td>${date}</td>
 			<td class="text-center">
-				<span class="label label-default">${status}</span>
+				<span class="label label-default">${idade}</span>
 			</td>
 			<td>
 				<a href="#">${email}</a>
@@ -26,7 +36,7 @@ function create_user(type, name, date, status, email) {
 						<i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
 					</span>
 				</a>
-				<a href="#" class="table-link danger">
+				<a href="#" class="table-link danger" onclick="delete_user(${indetification})">
 					<span class="fa-stack">
 						<i class="fa fa-square fa-stack-2x"></i>
 						<i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
@@ -38,10 +48,9 @@ function create_user(type, name, date, status, email) {
 }
 
 $(document).ready(function () {
-	document.getElementById('main-body').innerHTML += create_user('Admin', 'Valentina', '10/10/2018', 'Ativa', 'valentina.email@gmail.com');
-	document.getElementById('main-body').innerHTML += create_user('Usuário', 'Mihaell', '08/04/2016', 'Inativa', 'mihaell.email@gmail.com');
-	document.getElementById('main-body').innerHTML += create_user('Empresa', 'Melyssa', '28/07/2022', 'Banida', 'melyssa.email@gmail.com');
-	document.getElementById('main-body').innerHTML += create_user('Usuário', 'João Pedro', '16/12/2021', 'Confirmando', 'joaopedro.email@gmail.com');
-	document.getElementById('main-body').innerHTML += create_user('Empresa', 'Gabriel', '16/12/2021', 'Ativa', 'gabriel.email@gmail.com');
-	document.getElementById('main-body').innerHTML += create_user('Usuário', 'Alberto', '16/12/2021', 'Ativa', 'alberto.email@gmail.com');
+	$.get('/api/candidates', function (data) {
+		data.forEach(function (candidate) {
+			create_user(candidate.id, candidate.name, candidate.created_at, candidate.age, candidate.email);
+		});
+	});
 });

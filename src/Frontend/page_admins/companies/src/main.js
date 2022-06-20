@@ -1,5 +1,5 @@
 function create_user(fantasy_name, company_name, jobs_open, status, email, cnpj, date) {
-	return `
+	document.getElementById('main-body').innerHTML += `
 		<tr>
 			<td>
 				<img src="https://source.boringavatars.com/beam/${fantasy_name}" alt="" />
@@ -44,9 +44,9 @@ function create_user(fantasy_name, company_name, jobs_open, status, email, cnpj,
 }
 
 $(document).ready(function () {
-	document.getElementById('main-body').innerHTML += create_user('INTELI', 'Instituto de Tecnologia e Liderança', '10', 'Ativo', 'inteli.edu@sou.inteli.edu.br', '00.000.000/0001-00', '01/01/2018');
-	document.getElementById('main-body').innerHTML += create_user('INTELI', 'Instituto de Tecnologia e Liderança', '10', 'Ativo', 'inteli.edu@sou.inteli.edu.br', '00.000.000/0001-00', '01/01/2018');
-	document.getElementById('main-body').innerHTML += create_user('INTELI', 'Instituto de Tecnologia e Liderança', '10', 'Ativo', 'inteli.edu@sou.inteli.edu.br', '00.000.000/0001-00', '01/01/2018');
-	document.getElementById('main-body').innerHTML += create_user('INTELI', 'Instituto de Tecnologia e Liderança', '10', 'Ativo', 'inteli.edu@sou.inteli.edu.br', '00.000.000/0001-00', '01/01/2018');
-	document.getElementById('main-body').innerHTML += create_user('INTELI', 'Instituto de Tecnologia e Liderança', '10', 'Ativo', 'inteli.edu@sou.inteli.edu.br', '00.000.000/0001-00', '01/01/2018');
+	create_user('INTELI', 'Instituto de Tecnologia e Liderança', '10', 'Ativo', 'inteli.edu@sou.inteli.edu.br', '00.000.000/0001-00', '01/01/2018');
+	create_user('INTELI', 'Instituto de Tecnologia e Liderança', '10', 'Ativo', 'inteli.edu@sou.inteli.edu.br', '00.000.000/0001-00', '01/01/2018');
+	create_user('INTELI', 'Instituto de Tecnologia e Liderança', '10', 'Ativo', 'inteli.edu@sou.inteli.edu.br', '00.000.000/0001-00', '01/01/2018');
+	create_user('INTELI', 'Instituto de Tecnologia e Liderança', '10', 'Ativo', 'inteli.edu@sou.inteli.edu.br', '00.000.000/0001-00', '01/01/2018');
+	create_user('INTELI', 'Instituto de Tecnologia e Liderança', '10', 'Ativo', 'inteli.edu@sou.inteli.edu.br', '00.000.000/0001-00', '01/01/2018');
 });
