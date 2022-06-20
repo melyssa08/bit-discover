@@ -50,7 +50,7 @@ class Candidates extends DatabaseTable {
 				type: DataTypes.text,
 				notNull: false,
 			},
-			likes: {
+			experience: {
 				type: DataTypes.text,
 				notNull: false,
 			},

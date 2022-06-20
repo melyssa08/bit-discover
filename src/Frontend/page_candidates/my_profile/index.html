@@ -12,7 +12,7 @@
 <!-- na head, declaro o fontawesome e o bootstrap, assim como o css -->
 </head>
 
-<body class="myProfile-body">  <!-- classe do body todo -->
+<body class="myProfile-body" onload="onload()">  <!-- classe do body todo -->
     <div id="myProfile-navbar"></div>
     <div class="container justify-content-center me-auto">
         <!-- todas as classes que nao comecam com "myProfile" são do bootstrap -->
@@ -43,7 +43,7 @@
                                     </div>
                                     <div class="col-lg-5">
                                         <label for="myProfile-input-email" class="myProfile-label">Email</label>
-                                        <input type="text" placeholder="Digite seu email" class="myProfile-columns form-control myProfile-input-box myProfile-placeholder myProfile-disabled" id="myProfile-input-email" name="mP-input-email" disabled />
+                                        <input type="text" placeholder="Digite seu email" class="myProfile-columns form-control myProfile-input-box myProfile-placeholder myProfile-disabled" id="myProfile-input-email" name="mP-input-email" disabled/>
                                     </div>
                                     <div class="col-lg-5">
                                         <label for="myProfile-input-confirm-email" class="myProfile-label">Confirmar email</label>
@@ -55,16 +55,16 @@
                                     </div>
                                     <div class="col-lg-5">
                                         <label class="myProfile-label" for="myProfile-input-CPF">CPF</label>
-                                        <input type="text" class="myProfile-columns form-control myProfile-placeholder myProfile-input-box myProfile-disabled" placeholder="000.000.000-00" id="myProfile-input-CPF" name="mP-input-CPF" disabled />
+                                        <input type="text" class="myProfile-columns form-control myProfile-placeholder myProfile-input-box myProfile-disabled" placeholder="000.000.000-00" id="myProfile-input-CPF" name="mP-input-CPF" disabled/>
                                     </div>
                                     <div class="col-lg-5">
                                         <label for="myProfile-input-password" class="myProfile-label">Senha</label>
-                                        <input type="password" placeholder="12345" class="myProfile-columns form-control myProfile-input-box myProfile-placeholder myProfile-disabled" id="myProfile-input-password" name="mP-input-password" disabled />
+                                        <input type="password" placeholder="12345" class="myProfile-columns form-control myProfile-input-box myProfile-placeholder myProfile-disabled" id="myProfile-input-password" name="mP-input-password" disabled/>
                                     </div>
                                     <div class="col-lg-5">
                                         <label for="myProfile-input-confirm-password" class="myProfile-label">Confirmar
                                             senha</label>
-                                        <input type="password" placeholder="12345" class="myProfile-columns form-control myProfile-input-box myProfile-placeholder myProfile-disabled" id="myProfile-input-confirm-password" name="mP-input-confirm-password" disabled />
+                                        <input type="password" placeholder="12345" class="myProfile-columns form-control myProfile-input-box myProfile-placeholder myProfile-disabled" id="myProfile-input-confirm-password" name="mP-input-confirm-password" disabled/>
                                     </div>
                                     <div class="col-lg-5">
                                         <label for="myProfile-input-cp" class="myProfile-label">Código Postal
@@ -75,6 +75,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- div da textarea -->
                     <div class="container-lg mt-5">
                         <div class="row justify-content-center">
                             <h4 class="myProfile-hs">Conte mais sobre você</h4>
@@ -85,6 +86,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- div do inicio das informações profissionais -->
                     <div class="container-lg mt-5">
                         <h4 class="myProfile-hs myProfile-margintop">
                             Informações Profissionais
@@ -123,7 +125,7 @@
                                 </label>
                                 <select class="form-select myProfile-placeholder myProfile-input-box select myProfile-disabled" aria-label="Default select example" id="myProfile-input-course" name="rC-input-select-experience" disabled>
                                     <option class="myProfile-label" selected>
-                                        Selecione seu curso de tecnologia
+                                        Selecione seu curso de tecnologia 
                                     </option>
                                     <option class="myProfile-label" value="1">
                                         Ciências da Computação
@@ -141,6 +143,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- select final das informações profissionais -->
                     <div class="container-lg">
                         <div class="row myProfile-margintop">
                             <div class="col-lg-5 offset-lg-1 col-md-6 col-sm-12">
@@ -163,7 +166,7 @@
                         </div>
                     </div>
                 </div>
-
+                <!-- div do sistema de soft skills -->
                 <div class="container mt-3">
                     <h4 id="Softskills" class="myProfile-hs myProfile-margintop">
                         Registre aqui suas Soft Skills!
@@ -174,36 +177,15 @@
                                 <div id="myProfile-title-hard-skills-obligations">
                                     <p class="myProfile-title">Soft Skills:</p>
                                 </div>
-                                <div id="myProfile-content-obligation">
-                                    <button class="myProfile-button-tag" disabled>
-                                        Resolução de Problemas Complexos
-                                    </button>
-                                    <button class="myProfile-button-tag" disabled>Pensamento Crítico</button>
-                                    <button class="myProfile-button-tag" disabled>Criatividade</button>
-                                    <button class="myProfile-button-tag" disabled>Gestão de Pessoas</button>
-                                    <button class="myProfile-button-tag" disabled>
-                                        Liderança e influência social
-                                    </button>
-
-                                    <button class="myProfile-button-tag" disabled>
-                                        Pensamento analítico e inovação
-                                    </button>
-                                    <button class="myProfile-button-tag" disabled>
-                                        Resiliência, tolerância e flexibilidade
-                                    </button>
-                                    <button class="myProfile-button-tag" disabled>
-                                        Inteligência emocional
-                                    </button>
-                                    <button class="myProfile-button-tag" disabled>
-                                        Persuasão e negociação
-                                    </button>
-                                    <button class="myProfile-button-tag" disabled>Gestão do tempo</button>
-                                    <button class="myProfile-button-tag" disabled>Aprendizado ativo</button>
+                                <div id="myProfile-content-obligation" style="height: 10rem;">
+                                    <!-- o banco de dados puxa esses itens em uma requisição get -->
+                                   
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- div do sistema de hardskills -->
                 <div class="container mt-3">
                     <h4 id="myProfile-hardskills" class="myProfile-hs myProfile-margintop">
                         Registre aqui suas Hard Skills!
@@ -214,32 +196,26 @@
                                 <div id="myProfile-title-hard-skills-obligations">
                                     <p class="myProfile-title">Hard Skills:</p>
                                 </div>
-                                <div id="myProfile-content-obligation">
-                                    <button class="myProfile-button-tag" disabled>GODOT</button>
-                                    <button class="myProfile-button-tag" disabled>PHYTON</button>
-                                    <button class="myProfile-button-tag" disabled>HTML/CSS</button>
-                                    <button class="myProfile-button-tag" disabled>JAVA</button>
-                                    <button class="myProfile-button-tag" disabled>JAVASCRIPT</button>
-                                    <button class="myProfile-button-tag" disabled>C++</button>
-                                    <button class="myProfile-button-tag" disabled>REALIDADE VIRTUAL</button>
-                                    <button class="myProfile-button-tag" disabled>CANVA</button>
-                                    <button class="myProfile-button-tag" disabled>GIT</button>
-                                    <button class="myProfile-button-tag" disabled>REACT</button>
-                                    <button class="myProfile-button-tag" disabled>SQLITE</button>
+                                <div id="myProfile-content-obligation-1" style="height: 10rem;overflow-y:scroll">
+                                    <!-- o banco de dados puxa esses itens em uma requisição get -->
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div>
+                    <!-- botão do lápis que habilita a edição na página! -->
                     <button id="myProfile-pencil-btn" onclick="pencilbutton()"><i class="fa-solid fa-pencil fa-xl fa-shake"></i></button>
                 </div>
                 <div class="mx-auto">
+                    <!-- botão de salvar as alterações do perfil -->
                     <button class="myProfile-btn" onclick="update_profile()">Salvar alterações</button>
                 </div>
             </div>
         </div>
+        <!-- são referenciados no final o script da página e o bootstrap -->
         <script src="../../js/myProfile-js.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-</body>
+    </body>
 </html>

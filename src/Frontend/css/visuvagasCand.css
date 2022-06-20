@@ -61,9 +61,7 @@
     width: 100%;
     margin: 0 auto;
     border: 0px solid rgb(5, 5, 5);
-    /* border-radius: 10px; */
     background-color: #ffffff;
-    /* position: fixed;  */
     height: 4.8rem;
     padding: 0.5rem;
 }
@@ -93,6 +91,7 @@
     text-align: center;
     /* border: solid 1px black; */
     padding-top: 10%;
+    text-decoration: none;
 }
 
 .sideNavBar-side-bar-back-return {
@@ -105,6 +104,7 @@
 
 .sideNavBar-zoom {
     transition: 0.2s;
+    width: 100%;
 }
 
 .sideNavBar-zoom:hover {
@@ -124,4 +124,14 @@
 /* Bootstrap */
 .offcanvas-header{
     height: 4.8rem;
+}
+
+a, a:link {
+    color: rgb(83, 00, 132);
+    text-decoration: none;
+}
+
+a:hover {
+    color: #F3C42E;
+    text-decoration: none;
 }

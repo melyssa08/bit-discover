@@ -14,7 +14,7 @@ class Bonus extends DatabaseTable {
 				notNull: true,
 				autoIncrement: true,
 			},
-			benefits: {
+			name: {
 				type: DataTypes.text,
 				notNull: true,
 			},

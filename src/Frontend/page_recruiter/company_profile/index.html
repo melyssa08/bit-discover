@@ -205,16 +205,13 @@
               </div>
             </div>
             <!--DIV DOS BOTÕES  -->
-            <div
-              class="d-grid col-lg-3 col-md-3 col-sm-3 mx-auto container input-container"
-            >
-              <a href="../my_jobs/index.html"
-                ><button class="companyProfile-btn" onclick="update_profile()">
-                  Salvar alterações
-                </button></a
-              >
+            <div class="d-grid col-lg-3 col-md-3 col-sm-3 mx-auto container input-container">
+              <button class="companyProfile-btn" onclick="update_profile()">
+                 Salvar alterações
+              </button>
+              
             </div>
-            <br />
+            <br/>
             <div
               class="d-grid col-lg-9 col-md-9 col-sm-9 mx-auto container input-container"
             ></div>
@@ -233,42 +230,5 @@
       crossorigin="anonymous"
     ></script>
     <script src="../../js/company-profile.js"></script>
-    <script>
-      $.ajax({
-        url: "http://127.0.0.1:3000/api/companies/?id=1",
-        type: "GET",
-        success: function (data) {
-          console.log(data);
-          console.log(data[0]["name"]);
-          $("#companyProfile-input-company-name").val(data[0]["name"]);
-          $("#companyProfile-input-email").val(data[0]["email"]);
-          $("#companyProfile-input-confirmemail").val(data[0]["email"]);
-          $("#companyProfile-input-cnpj").val(data[0]["cnpj"]);
-          $("#companyProfile-input-password").val(data[0]["password"]);
-          $("#companyProfile-input-confirmpassword").val(data[0]["password"]);
-          $("#companyProfile-input-cp").val(data[0]["postal_code"]);
-          $("#companyProfile-input-link").val(data[0]["website"]);
-          $("#companyProfile-textarea").val(data[0]["description"]);
-        },
-      });
-
-      function update_profile() {
-        $.ajax({
-          url: "http://127.0.0.1:3000/api/companies/0",
-          type: "PUT",
-          data: `name=${$(
-            "#companyProfile-input-company-name"
-          ).val()}&email=${$("#companyProfile-input-email").val()}&cnpj=${$(
-            "#companyProfile-input-cnpj"
-          ).val()}&password=${$(
-            "#companyProfile-input-confirmpassword"
-          ).val()}&postal_code=${$(
-            "#companyProfile-input-cp"
-          ).val()}&website=${$(
-            "#companyProfile-input-link"
-          ).val()}&description=${$("#companyProfile-textarea").val()}`,
-        });
-      }
-    </script>
   </body>
 </html>

@@ -15,6 +15,7 @@
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Nunito&family=Roboto&display=swap");
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   </head>
   <!-- no body, declaro uma id para poder mexer na tela por inteiro -->
 
@@ -192,25 +193,14 @@
             </div>
             <!--DIV DOS BOTÕES  -->
             <div
-              class="d-grid col-lg-3 col-md-3 col-sm-3 mx-auto container input-container"
+              class="d-grid col-lg-3 col-md-3 col-sm-3 mx-auto input-container"
             >
-              <a href="../my_jobs/index.html"
-                ><button class="registrationCompany-btn">Criar Conta</button></a
-              >
+            <button class="registrationCompany-btn" onclick="create_profile()">Criar Conta</button>
             </div>
             <br />
             <div
               class="d-grid col-lg-9 col-md-9 col-sm-9 mx-auto container input-container"
             >
-              <h6>
-                Quer se cadastrar como candidata e não empresa?
-                <a
-                  id="registrationCompany-linkwithcandidate"
-                  href="../../page_candidates/registration_candidate/index.html"
-                  class=""
-                  >Clique aqui!</a
-                >
-              </h6>
             </div>
           </div>
         </div>
@@ -221,5 +211,6 @@
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
+   <script src="../../js/registrationCompany.js"></script>
   </body>
 </html>
