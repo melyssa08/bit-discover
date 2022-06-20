@@ -50,7 +50,7 @@ $.get("http://127.0.0.1:3000/api/bonus/", function (response) {
 			`<button class="registrationJobs-button-tag" value="${i.id}">${i.name}</button>`
 		)}
 	var loadTagRoles = new Promise ((resolve, reject) => {
-		resolve(adcionaFuncionalidadeAsTags('registrationJobs-tags-habilities-hard'))
+		resolve(adcionaFuncionalidadeAsTags('registrationJobs-tags-bonus'))
 	}).then((res) => {
 		loadPaintTag(jobsTagsBonus,resultadoPegarInformacoesJob[4])
 	})
