@@ -60,11 +60,27 @@
     flex-wrap: wrap;
 }
 
-#jobsVisualization-card {
+#jobsVisualization-card-green {
     width: 20rem;
     border-style: solid;
     box-shadow: 0px 2px 15px rgb(14, 117, 23);
     border: rgb(14, 117, 23);
+    border-width: 3px;
+}
+
+#jobsVisualization-card-yellow {
+    width: 20rem;
+    border-style: solid;
+    box-shadow: 0px 2px 15px rgb(207, 204, 31);
+    border: rgb(207, 204, 31);
+    border-width: 3px;
+}
+
+#jobsVisualization-card-red {
+    width: 20rem;
+    border-style: solid;
+    box-shadow: 0px 2px 15px rgb(218, 28, 69);
+    border: rgb(218, 28, 69);
     border-width: 3px;
 }
 

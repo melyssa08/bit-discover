@@ -5,6 +5,7 @@ import SoftskillsRoute from './softskills.route.js';
 import HardskillsRoute from './hardskills.route.js';
 import BonusRoute from './bonus.route.js';
 import JobContactsRoute from './jobs_contacts.route.js';
+import MatchRoute from './match.route.js';
 /*
  * Static routes controller for the application.
  */
@@ -39,5 +40,6 @@ RouteManager.addRoute(SoftskillsRoute); // Add Softskills route to routes manage
 RouteManager.addRoute(HardskillsRoute); // Add Hardskills route to routes manager
 RouteManager.addRoute(BonusRoute); // Add Hardskills route to routes manager
 RouteManager.addRoute(JobContactsRoute) // Add JobContacts route to routes manager
+RouteManager.addRoute(MatchRoute) // Add Match route to routes manager
 
 export default RouteManager;
