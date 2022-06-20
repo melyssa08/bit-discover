@@ -14,8 +14,11 @@ $.get("http://127.0.0.1:3000/api/softskills/", function(response) {
 		$("#registrationJobs-tags-habilities-soft").append(
 			`<button class="registrationJobs-button-tag" value="${i.id}">${i.name}</button>`
 			)}
-	adcionaFuncionalidadeAsTags('registrationJobs-tags-habilities-soft')
-	loadPaintTag(jobsTagsHabilitiesSoft,resultadoPegarInformacoesJob[3])
+	var loadTagRoles = new Promise ((resolve, reject) => {
+		resolve(adcionaFuncionalidadeAsTags('registrationJobs-tags-habilities-soft'))
+	}).then((res) => {
+		loadPaintTag(jobsTagsHabilitiesSoft,resultadoPegarInformacoesJob[3])
+	})
 }
 
 )
@@ -25,8 +28,11 @@ $.get("http://127.0.0.1:3000/api/hardskills/", function(response) {
 		$("#registrationJobs-tags-habilities-hard").append(
 			`<button class="registrationJobs-button-tag" value="${i.id}">${i.name}</button>`
 		)}
-	adcionaFuncionalidadeAsTags('registrationJobs-tags-habilities-hard')
-	loadPaintTag(jobsTagsHabilitiesHard, resultadoPegarInformacoesJob[2])
+	var loadTagRoles = new Promise ((resolve, reject) => {
+		resolve(adcionaFuncionalidadeAsTags('registrationJobs-tags-habilities-hard'))
+	}).then((res) => {
+		loadPaintTag(jobsTagsHabilitiesHard,resultadoPegarInformacoesJob[2])
+	})
 })
 
 $.get("http://127.0.0.1:3000/api/bonus/", function (response) {
@@ -34,8 +40,11 @@ $.get("http://127.0.0.1:3000/api/bonus/", function (response) {
 		$("#registrationJobs-tags-bonus").append(
 			`<button class="registrationJobs-button-tag" value="${i.id}">${i.name}</button>`
 		)}
-	adcionaFuncionalidadeAsTags('registrationJobs-tags-bonus')
-	loadPaintTag(jobsTagsBonus, resultadoPegarInformacoesJob[4])
+	var loadTagRoles = new Promise ((resolve, reject) => {
+		resolve(adcionaFuncionalidadeAsTags('registrationJobs-tags-habilities-hard'))
+	}).then((res) => {
+		loadPaintTag(jobsTagsBonus,resultadoPegarInformacoesJob[4])
+	})
 })
 
 function adcionaFuncionalidadeAsTags (nomeId) {
