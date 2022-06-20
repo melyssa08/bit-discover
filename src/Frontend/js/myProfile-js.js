@@ -52,21 +52,23 @@ function update_profile() {
   }
   //salva as mudanças no perfil do usário
   $.ajax({
-    url: "http://127.0.0.1:3000/api/candidates/1",
+    url: `http://127.0.0.1:3000/api/candidates/${id}`,
     type: "PUT",
     data: `name=${$("#myProfile-input-name").val()}&email=${$("#myProfile-input-email").val()}&age=${$("#myProfile-input-age").val()}&CPF=${$("#myProfile-input-CPF").val()}&password=${$("#myProfile-input-password").val()}&postal_code=${$("#myProfile-input-cp").val()}&scholarship=${$("#myProfile-select-scholarity").val()}&graduation=${$("#myProfile-input-course").val()}&departaments=${$("#myProfile-experience").val()}&description=${$("#myProfile-textarea").val()}`,
     success: function (data) {
       alert("Mudanças registradas! :D")
+      //redieciona para a próxima pagina
+    window.location.href = "../jobs_visualization/index.html"
     }
   })
 }
-
+//pega os dados do banco e já deixa o perfil preenchido com as informações interiores preenchidas
 $.ajax({
-  url: `http://127.0.0.1:3000/api/companies/?id=  ${id}`,
+  url: `http://127.0.0.1:3000/api/companies/?id= ${id}`,
   type: "GET",
   success: function (data) {
       console.log(data);
-      console.log(data[0]["name"]);
+      console.log(data[id]["name"]);
       $("#myProfile-input-name").val(data[id]["name"]);
       $("#myProfile-input-email").val(data[id]["email"]);
       $("#myProfile-input-confirm-email").val(data[id]["email"]);
