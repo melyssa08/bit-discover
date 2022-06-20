@@ -7,8 +7,12 @@ window.addEventListener('load', function () {
 		}
 	});
 	pegarInformacoesJob()
+	loadHard()
+	loadSoft()
+	loadBonus()
 });
 
+function loadSoft() {
 $.get("http://127.0.0.1:3000/api/softskills/", function(response) {
 	for (i of response) {
 		$("#registrationJobs-tags-habilities-soft").append(
@@ -22,7 +26,10 @@ $.get("http://127.0.0.1:3000/api/softskills/", function(response) {
 }
 
 )
+}
 
+
+function loadHard () {
 $.get("http://127.0.0.1:3000/api/hardskills/", function(response) {
 	for (i of response) {
 		$("#registrationJobs-tags-habilities-hard").append(
@@ -34,7 +41,9 @@ $.get("http://127.0.0.1:3000/api/hardskills/", function(response) {
 		loadPaintTag(jobsTagsHabilitiesHard,resultadoPegarInformacoesJob[2])
 	})
 })
+}
 
+function loadBonus() {
 $.get("http://127.0.0.1:3000/api/bonus/", function (response) {
 	for (i of response) {
 		$("#registrationJobs-tags-bonus").append(
@@ -46,6 +55,7 @@ $.get("http://127.0.0.1:3000/api/bonus/", function (response) {
 		loadPaintTag(jobsTagsBonus,resultadoPegarInformacoesJob[4])
 	})
 })
+}
 
 function adcionaFuncionalidadeAsTags (nomeId) {
 	var botao = document.getElementById(nomeId).children
