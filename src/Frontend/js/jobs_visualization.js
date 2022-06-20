@@ -110,12 +110,8 @@ function teste() {
 						<ul id="jobsVisualization-list"><li id = jobsVisualization-company-description>` +
 						[
 						...resul.bonus.map(function (resul) {
-<<<<<<< HEAD
 							console.log(resul)
 							return resul.name;
-=======
-							return resul.benefits;
->>>>>>> 91b5534712d38e1f8c0d25e2e6f1e699aacfb63e
 						}),
 						].join(', ') + `
 						</li></ul><br>

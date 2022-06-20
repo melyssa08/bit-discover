@@ -1,6 +1,66 @@
+window.addEventListener('load', function () {
+	$('#registrationJobs-header').load('/page_recruiter/side_and_navbar/index.html', function (response, status) {
+		if (status == 'error') {
+			console.log('Deu errado');
+		} else {
+			console.log('Funcionou');
+		}
+	});
+	pegarInformacoesJob()
+});
 
+$.get("http://127.0.0.1:3000/api/softskills/", function(response) {
+	for (i of response) {
+		$("#registrationJobs-tags-habilities-soft").append(
+			`<button class="registrationJobs-button-tag" value="${i.id}">${i.name}</button>`
+			)}
+	adcionaFuncionalidadeAsTags('registrationJobs-tags-habilities-soft')
+	loadPaintTag(jobsTagsHabilitiesSoft,resultadoPegarInformacoesJob[3])
+}
 
+)
 
+$.get("http://127.0.0.1:3000/api/hardskills/", function(response) {
+	for (i of response) {
+		$("#registrationJobs-tags-habilities-hard").append(
+			`<button class="registrationJobs-button-tag" value="${i.id}">${i.name}</button>`
+		)}
+	adcionaFuncionalidadeAsTags('registrationJobs-tags-habilities-hard')
+	loadPaintTag(jobsTagsHabilitiesHard, resultadoPegarInformacoesJob[2])
+})
+
+$.get("http://127.0.0.1:3000/api/bonus/", function (response) {
+	for (i of response) {
+		$("#registrationJobs-tags-bonus").append(
+			`<button class="registrationJobs-button-tag" value="${i.id}">${i.name}</button>`
+		)}
+	adcionaFuncionalidadeAsTags('registrationJobs-tags-bonus')
+	loadPaintTag(jobsTagsBonus, resultadoPegarInformacoesJob[4])
+})
+
+function adcionaFuncionalidadeAsTags (nomeId) {
+	var botao = document.getElementById(nomeId).children
+	for (item of botao) {
+		item.className = 'registrationJobs-button-tag false';
+	}
+	for (let i = 0; i < botao.length; i++) {
+		botao[i].addEventListener('click', function (e) {
+			if (botao[i].className == 'registrationJobs-button-tag false') {
+				e.preventDefault();
+				botao[i].style.backgroundColor = '#530084';
+				botao[i].style.color = '#FFFFFF';
+				botao[i].className = 'registrationJobs-button-tag true';
+			} else if (botao[i].className == 'registrationJobs-button-tag true') {
+				e.preventDefault();
+				botao[i].style.borderStyle = 'solid';
+				botao[i].style.borderStyle = '#530084';
+				botao[i].style.backgroundColor = '#FFFFFF';
+				botao[i].style.color = '#530084';
+				botao[i].className = 'registrationJobs-button-tag false';
+			}
+		});
+	}
+}
 
 // função pra ler querystring e pegar id do job para edição
 function queryString(parameter) {  
@@ -25,6 +85,18 @@ function queryString(parameter) {
 var idJob = queryString("idJob");
 // console.log("id do Job: "+idJob);
 
+function loadPaintTag (arrDiv, arrBanco) {
+	for (i of arrDiv) {
+		for (j = 0; j < arrBanco.length; j++) {
+			if (i.value == arrBanco[j]) {
+				i.style.backgroundColor = '#530084';
+				i.style.color = '#FFFFFF';
+				i.className = 'registrationJobs-button-tag true';
+			}
+		}
+	}
+}
+
 //DECLARAÇÃO DE VAR
 var jobsName = document.getElementById('registrationJobs-name-job');
 var jobsType = document.getElementById('registrationJobs-type');
@@ -43,8 +115,8 @@ var jobsTagsHabilitiesHard = document.getElementById('registrationJobs-tags-habi
 var jobsTagsHabilitiesSoft = document.getElementById('registrationJobs-tags-habilities-soft').children;
 var jobsTagsBonus = document.getElementById('registrationJobs-tags-bonus').children;
 var iconConfirm = document.getElementById('registrationJobs-icon-confirm');
-// var jobsEmail = document.getElementById('registrationJobs-email')
-// var jobsCell = document.getElementById('registrationJobs-cellphone')
+var jobsEmail = document.getElementById('registrationJobs-email')
+var jobsCell = document.getElementById('registrationJobs-cellphone')
 
 
 jobsType.addEventListener('input', function () {
@@ -68,11 +140,11 @@ jobsCP.addEventListener('input', function () {
 	}
 })
 
-// jobsCell.addEventListener('input', function () {
-// 	if (isNaN(this.value)) {
-// 		this.value = this.value.slice(0, -1)
-// 	}
-// })
+jobsCell.addEventListener('input', function () {
+	if (isNaN(this.value)) {
+		this.value = this.value.slice(0, -1)
+	}
+})
 
 function iteradorTagsHabilitiesHard() {
 	var arrHabilitiesHard = [];
@@ -106,59 +178,59 @@ function iteradorTagsBonus() {
 
 var informationJob;
 
+function workloadGET (res) {
+	return res == 6? 'half-time': 'full-time'
+}
+
+var resultadoPegarInformacoesJob 
+
+function pegarInformacoesJob () {
+			$.ajax({
+				url: `http://127.0.0.1:3000/api/jobs/${idJob}`,
+				type: 'get',
+				dataType: 'json',
+				async: false,
+				success: function(data) {
+					result = [data[0], data[0].contact, data[0].requireds_hardskill.split(','), data[0].requireds_softskill.split(','), data[0].bonus.split(',')]
+					resultadoPegarInformacoesJob = result
+				} 
+			 });
+			 jobsName.value = result[0].name
+			 jobsType.value = result[0].type
+			 jobsTime.value = workloadGET(result[0].workload)
+			 jobsModality.value = result[0].modality
+			 jobsShift.value = result[0].shift
+			 jobsSalaryMin.value = result[0].salary_min
+			 jobsSalaryMax.value = result[0].salary_max
+			 jobsCP.value = result[0].postal_code
+			 jobsProficiency.value = result[0].proficiency
+			 jobsDescription.value = result[0].activities
+			 jobsActivities.value = result[0].activities
+
+			$.ajax({
+				url: `http://127.0.0.1:3000/api/jobscontacts/${result[1]}`,
+				type: 'get',
+				dataType: 'json',
+				async: false,
+				success: function (data) {
+					jobsEmail.value = data[0].email
+					jobsCell.value = data[0].number
+				}
+			})
+
+}
 
 
-$(document).ready(
-
-	$.get("http://localhost:3000/api/jobs", function (dados) {
-		
-		// var test = $('#registrationJobs-name-job').val();
-		// test = dados[idJob].name;
-
-		//Seta os valores do html para os valores do DB
-		$(jobsName).val(dados[idJob].name);
-		$(jobsType).val(dados[idJob].type);
-		$(jobsTime).val(dados[idJob].worload).change();
-		$(jobsModality).val(dados[idJob].modality).change();
-		$(jobsShift).val(dados[idJob].shift);
-		$(jobsSalaryMin).val(dados[idJob].salary_min);
-		$(jobsSchooling).val(dados[idJob].scholarship).change;
-		$(jobsSalaryMax).val(dados[idJob].salary_max);
-		$(jobsCP).val(dados[idJob].postal_code);
-		$(jobsProficiency).val(dados[idJob].proficiency);
-		$(jobsNameCompany).val(dados[idJob].companu);
-		$(jobsDescription).val(dados[idJob].description);
-		$(jobsActivities).val(dados[idJob].activities);
-		$(jobsTagsHabilitiesHard).val(dados[idJob].requireds_hardskill);
-		$(jobsTagsHabilitiesSoft).val(dados[idJob].requireds_softskill);
-		$(jobsTagsBonus).val(dados[idJob].bonus);
-
-
-
-	
-		console.log(dados[idJob]);
-		// console.log(jobsName);
-	})
-
-
-);
-
-
-<<<<<<< HEAD
-
-=======
 //Edit cadastro
 var botaoDispara = new Promise(function (resolve, reject) { 
 	iconConfirm.addEventListener('click', function (e) {
 	e.preventDefault();
 
-		if (jobsSalaryMin.value && jobsSalaryMax.value && jobsCP.value && jobsDescription.value && jobsActivities.value /*&& jobsEmail.value && jobsCell.value*/) {
+		if (jobsSalaryMin.value && jobsSalaryMax.value && jobsCP.value && jobsDescription.value && jobsActivities.value && iteradorTagsHabilitiesHard() && iteradorTagsHabilitiesSoft() &&
+	iteradorTagsBonus()) {
 
-		//	editarCadastro('http://127.0.0.1:3000/api/jobscontacts/', {email: jobsEmail.value , number: jobsCell.value})
-
-	resolve(informationJob = {
+	resolve([informationJob = {
 		postal_code: parseInt(jobsCP.value),
-		//company: pegaIdEmpresa(JSON.parse(localStorage.UserBITDiscover).id,'http://127.0.0.1:3000/api/companies/'),
 		activities: jobsActivities.value,
 		name: jobsName.value,
 		description: jobsDescription.value,
@@ -168,21 +240,21 @@ var botaoDispara = new Promise(function (resolve, reject) {
 		bonus: iteradorTagsBonus().join(','),
 		salary_min: parseFloat(jobsSalaryMin.value),
 		salary_max: parseFloat(jobsSalaryMax.value),
-		contact: pegaIdContact(),
 		scholarship: jobsSchooling.value,
 		modality: jobsModality.value,
 		shift: jobsShift.value,
 		workload: jobsTime.value === 'full-time' ? 6 : 4,
 		proficiency: jobsProficiency.value,
 		created_at: `${new Date().getDate()}`
-	});
+	}, {email: jobsEmail.value, number: jobsCell.value}]);
 
 } else {
 	reject('Preencha todos os dados nos campos')
 }
 
 })}).then((res) => {
-	editarCadastro('http://127.0.0.1:3000/api/jobs/',res)
+	editarCadastro('http://127.0.0.1:3000/api/jobs/',idJob, res[0])
+	editarCadastro('http://127.0.0.1:3000/api/jobscontacts/', resultadoPegarInformacoesJob[1], res[1])
  })
 .then((resp) => {
 	$('#registrationJobs-target-myjobs').click(function () {
@@ -190,44 +262,24 @@ var botaoDispara = new Promise(function (resolve, reject) {
 	})
 })
 
+botaoDispara.catch((res) => {
+	alert(res)
+})
 
-
-function editarCadastro (id, urlGet){
+function editarCadastro (urlPUT, idJob, information){
 	$.ajax({
-		url: `${urlGet}${id}`,
+		url: `${urlPUT}${idJob}`,
 		type: 'put',
+		dataType: 'json',
+        async: false,
+		data: information,
 		success: function(data){
-			alert(data);
+			console.log('Atualização feita');
 		}
 	});
 }
 
 
 
-function pegaIdEmpresa(id, urlGet)
-{
-     $.ajax({
-        url: `${urlGet}${id}`,
-        type: 'get',
-        dataType: 'json',
-        async: false,
-        success: function(data) {
-            result = data[0].id
-        } 
-     });
-     return result;
-}
 
-function pegaIdContact () {
-	$.ajax({
-        url: `http://127.0.0.1:3000/api/jobscontacts/`,
-        type: 'get',
-        dataType: 'json',
-        async: false,
-        success: function(data) {
-            result = data[data.length -1].id
-        } 
-     });
-     return result;
-}
->>>>>>> 91b5534712d38e1f8c0d25e2e6f1e699aacfb63e
+
