@@ -7,6 +7,9 @@ function botao(id) {
     id.setAttribute("class","myProfile-button-tag-unclicked")
   }
 }
+var user = JSON.parse(localStorage.getItem('UserBITDiscover'));
+var id = user.id
+
 //o butão que deixa editar os campos
 function pencilbutton() {
   var inputs = document.querySelectorAll("input")
@@ -51,7 +54,7 @@ function update_profile() {
   $.ajax({
     url: "http://127.0.0.1:3000/api/candidates/1",
     type: "PUT",
-    data: `name=${$("#myProfile-input-name").val()}&email=${$("#myProfile-input-email").val()}&age=${$("#myProfile-input-age").val()}&CPF=${$("#myProfile-input-CPF").val()}&password=${$("#myProfile-input-password").val()}&postal_code=${$("#myProfile-input-cp").val()}&scholarship=${$("#myProfile-select-scholarity").val()}&graduation=${$("#myProfile-input-course").val()}&likes=${$("#myProfile-experience").val()}&description=${$("#myProfile-textarea").val()}`,
+    data: `name=${$("#myProfile-input-name").val()}&email=${$("#myProfile-input-email").val()}&age=${$("#myProfile-input-age").val()}&CPF=${$("#myProfile-input-CPF").val()}&password=${$("#myProfile-input-password").val()}&postal_code=${$("#myProfile-input-cp").val()}&scholarship=${$("#myProfile-select-scholarity").val()}&graduation=${$("#myProfile-input-course").val()}&departaments=${$("#myProfile-experience").val()}&description=${$("#myProfile-textarea").val()}`,
     success: function (data) {
       alert("Mudanças registradas! :D")
     }
@@ -59,31 +62,32 @@ function update_profile() {
 }
 
 $.ajax({
-  url: "http://127.0.0.1:3000/api/companies/?id=1",
+  url: `http://127.0.0.1:3000/api/companies/?id=  ${id}`,
   type: "GET",
   success: function (data) {
       console.log(data);
       console.log(data[0]["name"]);
-      $("#myProfile-input-name").val(data[0]["name"]);
-      $("#myProfile-input-email").val(data[0]["email"]);
-      $("#myProfile-input-confirm-email").val(data[0]["email"]);
-      $("#myProfile-input-CPF").val(data[0]["CPF"]);
-      $("#myProfile-input-password").val(data[0]["password"]);
-      $("#myProfile-input-confirm-password").val(data[0]["password"]);
-      $("#myProfile-input-age").val(data[0]["age"]);
-      $("#myProfile-input-cp").val(data[0]["cp"]);
-      $("#myProfile-textarea").val(data[0]["description"]);
-      $("#myProfile-select-scholarity").val(data[0]["scholarship"]).change();
-      $("#myProfile-select-course").val(data[0]["graduation"]).change();
-      $("#myProfile-select-experience").val(data[0]["expireince"]).change();
+      $("#myProfile-input-name").val(data[id]["name"]);
+      $("#myProfile-input-email").val(data[id]["email"]);
+      $("#myProfile-input-confirm-email").val(data[id]["email"]);
+      $("#myProfile-input-CPF").val(data[id]["CPF"]);
+      $("#myProfile-input-password").val(data[id]["password"]);
+      $("#myProfile-input-confirm-password").val(data[id]["password"]);
+      $("#myProfile-input-age").val(data[id]["age"]);
+      $("#myProfile-input-cp").val(data[id]["cp"]);
+      $("#myProfile-textarea").val(data[id]["description"]);
+      $("#myProfile-select-scholarity").val(data[id]["scholarship"]).change();
+      $("#myProfile-select-course").val(data[id]["graduation"]).change();
+      $("#myProfile-select-experience").val(data[id]["departament"]).change();
   },
 });
+
+$.ajax()
 
 //executa a função ao iniciar a pagina adicionando os botões de hard e softskills
 function onload() {
  //carrega os botões de softskill e os adiciona na página
   $.get("http://localhost:3000/api/softskills", function(softskills) {
-    console.log(softskills)
     for (i=0;i<softskills.length;i++) {
       $('#myProfile-content-obligation').append(`<button class="myProfile-button-tag-unclicked" id="s${softskills[i].id}"  onclick="botao(s${softskills[i].id})">` + softskills[i].name + `</button>`)
     }

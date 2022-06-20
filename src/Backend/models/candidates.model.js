@@ -66,6 +66,10 @@ class Candidates extends DatabaseTable {
 				type: DataTypes.text,
 				notNull: false,
 			},
+			departaments: {
+				type:DataTypes.varchar,
+				notNull:true
+			}
 		};
 		super('candidates', columns);
 	}
