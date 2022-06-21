@@ -132,13 +132,23 @@
     margin-bottom: 10%;
 }
 
-/* #jobsVisualization-icon-like {
+.jobsVisualization-icon-like-unclicked {
     align-self: flex-end;
     cursor: pointer;
     color: rgb(243, 196, 46);
-} */
+}
 
-#jobsVisualization-icon-like:hover {
+.jobsVisualization-icon-like-clicked {
+    align-self: flex-end;
+    cursor: pointer;
+    color: rgb(83, 00, 132);
+}
+
+.jobsVisualization-icon-like-clicked:hover {
+    color: rgb(243, 196, 46);
+}
+
+.jobsVisualization-icon-like-unclicked:hover {
     color: rgb(83, 00, 132);
 }
 

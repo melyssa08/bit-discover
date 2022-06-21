@@ -4,6 +4,70 @@ window.addEventListener('load', function () {
 	});
 });
 
+var userInfo = JSON.parse(localStorage.getItem("UserBITDiscover"))
+var likes = []
+var likesArray = likes.map(str => {
+	return Number(str);
+})
+console.log("ID User ", userInfo.id)
+
+function button(id) {
+	if (document.getElementById(`likecard${id}`).getAttribute('class') == 'jobsVisualization-icon-like-unclicked') {
+		document.getElementById(`likecard${id}`).setAttribute('class', 'jobsVisualization-icon-like-clicked')
+		console.log("oi")
+	}
+	else {
+		document.getElementById(`likecard${id}`).setAttribute('class', 'jobsVisualization-icon-like-unclicked')
+	}
+	like(id)
+}
+
+function like(id) {
+
+	if (likesArray.includes(id) === false) {
+		console.log("adicionou")
+		likesArray.push(id)
+		likesArray.sort((a, b) => a - b)
+
+		console.log(likesArray)
+		$.ajax({
+			url: `http://127.0.0.1:3000/api/candidates/${userInfo.id}`,
+			type: "PUT",
+			data: `likes=${likesArray}`,
+			success: data => {
+				console.log(data);
+			}
+		}).fail(function (err) {
+			console.log(err);
+			alert('Impossível adicionar mudanças no momento.');
+		})
+	}
+	else if (likesArray.includes(id) === true) {
+		for (var i = 0; i < likesArray.length; i++) {
+			if (likesArray[i] === id) {
+
+				likesArray.splice(i, 1);
+			}
+
+		}
+		console.log("removeu")
+		$.ajax({
+			url: `http://127.0.0.1:3000/api/candidates/${userInfo.id}`,
+			type: "PUT",
+			data: `likes=${likesArray}`,
+			success: data => {
+				console.log(data);
+			}
+		}).fail(function (err) {
+			console.log(err);
+			alert('Impossível adicionar mudanças no momento.');
+		})
+	}
+
+	console.log("Likes", likesArray)
+	console.log('Funciona ', id);
+}
+
 function loadCard(query= {}) {
 	// Consumo de api por jQuery com o método get
 	let textao = Object.keys(query).map(key => key +"=" +query[key]).join("&")
@@ -79,7 +143,7 @@ function loadCard(query= {}) {
 					  <button class="btn btn-primary btn-sm follow" id="jobsVisualization-follow" data-bs-toggle="modal" data-bs-target="#modalid` +
 							resul.id +
 							`">SAIBA MAIS</button>
-					  <svg xmlns="http://www.w3.org/2000/svg" width="35" height="30" id="jobsVisualization-icon-like" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+					  <svg xmlns="http://www.w3.org/2000/svg" width="35" height="30" fill="currentColor" id="likecard${resul.id}" onclick="button(${resul.id})" class="bi bi-heart-fill jobsVisualization-icon-like-unclicked" viewBox="0 0 16 16">
 						<path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
 					  </svg>
 					</div>
