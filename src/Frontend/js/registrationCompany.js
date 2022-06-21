@@ -1,3 +1,4 @@
+// Funcao que recebe os valores de entrada do usuario com validação e posta no banco de dados
 function create_profile() {
 
     if ($("#registrationCompany-input-company-name").val().length == 0 || $("#registrationCompany-input-email").val().length == 0 || $("#registrationCompany-input-confirmemail").val().length == 0 || $("#registrationCompany-input-link").val().length == 0 || $("#registrationCompany-input-cnpj").val().length == 0 || $("#registrationCompany-input-password").val().length == 0 || $("#registrationCompany-input-confirmpassword").val().length == 0 || $("#registrationCompany-input-cp").val().length == 0 || $("#registrationCompany-textarea").val().length == 0) {

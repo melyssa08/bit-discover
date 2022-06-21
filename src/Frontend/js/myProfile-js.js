@@ -1,5 +1,5 @@
 // faz os botões de hard e soft skill funcionar
-function botao(id) {
+function button(id) {
   if (id.getAttribute("class") == "myProfile-button-tag-unclicked" ){
  id.setAttribute("class","myProfile-button-tag-clicked")
   }
@@ -102,24 +102,24 @@ $.ajax({
   //carrega os botões de softskill e os adiciona na página
   $.get("http://localhost:3000/api/softskills", function(softskills) {
     for (i=0;i<softskills.length;i++) {
-      $('#myProfile-content-obligation').append(`<button class="myProfile-button-tag-unclicked" id="s${softskills[i].id}"  onclick="botao(document.getElementById('s${softskills[i].id}'))">` + softskills[i].name + `</button>`)
+      $('#myProfile-content-obligation').append(`<button class="myProfile-button-tag-unclicked" id="s${softskills[i].id}"  onclick="button(document.getElementById('s${softskills[i].id}'))">` + softskills[i].name + `</button>`)
     }
   }).then(function(buttons) {
     let array_soft = result[0]["softskills"].split(",")
     array_soft.forEach(element => {
-      botao(document.getElementById("s"+element))
+      button(document.getElementById("s"+element))
     });
   })
 
   $.get('http://localhost:3000/api/hardskills', function(hardskills) {
      //carrega os botões de hardskill e os adiciona na página
     for (i=0;i<hardskills.length;i++) {
-      $('#myProfile-content-obligation-1').append(`<button class="myProfile-button-tag-unclicked" id="h${hardskills[i].id}" onclick="botao(h${hardskills[i].id})">` + hardskills[i].name + `</button>`)
+      $('#myProfile-content-obligation-1').append(`<button class="myProfile-button-tag-unclicked" id="h${hardskills[i].id}" onclick="button(h${hardskills[i].id})">` + hardskills[i].name + `</button>`)
     }
   }).then(function(buttons) {
     let array_hard = result[0]["hardskills"].split(",")
     array_hard.forEach(element => {
-      botao(document.getElementById("h" + element))
+      button(document.getElementById("h" + element))
     })
   })
 

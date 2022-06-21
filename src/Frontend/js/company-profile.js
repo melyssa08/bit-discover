@@ -1,3 +1,4 @@
+// Funcao que desabilita inputs
 function pencilbutton() {
     var inputs = document.querySelectorAll("input")
     var textarea = document.querySelectorAll("textarea")
@@ -16,6 +17,7 @@ function pencilbutton() {
 }
 var user = JSON.parse(localStorage.getItem('UserBITDiscover'));
 var id = user.id
+// Requisição que puxa os valores para os campos
 $.ajax({
     url: `http://127.0.0.1:3000/api/companies/?id=${id}`,
     type: "GET",
