@@ -4,7 +4,7 @@ window.addEventListener('load', function () {
 	});
 });
 
-function teste(query= {}) {
+function loadCard(query= {}) {
 	// Consumo de api por jQuery com o método get
 	let textao = Object.keys(query).map(key => key +"=" +query[key]).join("&")
 	let url = "http://localhost:3000/api/jobs?" + textao
@@ -203,7 +203,7 @@ function buscar(event) {
 	if ($("input[name=proficiencia]:checked","#jobsVisualization-form-filter").val()) {
 		args["proficiency"] =$("input[name=proficiencia]:checked","#jobsVisualization-form-filter").val()
 	}
-	teste(args)
+	loadCard(args)
 	$("#exampleModal").modal("toggle")
 	return false
 }

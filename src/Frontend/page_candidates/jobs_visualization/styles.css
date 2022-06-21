@@ -167,6 +167,16 @@
     border-color: rgb(83, 00, 132);
     border-radius: 2px;
 }
+#jobsVisualization-reset {
+    margin-top: 1%;
+    width: 80%;
+    background-color: rgb(83, 00, 132);
+    color: white;
+    border-style: solid;
+    border-color: rgb(83, 00, 132);
+    border-radius: 2px;
+    margin-right: 1rem;
+}
 
 #jobsVisualization-space-confirm-modal {
     display: grid;
