@@ -14,7 +14,7 @@ function create_user(indetification, name, date, idade, email) {
 			<td>
 				<img src="https://source.boringavatars.com/beam/${name}" alt="" />
 				<a href="#" class="user-link">${name}</a>
-				<span class="user-subhead">${indetification}</span>
+				<span class="user-subhead">id: ${indetification}</span>
 			</td>
 			<td>${date}</td>
 			<td class="text-center">
