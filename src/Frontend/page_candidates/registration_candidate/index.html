@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
     <link rel="stylesheet" href="estilo.css" />
+    <script src="https://kit.fontawesome.com/1b4e4dcd7e.js" crossorigin="anonymous"></script>
     <title>Cadastro de Candidata</title>
 
 </head>
@@ -193,9 +194,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="mx-auto">
+                <div class="d-grid col-lg-3 col-md-3 col-sm-3 mx-auto input-container">
                     <button class="btn btn-primary registrationCandidates-btn" onclick="create_profile()">Criar Perfil</button>
                 </div>
+                <button id="registrationCandidates-back-btn" onclick="backbtn()">
+                    <i class="fa-solid fa-house"></i>
+                  </button>
             </div>
         </div>
         <script src="../../js/registrationCandidate-js.js"></script>

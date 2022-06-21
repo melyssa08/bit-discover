@@ -1,9 +1,9 @@
 function create_profile() {
 
-    if ( $("#registrationCompany-input-company-name").val().length ==0 || $("#registrationCompany-input-email").val().length == 0 || $("#registrationCompany-input-confirmemail").val().length ==0 || $("#registrationCompany-input-link").val().length ==0 || $("#registrationCompany-input-cnpj").val().length == 0|| $("#registrationCompany-input-password").val().length == 0 ||  $("#registrationCompany-input-confirmpassword").val().length == 0 ||$("#registrationCompany-input-cp").val().length == 0 ||$("#registrationCompany-textarea").val().length ==0){
+    if ($("#registrationCompany-input-company-name").val().length == 0 || $("#registrationCompany-input-email").val().length == 0 || $("#registrationCompany-input-confirmemail").val().length == 0 || $("#registrationCompany-input-link").val().length == 0 || $("#registrationCompany-input-cnpj").val().length == 0 || $("#registrationCompany-input-password").val().length == 0 || $("#registrationCompany-input-confirmpassword").val().length == 0 || $("#registrationCompany-input-cp").val().length == 0 || $("#registrationCompany-textarea").val().length == 0) {
         alert("não deixe nenhum campo em branco")
         return false
-      }
+    }
 
     if (!($("#registrationCompany-input-email").val() == $("#registrationCompany-input-confirmemail").val())) {
         return alert("Os emails não coincidem!")
@@ -26,7 +26,11 @@ function create_profile() {
             "#registrationCompany-input-link"
         ).val()}&description=${$("#registrationCompany-textarea").val()}`,
     },
-    window.location.href = "../my_jobs/index.html"
+        window.location.href = "../my_jobs/index.html"
     );
-    
+
 };
+
+function backbtn() {
+    window.location.href = "/";
+}

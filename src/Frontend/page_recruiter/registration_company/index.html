@@ -16,6 +16,10 @@
       @import url("https://fonts.googleapis.com/css2?family=Nunito&family=Roboto&display=swap");
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/1b4e4dcd7e.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <!-- no body, declaro uma id para poder mexer na tela por inteiro -->
 
@@ -57,6 +61,7 @@
                   <div class="col-sm-12">
                     <div class="row justify-content-center">
                       <div class="col-lg-5">
+                        <!-- cada input tem um label, input e label tem classes, cada input tem um id diferente -->
                         <label
                           for="registrationCompany-input-company-name"
                           class="registrationCompany-label"
@@ -193,16 +198,23 @@
             </div>
             <!--DIV DOS BOTÕES  -->
             <div
-              class="d-grid col-lg-3 col-md-3 col-sm-3 mx-auto input-container"
+              class="d-grid col-lg-2 col-md-2 col-sm-2 mx-auto input-container"
             >
-            <button class="registrationCompany-btn" onclick="create_profile()">Criar Conta</button>
+              <button
+                class="registrationCompany-btn"
+                onclick="create_profile()"
+              >
+                Criar Conta
+              </button>
             </div>
             <br />
             <div
-              class="d-grid col-lg-9 col-md-9 col-sm-9 mx-auto container input-container"
-            >
-            </div>
+              class="d-grid col-lg-9 col-md-9 col-sm-9 mx-auto input-container"
+            ></div>
           </div>
+          <button id="registrationCompany-back-btn" onclick="backbtn()">
+            <i class="fa-solid fa-house"></i>
+          </button>
         </div>
       </div>
     </div>
@@ -211,6 +223,6 @@
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
-   <script src="../../js/registrationCompany.js"></script>
+    <script src="../../js/registrationCompany.js"></script>
   </body>
 </html>
