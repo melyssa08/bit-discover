@@ -1,4 +1,4 @@
-import { companies } from '../models/index.js';
+import { companies, jobs } from '../models/index.js';
 
 const CompaniesController = {
 	/*
@@ -7,7 +7,7 @@ const CompaniesController = {
 	 */
 	get(req, res) {
 		// Get all companies
-		companies.get(req.body).then((result) => {
+		companies.get(req.query, 'LIKE').then((result) => {
 			// Get all companies
 			res.send(result); // Send all companies
 		});
@@ -39,11 +39,10 @@ const CompaniesController = {
 		var companies_raw = undefined;
 		companies_raw = await companies.get(req.body);
 		if (companies_raw.length === 0) {
-				res.status(404).send('Credenciais incorretas!')
-		}
-		else {
-			console.log(companies_raw[0])
-			res.json(companies_raw[0])
+			res.status(404).send('Credenciais incorretas!');
+		} else {
+			console.log(companies_raw[0]);
+			res.json(companies_raw[0]);
 		}
 	},
 
@@ -62,7 +61,8 @@ const CompaniesController = {
 	 * DELETE /companies
 	 * Delete a companies
 	 */
-	delete(req, res) {
+	async delete(req, res) {
+		await jobs.delete({ company: req.params.id });
 		companies.delete({ id: req.params.id }).then((result) => {
 			// Delete companies with id = req.params.id
 			res.send(result); // Send result

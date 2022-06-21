@@ -1,24 +1,31 @@
-function create_user(fantasy_name, company_name, jobs_open, status, email, cnpj, date) {
+function delete_user(indetification) {
+	$.ajax({
+		url: '/api/companies/' + indetification,
+		type: 'DELETE',
+		success: function (result) {
+			document.getElementById('user-' + indetification).remove();
+		},
+	});
+}
+
+function create_user(indetification, name, postal_code, email, cnpj, created_at) {
 	document.getElementById('main-body').innerHTML += `
-		<tr>
+		<tr id="user-${indetification}">
 			<td>
-				<img src="https://source.boringavatars.com/beam/${fantasy_name}" alt="" />
-				<a href="#" class="user-link">${fantasy_name}</a>
-				<span class="user-subhead">${company_name}</span>
+				<img src="https://source.boringavatars.com/beam/${name}" alt="" />
+				<a href="#" class="user-link">${name}</a>
+				<span class="user-subhead">${indetification}</span>
 			</td>
 			<td>
-				<a href="#">${jobs_open}</a>
-			</td>
-			<td class="text-center">
-				<span class="label label-default">${status}</span>
-			</td>
-			<td>
-				<a href="#">${email}</a>
+				<a href="#">${postal_code}</a>
 			</td>
 			<td>
 				<a href="#">${cnpj}</a>
 			</td>
-			<td>${date}</td>
+			<td>
+				<a href="#">${email}</a>
+			</td>
+			<td>${created_at}</td>
 			<td style="width: 20%">
 				<a href="#" class="table-link">
 					<span class="fa-stack">
@@ -32,7 +39,7 @@ function create_user(fantasy_name, company_name, jobs_open, status, email, cnpj,
 						<i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
 					</span>
 				</a>
-				<a href="#" class="table-link danger">
+				<a href="#" class="table-link danger" onclick="delete_user(${indetification})">
 					<span class="fa-stack">
 						<i class="fa fa-square fa-stack-2x"></i>
 						<i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
@@ -43,10 +50,26 @@ function create_user(fantasy_name, company_name, jobs_open, status, email, cnpj,
 	`;
 }
 
+function add_list_users(users) {
+	users.forEach(function (candidate) {
+		create_user(candidate.id, candidate.name, candidate.postal_code, candidate.cnpj, candidate.email, candidate.created_at);
+	});
+}
+
 $(document).ready(function () {
-	create_user('INTELI', 'Instituto de Tecnologia e Liderança', '10', 'Ativo', 'inteli.edu@sou.inteli.edu.br', '00.000.000/0001-00', '01/01/2018');
-	create_user('INTELI', 'Instituto de Tecnologia e Liderança', '10', 'Ativo', 'inteli.edu@sou.inteli.edu.br', '00.000.000/0001-00', '01/01/2018');
-	create_user('INTELI', 'Instituto de Tecnologia e Liderança', '10', 'Ativo', 'inteli.edu@sou.inteli.edu.br', '00.000.000/0001-00', '01/01/2018');
-	create_user('INTELI', 'Instituto de Tecnologia e Liderança', '10', 'Ativo', 'inteli.edu@sou.inteli.edu.br', '00.000.000/0001-00', '01/01/2018');
-	create_user('INTELI', 'Instituto de Tecnologia e Liderança', '10', 'Ativo', 'inteli.edu@sou.inteli.edu.br', '00.000.000/0001-00', '01/01/2018');
+	document.getElementById('searchForm').addEventListener('submit', function (e) {
+		e.preventDefault();
+		let search_param = document.getElementById('search_param').value;
+		let search_data = document.getElementById('search_data').value;
+		let url = `/api/companies?${search_param}=${search_data}%`;
+
+		$.get(url, function (data) {
+			document.getElementById('main-body').innerHTML = '';
+			add_list_users(data);
+		});
+	});
+
+	$.get('/api/companies', function (data) {
+		add_list_users(data);
+	});
 });
