@@ -107,8 +107,9 @@ class DatabaseTable {
 	/*
 	 * Method for getting data from the table
 	 */
-	get(where = {}) {
-		const sql = QueryConstructor.construct.filter(this.table, { where }); // Create the select query
+	get(where = {},operator ="=") {
+		let sql = QueryConstructor.construct.filter(this.table,{where}); // Create the select query
+		sql = sql.replace("=",operator)
 		return new Promise((resolve, reject) => {
 			database.all(sql, (err, rows) => {
 				if (err) {
