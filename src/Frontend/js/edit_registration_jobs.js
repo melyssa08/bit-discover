@@ -1,3 +1,4 @@
+// Carrega a NavBar e a SideBar
 window.addEventListener('load', function () {
 	$('#registrationJobs-header').load('/page_recruiter/side_and_navbar/index.html', function (response, status) {
 		if (status == 'error') {
@@ -5,13 +6,16 @@ window.addEventListener('load', function () {
 		} else {
 			console.log('Funcionou');
 		}
-	});
-	pegarInformacoesJob()
+	})
+	// Carrega as informações para os inputs
+	getInformationJob()
+	// Carrega as tags preenchidas se o usuario fez do Hard, Soft e Bonus
 	loadHard()
 	loadSoft()
 	loadBonus()
 });
 
+// Carrega as tags e as preenche se o usuário tiver clicado antes
 function loadSoft() {
 $.get("http://127.0.0.1:3000/api/softskills/", function(response) {
 	for (i of response) {
@@ -19,16 +23,16 @@ $.get("http://127.0.0.1:3000/api/softskills/", function(response) {
 			`<button class="registrationJobs-button-tag" value="${i.id}">${i.name}</button>`
 			)}
 	var loadTagRoles = new Promise ((resolve, reject) => {
-		resolve(adcionaFuncionalidadeAsTags('registrationJobs-tags-habilities-soft'))
+		resolve(addFuncionalityToTags('registrationJobs-tags-habilities-soft'))
 	}).then((res) => {
-		loadPaintTag(jobsTagsHabilitiesSoft,resultadoPegarInformacoesJob[3])
+		loadPaintTag(jobsTagsHabilitiesSoft,resultGetInformationJob[3])
 	})
 }
 
 )
 }
 
-
+// Carrega as tags e as preenche se o usuário tiver clicado antes
 function loadHard () {
 $.get("http://127.0.0.1:3000/api/hardskills/", function(response) {
 	for (i of response) {
@@ -36,13 +40,14 @@ $.get("http://127.0.0.1:3000/api/hardskills/", function(response) {
 			`<button class="registrationJobs-button-tag" value="${i.id}">${i.name}</button>`
 		)}
 	var loadTagRoles = new Promise ((resolve, reject) => {
-		resolve(adcionaFuncionalidadeAsTags('registrationJobs-tags-habilities-hard'))
+		resolve(addFuncionalityToTags('registrationJobs-tags-habilities-hard'))
 	}).then((res) => {
-		loadPaintTag(jobsTagsHabilitiesHard,resultadoPegarInformacoesJob[2])
+		loadPaintTag(jobsTagsHabilitiesHard,resultGetInformationJob[2])
 	})
 })
 }
 
+// Carrega as tags e as preenche se o usuário tiver clicado antes
 function loadBonus() {
 $.get("http://127.0.0.1:3000/api/bonus/", function (response) {
 	for (i of response) {
@@ -50,32 +55,33 @@ $.get("http://127.0.0.1:3000/api/bonus/", function (response) {
 			`<button class="registrationJobs-button-tag" value="${i.id}">${i.name}</button>`
 		)}
 	var loadTagRoles = new Promise ((resolve, reject) => {
-		resolve(adcionaFuncionalidadeAsTags('registrationJobs-tags-bonus'))
+		resolve(addFuncionalityToTags('registrationJobs-tags-bonus'))
 	}).then((res) => {
-		loadPaintTag(jobsTagsBonus,resultadoPegarInformacoesJob[4])
+		loadPaintTag(jobsTagsBonus,resultGetInformationJob[4])
 	})
 })
 }
 
-function adcionaFuncionalidadeAsTags (nomeId) {
-	var botao = document.getElementById(nomeId).children
-	for (item of botao) {
+// Adiciona Funcionalidade para as tags caso o usuário clique que seta as propriedades de estilo
+function addFuncionalityToTags (nameId) {
+	var button = document.getElementById(nameId).children
+	for (item of button) {
 		item.className = 'registrationJobs-button-tag false';
 	}
-	for (let i = 0; i < botao.length; i++) {
-		botao[i].addEventListener('click', function (e) {
-			if (botao[i].className == 'registrationJobs-button-tag false') {
+	for (let i = 0; i < button.length; i++) {
+		button[i].addEventListener('click', function (e) {
+			if (button[i].className == 'registrationJobs-button-tag false') {
 				e.preventDefault();
-				botao[i].style.backgroundColor = '#530084';
-				botao[i].style.color = '#FFFFFF';
-				botao[i].className = 'registrationJobs-button-tag true';
-			} else if (botao[i].className == 'registrationJobs-button-tag true') {
+				button[i].style.backgroundColor = '#530084';
+				button[i].style.color = '#FFFFFF';
+				button[i].className = 'registrationJobs-button-tag true';
+			} else if (button[i].className == 'registrationJobs-button-tag true') {
 				e.preventDefault();
-				botao[i].style.borderStyle = 'solid';
-				botao[i].style.borderStyle = '#530084';
-				botao[i].style.backgroundColor = '#FFFFFF';
-				botao[i].style.color = '#530084';
-				botao[i].className = 'registrationJobs-button-tag false';
+				button[i].style.borderStyle = 'solid';
+				button[i].style.borderStyle = '#530084';
+				button[i].style.backgroundColor = '#FFFFFF';
+				button[i].style.color = '#530084';
+				button[i].className = 'registrationJobs-button-tag false';
 			}
 		});
 	}
@@ -102,12 +108,12 @@ function queryString(parameter) {
 
 //Var que recebe o id do job
 var idJob = queryString("idJob");
-// console.log("id do Job: "+idJob);
 
-function loadPaintTag (arrDiv, arrBanco) {
+// Carrega as tags pintadas dependendo do preenchimento que o usuário fez antes
+function loadPaintTag (arrDiv, arrDataBase) {
 	for (i of arrDiv) {
-		for (j = 0; j < arrBanco.length; j++) {
-			if (i.value == arrBanco[j]) {
+		for (j = 0; j < arrDataBase.length; j++) {
+			if (i.value == arrDataBase[j]) {
 				i.style.backgroundColor = '#530084';
 				i.style.color = '#FFFFFF';
 				i.className = 'registrationJobs-button-tag true';
@@ -137,7 +143,7 @@ var iconConfirm = document.getElementById('registrationJobs-icon-confirm');
 var jobsEmail = document.getElementById('registrationJobs-email')
 var jobsCell = document.getElementById('registrationJobs-cellphone')
 
-
+// Validacao com condicao do campo input do Regime de trabalho
 jobsType.addEventListener('input', function () {
 	console.log(this.value)
 	if (this.value == "Estagio") {
@@ -153,19 +159,22 @@ jobsType.addEventListener('input', function () {
 	}
 })
 
+// Formatacao de entrada do campo do codigo postal
 jobsCP.addEventListener('input', function () {
 	if (isNaN(this.value)) {
 		this.value = this.value.slice(0,-1)
 	}
 })
 
+// Formatacao de entrada do campo de telefone
 jobsCell.addEventListener('input', function () {
 	if (isNaN(this.value)) {
 		this.value = this.value.slice(0, -1)
 	}
 })
 
-function iteradorTagsHabilitiesHard() {
+// Funcao que itera sobre as tags de Hard para ver se foi clicado
+function iterateTagsHabilitiesHard() {
 	var arrHabilitiesHard = [];
 	for (item of jobsTagsHabilitiesHard) {
 		if (item.className == 'registrationJobs-button-tag true') {
@@ -175,7 +184,8 @@ function iteradorTagsHabilitiesHard() {
 	return arrHabilitiesHard;
 }
 
-function iteradorTagsHabilitiesSoft() {
+// Funcao que itera sobre as tags de Soft para ver se foi clicado
+function iterateTagsHabilitiesSoft() {
 	var arrHabilitiesSoft = [];
 	for (item of jobsTagsHabilitiesSoft) {
 		if (item.className == 'registrationJobs-button-tag true') {
@@ -185,7 +195,8 @@ function iteradorTagsHabilitiesSoft() {
 	return arrHabilitiesSoft;
 }
 
-function iteradorTagsBonus() {
+// Funcao que itera sobre as tags de Bonus para ver se foi clicado
+function iterateTagsBonus() {
 	var arrBonus = [];
 	for (item of jobsTagsBonus) {
 		if (item.className == 'registrationJobs-button-tag true') {
@@ -197,13 +208,15 @@ function iteradorTagsBonus() {
 
 var informationJob;
 
+// Converte o numero do banco em um nome acessivel
 function workloadGET (res) {
 	return res == 6? 'half-time': 'full-time'
 }
 
-var resultadoPegarInformacoesJob 
+var resultGetInformationJob 
 
-function pegarInformacoesJob () {
+// Pega as informações do banco e coloca nos campos de entrada para o usuario editar
+function getInformationJob () {
 			$.ajax({
 				url: `http://127.0.0.1:3000/api/jobs/${idJob}`,
 				type: 'get',
@@ -211,7 +224,7 @@ function pegarInformacoesJob () {
 				async: false,
 				success: function(data) {
 					result = [data[0], data[0].contact, data[0].requireds_hardskill.split(','), data[0].requireds_softskill.split(','), data[0].bonus.split(',')]
-					resultadoPegarInformacoesJob = result
+					resultGetInformationJob = result
 				} 
 			 });
 			 jobsName.value = result[0].name
@@ -240,13 +253,15 @@ function pegarInformacoesJob () {
 }
 
 
-//Edit cadastro
-var botaoDispara = new Promise(function (resolve, reject) { 
+// Promessa que valida se todos os campos foram preenchidos
+// armazena os valores de entrada 
+// Atualiza no banco e ainda encaminha para a pagina de minhas vagas do recrutador
+var buttonTrigger = new Promise(function (resolve, reject) { 
 	iconConfirm.addEventListener('click', function (e) {
 	e.preventDefault();
 
-		if (jobsSalaryMin.value && jobsSalaryMax.value && jobsCP.value && jobsDescription.value && jobsActivities.value && iteradorTagsHabilitiesHard() && iteradorTagsHabilitiesSoft() &&
-	iteradorTagsBonus()) {
+		if (jobsSalaryMin.value && jobsSalaryMax.value && jobsCP.value && jobsDescription.value && jobsActivities.value && iterateTagsHabilitiesHard() && iterateTagsHabilitiesSoft() &&
+	iterateTagsBonus()) {
 
 	resolve([informationJob = {
 		postal_code: parseInt(jobsCP.value),
@@ -254,9 +269,9 @@ var botaoDispara = new Promise(function (resolve, reject) {
 		name: jobsName.value,
 		description: jobsDescription.value,
 		type: jobsType.value,
-		requireds_hardskill: iteradorTagsHabilitiesHard().join(','),
-		requireds_softskill: iteradorTagsHabilitiesSoft().join(','),
-		bonus: iteradorTagsBonus().join(','),
+		requireds_hardskill: iterateTagsHabilitiesHard().join(','),
+		requireds_softskill: iterateTagsHabilitiesSoft().join(','),
+		bonus: iterateTagsBonus().join(','),
 		salary_min: parseFloat(jobsSalaryMin.value),
 		salary_max: parseFloat(jobsSalaryMax.value),
 		scholarship: jobsSchooling.value,
@@ -272,20 +287,23 @@ var botaoDispara = new Promise(function (resolve, reject) {
 }
 
 })}).then((res) => {
-	editarCadastro('http://127.0.0.1:3000/api/jobs/',idJob, res[0])
-	editarCadastro('http://127.0.0.1:3000/api/jobscontacts/', resultadoPegarInformacoesJob[1], res[1])
+	editRegistration('http://127.0.0.1:3000/api/jobs/',idJob, res[0])
+	editRegistration('http://127.0.0.1:3000/api/jobscontacts/', resultGetInformationJob[1], res[1])
  })
 .then((resp) => {
+	// forca um clique e encaminha para a página minhas vagas
 	$('#registrationJobs-target-myjobs').click(function () {
 		window.location = 'http://127.0.0.1:3000/page_recruiter/my_jobs/index.html'
 	})
 })
 
-botaoDispara.catch((res) => {
+	// Alerta se houve uma excessão
+buttonTrigger.catch((res) => {
 	alert(res)
 })
 
-function editarCadastro (urlPUT, idJob, information){
+// Funcao que faz o Método PUT
+function editRegistration (urlPUT, idJob, information){
 	$.ajax({
 		url: `${urlPUT}${idJob}`,
 		type: 'put',

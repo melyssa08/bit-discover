@@ -1,3 +1,4 @@
+e// Carrega a NavBar e a SideBar 
 window.addEventListener('load', function () {
     $("#likesCandidates-header").load("/page_candidates/side_and_navbar/index.html", function (response, status) {
         if (status == "error") {
@@ -8,21 +9,23 @@ window.addEventListener('load', function () {
     })
 })
 
-function conversorDeStringEmArray (likesDoUser) {
+// Converte strings em arrays
+function convertStringInArray (likesDoUser) {
   return likesDoUser.split(',').map((i) => {return parseInt(i)})
 }
 
-function iteradorJobsEComparador (ids) {
+// Itera sobre os jobs do usuario e compara com ids
+function iterateJobsAndCompare (ids) {
   $.ajax({
     url: `http://127.0.0.1:3000/api/jobs/`,
     type: 'get',
     dataType: 'json',
     async: false,
     success: function(data) {
-        result = data.map((jobsPraUsar) => {
+        result = data.map((jobsToUser) => {
           for (j == 0; j < ids.length; j++) {
-            if (jobsPraUsar.id == ids[j]) {
-              return jobsPraUsar
+            if (jobsToUser.id == ids[j]) {
+              return jobsToUser
             }
           }
         })
@@ -30,14 +33,15 @@ function iteradorJobsEComparador (ids) {
     return result
 }
 
-function atualizaLikesLocalStorage (idCard) {
+// Funcao que seta os cards que o usuário deu like no localStorage e também atualiza o banco
+function addLikesLocalStorageAndDataBase (idCard) {
 
 }
 
-
+// Carrega os cards com likes
 function loadCard () {
 
-    iteradorJobsEComparador(conversorDeStringEmArray(JSON.parse(localStorage.UserBITDiscover).likes)).map((resul) => {
+    iterateJobsAndCompare(convertStringInArray(JSON.parse(localStorage.UserBITDiscover).likes)).map((resul) => {
 
     $('#likesCandidates-main').append(
       `<!--Inicio Card-->
@@ -163,10 +167,11 @@ function loadCard () {
     )
   })
 
-  adicionaFuncionalidadeLike()
+  addFuncionalityLike()
 }
 
-function adicionaFuncionalidadeLike () {
+// Adiciona funcionalidade ao icone de like, propriedades de estilo
+function addFuncionalityLike () {
 
 let itens = document.querySelectorAll('[id^=likesCandidates-icon-like]');
 		for (let i = 0; i < itens.length; i++) {
@@ -174,21 +179,21 @@ let itens = document.querySelectorAll('[id^=likesCandidates-icon-like]');
 			iconLike.style.alignSelf = 'flex-end';
 			iconLike.style.cursor = 'pointer';
 			iconLike.style.color = 'rgb(243, 196, 46)';
-			function mudaCorLike() {
-				var estadoIconLike = false;
+			function changeColorLike() {
+				var stateIconLike = false;
 				iconLike.addEventListener('click', function () {
 					console.log('Funciona');
-					if (estadoIconLike == false) {
-						estadoIconLike = true;
+					if (stateIconLike == false) {
+						stateIconLike = true;
 						iconLike.style.color = 'rgb(83, 00, 132)';
             iconLike.value = `${iconLike.value}true`  
 					} else {
 						iconLike.style.color = 'rgb(243, 196, 46)';
-						estadoIconLike = false;
+						stateIconLike = false;
 					}
 				});
 			}
-			mudaCorLike();
+			changeColorLike();
 		}
 }
 

@@ -9,52 +9,55 @@ window.addEventListener('load', function () {
 	});
 });
 
-//Pega os dados para colocar nas tags de soft
+//Pega os dados para colocar nas tags de soft e adiciona funcionalidade a essas tags
 $.get("http://127.0.0.1:3000/api/softskills/", function(response) {
 	for (i of response) {
 		$("#registrationJobs-tags-habilities-soft").append(
 			`<button class="registrationJobs-button-tag" value="${i.id}">${i.name}</button>`
 			)}
-	adcionaFuncionalidadeAsTags('registrationJobs-tags-habilities-soft')
+	addFuncionalityToTags('registrationJobs-tags-habilities-soft')
 }
 
 )
 
+// Pega os dados para colocar nas tags hard e adiciona funcionalidade a essas tags
 $.get("http://127.0.0.1:3000/api/hardskills/", function(response) {
 	for (i of response) {
 		$("#registrationJobs-tags-habilities-hard").append(
 			`<button class="registrationJobs-button-tag" value="${i.id}">${i.name}</button>`
 		)}
-	adcionaFuncionalidadeAsTags('registrationJobs-tags-habilities-hard')
+	addFuncionalityToTags('registrationJobs-tags-habilities-hard')
 })
 
+// Pega os dados para colocar nas tags de bonus e adciona funcionalidade a essas tags
 $.get("http://127.0.0.1:3000/api/bonus/", function (response) {
 	for (i of response) {
 		$("#registrationJobs-tags-bonus").append(
 			`<button class="registrationJobs-button-tag" value="${i.id}">${i.name}</button>`
 		)}
-	adcionaFuncionalidadeAsTags('registrationJobs-tags-bonus')
+	addFuncionalityToTags('registrationJobs-tags-bonus')
 })
 
-function adcionaFuncionalidadeAsTags (nomeId) {
-	var botao = document.getElementById(nomeId).children
-	for (item of botao) {
+// Funcao que adiciona a funcionalidade de evento click que muda de cor dependendo do estado da tag
+function addFuncionalityToTags (nameId) {
+	var button = document.getElementById(nameId).children
+	for (item of button) {
 		item.className = 'registrationJobs-button-tag false';
 	}
-	for (let i = 0; i < botao.length; i++) {
-		botao[i].addEventListener('click', function (e) {
-			if (botao[i].className == 'registrationJobs-button-tag false') {
+	for (let i = 0; i < button.length; i++) {
+		button[i].addEventListener('click', function (e) {
+			if (button[i].className == 'registrationJobs-button-tag false') {
 				e.preventDefault();
-				botao[i].style.backgroundColor = '#530084';
-				botao[i].style.color = '#FFFFFF';
-				botao[i].className = 'registrationJobs-button-tag true';
-			} else if (botao[i].className == 'registrationJobs-button-tag true') {
+				button[i].style.backgroundColor = '#530084';
+				button[i].style.color = '#FFFFFF';
+				button[i].className = 'registrationJobs-button-tag true';
+			} else if (button[i].className == 'registrationJobs-button-tag true') {
 				e.preventDefault();
-				botao[i].style.borderStyle = 'solid';
-				botao[i].style.borderStyle = '#530084';
-				botao[i].style.backgroundColor = '#FFFFFF';
-				botao[i].style.color = '#530084';
-				botao[i].className = 'registrationJobs-button-tag false';
+				button[i].style.borderStyle = 'solid';
+				button[i].style.borderStyle = '#530084';
+				button[i].style.backgroundColor = '#FFFFFF';
+				button[i].style.color = '#530084';
+				button[i].className = 'registrationJobs-button-tag false';
 			}
 		});
 	}
@@ -63,7 +66,7 @@ function adcionaFuncionalidadeAsTags (nomeId) {
 // Pega as tags e põem novas
 var addNewTag = document.getElementById('registrationJobs-add-new-tag');
 var listNewTag = document.getElementById('registrationJobs-input-add-tag');
-var divFatherOpcional = document.getElementById('registrationJobs-content-no-obligation');
+var divFatherOption = document.getElementById('registrationJobs-content-no-obligation');
 
 addNewTag.addEventListener('click', function () {
 	var newTag = document.createElement('button');
@@ -71,10 +74,10 @@ addNewTag.addEventListener('click', function () {
 	newTag.style.backgroundColor = '#530084';
 	newTag.style.color = 'white';
 	newTag.innerHTML = `${listNewTag.value}`;
-	divFatherOpcional.appendChild(newTag);
+	divFatherOption.appendChild(newTag);
 });
 
-
+// Variaveis dos inputs que recebem os valores de entrada do usuario
 var jobsName = document.getElementById('registrationJobs-name-job');
 var jobsType = document.getElementById('registrationJobs-type');
 var jobsTime = document.getElementById('registrationJobs-time');
@@ -95,7 +98,7 @@ var iconConfirm = document.getElementById('registrationJobs-icon-confirm');
 var jobsEmail = document.getElementById('registrationJobs-email')
 var jobsCell = document.getElementById('registrationJobs-cellphone')
 
-
+// Validacao com condicao do campo input do Regime de trabalho
 jobsType.addEventListener('input', function () {
 	console.log(this.value)
 	if (this.value == "Estagio") {
@@ -111,19 +114,22 @@ jobsType.addEventListener('input', function () {
 	}
 })
 
+// Formatacao de entrada do campo do codigo postal
 jobsCP.addEventListener('input', function () {
 	if (isNaN(this.value)) {
 		this.value = this.value.slice(0,-1)
 	}
 })
 
+// Formatacao de entrada do campo de telefone
 jobsCell.addEventListener('input', function () {
 	if (isNaN(this.value)) {
 		this.value = this.value.slice(0, -1)
 	}
 })
 
-function iteradorTagsHabilitiesHard() {
+// Funcao que itera sobre as tags de Hard para ver se foi clicado
+function iterateTagsHabilitiesHard() {
 	var arrHabilitiesHard = [];
 	for (item of jobsTagsHabilitiesHard) {
 		if (item.className == 'registrationJobs-button-tag true') {
@@ -133,7 +139,8 @@ function iteradorTagsHabilitiesHard() {
 	return arrHabilitiesHard;
 }
 
-function iteradorTagsHabilitiesSoft() {
+// Funcao que itera sobre as tags de Soft para ver se foi clicado
+function iterateTagsHabilitiesSoft() {
 	var arrHabilitiesSoft = [];
 	for (item of jobsTagsHabilitiesSoft) {
 		if (item.className == 'registrationJobs-button-tag true') {
@@ -143,7 +150,8 @@ function iteradorTagsHabilitiesSoft() {
 	return arrHabilitiesSoft;
 }
 
-function iteradorTagsBonus() {
+// Funcao que itera sobre as tags de Bonus para ver se foi clicado
+function iterateTagsBonus() {
 	var arrBonus = [];
 	for (item of jobsTagsBonus) {
 		if (item.className == 'registrationJobs-button-tag true') {
@@ -153,31 +161,34 @@ function iteradorTagsBonus() {
 	return arrBonus;
 }
 
+// variavel que irá armazenar valores dos inputs inseridos pelo usuário
 var informationJob;
 
-
-var botaoDispara = new Promise(function (resolve, reject) { 
+// Promessa que valida se todos os campos foram preenchidos
+// armazena os valores de entrada 
+//posta no banco e ainda encaminha para a pagina de minhas vagas do recrutador
+var buttonTrigger = new Promise(function (resolve, reject) { 
 	iconConfirm.addEventListener('click', function (e) {
 	e.preventDefault();
 
 		if (jobsSalaryMin.value && jobsSalaryMax.value && jobsCP.value && jobsDescription.value && jobsActivities.value && jobsEmail.value && jobsCell.value
-			&& iteradorTagsHabilitiesHard() && iteradorTagsHabilitiesSoft() && iteradorTagsBonus()) {
+			&& iterateTagsHabilitiesHard() && iterateTagsHabilitiesSoft() && iterateTagsBonus()) {
 
-			postarCadastro('http://127.0.0.1:3000/api/jobscontacts/', {email: jobsEmail.value , number: jobsCell.value})
+			postRegistration('http://127.0.0.1:3000/api/jobscontacts/', {email: jobsEmail.value , number: jobsCell.value})
 
 	resolve(informationJob = {
 		postal_code: parseInt(jobsCP.value),
-		company: pegaIdEmpresa(JSON.parse(localStorage.UserBITDiscover).id,'http://127.0.0.1:3000/api/companies/'),
+		company: getIdCompany(JSON.parse(localStorage.UserBITDiscover).id,'http://127.0.0.1:3000/api/companies/'),
 		activities: jobsActivities.value,
 		name: jobsName.value,
 		description: jobsDescription.value,
 		type: jobsType.value,
-		requireds_hardskill: iteradorTagsHabilitiesHard().join(','),
-		requireds_softskill: iteradorTagsHabilitiesSoft().join(','),
-		bonus: iteradorTagsBonus().join(','),
+		requireds_hardskill: iterateTagsHabilitiesHard().join(','),
+		requireds_softskill: iterateTagsHabilitiesSoft().join(','),
+		bonus: iterateTagsBonus().join(','),
 		salary_min: parseFloat(jobsSalaryMin.value),
 		salary_max: parseFloat(jobsSalaryMax.value),
-		contact: pegaIdContact(),
+		contact: getIdContact(),
 		scholarship: jobsSchooling.value,
 		modality: jobsModality.value,
 		shift: jobsShift.value,
@@ -191,26 +202,30 @@ var botaoDispara = new Promise(function (resolve, reject) {
 }
 
 })}).then((res) => {
-	postarCadastro('http://127.0.0.1:3000/api/jobs/',res)
+	// Posta o registro no banco
+	postRegistration('http://127.0.0.1:3000/api/jobs/',res)
  })
 .then((resp) => {
 	$('#registrationJobs-target-myjobs').click(function () {
+		// ecaminha para a página de minhas vagas do recrutador
 		window.location = 'http://127.0.0.1:3000/page_recruiter/my_jobs/index.html'
 	})
 })
 
-botaoDispara.catch((err) => {
+// Mensagem de excessão caso nem todos os campos forem preenchidos quando se clica no icone confirma
+buttonTrigger.catch((err) => {
 	alert(err)
 })
 
-
-function postarCadastro(url,information) {
+// Funcao que posta no banco
+function postRegistration(url,information) {
 	$.post(url, information, function (response) {
 		console.log(response); 
 	});
 }
 
-function pegaIdEmpresa(id, urlGet)
+// Funcao que pega o Id da empresa que esta usando no banco
+function getIdCompany(id, urlGet)
 {
      $.ajax({
         url: `${urlGet}${id}`,
@@ -224,7 +239,8 @@ function pegaIdEmpresa(id, urlGet)
      return result;
 }
 
-function pegaIdContact () {
+// Funcao que pega o id de contato 
+function getIdContact () {
 	$.ajax({
         url: `http://127.0.0.1:3000/api/jobscontacts/`,
         type: 'get',

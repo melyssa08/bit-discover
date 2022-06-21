@@ -1,5 +1,5 @@
 // faz os botões de hard e soft skill funcionar
-function botao(id) {
+function button(id) {
   if (id.getAttribute("class") == "registrationCandidates-button-tag-unclicked" ){
  id.setAttribute("class","registrationCandidates-button-tag-clicked")
   }
@@ -75,7 +75,7 @@ function onload() {
    $.get("http://localhost:3000/api/softskills", function(softskills) {
      console.log(softskills)
      for (i=0;i<softskills.length;i++) {
-       $('#registrationCandidates-content-obligation').append(`<button class="registrationCandidates-button-tag-unclicked" id="s${softskills[i].id}"  onclick="botao(s${softskills[i].id})">` + softskills[i].name + `</button>`)
+       $('#registrationCandidates-content-obligation').append(`<button class="registrationCandidates-button-tag-unclicked" id="s${softskills[i].id}"  onclick="button(s${softskills[i].id})">` + softskills[i].name + `</button>`)
      }
    }) 
  
@@ -83,7 +83,7 @@ function onload() {
    $.get('http://localhost:3000/api/hardskills', function(hardskills) {
       //carrega os botões de hardskill e os adiciona na página
      for (i=0;i<hardskills.length;i++) {
-       $('#registrationCandidates-content-obligation-1').append(`<button class="registrationCandidates-button-tag-unclicked" id="h${hardskills[i].id}" onclick="botao(h${hardskills[i].id})">` + hardskills[i].name + `</button>`)
+       $('#registrationCandidates-content-obligation-1').append(`<button class="registrationCandidates-button-tag-unclicked" id="h${hardskills[i].id}" onclick="button(h${hardskills[i].id})">` + hardskills[i].name + `</button>`)
      }
    })
     }
