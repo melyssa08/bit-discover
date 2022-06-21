@@ -32,6 +32,7 @@ function create_profile() {
 
 };
 
+// função que faz voltar para a página inicial
 function backbtn() {
     window.location.href = "/";
 }

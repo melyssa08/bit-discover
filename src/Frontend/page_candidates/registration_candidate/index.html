@@ -7,18 +7,21 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
     <link rel="stylesheet" href="estilo.css" />
     <script src="https://kit.fontawesome.com/1b4e4dcd7e.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>Cadastro de Candidata</title>
-
+<!-- na head, declaro o ajax, fontawesome e o bootstrap, assim como o css -->
 </head>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <body class="registrationCandidates-body" onload="onload()">
     <div class="container justify-content-center me-auto">
+        <!-- todas as classes que nao comecam com "registrationCandidates" são do bootstrap -->
+        <!-- classes de container, card e row foram usadas para responsividade -->
         <div class="row justify-content-center">
             <div class="card justify-content-center" id="registrationCandidates-cardsbootstrap">
                 <div class="card-body">
                     <div class="container-lg my-5">
                         <div class="justify-content-center mb-10">
+                            <!-- asset da logo -->
                             <img src="../../assets/logo.png" alt="bit-logo" class="registrationCandidates-image" />
                         </div>
                     </div>
@@ -29,6 +32,7 @@
                         </h4>
                     </div>
                     <div class="container justify-content-center" id="registrationCandidates-flex">
+                        <!-- container das informacoes pessoais -->
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="row justify-content-center">
@@ -70,6 +74,7 @@
                             </div>
                         </div>
                     </div>
+                        <!-- div da textarea -->
                     <div class="container-lg mt-5">
                         <div class="row justify-content-center">
                             <h4 class="registrationCandidates-hs">Conte mais sobre você</h4>
@@ -80,6 +85,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- div da primeira linha das informações profissionais -->
                     <div class="container-lg mt-5">
                         <h4 class="registrationCandidates-hs registrationCandidates-margintop">
                             Informações Profissionais
@@ -136,6 +142,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- div da ultima linha de informações profissionais -->
                     <div class="container-lg">
                         <div class="row registrationCandidates-margintop">
                             <div class="col-lg-5 offset-lg-1 col-md-6 col-sm-12">
@@ -161,7 +168,7 @@
                         </div>
                     </div>
                 </div>
-
+                <!-- div do sistema de soft skills -->
                 <div class="container mt-3">
                     <h4 id="Softskills" class="registrationCandidates-hs registrationCandidates-margintop">
                         Registre aqui suas Soft Skills!
@@ -173,11 +180,13 @@
                                     <p class="registrationCandidates-title">Soft Skills:</p>
                                 </div>
                                 <div id="registrationCandidates-content-obligation" style="height: 10rem;">
+                                    <!-- o banco de dados puxa esses itens em uma requisição get -->
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- div do sistema de hard skills -->
                 <div class="container mt-3">
                     <h4 id="registrationCandidates-hardskills" class="registrationCandidates-hs registrationCandidates-margintop">
                         Registre aqui suas Hard Skills!
@@ -189,19 +198,23 @@
                                     <p class="registrationCandidates-title">Hard Skills:</p>
                                 </div>
                                 <div id="registrationCandidates-content-obligation-1" style="overflow-y:scroll; height: 10rem;" >
+                                    <!-- o banco de dados puxa esses itens em uma requisição get -->
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- botão de criar o perfil -->
                 <div class="d-grid col-lg-3 col-md-3 col-sm-3 mx-auto input-container">
                     <button class="btn btn-primary registrationCandidates-btn" onclick="create_profile()">Criar Perfil</button>
                 </div>
+                <!-- botão de voltar para a página de login -->
                 <button id="registrationCandidates-back-btn" onclick="backbtn()">
                     <i class="fa-solid fa-house"></i>
                   </button>
             </div>
         </div>
+        <!-- são referenciados no final o script da página e o bootstrap -->
         <script src="../../js/registrationCandidate-js.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
