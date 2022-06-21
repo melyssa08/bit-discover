@@ -79,21 +79,45 @@ input::-webkit-inner-spin-button {
 }
 
 /* Propriedades de estilização e espaço no campo cep */
-#registrationJobs-cp, #registrationJobs-name-company, #registrationJobs-profiency {
+#registrationJobs-profiency, #registrationJobs-email, #registrationJobs-description-activities {
     border-style: #F3C42E;
     border-radius: 10px;
     border-color: #F3C42E;
     min-width: 212px;
-    height: 80%;
+    height: 100%;
     width: 60%;
 }
 
-#registrationJobs-profiency {
-    width: 80%;
+
+#registrationJobs-salary-min, #registrationJobs-salary-max, #registrationJobs-cp {
+    border-style: #F3C42E;
+    border-radius: 10px;
+    border-color: #F3C42E;
+    min-width: 212px;
+    height: 100%;
+    width: 60%;
+}
+
+#registrationJobs-schooling, #registrationJobs-modality, #registrationJobs-shift {
+    border-style: #F3C42E;
+    border-radius: 10px;
+    border-color: #F3C42E;
+    min-width: 212px;
+    height: 100%;
+    width: 60%;
+}
+
+#registrationJobs-name-job, #registrationJobs-type, #registrationJobs-time {
+    border-style: #F3C42E;
+    border-radius: 10px;
+    border-color: #F3C42E;
+    min-width: 212px;
+    height: 100%;
+    width: 60%;
 }
 
 /* Propriedades de estilo e espaço no campo observação vaga */
-#registrationJobs-description-jobs, #registrationJobs-description-activities {
+#registrationJobs-description-jobs, #registrationJobs-cellphone {
     border-style: solid;
     border-color: #F3C42E;
     border-radius: 10px;
@@ -131,9 +155,10 @@ input::-webkit-inner-spin-button {
 
 /* Propriedades de espaço e estilo nos campos de seleção de tags */
 .registrationJobs-input-form-buttons-box {
+    overflow: hidden;
     background-color: #FFFFFF;
     display: flex;
-    height: 100%;
+    height: 80%;
     width: 100%;
     min-width: 215px;
     border-style: solid;
@@ -156,7 +181,6 @@ input::-webkit-inner-spin-button {
 
 /* Propriedade de posição no titulo de requisitos obrigatórios e não obrigatórios */
 .registrationJobs-title {
-    padding-top: 1%;
     width: 100%;
 }
 
@@ -164,6 +188,7 @@ input::-webkit-inner-spin-button {
 .registrationJobs-field-search {
     display: flex;
     width: 100%;
+    height: 2rem;
 }
 
 /* Propriedades de espaço e posicionamento do canto superior das caixas de seleção de tags */
@@ -180,8 +205,7 @@ input::-webkit-inner-spin-button {
     width: 100%;
     justify-content: space-between;
     padding-left: 1%;
-    padding-top: 3%;
-    height: 50%;
+    height: 100%;
 }
 
 /* Propriedade da caixa de seleção de tags quando a caixa se estica e aparece uma sroll para deslizar para baixo */
@@ -222,6 +246,14 @@ input::-webkit-inner-spin-button {
     margin-top: 10px;
     width: 100%;
     display: grid;
+}
+
+.registrationJobs-hard-skills-new-tag {
+    display: flex;
+    margin-top: 10px;
+    width: 100%;
+    display: grid;
+    height: 7rem;
 }
 
 /* Propriedade de estilo e espaço nos campos de busca dentro das caixas de seleção de tags */

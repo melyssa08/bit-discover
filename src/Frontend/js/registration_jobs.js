@@ -66,7 +66,7 @@ function addFuncionalityToTags (nameId) {
 // Pega as tags e põem novas
 var addNewTag = document.getElementById('registrationJobs-add-new-tag');
 var listNewTag = document.getElementById('registrationJobs-input-add-tag');
-var divFatherOption = document.getElementById('registrationJobs-content-no-obligation');
+var divFatherOption = document.getElementById('registrationJobs-new-tags-box');
 
 addNewTag.addEventListener('click', function () {
 	var newTag = document.createElement('button');
