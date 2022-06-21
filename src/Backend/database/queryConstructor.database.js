@@ -6,7 +6,7 @@ const QueryConstructor = {
 			 * @param {Object} filter - Filter object
 			 * @return {String} - Filter query
 			 */
-			filter: (where) => {
+			filter: (where,operator="=") => {
 				if (!where) {
 					// If filter is empty
 					return '';
@@ -16,8 +16,9 @@ const QueryConstructor = {
 				const values = Object.values(where).map((value) => (typeof value === 'string' ? `'${value}'` : value)); // Get values from filter
 
 				items.forEach((item, index) => {
-					filters += `${item} = ${values[index]} ${index === items.length - 1 ? '' : 'AND '}`; // Add filter to filters
+					filters += `${item} ${operator} ${values[index]} ${index === items.length - 1 ? '' : 'AND '}`; // Add filter to filters
 				});
+				console.log(filters)
 
 				return filters;
 			},

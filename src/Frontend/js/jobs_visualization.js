@@ -4,13 +4,16 @@ window.addEventListener('load', function () {
 	});
 });
 
-function loadCard() {
+function loadCard(query= {}) {
 	// Consumo de api por jQuery com o método get
-	$.get('http://localhost:3000/api/jobs', function (resultado) {
+	let textao = Object.keys(query).map(key => key +"=" +query[key]).join("&")
+	let url = "http://localhost:3000/api/jobs?" + textao
+	$.get(url, function (resultado) {
 		var userInfo = JSON.parse(localStorage.getItem("UserBITDiscover"))
 		console.log(userInfo)
 		var userId = userInfo.id
 		console.log(userId)
+		$("#jobsVisualization-cards").html("")
 		// Veio como array o resultado então usa o map para fazer a modificação em cada item do array
 		resultado.map((resul) => {
 			$.ajax({
@@ -23,6 +26,7 @@ function loadCard() {
 				success: data => {
 					console.log("Porcentagem vagas!!", data);
 					var percentage = data
+					
 					$('#jobsVisualization-cards').append(
 						`<!--Inicio Card-->
 						<div class="col-4">
@@ -178,4 +182,28 @@ function loadCard() {
 			changeColorLike();
 		}
 	});
+}
+// age quando o botão do formulário de pesquisa é clickado
+function buscar(event) {
+	//impede um redirecr da página
+	event.preventDefault();
+	// dicionário que guarda as condições do filtro
+	let args = {
+	}
+	//os filtros que são usados no modal de busca
+	if ($("#jobsVisualization-name").val()) {
+		args["name"] ="%" + $("#jobsVisualization-name").val() +"%"
+	}
+	if ($("input[name=modalidade]:checked","#jobsVisualization-form-filter").val()) {
+		args["modality"] =$("input[name=modalidade]:checked","#jobsVisualization-form-filter").val()
+	}
+	if ($("input[name=regime-de-trabalho]:checked","#jobsVisualization-form-filter").val()) {
+		args["type"] =$("input[name=regime-de-trabalho]:checked","#jobsVisualization-form-filter").val()
+	}
+	if ($("input[name=proficiencia]:checked","#jobsVisualization-form-filter").val()) {
+		args["proficiency"] =$("input[name=proficiencia]:checked","#jobsVisualization-form-filter").val()
+	}
+	loadCard(args)
+	$("#exampleModal").modal("toggle")
+	return false
 }

@@ -3,7 +3,7 @@ import express from 'express';
 
 const api_jobs = express.Router(); // Create express router
 
-api_jobs.get('/', JobsController.get); // Add get all jobs endpoint
+api_jobs.get('/', JobsController.getFilter); // Add get jobs by filter endpoint
 
 api_jobs.get('/:id', JobsController.getOne); // Add get job by id endpoint
 

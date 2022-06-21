@@ -249,3 +249,21 @@
     display: flex;
     justify-content: space-between;
 }
+
+
+#registrationCandidates-back-btn {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    top: 40px;
+    left: 40px;
+    border-radius: 30px;
+    background-color: white;
+    color: #530084;
+    border-color: #f3c42e;
+    border-style: solid;
+  }
+  #registrationCandidates-back-btn:hover {
+    background-color: #f3c42e;
+    border-color: #550084;
+  }

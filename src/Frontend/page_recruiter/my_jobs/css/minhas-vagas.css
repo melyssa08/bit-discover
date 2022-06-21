@@ -65,10 +65,24 @@ h7.myJobs-card-title{
     border: 0px 
 }
 
+#myJobs-icon-plus {
+    height: 15%;
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    position: fixed;
+    bottom: 0;
+}
+
+#myJobs-icon-new-job {
+    margin-right: 30px;
+    cursor: pointer;
+}
+
 .myJobs-card {
     background-color: #530084;
     padding: 5px 8px;
-
+    max-width: 25rem;
 }
 
 /* HOVER */

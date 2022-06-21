@@ -43,10 +43,10 @@
   <body class="mt-5" onload="loadCard()" id="jobsVisualization-body">
     <main class="mt-5 text-black row gx-0"></main>
     <main class="mt-5 text-black row" style="margin-bottom: 5rem">
-      <div id="jobsVisualization-cards" class="row col-12"></div>
+      <div id="jobsVisualization-cards" class="row col-12 flex justify-content-center"></div>
     </main>
     <!--Modal Filter-->
-    <div
+    <div 
       class="modal fade"
       id="exampleModal"
       tabindex="-1"
@@ -66,7 +66,11 @@
           </div>
           <div class="modal-body">
             <p>Modalidade:</p>
-            <form id="jobsVisualization-form-filter">
+            <form id="jobsVisualization-form-filter" onsubmit="return buscar(event)">
+              <div>
+                <label for="jobsVisualization-name">pesquise aqui: </label>
+                <input type="text" name ="name" id="jobsVisualization-name" placeholder="digite aqui o nome da vaga">
+              </div>
               <div>
                 <input
                   type="radio"
@@ -151,7 +155,8 @@
                 <label for="jobsVisualization-senior"> SÊNIOR </label>
               </div>
               <div id="jobsVisualization-space-confirm-filter">
-                <button id="jobsVisualization-confirm-filter">CONFIRMA</button>
+                <input type="reset" id="jobsVisualization-reset">
+                <button id="jobsVisualization-confirm-filter" type="submit">CONFIRMA</button>
               </div>
             </form>
           </div>

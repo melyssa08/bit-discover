@@ -133,7 +133,7 @@ input::-webkit-inner-spin-button {
 .registrationJobs-input-form-buttons-box {
     background-color: #FFFFFF;
     display: flex;
-    height: 100%;
+    height: 80%;
     width: 100%;
     min-width: 215px;
     border-style: solid;
@@ -156,7 +156,6 @@ input::-webkit-inner-spin-button {
 
 /* Propriedade de posição no titulo de requisitos obrigatórios e não obrigatórios */
 .registrationJobs-title {
-    padding-top: 1%;
     width: 100%;
 }
 
@@ -180,8 +179,7 @@ input::-webkit-inner-spin-button {
     width: 100%;
     justify-content: space-between;
     padding-left: 1%;
-    padding-top: 3%;
-    height: 50%;
+    height: 100%;
 }
 
 /* Propriedade da caixa de seleção de tags quando a caixa se estica e aparece uma sroll para deslizar para baixo */
@@ -219,7 +217,6 @@ input::-webkit-inner-spin-button {
 
 /* Propriedade de display de uma caixa de seleção de tag */
 .registrationJobs-hard-skills {
-    margin-top: 10px;
     width: 100%;
     display: grid;
 }
@@ -271,4 +268,51 @@ input::-webkit-inner-spin-button {
 
 #registrationJobs-icon-confirm {
     cursor: pointer;
+}
+
+#registrationJobs-profiency, #registrationJobs-email, #registrationJobs-description-activities {
+    border-style: #F3C42E;
+    border-radius: 10px;
+    border-color: #F3C42E;
+    min-width: 212px;
+    height: 100%;
+    width: 60%;
+}
+
+
+#registrationJobs-salary-min, #registrationJobs-salary-max, #registrationJobs-cp {
+    border-style: #F3C42E;
+    border-radius: 10px;
+    border-color: #F3C42E;
+    min-width: 212px;
+    height: 100%;
+    width: 60%;
+}
+
+#registrationJobs-schooling, #registrationJobs-modality, #registrationJobs-shift {
+    border-style: #F3C42E;
+    border-radius: 10px;
+    border-color: #F3C42E;
+    min-width: 212px;
+    height: 100%;
+    width: 60%;
+}
+
+#registrationJobs-name-job, #registrationJobs-type, #registrationJobs-time {
+    border-style: #F3C42E;
+    border-radius: 10px;
+    border-color: #F3C42E;
+    min-width: 212px;
+    height: 100%;
+    width: 60%;
+}
+
+/* Propriedades de estilo e espaço no campo observação vaga */
+#registrationJobs-description-jobs, #registrationJobs-cellphone {
+    border-style: solid;
+    border-color: #F3C42E;
+    border-radius: 10px;
+    height: 80%;
+    min-width: 212px;
+    width: 80%;
 }
