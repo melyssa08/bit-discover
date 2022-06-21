@@ -1,3 +1,4 @@
+// Carrega a navbar na tela
 window.addEventListener('load', function () {
 	$('#jobsVisualization-header').load('/page_candidates/side_and_navbar/index.html', function (response, status) {
 	});
@@ -158,26 +159,27 @@ function teste(query= {}) {
 		});
 	})
 	.then(() => {
+		// Adiciona funcionalidade ao icone de like dos cards
 		let itens = document.querySelectorAll('[id^=jobsVisualization-icon-like]');
 		for (let i = 0; i < itens.length; i++) {
 			let iconLike = itens[i];
 			iconLike.style.alignSelf = 'flex-end';
 			iconLike.style.cursor = 'pointer';
 			iconLike.style.color = 'rgb(243, 196, 46)';
-			function mudaCorLike() {
-				var estadoIconLike = false;
+			function changeColorLike() {
+				var stateIconLike = false;
 				iconLike.addEventListener('click', function () {
 					console.log('Funciona');
-					if (estadoIconLike == false) {
-						estadoIconLike = true;
+					if (stateIconLike == false) {
+						stateIconLike = true;
 						iconLike.style.color = 'rgb(83, 00, 132)';
 					} else {
 						iconLike.style.color = 'rgb(243, 196, 46)';
-						estadoIconLike = false;
+						stateIconLike = false;
 					}
 				});
 			}
-			mudaCorLike();
+			changeColorLike();
 		}
 	});
 }
