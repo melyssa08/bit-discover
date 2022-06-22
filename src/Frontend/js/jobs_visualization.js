@@ -4,6 +4,68 @@ window.addEventListener('load', function () {
 	});
 });
 
+var userInfo = JSON.parse(localStorage.getItem("UserBITDiscover"))
+var likesArray = []
+console.log("ID User ", userInfo.id)
+
+function button(id) {
+	if (document.getElementById(`likecard${id}`).getAttribute('class') == 'jobsVisualization-icon-like-clicked') {
+		document.getElementById(`likecard${id}`).setAttribute('class', 'jobsVisualization-icon-like-unclicked')
+		console.log("oi")
+	}
+	else {
+		document.getElementById(`likecard${id}`).setAttribute('class', 'jobsVisualization-icon-like-clicked')
+		console.log("oi 2")
+	}
+	like(id)
+}
+
+function like(id) {
+	console.log(likesArray)
+	id = String(id)
+	if (likesArray.includes(id) === false) {
+		likesArray.push(id)
+		likesArray.sort((a, b) => a - b)
+
+		console.log(likesArray)
+		$.ajax({
+			url: `http://127.0.0.1:3000/api/candidates/${userInfo.id}`,
+			type: "PUT",
+			data: `likes=${likesArray}`,
+			success: data => {
+				console.log(data);
+			}
+		}).fail(function (err) {
+			console.log(err);
+			alert('Impossível adicionar mudanças no momento.');
+		})
+	}
+	else if (likesArray.includes(id) === true) {
+		for (var i = 0; i < likesArray.length; i++) {
+			if (likesArray[i] === id) {
+
+				likesArray.splice(i, 1);
+			}
+
+		}
+		console.log("removeu")
+		$.ajax({
+			url: `http://127.0.0.1:3000/api/candidates/${userInfo.id}`,
+			type: "PUT",
+			data: `likes=${likesArray}`,
+			success: data => {
+				console.log(data);
+			}
+		}).fail(function (err) {
+			console.log(err);
+			alert('Impossível adicionar mudanças no momento.');
+		})
+	}
+
+	console.log("Likes", likesArray)
+	console.log('Funciona ', id);
+}
+
 function loadCard(query= {}) {
 	// Consumo de api por jQuery com o método get
 	let textao = Object.keys(query).map(key => key +"=" +query[key]).join("&")
@@ -79,7 +141,7 @@ function loadCard(query= {}) {
 					  <button class="btn btn-primary btn-sm follow" id="jobsVisualization-follow" data-bs-toggle="modal" data-bs-target="#modalid` +
 							resul.id +
 							`">SAIBA MAIS</button>
-					  <svg xmlns="http://www.w3.org/2000/svg" width="35" height="30" id="jobsVisualization-icon-like" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+					  <svg xmlns="http://www.w3.org/2000/svg" width="35" height="30" fill="currentColor" id="likecard${resul.id}" onclick="button(${resul.id})" class="bi bi-heart-fill jobsVisualization-icon-like-unclicked" viewBox="0 0 16 16">
 						<path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
 					  </svg>
 					</div>
@@ -157,31 +219,26 @@ function loadCard(query= {}) {
 			// Está colocando os cards no html por meio do jQuery
 			// Template de string que mostra a criação dos cards como se fosse um html só que dentro de um arquivo javascript
 		});
-	})
-	.then(() => {
-		// Adiciona funcionalidade ao icone de like dos cards
-		let itens = document.querySelectorAll('[id^=jobsVisualization-icon-like]');
-		for (let i = 0; i < itens.length; i++) {
-			let iconLike = itens[i];
-			iconLike.style.alignSelf = 'flex-end';
-			iconLike.style.cursor = 'pointer';
-			iconLike.style.color = 'rgb(243, 196, 46)';
-			function changeColorLike() {
-				var stateIconLike = false;
-				iconLike.addEventListener('click', function () {
-					console.log('Funciona');
-					if (stateIconLike == false) {
-						stateIconLike = true;
-						iconLike.style.color = 'rgb(83, 00, 132)';
-					} else {
-						iconLike.style.color = 'rgb(243, 196, 46)';
-						stateIconLike = false;
-					}
+	}).then(function(result) {
+		$.get("http://127.0.0.1:3000/api/candidates/" + userInfo.id, (res) => {
+			let likes = res[0]["likes"].split(",")
+			likesArray = likes
+			console.log(likes)
+			if(likes.length > 1) {
+				likes.forEach(element => {
+					console.log(element)
+					document.getElementById(`likecard` + element).setAttribute('class', 'jobsVisualization-icon-like-clicked')
 				});
 			}
-			changeColorLike();
-		}
-	});
+			else if(!(likes[0]=="")) {
+				console.log(document.getElementById(`likecard${likes[0]}`))
+				document.getElementById(`likecard` + likes[0]).setAttribute('class', 'jobsVisualization-icon-like-clicked')
+			}
+			else {
+				likesArray = []
+			}
+		})
+	})
 }
 // age quando o botão do formulário de pesquisa é clickado
 function buscar(event) {

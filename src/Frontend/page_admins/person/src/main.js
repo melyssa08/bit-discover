@@ -14,7 +14,7 @@ function create_user(indetification, name, date, idade, email) {
 			<td>
 				<img src="https://source.boringavatars.com/beam/${name}" alt="" />
 				<a href="#" class="user-link">${name}</a>
-				<span class="user-subhead">${indetification}</span>
+				<span class="user-subhead">id: ${indetification}</span>
 			</td>
 			<td>${date}</td>
 			<td class="text-center">
@@ -47,10 +47,26 @@ function create_user(indetification, name, date, idade, email) {
 	`;
 }
 
+function add_list_users(users) {
+	users.forEach(function (candidate) {
+		create_user(candidate.id, candidate.name, candidate.created_at, candidate.age, candidate.email);
+	});
+}
+
 $(document).ready(function () {
-	$.get('/api/candidates', function (data) {
-		data.forEach(function (candidate) {
-			create_user(candidate.id, candidate.name, candidate.created_at, candidate.age, candidate.email);
+	document.getElementById('searchForm').addEventListener('submit', function (e) {
+		e.preventDefault();
+		let search_param = document.getElementById('search_param').value;
+		let search_data = document.getElementById('search_data').value;
+		let url = `/api/candidates?${search_param}=${search_data}%`;
+
+		$.get(url, function (data) {
+			document.getElementById('main-body').innerHTML = '';
+			add_list_users(data);
 		});
+	});
+
+	$.get('/api/candidates', function (data) {
+		add_list_users(data);
 	});
 });
