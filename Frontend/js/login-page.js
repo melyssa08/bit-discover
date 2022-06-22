@@ -21,7 +21,7 @@ function loginCompany() {
     var senha = document.getElementById('login-input-senha').value;
 
     $.ajax({
-        url: "http://127.0.0.1:3000/api/companies/login",
+        url: "/api/companies/login",
         type: "POST",
         data: {
             email: user,
@@ -44,7 +44,7 @@ function loginCandidate() {
     var senha = document.getElementById('login-input-senha').value;
 
     $.ajax({
-        url: "http://127.0.0.1:3000/api/candidates/login",
+        url: "/api/candidates/login",
         type: "POST",
         data: {
             email: user,

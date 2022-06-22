@@ -10,7 +10,7 @@ window.addEventListener('load', function () {
 });
 
 //Pega os dados para colocar nas tags de soft e adiciona funcionalidade a essas tags
-$.get("http://127.0.0.1:3000/api/softskills/", function(response) {
+$.get("/api/softskills/", function(response) {
 	for (i of response) {
 		$("#registrationJobs-tags-habilities-soft").append(
 			`<button class="registrationJobs-button-tag" value="${i.id}">${i.name}</button>`
@@ -21,7 +21,7 @@ $.get("http://127.0.0.1:3000/api/softskills/", function(response) {
 )
 
 // Pega os dados para colocar nas tags hard e adiciona funcionalidade a essas tags
-$.get("http://127.0.0.1:3000/api/hardskills/", function(response) {
+$.get("/api/hardskills/", function(response) {
 	for (i of response) {
 		$("#registrationJobs-tags-habilities-hard").append(
 			`<button class="registrationJobs-button-tag" value="${i.id}">${i.name}</button>`
@@ -30,7 +30,7 @@ $.get("http://127.0.0.1:3000/api/hardskills/", function(response) {
 })
 
 // Pega os dados para colocar nas tags de bonus e adciona funcionalidade a essas tags
-$.get("http://127.0.0.1:3000/api/bonus/", function (response) {
+$.get("/api/bonus/", function (response) {
 	for (i of response) {
 		$("#registrationJobs-tags-bonus").append(
 			`<button class="registrationJobs-button-tag" value="${i.id}">${i.name}</button>`
@@ -178,11 +178,11 @@ var buttonTrigger = new Promise(function (resolve, reject) {
 			&& iterateTagsHabilitiesHard().length > 1 && iterateTagsHabilitiesSoft().length > 1 && iterateTagsBonus()
 			&& compareValueInNameJob(jobsName)) {
 
-			postRegistration('http://127.0.0.1:3000/api/jobscontacts/', {email: jobsEmail.value , number: jobsCell.value})
+			postRegistration('/api/jobscontacts/', {email: jobsEmail.value , number: jobsCell.value})
 
 	resolve(informationJob = {
 		postal_code: parseInt(jobsCP.value),
-		company: getIdCompany(JSON.parse(localStorage.UserBITDiscover).id,'http://127.0.0.1:3000/api/companies/'),
+		company: getIdCompany(JSON.parse(localStorage.UserBITDiscover).id,'/api/companies/'),
 		activities: jobsActivities.value,
 		name: jobsName.value,
 		description: jobsDescription.value,
@@ -207,7 +207,7 @@ var buttonTrigger = new Promise(function (resolve, reject) {
 
 })}).then((res) => {
 	// Posta o registro no banco
-	postRegistration('http://127.0.0.1:3000/api/jobs/',res)
+	postRegistration('/api/jobs/',res)
  })
 .then((resp) => {
 	$('#registrationJobs-target-myjobs').click(function () {
@@ -242,7 +242,7 @@ function getIdCompany(id, urlGet)
 // Funcao que pega o id de contato 
 function getIdContact () {
 	$.ajax({
-        url: `http://127.0.0.1:3000/api/jobscontacts/`,
+        url: `/api/jobscontacts/`,
         type: 'get',
         dataType: 'json',
         async: false,

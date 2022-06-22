@@ -17,7 +17,7 @@ window.addEventListener('load', function () {
 
 // Carrega as tags e as preenche se o usuário tiver clicado antes
 function loadSoft() {
-$.get("http://127.0.0.1:3000/api/softskills/", function(response) {
+$.get("/api/softskills/", function(response) {
 	for (i of response) {
 		$("#registrationJobs-tags-habilities-soft").append(
 			`<button class="registrationJobs-button-tag" value="${i.id}">${i.name}</button>`
@@ -34,7 +34,7 @@ $.get("http://127.0.0.1:3000/api/softskills/", function(response) {
 
 // Carrega as tags e as preenche se o usuário tiver clicado antes
 function loadHard () {
-$.get("http://127.0.0.1:3000/api/hardskills/", function(response) {
+$.get("/api/hardskills/", function(response) {
 	for (i of response) {
 		$("#registrationJobs-tags-habilities-hard").append(
 			`<button class="registrationJobs-button-tag" value="${i.id}">${i.name}</button>`
@@ -49,7 +49,7 @@ $.get("http://127.0.0.1:3000/api/hardskills/", function(response) {
 
 // Carrega as tags e as preenche se o usuário tiver clicado antes
 function loadBonus() {
-$.get("http://127.0.0.1:3000/api/bonus/", function (response) {
+$.get("/api/bonus/", function (response) {
 	for (i of response) {
 		$("#registrationJobs-tags-bonus").append(
 			`<button class="registrationJobs-button-tag" value="${i.id}">${i.name}</button>`
@@ -221,7 +221,7 @@ var resultGetInformationJob
 // Pega as informações do banco e coloca nos campos de entrada para o usuario editar
 function getInformationJob () {
 			$.ajax({
-				url: `http://127.0.0.1:3000/api/jobs/${idJob}`,
+				url: `/api/jobs/${idJob}`,
 				type: 'get',
 				dataType: 'json',
 				async: false,
@@ -243,7 +243,7 @@ function getInformationJob () {
 			 jobsActivities.value = result[0].activities
 
 			$.ajax({
-				url: `http://127.0.0.1:3000/api/jobscontacts/${result[1]}`,
+				url: `/api/jobscontacts/${result[1]}`,
 				type: 'get',
 				dataType: 'json',
 				async: false,
@@ -299,8 +299,8 @@ var buttonTrigger = new Promise(function (resolve, reject) {
 }
 
 })}).then((res) => {
-	editRegistration('http://127.0.0.1:3000/api/jobs/',idJob, res[0])
-	editRegistration('http://127.0.0.1:3000/api/jobscontacts/', resultGetInformationJob[1], res[1])
+	editRegistration('/api/jobs/',idJob, res[0])
+	editRegistration('/api/jobscontacts/', resultGetInformationJob[1], res[1])
  })
 .then((resp) => {
 	// forca um clique e encaminha para a página minhas vagas

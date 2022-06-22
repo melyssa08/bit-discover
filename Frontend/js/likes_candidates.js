@@ -17,7 +17,7 @@ function convertStringInArray (likesDoUser) {
 // Itera sobre os jobs do usuario e compara com ids
 function iterateJobsAndCompare (ids) {
   $.ajax({
-    url: `http://127.0.0.1:3000/api/jobs/`,
+    url: `/api/jobs/`,
     type: 'get',
     dataType: 'json',
     async: false,

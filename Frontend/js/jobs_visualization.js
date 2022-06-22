@@ -29,7 +29,7 @@ function like(id) {
 
 		console.log(likesArray)
 		$.ajax({
-			url: `http://127.0.0.1:3000/api/candidates/${userInfo.id}`,
+			url: `/api/candidates/${userInfo.id}`,
 			type: "PUT",
 			data: `likes=${likesArray}`,
 			success: data => {
@@ -50,7 +50,7 @@ function like(id) {
 		}
 		console.log("removeu")
 		$.ajax({
-			url: `http://127.0.0.1:3000/api/candidates/${userInfo.id}`,
+			url: `/api/candidates/${userInfo.id}`,
 			type: "PUT",
 			data: `likes=${likesArray}`,
 			success: data => {
@@ -69,7 +69,7 @@ function like(id) {
 function loadCard(query= {}) {
 	// Consumo de api por jQuery com o método get
 	let textao = Object.keys(query).map(key => key +"=" +query[key]).join("&")
-	let url = "http://localhost:3000/api/jobs?" + textao
+	let url = "/api/jobs?" + textao
 	$.get(url, function (resultado) {
 		var userInfo = JSON.parse(localStorage.getItem("UserBITDiscover"))
 		console.log(userInfo)
@@ -79,7 +79,7 @@ function loadCard(query= {}) {
 		// Veio como array o resultado então usa o map para fazer a modificação em cada item do array
 		resultado.map((resul) => {
 			$.ajax({
-				url: "http://127.0.0.1:3000/api/match",
+				url: "/api/match",
 				type: "POST",
 				data: {
 					candidates_id: userId,
@@ -220,7 +220,7 @@ function loadCard(query= {}) {
 			// Template de string que mostra a criação dos cards como se fosse um html só que dentro de um arquivo javascript
 		});
 	}).then(function(result) {
-		$.get("http://127.0.0.1:3000/api/candidates/" + userInfo.id, (res) => {
+		$.get("/api/candidates/" + userInfo.id, (res) => {
 			let likes = res[0]["likes"].split(",")
 			likesArray = likes
 			console.log(likes)

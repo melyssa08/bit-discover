@@ -76,7 +76,7 @@ function update_profile() {
 //salva as mudanças no perfil do usário
   //salva as mudanças no perfil do usário
   $.ajax({
-    url: `http://127.0.0.1:3000/api/candidates/${id}`,
+    url: `/api/candidates/${id}`,
     type: "PUT",
     data: `name=${$("#myProfile-input-name").val()}&email=${$("#myProfile-input-email").val()}&age=${$("#myProfile-input-age").val()}&CPF=${$("#myProfile-input-CPF").val()}&password=${$("#myProfile-input-password").val()}&postal_code=${$("#myProfile-input-cp").val()}&scholarship=${$("#myProfile-select-scholarity").val()}&graduation=${$("#myProfile-input-course").val()}&departaments=${$("#myProfile-experience").val()}&description=${$("#myProfile-textarea").val()}&softskills=${soft_text}&hardskills=${hard_text}`,
     success: function (data) {
@@ -88,7 +88,7 @@ function update_profile() {
 }
 //pega os dados do banco e já deixa o perfil preenchido com as informações interiores preenchidas
 $.ajax({
-  url: `http://127.0.0.1:3000/api/candidates/${id}`,
+  url: `/api/candidates/${id}`,
   type: "GET",
   success: function (data) {
       $("#myProfile-input-name").val(data[0]["name"]);
@@ -106,7 +106,7 @@ $.ajax({
   },
 }).then(function(result) {
   //carrega os botões de softskill e os adiciona na página
-  $.get("http://localhost:3000/api/softskills", function(softskills) {
+  $.get("/api/softskills", function(softskills) {
     for (i=0;i<softskills.length;i++) {
       $('#myProfile-content-obligation').append(`<button class="myProfile-button-tag-unclicked" id="s${softskills[i].id}"  onclick="button(document.getElementById('s${softskills[i].id}'))">` + softskills[i].name + `</button>`)
     }
@@ -117,7 +117,7 @@ $.ajax({
     });
   })
 
-  $.get('http://localhost:3000/api/hardskills', function(hardskills) {
+  $.get('/api/hardskills', function(hardskills) {
      //carrega os botões de hardskill e os adiciona na página
     for (i=0;i<hardskills.length;i++) {
       $('#myProfile-content-obligation-1').append(`<button class="myProfile-button-tag-unclicked" id="h${hardskills[i].id}" onclick="button(h${hardskills[i].id})">` + hardskills[i].name + `</button>`)

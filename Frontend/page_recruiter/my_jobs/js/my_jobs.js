@@ -28,7 +28,7 @@ function deleteJob(id){
 	//implementar o api_jobs.delete!!
 
 	$.ajax({
-		url: `http://localhost:3000/api/jobs/${id}`,
+		url: `/api/jobs/${id}`,
 		type: 'DELETE',
 		success: function(){
 			alert("deletado com sucesso!")
@@ -39,7 +39,7 @@ function deleteJob(id){
 
 // Funcao que carrega os cards com os dados do resultado da requisicao
 function getJobOnLoad() {
-	$.get('http://localhost:3000/api/jobs', function (result) {
+	$.get('/api/jobs', function (result) {
 		 console.log("Resultado", result);
 
 		if (result.length == 0) {
