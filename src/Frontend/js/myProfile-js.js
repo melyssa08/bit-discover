@@ -1,3 +1,9 @@
+// Carrega a navbar na tela
+window.addEventListener('load', function () {
+	$('#myProfile-header').load('/page_candidates/side_and_navbar/index.html', function (response, status) {
+	});
+});
+
 // faz os botões de hard e soft skill funcionar
 function button(id) {
   if (id.getAttribute("class") == "myProfile-button-tag-unclicked" ){
