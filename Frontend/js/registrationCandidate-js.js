@@ -10,7 +10,7 @@ function button(id) {
 //executa a função ao iniciar a pagina adicionando os botões de hard e softskills
 function onload() {
   //carrega os botões de softskill e os adiciona na página
-  $.get("http:///api/softskills", function (softskills) {
+  $.get("http://localhost:3000/api/softskills", function (softskills) {
     console.log(softskills)
     for (i = 0; i < softskills.length; i++) {
       $('#registrationCandidates-content-obligation').append(`<button class="registrationCandidates-button-tag-unclicked" onclick="selectSoftSkill(${softskills[i].id})" id="s${softskills[i].id}">` + softskills[i].name + `</button>`)
@@ -18,7 +18,7 @@ function onload() {
   })
 
 
-  $.get('http:///api/hardskills', function (hardskills) {
+  $.get('http://localhost:3000/api/hardskills', function (hardskills) {
     //carrega os botões de hardskill e os adiciona na página
     for (i = 0; i < hardskills.length; i++) {
       $('#registrationCandidates-content-obligation-1').append(`<button class="registrationCandidates-button-tag-unclicked" onclick="selectHardSkill(${hardskills[i].id})" id="h${hardskills[i].id}">` + hardskills[i].name + `</button>`)
@@ -60,7 +60,7 @@ function create_profile() {
   hard_text = hard_text.substring(0, hard_text.length - 1)
   //salva as mudanças no perfil do usário
   $.ajax({
-    url: "http://api/candidates/",
+    url: "http://127.0.0.1:3000/api/candidates/",
     type: "POST",
     data: `name=${$("#registrationCandidates-input-name").val()}&email=${$("#registrationCandidates-input-email").val()}&age=${$("#registrationCandidates-input-age").val()}&CPF=${$("#registrationCandidates-input-CPF").val()}&password=${$("#registrationCandidates-input-password").val()}&postal_code=${$("#registrationCandidates-input-cp").val()}&scholarship=${$("#registrationCandidates-scholarity").val()}&graduation=${$("#registrationCandidates-graduation").val()}&description=${$("#registrationCandidates-textarea").val()}&hardskills=${hard_text}&softskills=${soft_text}&departaments=${$("#registrationCandidates-experience").val()}`,
     success: function (data) {
@@ -73,7 +73,7 @@ function create_profile() {
 //carrega ao iniciar pagina 
 function onload() {
   //carrega os botões de softskill e os adiciona na página
-  $.get("http:///api/softskills", function (softskills) {
+  $.get("http://localhost:3000/api/softskills", function (softskills) {
     console.log(softskills)
     for (i = 0; i < softskills.length; i++) {
       $('#registrationCandidates-content-obligation').append(`<button class="registrationCandidates-button-tag-unclicked" id="s${softskills[i].id}"  onclick="button(s${softskills[i].id})">` + softskills[i].name + `</button>`)
@@ -81,7 +81,7 @@ function onload() {
   })
 
 
-  $.get('http:///api/hardskills', function (hardskills) {
+  $.get('http://localhost:3000/api/hardskills', function (hardskills) {
     //carrega os botões de hardskill e os adiciona na página
     for (i = 0; i < hardskills.length; i++) {
       $('#registrationCandidates-content-obligation-1').append(`<button class="registrationCandidates-button-tag-unclicked" id="h${hardskills[i].id}" onclick="button(h${hardskills[i].id})">` + hardskills[i].name + `</button>`)
