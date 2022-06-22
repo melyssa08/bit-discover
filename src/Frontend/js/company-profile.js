@@ -1,3 +1,9 @@
+// Pega a Nav bar e a Side Bar
+window.addEventListener('load', function () {
+    $('#companyProfile-header').load('/page_recruiter/side_and_navbar/index.html', function (response, status) {
+    });
+});
+
 // Funcao que desabilita inputs
 function pencilbutton() {
     var inputs = document.querySelectorAll("input")
@@ -38,20 +44,19 @@ $.ajax({
 // salva as modificações do perfil
 function update_profile() {
     //checka se algum campo em branco
-    if ($("#companyProfile-input-company-name").val().length == 0 ||  $("#companyProfile-input-email").val().length==0||$("#companyProfile-input-confirmemail").val().length==0||$("#companyProfile-input-cnpj").val().length ==0||$("#companyProfile-input-password").val().length==0||$("#companyProfile-input-confirmpassword").val().length==0|| $("#companyProfile-input-cp").val().length==0||$("#companyProfile-input-link").val().length==0||$("#companyProfile-textarea").val().length==0)
-    {
+    if ($("#companyProfile-input-company-name").val().length == 0 || $("#companyProfile-input-email").val().length == 0 || $("#companyProfile-input-confirmemail").val().length == 0 || $("#companyProfile-input-cnpj").val().length == 0 || $("#companyProfile-input-password").val().length == 0 || $("#companyProfile-input-confirmpassword").val().length == 0 || $("#companyProfile-input-cp").val().length == 0 || $("#companyProfile-input-link").val().length == 0 || $("#companyProfile-textarea").val().length == 0) {
         alert("não deixe nenhum campo em branco")
         return false
     }
     //check de coincidência de email
     if (!($("#companyProfile-input-email").val() == $("#companyProfile-input-confirmemail").val())) {
-         alert("Os emails não coincidem!")
-         return false
+        alert("Os emails não coincidem!")
+        return false
     }
-     //check de coincidência de senha
+    //check de coincidência de senha
     if (!($("#companyProfile-input-password").val() == $("#companyProfile-input-confirmpassword").val())) {
-         alert("As senhas não coincidem!")
-         return false
+        alert("As senhas não coincidem!")
+        return false
     }
     //muda as informações no banco de dados
     $.ajax({
