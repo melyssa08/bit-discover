@@ -38,7 +38,7 @@ class BasicsConfig {
 	 * Middleware add static files.
 	 */
 	static staticFiles(app) {
-		app.use(express.static('../Frontend/'));
+		app.use(express.static('./Frontend/'));
 	}
 
 	/*
