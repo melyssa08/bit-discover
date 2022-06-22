@@ -9,12 +9,13 @@ var likesArray = []
 console.log("ID User ", userInfo.id)
 
 function button(id) {
-	if (document.getElementById(`likecard${id}`).getAttribute('class') == 'jobsVisualization-icon-like-unclicked') {
-		document.getElementById(`likecard${id}`).setAttribute('class', 'jobsVisualization-icon-like-clicked')
+	if (document.getElementById(`likecard${id}`).getAttribute('class') == 'jobsVisualization-icon-like-clicked') {
+		document.getElementById(`likecard${id}`).setAttribute('class', 'jobsVisualization-icon-like-unclicked')
 		console.log("oi")
 	}
 	else {
-		document.getElementById(`likecard${id}`).setAttribute('class', 'jobsVisualization-icon-like-unclicked')
+		document.getElementById(`likecard${id}`).setAttribute('class', 'jobsVisualization-icon-like-clicked')
+		console.log("oi 2")
 	}
 	like(id)
 }
