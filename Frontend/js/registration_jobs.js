@@ -212,7 +212,7 @@ var buttonTrigger = new Promise(function (resolve, reject) {
 .then((resp) => {
 	$('#registrationJobs-target-myjobs').click(function () {
 		// ecaminha para a página de minhas vagas do recrutador
-		window.location = 'http://127.0.0.1:3000/page_recruiter/my_jobs/index.html'
+		window.location = '/page_recruiter/my_jobs/index.html'
 	})
 })
 

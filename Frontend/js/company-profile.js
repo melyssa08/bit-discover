@@ -25,7 +25,7 @@ var user = JSON.parse(localStorage.getItem('UserBITDiscover'));
 var id = user.id
 // Requisição que puxa os valores para os campos
 $.ajax({
-    url: `http://127.0.0.1:3000/api/companies/?id=${id}`,
+    url: `/api/companies/?id=${id}`,
     type: "GET",
     success: function (data) {
         console.log(data);
@@ -60,7 +60,7 @@ function update_profile() {
     }
     //muda as informações no banco de dados
     $.ajax({
-        url: `http://127.0.0.1:3000/api/companies/${id}`,
+        url: `/api/companies/${id}`,
         type: "PUT",
         data: `name=${$(
             "#companyProfile-input-company-name"

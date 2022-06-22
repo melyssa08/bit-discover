@@ -8,7 +8,7 @@ window.addEventListener('load', function () {
 var iconNewJob = document.getElementById('myJobs-icon-new-job')
 
 iconNewJob.addEventListener('click', function () {
-	window.location = "http://127.0.0.1:3000/page_recruiter/registration_jobs/"
+	window.location = "/page_recruiter/registration_jobs/"
 })
 
 //TESTE DE FUNÇOES EDIT E DELETE VAGA
@@ -17,7 +17,7 @@ function editJob(id) {
 
 	console.log(id);
 
-	window.location.href = "http://localhost:3000/page_recruiter/edit_registration_jobs/index.html?idJob="+id;
+	window.location.href = "/page_recruiter/edit_registration_jobs/index.html?idJob="+id;
 
 }
 

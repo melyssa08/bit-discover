@@ -305,7 +305,7 @@ var buttonTrigger = new Promise(function (resolve, reject) {
 .then((resp) => {
 	// forca um clique e encaminha para a página minhas vagas
 	$('#registrationJobs-target-myjobs').click(function () {
-		window.location = 'http://127.0.0.1:3000/page_recruiter/my_jobs/index.html'
+		window.location = '/page_recruiter/my_jobs/index.html'
 	})
 })
 
