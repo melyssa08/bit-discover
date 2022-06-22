@@ -164,6 +164,16 @@ function iterateTagsBonus() {
 	return arrBonus;
 }
 
+// Funcao que compara o input do usuario com a lista de nomes de vagas
+function compareValueInNameJob (inputUser) {
+	for (i of JobsNameList.children) {
+		if (i.value != inputUser.value) {
+			return false
+	} else {
+		return true
+	}
+}}
+
 // variavel que irá armazenar valores dos inputs inseridos pelo usuário
 var informationJob;
 
