@@ -30,7 +30,7 @@ function loginCompany() {
         success: data => {
             console.log(data);
         localStorage.setItem("UserBITDiscover", JSON.stringify(data));
-        window.location.href = 'http://127.0.0.1:3000/page_recruiter/my_jobs/index.html'
+        window.location.href = '/page_recruiter/my_jobs/index.html'
         }
     }).fail(function(err) {
         console.log(err);
@@ -53,7 +53,7 @@ function loginCandidate() {
         success: data => {
             console.log(data);
         localStorage.setItem("UserBITDiscover", JSON.stringify(data));
-        window.location.href = 'http://127.0.0.1:3000/page_candidates/jobs_visualization/index.html'
+        window.location.href = '/page_candidates/jobs_visualization/index.html'
         }
     }).fail(function(err) {
         console.log(err);
