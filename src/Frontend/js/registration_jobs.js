@@ -97,15 +97,18 @@ var jobsTagsBonus = document.getElementById('registrationJobs-tags-bonus').child
 var iconConfirm = document.getElementById('registrationJobs-icon-confirm');
 var jobsEmail = document.getElementById('registrationJobs-email')
 var jobsCell = document.getElementById('registrationJobs-cellphone')
+var JobsNameList = document.getElementById('registrationJobs-jobs-list')
 
 // Validacao com condicao do campo input do Regime de trabalho
 jobsType.addEventListener('input', function () {
 	console.log(this.value)
-	if (this.value == "Estagio") {
+	if (this.value == "estagio") {
 		jobsTime.disabled = true
 		jobsProficiency.disabled = true
 		jobsTime.style.backgroundColor = 'gray'
 		jobsProficiency.style.backgroundColor = 'gray'
+		jobsProficiency.value = 'JUNIOR'
+		jobsTime.value = 'half-time'
 	} else {
 		jobsTime.disabled = false
 		jobsProficiency.disabled = false
@@ -172,7 +175,8 @@ var buttonTrigger = new Promise(function (resolve, reject) {
 	e.preventDefault();
 
 		if (jobsSalaryMin.value && jobsSalaryMax.value && jobsCP.value && jobsDescription.value && jobsActivities.value && jobsEmail.value && jobsCell.value
-			&& iterateTagsHabilitiesHard() && iterateTagsHabilitiesSoft() && iterateTagsBonus()) {
+			&& iterateTagsHabilitiesHard().length > 1 && iterateTagsHabilitiesSoft().length > 1 && iterateTagsBonus()
+			&& compareValueInNameJob(jobsName)) {
 
 			postRegistration('http://127.0.0.1:3000/api/jobscontacts/', {email: jobsEmail.value , number: jobsCell.value})
 
@@ -198,7 +202,7 @@ var buttonTrigger = new Promise(function (resolve, reject) {
 	});
 
 } else {
-	reject('Preencha todos os dados nos campos')
+	alert("Preencha todos os campos, coloque no minimo duas tags de Soft e duas Tags de Hard nos campos de requisitos e só use nomes de vagas dado pela lista")
 }
 
 })}).then((res) => {
@@ -212,10 +216,6 @@ var buttonTrigger = new Promise(function (resolve, reject) {
 	})
 })
 
-// Mensagem de excessão caso nem todos os campos forem preenchidos quando se clica no icone confirma
-buttonTrigger.catch((err) => {
-	alert(err)
-})
 
 // Funcao que posta no banco
 function postRegistration(url,information) {

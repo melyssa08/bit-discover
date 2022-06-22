@@ -1,4 +1,4 @@
-e// Carrega a NavBar e a SideBar 
+// Carrega a NavBar e a SideBar 
 window.addEventListener('load', function () {
     $("#likesCandidates-header").load("/page_candidates/side_and_navbar/index.html", function (response, status) {
         if (status == "error") {

@@ -29,16 +29,16 @@ $.ajax({
     type: "GET",
     success: function (data) {
         console.log(data);
-        console.log(data[id]["name"]);
-        $("#companyProfile-input-company-name").val(data[id]["name"]);
-        $("#companyProfile-input-email").val(data[id]["email"]);
-        $("#companyProfile-input-confirmemail").val(data[id]["email"]);
-        $("#companyProfile-input-cnpj").val(data[id]["cnpj"]);
-        $("#companyProfile-input-password").val(data[id]["password"]);
-        $("#companyProfile-input-confirmpassword").val(data[id]["password"]);
-        $("#companyProfile-input-cp").val(data[id]["postal_code"]);
-        $("#companyProfile-input-link").val(data[id]["website"]);
-        $("#companyProfile-textarea").val(data[id]["description"]);
+        console.log(data[0]["name"]);
+        $("#companyProfile-input-company-name").val(data[0]["name"]);
+        $("#companyProfile-input-email").val(data[0]["email"]);
+        $("#companyProfile-input-confirmemail").val(data[0]["email"]);
+        $("#companyProfile-input-cnpj").val(data[0]["cnpj"]);
+        $("#companyProfile-input-password").val(data[0]["password"]);
+        $("#companyProfile-input-confirmpassword").val(data[0]["password"]);
+        $("#companyProfile-input-cp").val(data[0]["postal_code"]);
+        $("#companyProfile-input-link").val(data[0]["website"]);
+        $("#companyProfile-textarea").val(data[0]["description"]);
     },
 });
 // salva as modificações do perfil
