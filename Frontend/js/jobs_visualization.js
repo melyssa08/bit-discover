@@ -71,6 +71,7 @@ function loadCard(query = {}) {
 	let textao = Object.keys(query).map(key => key +"=" +query[key]).join("&")
 	let url = "/api/jobs?" + textao
   $.get("/api/candidates/" + userInfo.id, (res) => {
+    console.log(res[0]["likes"])
 			likesArray = res[0]["likes"].split(",")
 			console.log(likesArray)
       
