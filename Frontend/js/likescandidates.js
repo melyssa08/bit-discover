@@ -69,7 +69,7 @@ function like(id) {
 function loadCard(query = {}) {
 	// Consumo de api por jQuery com o método get
 	let textao = Object.keys(query).map(key => key +"=" +query[key]).join("&")
-	let url = "http://localhost:3000/api/jobs?" + textao
+	let url = "/api/jobs?" + textao
   $.get("/api/candidates/" + userInfo.id, (res) => {
 			likesArray = res[0]["likes"].split(",")
 
