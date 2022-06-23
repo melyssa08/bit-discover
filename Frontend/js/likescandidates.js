@@ -1,4 +1,4 @@
-// Carrega a navbar na tela
+// Carrega a NavBar e a SideBar 
 window.addEventListener('load', function () {
 	$('#jobsVisualization-header').load('/page_candidates/side_and_navbar/index.html', function (response, status) {
 	});
@@ -72,6 +72,7 @@ function loadCard(query = {}) {
 	let url = "http://localhost:3000/api/jobs?" + textao
   $.get("/api/candidates/" + userInfo.id, (res) => {
 			likesArray = res[0]["likes"].split(",")
+
 			console.log(likesArray)
       
       $.get(url, function (resultado) {
@@ -81,6 +82,11 @@ function loadCard(query = {}) {
         console.log(userId)
         $("#jobsVisualization-cards").html("")
         // Veio como array o resultado então usa o map para fazer a modificação em cada item do array
+        console.log("resultado length =", likesArray)
+        if (likesArray.length === 1 && likesArray[0] == '') {
+          $('#jobsVisualization-cards').html('Você ainda não deu like em nenhuma vaga. Vá até suas vagas e comece por lá!')
+          return
+        }
         resultado.map((resul) => {
           $.ajax({
             url: "/api/match",
@@ -90,6 +96,9 @@ function loadCard(query = {}) {
               jobs_id: resul.id
             },
             success: data => {
+              if(!likesArray.includes(String(resul.id))){
+                return
+              }
               console.log("Porcentagem vagas!!", data);
               var percentage = data
               

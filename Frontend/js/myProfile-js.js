@@ -106,7 +106,7 @@ $.ajax({
   },
 }).then(function(result) {
   //carrega os botões de softskill e os adiciona na página
-  $.get("/api/softskills", function(softskills) {
+  $.get("http://localhost:3000/api/softskills", function(softskills) {
     for (i=0;i<softskills.length;i++) {
       $('#myProfile-content-obligation').append(`<button class="myProfile-button-tag-unclicked" id="s${softskills[i].id}"  onclick="button(document.getElementById('s${softskills[i].id}'))">` + softskills[i].name + `</button>`)
     }
@@ -117,7 +117,7 @@ $.ajax({
     });
   })
 
-  $.get('/api/hardskills', function(hardskills) {
+  $.get('http://localhost:3000/api/hardskills', function(hardskills) {
      //carrega os botões de hardskill e os adiciona na página
     for (i=0;i<hardskills.length;i++) {
       $('#myProfile-content-obligation-1').append(`<button class="myProfile-button-tag-unclicked" id="h${hardskills[i].id}" onclick="button(h${hardskills[i].id})">` + hardskills[i].name + `</button>`)

@@ -164,18 +164,16 @@ function iterateTagsBonus() {
 	return arrBonus;
 }
 
+// variavel que irá armazenar valores dos inputs inseridos pelo usuário
+var informationJob;
+
 // Funcao que compara o input do usuario com a lista de nomes de vagas
 function compareValueInNameJob (inputUser) {
 	for (i of JobsNameList.children) {
-		if (i.value != inputUser.value) {
-			return false
-	} else {
-		return true
+		if (i.value == inputUser.value) {
+			return 'certo'
 	}
 }}
-
-// variavel que irá armazenar valores dos inputs inseridos pelo usuário
-var informationJob;
 
 // Promessa que valida se todos os campos foram preenchidos
 // armazena os valores de entrada 
@@ -186,7 +184,7 @@ var buttonTrigger = new Promise(function (resolve, reject) {
 
 		if (jobsSalaryMin.value && jobsSalaryMax.value && jobsCP.value && jobsDescription.value && jobsActivities.value && jobsEmail.value && jobsCell.value
 			&& iterateTagsHabilitiesHard().length > 1 && iterateTagsHabilitiesSoft().length > 1 && iterateTagsBonus()
-			&& compareValueInNameJob(jobsName)) {
+			&& compareValueInNameJob(jobsName) == 'certo') {
 
 			postRegistration('/api/jobscontacts/', {email: jobsEmail.value , number: jobsCell.value})
 

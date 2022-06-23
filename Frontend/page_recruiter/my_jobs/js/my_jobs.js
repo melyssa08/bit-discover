@@ -17,7 +17,7 @@ function editJob(id) {
 
 	console.log(id);
 
-	window.location.href = "/page_recruiter/edit_registration_jobs/index.html?idJob="+id;
+	window.location.href = "http://localhost:3000/page_recruiter/edit_registration_jobs/index.html?idJob="+id;
 
 }
 
@@ -28,7 +28,7 @@ function deleteJob(id){
 	//implementar o api_jobs.delete!!
 
 	$.ajax({
-		url: `/api/jobs/${id}`,
+		url: `http://localhost:3000/api/jobs/${id}`,
 		type: 'DELETE',
 		success: function(){
 			alert("deletado com sucesso!")
@@ -39,7 +39,7 @@ function deleteJob(id){
 
 // Funcao que carrega os cards com os dados do resultado da requisicao
 function getJobOnLoad() {
-	$.get('/api/jobs', function (result) {
+	$.get('http://localhost:3000/api/jobs', function (result) {
 		 console.log("Resultado", result);
 
 		if (result.length == 0) {
