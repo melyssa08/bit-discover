@@ -117,11 +117,6 @@
     text-decoration: none;
 }
 
-.sideNavBar-black {
-    color: rgb(83, 00, 132);
-    text-decoration: none;
-}
-
 .sideNavBar-black:hover {
     color: #F3C42E;
     text-decoration: none;
@@ -139,11 +134,4 @@ a, a:link {
 a:hover {
     color: #F3C42E;
     text-decoration: none;
-}
-
-#sideNavBar-btn-logout {
-    /* font-family: 'Nunito', sans-serif; */
-    border: none;
-    background-color: white;
-    font-weight: bold;
 }

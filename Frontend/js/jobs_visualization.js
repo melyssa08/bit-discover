@@ -19,6 +19,7 @@ function button(id) {
 	}
 	like(id)
 }
+
 function like(id) {
 	console.log(likesArray)
 	id = String(id)
@@ -70,10 +71,9 @@ function loadCard(query = {}) {
 	let textao = Object.keys(query).map(key => key +"=" +query[key]).join("&")
 	let url = "/api/jobs?" + textao
   $.get("/api/candidates/" + userInfo.id, (res) => {
-      if (res[0]["likes"]){
 			likesArray = res[0]["likes"].split(",")
-			}
-        
+			console.log(likesArray)
+      
       $.get(url, function (resultado) {
         var userInfo = JSON.parse(localStorage.getItem("UserBITDiscover"))
         console.log(userInfo)
@@ -95,7 +95,7 @@ function loadCard(query = {}) {
               
               $('#jobsVisualization-cards').append(
                 `<!--Inicio Card-->
-                <div class="col-12 col-sm-4 col-s-12 col-m-12 col-xs-12" id="cardStart">
+                <div class="col-4">
               <div class="card container d-flex justify-content-between align-items-center text-black jobsVisualization-fix-center col-12" id=jobsVisualization-card-` + [percentage >= 60 ? "green" : percentage >= 40 ? "yellow" : "red"] + `>
               <div class="row">
               <div class="mt-3 text-center col-12">
